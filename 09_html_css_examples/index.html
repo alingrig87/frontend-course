@@ -1,68 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Exemple practice HTML + CSS (nav, forms)</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="main-header">
-    <div class="logo">Exemple HTML+CSS <span style="opacity:.85;">(nav, forms)</span></div>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#teorie">Teorie</a>
-      <a href="#exemple">Exemple</a>
-      <a href="#exercitii">Exerciții</a>
-      <a href="#intrebari">Întrebări</a>
-      <a href="#proiect">Mini-proiect</a>
-    </nav>
-  </header>
-
-  <aside class="sidebar" aria-label="Meniu lateral">
-    <h2>Concepte</h2>
-    <ul>
-      <li><span class="badge html">H</span> <a href="#teorie">Teorie</a></li>
-      <li><span class="badge css">C</span> <a href="#exemple">Exemple</a></li>
-      <li><span class="badge js">J</span> <a href="#exercitii">Exerciții</a></li>
-      <li><span class="badge.final">P</span> <a href="#proiect">Proiect</a></li>
-    </ul>
-  </aside>
-
-  <main class="content">
-    <section class="hero" id="teorie">
-      <h1>Exemple practice HTML + CSS (nav, forms)</h1>
-      <p>Scopul: să explicăm cum să construiești un <strong>navbar</strong> accesibil și un <strong>formular</strong> practic, folosind HTML semantic, CSS (Flexbox/Grid minimal) și validare JS.</p>
-    </section>
-
-    <section class="cards-section" id="exemple">
-      <h2>Partea teoretică</h2>
-
-      <div class="info note">
-        <strong>Definiții & concepte-cheie:</strong>
-        <ul>
-          <li><em>nav</em> - element semantic pentru navigație.</li>
-          <li><em>form</em> - container pentru controale de input; folosește <code>label</code> pentru accesibilitate.</li>
-          <li>Folosește <code>aria-*</code> când elementele nu sunt suficient de descriptive.</li>
-        </ul>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Exemple practice HTML + CSS (nav, forms)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">
+        Exemple HTML+CSS <span style="opacity: 0.85">(nav, forms)</span>
       </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#teorie">Teorie</a>
+        <a href="#exemple">Exemple</a>
+        <a href="#exercitii">Exerciții</a>
+        <a href="#intrebari">Întrebări</a>
+        <a href="#proiect">Mini-proiect</a>
+      </nav>
+    </header>
 
-      <div class="info">
-        <strong>Sintaxă / API-uri utile:</strong>
-        <ul>
-          <li><code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;label for="id"&gt;</code>, <code>required</code>, <code>type="email"</code>.</li>
-          <li>CSS: Flexbox pentru aliniere rapidă: <code>display:flex; align-items:center; gap:1rem;</code>.</li>
-        </ul>
-      </div>
+    <aside class="sidebar" aria-label="Meniu lateral">
+      <h2>Concepte</h2>
+      <ul>
+        <li><span class="badge html">H</span> <a href="#teorie">Teorie</a></li>
+        <li><span class="badge css">C</span> <a href="#exemple">Exemple</a></li>
+        <li>
+          <span class="badge js">J</span> <a href="#exercitii">Exerciții</a>
+        </li>
+        <li>
+          <span class="badge final">P</span> <a href="#proiect">Proiect</a>
+        </li>
+      </ul>
+    </aside>
 
-      <div class="info warning">
-        <strong>Bune practici:</strong> etichete clare, mesaje de eroare vizibile, tabindex natural (nu forța ordinea cu tabindex>0), evită inline styles pentru conținut repetat.
-      </div>
+    <main class="content">
+      <section class="hero" id="teorie">
+        <h1>Exemple practice HTML + CSS (nav, forms)</h1>
+        <p>
+          Scopul: să explicăm cum să construiești un
+          <strong>navbar</strong> accesibil și un
+          <strong>formular</strong> practic, folosind HTML semantic, CSS
+          (Flexbox/Grid minimal) și validare JS.
+        </p>
+      </section>
 
-      <h3>Exemplu 1 — Navbar simplu (HTML + CSS)</h3>
-      <div class="card">
-        <p><strong>Descriere:</strong> navbar responsive, cu buton pentru mobile (fără librării).</p>
+      <section class="cards-section" id="exemple">
+        <h2>Partea teoretică</h2>
 
-        <pre><code>&lt;nav class="site-nav"&gt;
+        <div class="info note">
+          <strong>Definiții & concepte-cheie:</strong>
+          <ul>
+            <li><em>nav</em> - element semantic pentru navigație.</li>
+            <li>
+              <em>form</em> - container pentru controale de input; folosește
+              <code>label</code> pentru accesibilitate.
+            </li>
+            <li>
+              Folosește <code>aria-*</code> când elementele nu sunt suficient de
+              descriptive.
+            </li>
+          </ul>
+        </div>
+
+        <div class="info">
+          <strong>Sintaxă / API-uri utile:</strong>
+          <ul>
+            <li>
+              <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>,
+              <code>&lt;label for="id"&gt;</code>, <code>required</code>,
+              <code>type="email"</code>.
+            </li>
+            <li>
+              CSS: Flexbox pentru aliniere rapidă:
+              <code>display:flex; align-items:center; gap:1rem;</code>.
+            </li>
+          </ul>
+        </div>
+
+        <div class="info warning">
+          <strong>Bune practici:</strong> etichete clare, mesaje de eroare
+          vizibile, tabindex natural (nu forța ordinea cu tabindex>0), evită
+          inline styles pentru conținut repetat.
+        </div>
+
+        <h3>Exemplu 1 — Navbar simplu (HTML + CSS)</h3>
+        <div class="card">
+          <p>
+            <strong>Descriere:</strong> navbar responsive, cu buton pentru
+            mobile (fără librării).
+          </p>
+
+          <pre><code>&lt;nav class="site-nav"&gt;
   &lt;a class="brand" href="#"&gt;Logo&lt;/a&gt;
   &lt;button class="nav-toggle" aria-expanded="false"&gt;☰&lt;/button&gt;
   &lt;ul class="nav-list"&gt;
@@ -72,11 +101,16 @@
   &lt;/ul&gt;
 &lt;/nav&gt;</code></pre>
 
-        <button class="show-btn" data-target="#sol-nav-1">Arată rezolvare</button>
-        <div class="solution" id="sol-nav-1" hidden>
-          <p>Rezolvare: folosim CSS pentru a ascunde lista pe mobil și JS pentru a comuta aria-expanded.</p>
+          <button class="show-btn" data-target="#sol-nav-1">
+            Arată rezolvare
+          </button>
+          <div class="solution" id="sol-nav-1" hidden>
+            <p>
+              Rezolvare: folosim CSS pentru a ascunde lista pe mobil și JS
+              pentru a comuta aria-expanded.
+            </p>
 
-          <pre><code>&lt;style&gt;
+            <pre><code>&lt;style&gt;
 .site-nav { display:flex; align-items:center; gap:1rem; }
 .nav-list { display:flex; list-style:none; gap:0.6rem; }
 @media (max-width:600px){
@@ -84,14 +118,17 @@
   .nav-list.open { display:flex; }
 }
 &lt;/style&gt;</code></pre>
+          </div>
         </div>
-      </div>
 
-      <h3>Exemplu 2 — Formular de contact (HTML + CSS + JS)</h3>
-      <div class="card">
-        <p><strong>Descriere:</strong> formular simplu cu validare minimă JS și mesaje inline.</p>
+        <h3>Exemplu 2 — Formular de contact (HTML + CSS + JS)</h3>
+        <div class="card">
+          <p>
+            <strong>Descriere:</strong> formular simplu cu validare minimă JS și
+            mesaje inline.
+          </p>
 
-        <pre><code>&lt;form id="contactForm"&gt;
+          <pre><code>&lt;form id="contactForm"&gt;
   &lt;label for="name"&gt;Nume&lt;/label&gt;
   &lt;input id="name" name="name" required /&gt;
 
@@ -104,131 +141,468 @@
   &lt;button type="submit"&gt;Trimite&lt;/button&gt;
 &lt;/form&gt;</code></pre>
 
-        <button class="show-btn" data-target="#sol-form-1">Arată rezolvare</button>
-        <div class="solution" id="sol-form-1" hidden>
-          <p>Rezolvare: validare JS, afișare mesaj succes/eroare, prevenire submit default pentru demo.</p>
+          <button class="show-btn" data-target="#sol-form-1">
+            Arată rezolvare
+          </button>
+          <div class="solution" id="sol-form-1" hidden>
+            <p>
+              Rezolvare: validare JS, afișare mesaj succes/eroare, prevenire
+              submit default pentru demo.
+            </p>
 
-          <pre><code>document.getElementById('contactForm').addEventListener('submit', function(e){
+            <pre><code>document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();
   // validare simplă
   const email = this.email.value;
   if(!/.+@.+\..+/.test(email)) { /* arată eroare */ }
   else { /* arată succes */ }
 });</code></pre>
+          </div>
         </div>
-      </div>
 
-      <div class="info exercise">
-        <strong>Exerciții practice (implementate în pagină):</strong>
+        <div class="info exercise">
+          <strong>Exerciții practice (implementate în pagină):</strong>
+          <ol>
+            <li>
+              Creează un navbar similar celui de mai sus și fă-l responsive.
+            </li>
+            <li>
+              Adaugă un formular de contact care arată mesaje inline la validare
+              (vezi partea de exemple).
+            </li>
+            <li>
+              Extensie: salvează datele în localStorage și afișează-le într-o
+              listă sub formular.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="exercitii">
+        <h2>Exerciții & Exemple live</h2>
+
+        <div class="card">
+          <h3>Navbar live</h3>
+          <!-- Navbar live -->
+          <nav class="site-nav" aria-label="Site">
+            <a class="brand" href="#">Logo</a>
+            <button
+              class="nav-toggle"
+              aria-expanded="false"
+              aria-controls="mainMenu"
+              title="Deschide meniul"
+            >
+              <!-- icon svg -->
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"
+                />
+              </svg>
+            </button>
+
+            <ul class="nav-list" id="mainMenu">
+              <li><a href="#teorie">Teorie</a></li>
+              <li><a href="#exemple">Exemple</a></li>
+              <li><a href="#proiect">Proiect</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="card">
+          <h3>Formular live</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="name">Nume</label>
+              <input id="name" name="name" required />
+              <small class="field-msg" aria-live="polite"></small>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+              <small class="field-msg" aria-live="polite"></small>
+            </div>
+
+            <div class="form-row">
+              <label for="message">Mesaj</label>
+              <textarea id="message" name="message" required></textarea>
+              <small class="field-msg" aria-live="polite"></small>
+            </div>
+
+            <div class="form-row">
+              <button type="submit">Trimite</button>
+              <button type="button" id="saveBtn">
+                Salvează în localStorage
+              </button>
+            </div>
+
+            <div id="formResult" role="status" aria-live="polite"></div>
+          </form>
+
+          <div id="savedList" class="card" style="margin-top: 1rem">
+            <h4>Mesaje salvate (localStorage)</h4>
+            <ul id="savedItems"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="intrebari">
+        <h2>Întrebări de interviu</h2>
+
+        <ul>
+          <li>
+            <p>
+              Ce element semantic folosești pentru a declara o zonă de navigare
+              și de ce?
+            </p>
+            <button class="show-btn" data-target="#sol-q1">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q1" hidden>
+              <p>
+                <code>&lt;nav&gt;</code> — este un element semantic HTML folosit
+                pentru a grupa linkuri de navigație principală. Ajută la
+                accesibilitate (screen reader-ele știu că e un meniu) și
+                structurarea clară a paginii.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              De ce este importantă asocierea <code>&lt;label&gt;</code> cu
+              input?
+            </p>
+            <button class="show-btn" data-target="#sol-q2">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q2" hidden>
+              <p>
+                Asocierea prin <code>for</code> (sau înglobare) permite screen
+                reader-elor să citească corect câmpul. Crește accesibilitatea și
+                ușurează selectarea câmpului la click pe etichetă.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>Cum faci un navbar responsive fără framework?</p>
+            <button class="show-btn" data-target="#sol-q3">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q3" hidden>
+              <p>
+                Folosind HTML semantic (<code>&lt;nav&gt;</code>), CSS Flexbox
+                și <code>@media</code> queries pentru a ascunde/afișa meniul pe
+                mobil. JS poate fi folosit pentru a comuta clasele (ex:
+                <code>open</code>).
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>Ce înseamnă <code>novalidate</code> pe un <code>form</code>?</p>
+            <button class="show-btn" data-target="#sol-q4">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q4" hidden>
+              <p>
+                Dezactivează validarea HTML5 nativă a browserului. Este util
+                când vrei să controlezi validarea complet cu JavaScript.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Cum oferi feedback vizual pentru erori de validare? (ARIA +
+              vizual)
+            </p>
+            <button class="show-btn" data-target="#sol-q5">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q5" hidden>
+              <p>
+                Se poate folosi <code>aria-live="polite"</code> pentru mesaje și
+                clase CSS precum <code>.error</code> cu
+                <code>:invalid</code> pentru stiluri (roșu, borduri, mesaje
+                inline).
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>Care sunt avantajele validării pe client vs. server?</p>
+            <button class="show-btn" data-target="#sol-q6">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q6" hidden>
+              <p>
+                Client: rapid, interactiv, reduce cererile. Server: sigur, nu
+                poate fi evitat. Ideal: ambele.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>Ce este <code>aria-expanded</code> și când îl folosești?</p>
+            <button class="show-btn" data-target="#sol-q7">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q7" hidden>
+              <p>
+                Atribut folosit pe elemente interactive (ex: buton) pentru a
+                indica dacă o zonă e deschisă (true) sau închisă (false). Ajută
+                utilizatorii de screen reader.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Cum previi trimiterea repetată a formularului (double submit)?
+            </p>
+            <button class="show-btn" data-target="#sol-q8">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q8" hidden>
+              <p>
+                Dezactivezi butonul de submit după primul click, sau folosești
+                un flag în JavaScript pentru a ignora trimiterea ulterioară.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Explică cum folosești localStorage pentru salvare temporară a
+              formularelor.
+            </p>
+            <button class="show-btn" data-target="#sol-q9">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q9" hidden>
+              <p>
+                La submit sau click pe buton, colectezi valorile și le salvezi
+                cu
+                <code>localStorage.setItem("cheie", JSON.stringify(...))</code>.
+                Le poți citi apoi cu <code>getItem</code> și le afișezi.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Ce trebuie să verifici când faci un design pentru mobil
+              (mobile-first)?
+            </p>
+            <button class="show-btn" data-target="#sol-q10">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q10" hidden>
+              <p>
+                Fonturi lizibile, layout vertical, butoane mari și spațiate,
+                meniuri ascunse, media queries pentru ecrane mici
+                (<code>max-width</code>), testare pe touch.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Diferența între <code>&lt;button&gt;</code> (implicit) și
+              <code>&lt;input type="submit"&gt;</code>.
+            </p>
+            <button class="show-btn" data-target="#sol-q11">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q11" hidden>
+              <p>
+                <code>button</code> e mai flexibil (poate conține HTML, text,
+                SVG). Ambele pot trimite formularul, dar
+                <code>button</code> poate avea și <code>type="button"</code> sau
+                <code>reset</code>.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Cum testezi accesibilitatea unui formular (screen reader, tab,
+              color contrast)?
+            </p>
+            <button class="show-btn" data-target="#sol-q12">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q12" hidden>
+              <p>
+                Testezi navigarea cu Tab, verifici contrastul (ex. WCAG),
+                asculți cu un screen reader (NVDA, VoiceOver), folosești
+                <code>label</code> corect și aria-atribute dacă trebuie.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>Ce face <code>required</code> pe un input și ce limitări are?</p>
+            <button class="show-btn" data-target="#sol-q13">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q13" hidden>
+              <p>
+                Forțează completarea câmpului înainte de submit (în HTML5).
+                Limitare: poate fi evitat cu JS, deci trebuie validare și pe
+                server.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>Ce rol are <code>autocomplete</code> pe input-uri?</p>
+            <button class="show-btn" data-target="#sol-q14">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q14" hidden>
+              <p>
+                Ajută browserul să sugereze completări pe baza valorilor
+                introduse anterior (ex: email, nume). Crește experiența
+                utilizatorului.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Explică diferența între <code>placeholder</code> și
+              <code>label</code>.
+            </p>
+            <button class="show-btn" data-target="#sol-q15">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q15" hidden>
+              <p>
+                <code>label</code> e vizibil tot timpul și accesibil,
+                <code>placeholder</code> dispare când scrii și nu e citit mereu
+                de screen reader. Nu le folosi unul în locul altuia.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Ce sunt pseudo-clasele <code>:focus</code> și
+              <code>:invalid</code> și cum le folosești?
+            </p>
+            <button class="show-btn" data-target="#sol-q16">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q16" hidden>
+              <p>
+                <code>:focus</code> stilizează un input activ,
+                <code>:invalid</code> marchează un câmp invalid conform
+                validării HTML. Le folosești pentru feedback vizual.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <p>
+              Cum faci un layout în care navbar-ul rămâne fix în partea de sus
+              (sticky) fără JS?
+            </p>
+            <button class="show-btn" data-target="#sol-q17">
+              Arată rezolvare
+            </button>
+            <div class="solution" id="sol-q17" hidden>
+              <p>
+                Folosind CSS: <code>position: sticky; top: 0;</code> pe navbar.
+                Asigură-te că are un <code>z-index</code> mare și un
+                <code>background</code> setat.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="proiect">
+        <h2>Mini-proiect — "Contact & Nav Starter"</h2>
+        <p>
+          Obiectiv: construiește un mic site cu navbar responsive, formular de
+          contact, validare, salvare în localStorage și afișare a mesajelor.
+        </p>
         <ol>
-          <li>Creează un navbar similar celui de mai sus și fă-l responsive.</li>
-          <li>Adaugă un formular de contact care arată mesaje inline la validare (vezi partea de exemple).</li>
-          <li>Extensie: salvează datele în localStorage și afișează-le într-o listă sub formular.</li>
+          <li>
+            <label
+              ><input type="checkbox" /> Setează structura fișierelor (index,
+              css, js). (<em>git init</em>, adaugă
+              <code>.gitignore</code> pentru node_modules)</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Construiește navbar-ul semantic cu
+              <code>&lt;nav&gt;</code> și buton toggle.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Adaugă stiluri responsive folosind
+              media queries (max-width:600px).</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Construiește formularul cu câmpuri:
+              nume, email, subiect, mesaj.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Adaugă validare JS pentru email și
+              lungime minimă a mesajului.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Arată mesaje inline pentru fiecare câmp
+              (eroare / succes).</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Previne trimiterea reală (pentru
+              versiunea demo) și afișează un toast de succes.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Salvează datele în localStorage la
+              click pe "Salvează" și afișează lista.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Adaugă buton de ștergere pentru fiecare
+              element salvat.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Documentează pașii în README.md și
+              adaugă comenzi git pentru deploy pe gh-pages.</label
+            >
+          </li>
         </ol>
-      </div>
 
-    </section>
-
-    <section id="exercitii">
-      <h2>Exerciții & Exemple live</h2>
-
-      <div class="card">
-        <h3>Navbar live</h3>
-        <!-- Navbar live -->
-        <nav class="site-nav" aria-label="Site">
-          <a class="brand" href="#">Logo</a>
-          <button class="nav-toggle" aria-expanded="false" aria-controls="mainMenu" title="Deschide meniul">
-            <!-- icon svg -->
-            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-          </button>
-
-          <ul class="nav-list" id="mainMenu">
-            <li><a href="#teorie">Teorie</a></li>
-            <li><a href="#exemple">Exemple</a></li>
-            <li><a href="#proiect">Proiect</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="card">
-        <h3>Formular live</h3>
-        <form id="contactForm" novalidate>
-          <div class="form-row">
-            <label for="name">Nume</label>
-            <input id="name" name="name" required />
-            <small class="field-msg" aria-live="polite"></small>
-          </div>
-
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
-            <small class="field-msg" aria-live="polite"></small>
-          </div>
-
-          <div class="form-row">
-            <label for="message">Mesaj</label>
-            <textarea id="message" name="message" required></textarea>
-            <small class="field-msg" aria-live="polite"></small>
-          </div>
-
-          <div class="form-row">
-            <button type="submit">Trimite</button>
-            <button type="button" id="saveBtn">Salvează în localStorage</button>
-          </div>
-
-          <div id="formResult" role="status" aria-live="polite"></div>
-        </form>
-
-        <div id="savedList" class="card" style="margin-top:1rem;">
-          <h4>Mesaje salvate (localStorage)</h4>
-          <ul id="savedItems"></ul>
-        </div>
-      </div>
-
-    </section>
-
-    <section id="intrebari">
-      <h2>Întrebări de interviu (cât mai multe)</h2>
-      <ul>
-        <li>Ce element semantic folosești pentru a declara o zonă de navigare și de ce?</li>
-        <li>De ce este importantă asocierea <code>&lt;label&gt;</code> cu <code>input</code>?</li>
-        <li>Cum faci un navbar responsive fără framework?</li>
-        <li>Ce înseamnă <code>novalidate</code> pe un <code>form</code>?</li>
-        <li>Cum oferi feedback vizual pentru erori de validare? (ARIA + vizual)</li>
-        <li>Care sunt avantajele validării pe client vs. server?</li>
-        <li>Ce este <code>aria-expanded</code> și când îl folosești?</li>
-        <li>Cum previi trimiterea repetată a formularului (double submit)?</li>
-        <li>Explică cum folosești localStorage pentru salvare temporară a formularelor.</li>
-        <li>Ce trebuie să verifici când faci un design pentru mobil (mobile-first)?</li>
-        <li>Diferența între <code>button</code> (implicit) și <code>input type="submit"</code>.</li>
-        <li>Cum testezi accesibilitatea unui formular (screen reader, tab, color contrast)?</li>
-        <li>Ce face <code>required</code> pe un input și ce limitări are?</li>
-        <li>Ce rol are <code>autocomplete</code> pe input-uri?</li>
-        <li>Explică diferența între <code>placeholder</code> și <code>label</code>.</li>
-        <li>Ce sunt pseudo-clasele <code>:focus</code> și <code>:invalid</code> și cum le folosești?</li>
-        <li>Cum faci un layout în care navbar-ul rămâne fix în partea de sus (sticky) fără JS?</li>
-      </ul>
-    </section>
-
-    <section id="proiect">
-      <h2>Mini-proiect (10 taskuri) — "Contact & Nav Starter"</h2>
-      <p>Obiectiv: construiește un mic site cu navbar responsive, formular de contact, validare, salvare în localStorage și afișare a mesajelor.</p>
-      <ol>
-        <li>Setează structura fișierelor (index, css, js). (<em>git init</em>, adaugă <code>.gitignore</code> pentru node_modules)</li>
-        <li>Construiește navbar-ul semantic cu <code>&lt;nav&gt;</code> și buton toggle.</li>
-        <li>Adaugă stiluri responsive folosind media queries (max-width:600px).</li>
-        <li>Construiește formularul cu câmpuri: nume, email, subiect, mesaj.</li>
-        <li>Adaugă validare JS pentru email și lungime minimă a mesajului.</li>
-        <li>Arată mesaje inline pentru fiecare câmp (eroare / succes).</li>
-        <li>Previne trimiterea reală (pentru versiunea demo) și afișează un toast de succes.</li>
-        <li>Salvează datele în localStorage la click pe "Salvează" și afișează lista.</li>
-        <li>Adaugă buton de ștergere pentru fiecare element salvat.</li>
-        <li>Documentează pașii în README.md și adaugă comenzi git pentru deploy pe gh-pages.</li>
-      </ol>
-
-      <div class="info note">
-        <strong>Comenzi Git recomandate (exemplu):</strong>
-        <pre><code>git init
+        <div class="info note">
+          <strong>Comenzi Git recomandate:</strong>
+          <pre><code>git init
 git add .
 git commit -m "Initial: navbar + contact form"
 git branch -M main
@@ -240,19 +614,19 @@ git add .
 git commit -m "deploy"
 git push origin main
 npx gh-pages -d .</code></pre>
+        </div>
+      </section>
+
+      <div class="info note" style="margin-top: 1.5rem">
+        <strong>Observație:</strong> codul din pagină conține comentarii utile
+        (în română). Poți copia fișierele și le poți modifica pentru a exersa.
       </div>
-    </section>
+    </main>
 
-    <div class="info note" style="margin-top:1.5rem;">
-      <strong>Observație:</strong> codul din pagină conține comentarii utile (în română). Poți copia fișierele și le poți modifica pentru a exersa.
-    </div>
+    <footer class="footer">
+      &copy; 2025 — Exemple HTML + CSS (nav, forms) • Creat pentru tine
+    </footer>
 
-  </main>
-
-  <footer class="footer">
-    &copy; 2025 — Exemple HTML + CSS (nav, forms) • Creat pentru tine
-  </footer>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
