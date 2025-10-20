@@ -1,13 +1,312 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CSS Responsive — media queries, mobile-first</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplu Tutorial Frontend - CSS Responsive (Extins)</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>CSS Responsive — media queries, mobile-first</h1>
-  <script src="app.js" defer></script>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo">🌐 Frontend Path</div>
+    <button class="burger" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+    <nav class="nav">
+      <a href="#">Acasă</a>
+      <a href="#teorie">Teorie</a>
+      <a href="#exercitii">Exerciții</a>
+      <a href="#intrebari">Întrebări</a>
+      <a href="#proiect">Proiect</a>
+    </nav>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <nav id="mobile-nav" class="mobile-nav hidden" aria-hidden="true">
+    <a href="#">🏠 Acasă</a>
+    <a href="#teorie">📘 Teorie</a>
+    <a href="#exercitii">🧠 Exerciții</a>
+    <a href="#intrebari">💬 Întrebări</a>
+    <a href="#proiect">🧩 Proiect</a>
+  </nav>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Module</h2>
+    <ul>
+      <li><span class="badge html">01</span> Frontend Tools</li>
+      <li><span class="badge css">08</span> CSS Responsive</li>
+      <li><span class="badge js">15</span> Ajax & Promises</li>
+      <li><span class="badge react">24</span> React Hooks</li>
+      <li><span class="badge final">28</span> Final Project</li>
+    </ul>
+  </aside>
+
+  <!-- CONTINUT PRINCIPAL -->
+  <main class="content">
+    <section class="hero" id="teorie">
+      <h1>Exemplu Pagina Tutorial Extinsă — CSS Responsive</h1>
+      <p>Template cu secțiuni pentru teorie, exerciții (fiecare cu soluție show/hide), întrebări de interviu și un mini-proiect cu minim 10 taskuri.</p>
+    </section>
+
+    <!-- TEORIE -->
+    <section class="theory">
+      <h2>🔎 Partea teoretică — CSS Responsive</h2>
+
+      <article class="concept">
+        <h3>📱 1. Mobile-first vs Desktop-first</h3>
+        <p><strong>Mobile-first</strong> înseamnă scrierea stilurilor de bază pentru ecrane mici și adăugarea de reguli la breakpoints mai mari cu <code>@media (min-width: ...)</code>. <strong>Desktop-first</strong> este invers (folosește <code>max-width</code>).</p>
+        <p><em>Recomandare:</em> folosește mobile-first pentru performanță și claritate.</p>
+        <button class="eye-btn" data-target="ex-mff">👁️ Exercițiu: arată diferența</button>
+        <div class="answer hidden" id="ex-mff">
+<pre><code>&lt;!-- Mobile-first: reguli de bază pentru mobile, apoi extinderi --&gt;
+.container { padding: 12px; }
+@media (min-width: 768px) {
+  .container { padding: 24px; }
+}
+
+&lt;!-- Desktop-first: reguli pentru desktop, apoi scăderi --&gt;
+.container { padding: 24px; }
+@media (max-width: 767px) {
+  .container { padding: 12px; }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="concept">
+        <h3>🌐 2. Viewport meta & unități fluide</h3>
+        <p>Include <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>. Folosește <code>%, vw, vh, rem, em</code> și <code>clamp()</code> pentru dimensiuni fluide.</p>
+        <button class="eye-btn" data-target="ex-vp">👁️ Exercițiu: folosește clamp()</button>
+        <div class="answer hidden" id="ex-vp">
+<pre><code>h1 { font-size: clamp(1.4rem, 3.5vw, 2.2rem); }</code></pre>
+        </div>
+      </article>
+
+      <article class="concept">
+        <h3>🧭 3. Flexbox & Grid</h3>
+        <p>Flexbox este excelent pentru aliniere într-o singură dimensiune, Grid pentru layout 2D. Combină-le pentru soluții robuste.</p>
+        <button class="eye-btn" data-target="ex-fg">👁️ Exercițiu: galerie simplă</button>
+        <div class="answer hidden" id="ex-fg">
+<pre><code>.gallery { display:flex; flex-wrap:wrap; gap:12px; }
+.card { flex: 1 1 100%; }
+@media (min-width:768px) {
+  .card { flex: 1 1 calc(33.333% - 12px); }
+}
+
+/* sau cu Grid */
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:12px; }</code></pre>
+        </div>
+      </article>
+
+      <article class="concept">
+        <h3>🧩 4. Breakpoints practice</h3>
+        <p>Breakpoints comune: <code>320px</code> (mobile), <code>768px</code> (tablet), <code>1024px</code> (desktop). Alege breakpoints pe baza conținutului (content-first).</p>
+        <button class="eye-btn" data-target="ex-bp">👁️ Exercițiu: media queries</button>
+        <div class="answer hidden" id="ex-bp">
+<pre><code>@media (max-width: 767px) { /* mobile */ }
+@media (min-width: 768px) and (max-width: 1023px) { /* tablet */ }
+@media (min-width: 1024px) { /* desktop */ }</code></pre>
+        </div>
+      </article>
+
+      <article class="concept">
+        <h3>🖼️ 5. Imagini responsive</h3>
+        <p>Folosește elementele <code>&lt;picture&gt;</code>, <code>srcset</code> și <code>sizes</code> pentru a livra imagini potrivite fiecărui ecran.</p>
+        <button class="eye-btn" data-target="ex-img">👁️ Exercițiu: exemplu picture</button>
+        <div class="answer hidden" id="ex-img">
+<pre><code>&lt;picture&gt;
+  &lt;source media="(min-width:1024px)" srcset="img/large.jpg"&gt;
+  &lt;source media="(min-width:768px)" srcset="img/medium.jpg"&gt;
+  &lt;img src="img/small.jpg" alt="Exemplu"&gt;
+&lt;/picture&gt;</code></pre>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- EXERCITII -->
+    <section class="exercise-section" id="exercitii">
+      <h2>🧠 Exerciții practice (fiecare are soluția ascunsă)</h2>
+
+      <div class="exercise-card">
+        <h3>Exercițiul A — Layout responsive cu Flexbox</h3>
+        <p>Crează o galerie de carduri care aranjează 1 coloană pe mobile și 3 coloane pe desktop.</p>
+        <button class="eye-btn" data-target="solA">👁️ Arată soluția</button>
+        <div class="answer hidden" id="solA">
+<pre><code>.gallery { display:flex; flex-wrap:wrap; gap:12px; }
+.card-item { flex: 1 1 100%; }
+@media (min-width: 768px) {
+  .card-item { flex: 1 1 calc(33.333% - 12px); }
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="exercise-card">
+        <h3>Exercițiul B — Buton cu efect hover și tranziție</h3>
+        <p>Stilizează un buton astfel încât să aibă o tranziție la hover.</p>
+        <button class="eye-btn" data-target="solB">👁️ Arată soluția</button>
+        <div class="answer hidden" id="solB">
+<pre><code>.btn { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }</code></pre>
+        </div>
+      </div>
+
+      <div class="exercise-card">
+        <h3>Exercițiul C — Utilizare clamp() pentru titluri</h3>
+        <p>Setează un font-size fluid pentru <code>h1</code> folosind <code>clamp()</code>.</p>
+        <button class="eye-btn" data-target="solC">👁️ Arată soluția</button>
+        <div class="answer hidden" id="solC">
+<pre><code>h1 { font-size: clamp(1.4rem, 3.5vw, 2.2rem); }</code></pre>
+        </div>
+      </div>
+
+      <div class="exercise-card">
+        <h3>Exercițiul D — Picture + srcset</h3>
+        <p>Crează un <code>&lt;picture&gt;</code> care servește o imagine mică pe mobile și una mare pe desktop.</p>
+        <button class="eye-btn" data-target="solD">👁️ Arată soluția</button>
+        <div class="answer hidden" id="solD">
+<pre><code>&lt;picture&gt;
+  &lt;source media="(min-width:1024px)" srcset="hero-large.jpg"&gt;
+  &lt;img src="hero-small.jpg" alt="Hero"&gt;
+&lt;/picture&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTREBARI INTERVIU -->
+    <section class="interview-section" id="intrebari">
+      <h2>💬 Întrebări de interviu — CSS Responsive</h2>
+
+      <div class="question">
+        <p><strong>1. Ce este responsive design?</strong></p>
+        <button class="eye-btn" data-target="a1">👁️ Vezi răspunsul</button>
+        <div class="answer hidden" id="a1">👉 Responsive design înseamnă proiectarea interfețelor astfel încât să funcționeze pe o varietate de dimensiuni de ecran și dispozitive.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>2. Ce face meta viewport și de ce e importantă?</strong></p>
+        <button class="eye-btn" data-target="a2">👁️ Vezi răspunsul</button>
+        <div class="answer hidden" id="a2">👉 Tagul meta viewport controlează scala paginii pe mobile; fără el, browserele mobile afișează pagina ca pe desktop, redimensionată.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>3. Cum aleg breakpoint-urile?</strong></p>
+        <button class="eye-btn" data-target="a3">👁️ Vezi răspunsul</button>
+        <div class="answer hidden" id="a3">👉 Alege breakpoints bazat pe conținut (content-first): când designul "se rupe" vizual, adaugă o regulă media.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>4. Ce este <code>clamp()</code>?</strong></p>
+        <button class="eye-btn" data-target="a4">👁️ Vezi răspunsul</button>
+        <div class="answer hidden" id="a4">👉 <code>clamp(min, val, max)</code> definește o valoare fluidă cu limite minime și maxime — util pentru font-size sau spacing.</div>
+      </div>
+
+      <!-- mai multe intrebari pot fi adaugate similar -->
+    </section>
+
+    <!-- PROIECT -->
+    <section class="project" id="proiect">
+      <h2>🧩 Mini-proiect: "Mic site responsive de portofoliu" — pași detaliați</h2>
+      <p>Următorii pași sunt gândiți ca un ghid pas cu pas. După fiecare pas găsești sugestii de cod și comenzi Git.</p>
+
+      <ol class="project-tasks">
+        <li>
+          <strong>1. Inițializează repository Git și structura proiectului</strong>
+          <p>Crează folderul proiect, rulează <code>git init</code>, adaugă <code>index.html</code>, <code>style.css</code>, <code>app.js</code>. Commit inițial:</p>
+          <pre><code>git init
+git add .
+git commit -m "Init: portfolio responsive"</code></pre>
+        </li>
+
+        <li>
+          <strong>2. Meta viewport și setări de bază</strong>
+          <p>Adaugă în <code>&lt;head&gt;</code>:</p>
+          <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+          <p>Setează baza font-size în CSS (ex: <code>html { font-size: 16px; }</code>) și folosește <code>rem</code> pentru scalare coerentă.</p>
+        </li>
+
+        <li>
+          <strong>3. Header responsive cu hamburger</strong>
+          <p>Folosește <code>display:flex</code> pentru header. Adaugă butonul hamburger (vezi exemplul din pagină). JS: toggling <code>hidden</code> și aria-expanded.</p>
+          <pre><code>&lt;button class="burger" aria-expanded="false"&gt;☰&lt;/button&gt;
+document.querySelector('.burger').addEventListener('click', () =&gt; {
+  const nav = document.getElementById('mobile-nav');
+  nav.classList.toggle('hidden');
+});</code></pre>
+        </li>
+
+        <li>
+          <strong>4. Hero fluid</strong>
+          <p>Setează titlu și padding fluid:</p>
+          <pre><code>.hero { padding: clamp(1rem, 5vw, 3rem); }
+.hero h1 { font-size: clamp(1.6rem, 4.5vw, 3rem); }</code></pre>
+        </li>
+
+        <li>
+          <strong>5. Galerie / secțiune proiecte</strong>
+          <p>Folosește Grid cu auto-fit sau Flexbox cu calc(). Exemplu Grid:</p>
+          <pre><code>.projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:16px; }</code></pre>
+        </li>
+
+        <li>
+          <strong>6. Formular de contact</strong>
+          <p>Stilează input-urile full-width și asigură spacing pe mobile:</p>
+          <pre><code>form input, form textarea { width:100%; padding:0.6rem; border-radius:8px; }</code></pre>
+        </li>
+
+        <li>
+          <strong>7. Imagini responsive (picture + srcset)</strong>
+          <p>Exemplu:</p>
+          <pre><code>&lt;picture&gt;
+  &lt;source media="(min-width:1024px)" srcset="img/project-large.jpg"&gt;
+  &lt;source media="(min-width:768px)" srcset="img/project-medium.jpg"&gt;
+  &lt;img src="img/project-small.jpg" alt="Proiect"&gt;
+&lt;/picture&gt;</code></pre>
+        </li>
+
+        <li>
+          <strong>8. Footer compact / sticky pe mobile</strong>
+          <p>Footer-ul poate rămâne vizibil sau compact pe mobile; folosește <code>position:sticky</code> doar dacă designul permite.</p>
+        </li>
+
+        <li>
+          <strong>9. Optimizare CSS</strong>
+          <p>Folosește variabile CSS, scrie mobile-first, evită selectori foarte specifici și minimizează CSS inutil.</p>
+          <pre><code>:root { --primary: #4b3f72; --accent:#7b1fa2; }</code></pre>
+        </li>
+
+        <li>
+          <strong>10. Testare & ajustare breakpoints</strong>
+          <p>Testează la 320px, 375px, 768px, 1024px, 1440px. Ajustează paddings, font-sizes și layout.</p>
+        </li>
+      </ol>
+
+      <div class="card">
+        <h3>Start code / snippet util</h3>
+        <pre><code>&lt;!-- hamburger toggle accesibil --&gt;
+const burger = document.querySelector('.burger');
+const mobileNav = document.getElementById('mobile-nav');
+burger.addEventListener('click', () =&gt; {
+  const open = !mobileNav.classList.toggle('hidden');
+  burger.setAttribute('aria-expanded', open);
+  mobileNav.setAttribute('aria-hidden', !open);
+});</code></pre>
+      </div>
+    </section>
+
+    <!-- IMAGINI DEMO -->
+    <section class="images-demo">
+      <h2>🖼️ Exemple vizuale</h2>
+      <div class="image-placeholder">📷 Aici poți adăuga o imagine despre conceptele prezentate.</div>
+      <div class="image-placeholder">📷 Poți adăuga un GIF sau o captură de ecran cu rezultat de cod.</div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Frontend Learning Path — Template Extins</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
