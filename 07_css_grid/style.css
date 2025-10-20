@@ -1,1 +1,250 @@
-/* CSS Grid — layout pe linii și coloane - style.css (gol, folosește pentru exerciții) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f8f9fb;
+    color: #333;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        'header header'
+        'sidebar content'
+        'footer footer';
+    min-height: 100vh;
+}
+
+/* HEADER */
+.main-header {
+    grid-area: header;
+    background: #4b3f72;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.main-header .logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.nav a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* SIDEBAR */
+.sidebar {
+    grid-area: sidebar;
+    background: #fff;
+    padding: 1.5rem;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin: 0.6rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* BADGE-URI */
+.badge {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 26px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.badge.css {
+    background: #1572b6;
+}
+
+.badge.final {
+    background: #7b1fa2;
+}
+
+/* CONTENT */
+.content {
+    grid-area: content;
+    padding: 2rem;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #4b3f72, #7b1fa2);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+/* EXERCISE CARDS */
+.exercise-section h2 {
+    margin-bottom: 1rem;
+}
+
+.exercise-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1rem;
+}
+
+.image-placeholder {
+    background: #fff;
+    border: 1px dashed #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+}
+
+/* DEMO GRID STYLES */
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 0.8rem;
+}
+
+.demo-grid.auto-fit-demo {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.demo-grid.layout-demo {
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(60px, auto);
+}
+
+.demo {
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.8rem;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    font-weight: 600;
+}
+
+/* specific styles to visualize different sizes */
+.demo.large {
+    grid-column: 1 / 2;
+}
+
+.demo.full {
+    grid-column: 1 / 3;
+}
+
+/* INTERVIEW QUESTIONS */
+.question {
+    background: #fff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.eye-btn {
+    background: #4b3f72;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.answer {
+    display: none;
+    margin-top: 0.6rem;
+    padding: 0.6rem;
+    background: #f7f7fb;
+    border-radius: 6px;
+}
+
+/* PROJECT SECTION */
+.did-you-know {
+    margin-top: 1.2rem;
+}
+
+.project-tasks {
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.project-tasks li {
+    margin: 0.5rem 0;
+}
+
+/* GIT BOX */
+.gitbox pre {
+    background: #222;
+    color: #eee;
+    padding: 0.8rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* FOOTER */
+.footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 1rem;
+    background: #4b3f72;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* SMALL NOTES */
+.note-small {
+    color: #222;
+    margin-top: 0.6rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'header'
+            'content'
+            'footer';
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .demo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* keep colors and style cohesive with original example */
