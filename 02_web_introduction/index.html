@@ -1,13 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Web Introduction & TCP/IP, HTTP, DNS, Browsers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducere în Web</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Web Introduction & TCP/IP, HTTP, DNS, Browsers</h1>
-  <script src="app.js" defer></script>
+  <header class="main-header">
+    <div class="logo">🌐 Frontend Path - Introducere Web</div>
+    <nav class="nav">
+      <a href="#theorie">Teorie</a>
+      <a href="#exercitii">Exerciții</a>
+      <a href="#interviu">Întrebări</a>
+      <a href="#proiect">Proiect</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section id="theorie" class="card">
+      <h1>📘 Ce este Web-ul?</h1>
+      <p>Web-ul (World Wide Web) este o rețea de documente interconectate care pot fi accesate prin internet. Aceste documente sunt construite folosind HTML, CSS și JavaScript.</p>
+
+      <h2>🌐 Arhitectura Client-Server</h2>
+      <p>Un utilizator (clientul) trimite cereri HTTP către un server, iar serverul răspunde cu resurse (HTML, CSS, JS, imagini etc.).</p>
+
+      <h2>📄 Rolul HTML, CSS și JavaScript</h2>
+      <ul>
+        <li>🔤 <b>HTML</b> definește structura paginii web.</li>
+        <li>🎨 <b>CSS</b> controlează stilul și prezentarea paginii.</li>
+        <li>⚙️ <b>JavaScript</b> adaugă comportament dinamic și interactivitate.</li>
+      </ul>
+
+      <h2>📡 HTTP și HTTPS</h2>
+      <p>HTTP (Hypertext Transfer Protocol) este protocolul de bază pentru comunicare între client și server. HTTPS este versiunea sa securizată, care folosește criptarea SSL/TLS.</p>
+
+      <h2>🧠 DOM (Document Object Model)</h2>
+      <p>DOM reprezintă structura ierarhică a elementelor HTML. Poate fi manipulat folosind JavaScript pentru a modifica conținutul sau stilul unei pagini.</p>
+    </section>
+
+    <section id="exercitii" class="card">
+      <h2>🧩 Exerciții practice</h2>
+
+      <div class="exercise">
+        <h3>1️⃣ Creează o pagină HTML simplă</h3>
+        <p>Scrie o pagină HTML cu un titlu, o imagine și un paragraf despre tine.</p>
+        <button class="eye-btn" onclick="toggleAnswer('ans1')">👁️ Vezi rezolvarea</button>
+        <div id="ans1" class="answer hidden">
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Despre mine&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Salut, sunt Alex!&lt;/h1&gt;
+  &lt;img src="poza.jpg" alt="eu" /&gt;
+  &lt;p&gt;Îmi place programarea și web designul.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <h3>2️⃣ Creează un buton cu efect hover</h3>
+        <p>Adaugă tranziții CSS pentru a schimba culoarea la hover.</p>
+        <button class="eye-btn" onclick="toggleAnswer('ans2')">👁️ Vezi rezolvarea</button>
+        <div id="ans2" class="answer hidden">
+          <pre><code>.btn {
+  background-color: #4b3f72;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background-color: #7b1fa2;
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="interviu" class="card">
+      <h2>💬 Întrebări de interviu — Introducere Web</h2>
+      <ul>
+        <li>❓ Ce este diferența dintre Internet și Web?</li>
+        <li>❓ Ce înseamnă client și server?</li>
+        <li>❓ Ce este un protocol HTTP?</li>
+        <li>❓ Care este rolul HTML-ului într-o pagină web?</li>
+        <li>❓ Ce face CSS-ul?</li>
+        <li>❓ Ce este DOM-ul?</li>
+        <li>❓ Ce diferență este între HTTP și HTTPS?</li>
+        <li>❓ Ce este o cerere GET și POST?</li>
+        <li>❓ Ce este un API?</li>
+        <li>❓ Cum se încarcă o pagină web în browser?</li>
+      </ul>
+    </section>
+
+    <section id="proiect" class="card">
+      <h2>🚀 Mini-proiect: Pagina personală de prezentare</h2>
+      <p>📋 Obiectiv: creează o pagină personală care să combine HTML, CSS și puțin JavaScript.</p>
+      <ol>
+        <li>Inițializează un proiect cu <code>git init</code></li>
+        <li>Creează fișierul <code>index.html</code></li>
+        <li>Adaugă o secțiune cu un titlu și o imagine</li>
+        <li>Adaugă o listă cu hobby-urile tale</li>
+        <li>Adaugă un buton care, la click, afișează un mesaj</li>
+        <li>Stilizează totul cu CSS (culori, fonturi, margini)</li>
+        <li>Fă butonul să schimbe culoarea la hover</li>
+        <li>Adaugă un link către profilul tău GitHub</li>
+        <li>Salvează și dă commit cu <code>git add .</code> și <code>git commit -m "Pagina mea"</code></li>
+        <li>Publică proiectul pe GitHub Pages</li>
+      </ol>
+      <pre><code># Comenzi Git
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/user/pagina-mea.git
+git push -u origin main</code></pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Frontend Path — Introducere Web</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
