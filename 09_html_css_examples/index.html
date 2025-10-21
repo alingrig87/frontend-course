@@ -51,37 +51,172 @@
         <div class="info note">
           <strong>Definiții & concepte-cheie:</strong>
           <ul>
-            <li><em>nav</em> - element semantic pentru navigație.</li>
             <li>
-              <em>form</em> - container pentru controale de input; folosește
-              <code>label</code> pentru accesibilitate.
+              <code>&lt;nav&gt;</code> — element semantic pentru navigație.
+              Reprezintă o zonă care conține linkuri către alte părți ale
+              site-ului sau paginii.
+              <br />
+              ✅ Exemplu:
+              <pre><code>&lt;nav aria-label="Navigație principală"&gt;
+  &lt;a href="#acasa"&gt;Acasă&lt;/a&gt;
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+              Acest exemplu arată o navigație semantică și accesibilă prin
+              <code>aria-label</code>, care descrie scopul zonei.
             </li>
+
             <li>
-              Folosește <code>aria-*</code> când elementele nu sunt suficient de
-              descriptive.
+              <code>&lt;form&gt;</code> este containerul pentru câmpurile de
+              input și permite trimiterea datelor către un server. Este
+              important să asociezi fiecare câmp cu un
+              <code>&lt;label&gt;</code> pentru accesibilitate:
+
+              <pre><code>&lt;form&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" required&gt;
+
+  &lt;button type="submit"&gt;Trimite&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+              Această asociere permite cititoarelor de ecran să anunțe corect
+              scopul câmpului. De exemplu: **„Email — câmp de editare,
+              obligatoriu”**. Atributul <code>required</code> activează
+              validarea automată în browser și indică faptul că acel câmp
+              trebuie completat pentru a trimite formularul.
+            </li>
+
+            <li>
+              <code>aria-*</code> — set de atribute care adaugă informații
+              suplimentare pentru accesibilitate (ARIA = Accessible Rich
+              Internet Applications).
+              <ul>
+                <li>
+                  <code>aria-label</code> — oferă o descriere clară (ex:
+                  <code>&lt;button aria-label="Deschide meniul"&gt;</code>)
+                </li>
+                <li>
+                  <code>aria-expanded</code> — indică dacă un meniu este deschis
+                  (<code>true</code>) sau închis (<code>false</code>).
+                </li>
+                <li>
+                  <code>aria-live="polite"</code> — anunță mesajele care se
+                  schimbă dinamic (ex: “Mesaj trimis cu succes”).
+                </li>
+              </ul>
+              ⚙️ Atributele <code>aria-*</code> sunt folosite doar când HTML-ul
+              nu este suficient de descriptiv. Nu înlocuiesc elementele
+              semantice (ex: <code>&lt;nav&gt;</code>,
+              <code>&lt;button&gt;</code>, <code>&lt;header&gt;</code>), ci le
+              completează.
             </li>
           </ul>
         </div>
 
         <div class="info">
-          <strong>Sintaxă / API-uri utile:</strong>
+          <strong>Diagrame conceptuale:</strong>
+          <p>
+            🔹 Relația dintre HTML, CSS și ARIA în construirea unui navbar
+            accesibil:
+          </p>
+          <pre><code>
+[ HTML semantic ]
+       ↓
+&lt;nav aria-label="Navigație principală"&gt;
+   &lt;button aria-expanded="false"&gt;☰&lt;/button&gt;
+   &lt;ul&gt;&lt;li&gt;&lt;a&gt;Link&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/nav&gt;
+
+[ CSS ]
+→ Flexbox/Grid pentru structură și responsive
+→ Media queries pentru mobil
+
+[ ARIA ]
+→ clarifică scopul elementelor pentru screen reader
+→ actualizat dinamic cu JS (ex: aria-expanded)
+  </code></pre>
+        </div>
+
+        <div class="info">
+          <strong>Comenzi / API-uri utile:</strong>
           <ul>
             <li>
               <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>,
-              <code>&lt;label for="id"&gt;</code>, <code>required</code>,
-              <code>type="email"</code>.
+              <code>&lt;li&gt;</code> pentru navigație
             </li>
             <li>
-              CSS: Flexbox pentru aliniere rapidă:
-              <code>display:flex; align-items:center; gap:1rem;</code>.
+              <code>&lt;form&gt;</code>, <code>&lt;label&gt;</code>,
+              <code>&lt;input&gt;</code>, <code>required</code>,
+              <code>type="email"</code> pentru formulare
+            </li>
+            <li>
+              CSS Flexbox:
+              <code>display: flex; align-items: center; gap: 1rem;</code>
+            </li>
+            <li>
+              JavaScript: <code>getAttribute()</code>,
+              <code>setAttribute()</code> pentru actualizarea atributelor
+              <code>aria-*</code>
             </li>
           </ul>
         </div>
 
         <div class="info warning">
-          <strong>Bune practici:</strong> etichete clare, mesaje de eroare
-          vizibile, tabindex natural (nu forța ordinea cu tabindex>0), evită
-          inline styles pentru conținut repetat.
+          <strong>Bune practici:</strong>
+          <ul>
+            <li>Folosește etichete clare și mesaje de eroare vizibile.</li>
+            <li>
+              Asociază fiecare <code>&lt;label&gt;</code> cu câmpul său folosind
+              <code>for</code> și <code>id</code>.
+            </li>
+            <li>
+              Menține <code>tabindex</code> natural — evită forțarea ordinii cu
+              valori numerice, cu excepții bine justificate.
+            </li>
+            <li>
+              Folosește <code>aria-label</code> doar când nu există text vizibil
+              (ex: iconițe fără text).
+            </li>
+            <li>
+              Adaugă atribute precum <code>aria-required</code> și
+              <code>aria-invalid</code> când gestionezi validarea cu JavaScript.
+            </li>
+            <li>
+              Grupează câmpuri relevante cu <code>&lt;fieldset&gt;</code> și
+              folosește <code>&lt;legend&gt;</code> pentru a descrie scopul
+              grupului.
+            </li>
+            <li>
+              Nu abuza de stiluri inline — definește clase CSS reutilizabile și
+              semantice pentru consistență și întreținere ușoară.
+            </li>
+          </ul>
+        </div>
+
+        <div class="info note">
+          <strong>Referințe utile:</strong>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav"
+                target="_blank"
+                >MDN — &lt;nav&gt;</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"
+                target="_blank"
+                >MDN — &lt;form&gt;</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA"
+                target="_blank"
+                >MDN — ARIA: Accessible Rich Internet Applications</a
+              >
+            </li>
+          </ul>
         </div>
 
         <h3>Exemplu 1 — Navbar simplu (HTML + CSS)</h3>
@@ -161,7 +296,7 @@
         </div>
 
         <div class="info exercise">
-          <strong>Exerciții practice (implementate în pagină):</strong>
+          <strong>Exerciții practice:</strong>
           <ol>
             <li>
               Creează un navbar similar celui de mai sus și fă-l responsive.
@@ -177,10 +312,8 @@
           </ol>
         </div>
       </section>
-
       <section id="exercitii">
         <h2>Exerciții & Exemple live</h2>
-
         <div class="card">
           <h3>Navbar live</h3>
           <!-- Navbar live -->
@@ -205,7 +338,6 @@
                 />
               </svg>
             </button>
-
             <ul class="nav-list" id="mainMenu">
               <li><a href="#teorie">Teorie</a></li>
               <li><a href="#exemple">Exemple</a></li>
@@ -213,7 +345,6 @@
             </ul>
           </nav>
         </div>
-
         <div class="card">
           <h3>Formular live</h3>
           <form id="contactForm" novalidate>
@@ -222,29 +353,24 @@
               <input id="name" name="name" required />
               <small class="field-msg" aria-live="polite"></small>
             </div>
-
             <div class="form-row">
               <label for="email">Email</label>
               <input id="email" name="email" type="email" required />
               <small class="field-msg" aria-live="polite"></small>
             </div>
-
             <div class="form-row">
               <label for="message">Mesaj</label>
               <textarea id="message" name="message" required></textarea>
               <small class="field-msg" aria-live="polite"></small>
             </div>
-
             <div class="form-row">
               <button type="submit">Trimite</button>
               <button type="button" id="saveBtn">
                 Salvează în localStorage
               </button>
             </div>
-
             <div id="formResult" role="status" aria-live="polite"></div>
           </form>
-
           <div id="savedList" class="card" style="margin-top: 1rem">
             <h4>Mesaje salvate (localStorage)</h4>
             <ul id="savedItems"></ul>
@@ -533,10 +659,11 @@
       <section id="proiect">
         <h2>Mini-proiect — "Contact & Nav Starter"</h2>
         <p>
-          Obiectiv: construiește un mic site cu navbar responsive, formular de
-          contact, validare, salvare în localStorage și afișare a mesajelor.
+          <strong>Obiectiv:</strong> construiește un mic site cu navbar
+          responsive, formular de contact, validare, salvare în localStorage și
+          afișare a mesajelor.
         </p>
-        <ol>
+        <ul class="task-list">
           <li>
             <label
               ><input type="checkbox" /> Setează structura fișierelor (index,
@@ -598,7 +725,7 @@
               adaugă comenzi git pentru deploy pe gh-pages.</label
             >
           </li>
-        </ol>
+        </ul>
 
         <div class="info note">
           <strong>Comenzi Git recomandate:</strong>
@@ -608,12 +735,18 @@ git commit -m "Initial: navbar + contact form"
 git branch -M main
 git remote add origin git@github.com:utilizator/proiect-exemplu.git
 git push -u origin main
-# optional: deploy to gh-pages
-npm install --global gh-pages
+
+# Deploy pe GitHub Pages (opțional pentru proiecte statice)
+npm install --global gh-pages         # se face o singură dată
+
+# Salvezi modificările și le împingi
 git add .
-git commit -m "deploy"
+git commit -m "Deploy"
 git push origin main
-npx gh-pages -d .</code></pre>
+
+# Publici fișierele (din root) pe GitHub Pages
+npx gh-pages -d .
+</code></pre>
         </div>
       </section>
 

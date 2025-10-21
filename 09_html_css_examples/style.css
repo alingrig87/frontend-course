@@ -185,6 +185,7 @@ code {
 .info.note {
   background: #e0f7fa;
   border-left: 5px solid #00acc1;
+  margin-top: 2rem;
 }
 
 .info.warning {
@@ -221,6 +222,31 @@ code {
   }
 }
 
+.solution {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  white-space: pre-wrap; /* pentru a păstra formatul codului */
+  font-family: monospace;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.toggle-solution {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #4b4a67;
+  color: white;
+  border: none;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+
+.toggle-solution:hover {
+  background-color: #3a3950;
+}
 /* INTERVIEW QUESTIONS — stiluri îmbunătățite */
 #intrebari {
   margin-top: 3rem;
@@ -292,6 +318,25 @@ code {
   margin-bottom: 0.5rem;
 }
 
+#proiect {
+  margin-top: 3rem;
+}
+
+#proiect h2 {
+  margin-bottom: 1rem;
+}
+#proiect p {
+  margin-bottom: 1rem;
+}
+
+.task-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.task-list li {
+  margin-bottom: 0.6rem;
+}
 /* === ADĂUGIRI MINIME PENTRU DEMO (nu schimb culori principale) === */
 
 .site-nav {
