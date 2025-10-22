@@ -1,13 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JavaScript Basics — variabile, tipuri, control flow</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>JavaScript Basics — variabile, tipuri, control flow</h1>
-  <script src="app.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11_JS_Basics - Bazele JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">💻 JavaScript Basics</div>
+      <nav class="nav">
+        <a href="#">Acasă</a>
+        <a href="#exercitii">Exerciții</a>
+        <a href="#intrebari">Întrebări</a>
+        <a href="#proiect">Proiect</a>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <h2>Module</h2>
+      <ul>
+        <li><span class="badge js">11</span> JavaScript Basics</li>
+        <li><span class="badge css">08</span> CSS Responsive</li>
+        <li><span class="badge react">24</span> React Hooks</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <section class="hero">
+        <h1>🧠 Bazele JavaScript</h1>
+        <p>
+          Învață conceptele fundamentale: variabile, funcții, bucle, evenimente
+          și manipularea DOM-ului.
+        </p>
+      </section>
+
+      <!-- TEORETIC -->
+      <section id="teorie" class="theory">
+        <h2>📘 Partea teoretică</h2>
+        <div class="info note">
+          <p>
+            <strong>1️⃣ Variabile:</strong> <code>let</code> și
+            <code>const</code> sunt recomandate; <code>var</code> e mai vechi.
+          </p>
+          <pre><code>let nume = "Xonia";
+const PI = 3.14;</code></pre>
+        </div>
+
+        <div class="info note">
+          <p>
+            <strong>2️⃣ Tipuri de date:</strong> String, Number, Boolean, Array,
+            Object.
+          </p>
+          <pre><code>let text = "Salut!";
+let numar = 42;
+let adevar = true;
+let lista = ["HTML", "CSS", "JS"];
+let persoana = { nume: "Alina", varsta: 30 };</code></pre>
+        </div>
+
+        <div class="info note">
+          <p><strong>3️⃣ Funcții:</strong> Blocoane de cod reutilizabile.</p>
+          <pre><code>function salut() {
+  console.log("Bine ai venit!");
+}
+salut();</code></pre>
+        </div>
+      </section>
+
+      <!-- EXERCITII -->
+      <section id="exercitii" class="exercise-section">
+        <h2>⚙️ Exerciții practice</h2>
+
+        <div class="exercise-card">
+          <h3>1️⃣ Creează o funcție care calculează suma a două numere</h3>
+          <button class="eye-btn">👁️ Vezi rezolvarea</button>
+          <div class="answer">
+            <pre><code>function suma(a, b) {
+  return a + b;
+}
+console.log(suma(5, 7));</code></pre>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <h3>2️⃣ Afișează toate elementele dintr-un array folosind o buclă</h3>
+          <button class="eye-btn">👁️ Vezi rezolvarea</button>
+          <div class="answer">
+            <pre><code>let limbaje = ["HTML", "CSS", "JS"];
+for(let i = 0; i < limbaje.length; i++) {
+  console.log(limbaje[i]);
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTREBARI -->
+      <section id="intrebari" class="interview-section">
+        <h2>💬 Întrebări de interviu</h2>
+        <ul>
+          <li>1️⃣ Ce este <code>hoisting</code> în JavaScript?</li>
+          <li>
+            2️⃣ Care este diferența dintre <code>==</code> și <code>===</code>?
+          </li>
+          <li>3️⃣ Ce este scopul (scope) unei variabile?</li>
+          <li>4️⃣ Ce face metoda <code>addEventListener()</code>?</li>
+          <li>
+            5️⃣ Ce este <code>NaN</code> și cum verifici dacă o valoare este
+            <code>NaN</code>?
+          </li>
+          <li>6️⃣ Ce este DOM-ul?</li>
+          <li>
+            7️⃣ Ce face <code>JSON.stringify()</code> și
+            <code>JSON.parse()</code>?
+          </li>
+        </ul>
+      </section>
+
+      <!-- PROIECT -->
+      <section id="proiect" class="project-section">
+        <h2>📋 Mini-proiect: Task Tracker</h2>
+        <p>
+          🧱 Obiectiv: creează o aplicație simplă pentru adăugarea și
+          gestionarea sarcinilor.
+        </p>
+
+        <ol>
+          <li>
+            🔹 <b>Pas 1:</b> Inițializează proiectul și creează fișierele.
+            <pre><code>git init
+git add .
+git commit -m "Inițializare proiect Task Tracker"</code></pre>
+          </li>
+          <li>
+            🔹 <b>Pas 2:</b> Creează o zonă de input și un buton “Adaugă”.
+          </li>
+          <li>
+            🔹 <b>Pas 3:</b> Când utilizatorul apasă butonul, adaugă task-ul în
+            listă.
+          </li>
+          <li>🔹 <b>Pas 4:</b> Permite ștergerea task-urilor.</li>
+          <li>🔹 <b>Pas 5:</b> Adaugă opțiunea de a bifa un task finalizat.</li>
+          <li>🔹 <b>Pas 6:</b> Salvează lista în localStorage.</li>
+          <li>🔹 <b>Pas 7:</b> Încarcă task-urile salvate la refresh.</li>
+          <li>
+            🔹 <b>Pas 8:</b> Adaugă stiluri CSS pentru sarcini completate.
+          </li>
+          <li>🔹 <b>Pas 9:</b> Optimizează codul JS.</li>
+          <li>
+            🔹 <b>Pas 10:</b> Fă commit final și push către GitHub.
+            <pre><code>git add .
+git commit -m "Finalizat proiect JS Basics"
+git push origin xonia-11-js-basics</code></pre>
+          </li>
+        </ol>
+
+        <div id="taskApp">
+          <input id="taskInput" type="text" placeholder="Adaugă o sarcină..." />
+          <button id="addTaskBtn">➕ Adaugă</button>
+          <ul id="taskList"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Frontend Path — 11_JS_Basics by Xonia88</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
 </html>

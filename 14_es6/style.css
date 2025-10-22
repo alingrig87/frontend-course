@@ -1,1 +1,248 @@
-/* ES6+ — let/const, template strings, destructuring, modules - style.css (gol, folosește pentru exerciții) */
+/* === STYLE.CSS (bazat pe exemplul oferit) === */
+/* Reset & fonturi de bază */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f8f9fb;
+  color: #333;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header header'
+    'sidebar content'
+    'footer footer';
+  min-height: 100vh;
+}
+
+/* HEADER */
+.main-header {
+  grid-area: header;
+  background: #4b3f72;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.main-header .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* SIDEBAR */
+.sidebar {
+  grid-area: sidebar;
+  background: #fff;
+  padding: 1.5rem;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* BADGE-URI */
+.badge {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 26px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.badge.html { background: #e44d26; }
+.badge.css { background: #1572b6; }
+.badge.js { background: #f7df1e; color: #000; }
+.badge.react { background: #61dafb; color: #000; }
+.badge.final { background: #7b1fa2; }
+
+/* CONTENT */
+.content {
+  grid-area: content;
+  padding: 2rem;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #4b3f72, #7b1fa2);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+/* CARDURI */
+.cards-section h2 { margin-bottom: 1rem; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card h3 { margin-bottom: 0.5rem; }
+
+.card button {
+  background: #4b3f72;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.card button:hover {
+  background: #7b1fa2;
+}
+
+/* EXERCISE CARDS */
+.exercise-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.image-placeholder {
+  background: #f1f3f6;
+  border: 1px dashed #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+  background: transparent;
+  border: 1px dashed #4b3f72;
+  color: #4b3f72;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.6rem;
+}
+
+/* ANSWER (hidden by default) */
+.answer {
+  margin-top: 0.8rem;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 0.8rem;
+  border-left: 4px solid #4b3f72;
+}
+
+.hidden { display: none; }
+
+/* CODE BLOCKS */
+pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+}
+
+/* INTERVIEW QUESTIONS */
+.interview-section .question {
+  background: white;
+  padding: 0.9rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  border-left: 4px solid #1572b6;
+}
+
+/* PROIECT */
+.project-tasks {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-tasks li {
+  background: white;
+  margin-bottom: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 1rem;
+  background: #4b3f72;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'content'
+      'footer';
+  }
+  .sidebar {
+    display: none;
+  }
+}

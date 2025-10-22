@@ -1,29 +1,34 @@
-# ES6+ — let/const, template strings, destructuring, modules
+# ES6 Tutorial (RO) — Proiect mic
 
-## Descriere
-Această lecție explică **ES6+ — let/const, template strings, destructuring, modules**. Scopul este să oferi o înțelegere practică și teoretică, exemple și exerciții pentru a putea aplica imediat conceptele în proiecte reale.
+Acest pachet conține un mic tutorial ES6 în limba română cu:
+- index.html
+- style.css (bazat pe exemplul oferit de tine)
+- app.js (interactivitate: show/hide, generare întrebări)
+- .gitignore
+- README.md
 
-## Ce înveți
-- Înțelegerea conceptelor cheie legate de: es6+ — let/const, template strings, destructuring, modules
-- Instrumente, comenzi și workflow-uri specifice
-- Exemple practice și pași pentru a construi un mic proiect aplicat
+## Comenzi Git recomandate (exemple)
+```bash
+# initialize repository
+git init
 
-## Partea teoretică (ce să scrii în viitor)
-Adaugă aici explicații detaliate, diagrame, comenzi și referințe. Exemple recomandate de sub-capitole:
-- Definiții și concepte-cheie
-- Comenzi / API-uri / sintaxă
-- Bune practici și capcane comune
+# adauga fisiere
+git add .
 
-## Exerciții
-1. Citește și rezumă conceptele principale în 5 propoziții.
-2. Rezolvă 3-4 exemple practice din acest capitol (implementate în `index.html` / `app.js` / `style.css`).
-3. Extensie: implementează o funcționalitate mică legată de capitol.
+# commit initial
+git commit -m "Initial: tutorial ES6 in limba romana"
 
-## Întrebări de interviu
-- Explică pe scurt: ES6+ — let/const, template strings, destructuring, modules.
-- Care sunt cele mai frecvente probleme întâlnite și cum le rezolvi?
-- Demonstrează un exemplu practic în 5 pași.
+# creare branch de lucru
+git checkout -b feature/exercises
 
-## Mini-proiect (mic)
-Proiect: Construiește un mic proiect care să exerseze conceptele descrise mai sus. De exemplu: Refactorizează un cod clasic JS folosind ES6 features (let, const, arrow)..
+# adauga remote (exemplu)
+git remote add origin git@github.com:utilizator/proiect-es6.git
+
+# push branch
+git push -u origin feature/exercises
+```
+
+## Structura
+- Deschide `index.html` în browser (doar dublu-click sau `Live Server`).
+- `app.js` se ocupă de butoanele de afișare/ascundere și generează întrebările de interviu.
 
