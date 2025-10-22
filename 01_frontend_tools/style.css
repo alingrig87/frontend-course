@@ -1,101 +1,155 @@
-/* Reset general */
+/* === STYLE.CSS — bazat pe modelul oferit === */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Stil general */
 body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: #f5f7fa;
-	color: #333;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f8f9fb;
+  color: #333;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header header'
+    'sidebar content'
+    'footer footer';
+  min-height: 100vh;
 }
 
-/* Sidebar fix pe stânga */
+/* HEADER */
+.main-header {
+  grid-area: header;
+  background: #4b3f72;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* SIDEBAR — fix pe stânga */
 .sidebar {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 250px;
-	background-color: #20232a;
-	color: #fff;
-	padding: 1.5rem 1rem;
-	overflow-y: auto;
-	border-right: 1px solid #333;
+  grid-area: sidebar;
+  background: #fff;
+  padding: 1.5rem;
+  border-right: 1px solid #ddd;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  overflow-y: auto;
 }
 
 .sidebar h2 {
-	font-size: 1.2rem;
-	margin-bottom: 1rem;
-	color: #61dafb;
-	text-transform: uppercase;
-	letter-spacing: 1px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
-.side-nav ul {
-	list-style: none;
+.topics-list {
+  list-style: none;
 }
 
-.side-nav li {
-	margin: 0.5rem 0;
+.topics-list li {
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  cursor: default;
 }
 
-.side-nav a {
-	display: block;
-	padding: 0.5rem 0.75rem;
-	color: #ddd;
-	text-decoration: none;
-	border-radius: 6px;
-	transition: all 0.2s ease;
+.topics-list li:hover {
+  background: #f0f0f5;
+  border-radius: 6px;
+  padding-left: 0.4rem;
+  transition: 0.2s ease;
 }
 
-.side-nav a:hover {
-	background-color: #2c2f36;
-	color: #61dafb;
+/* BADGE */
+.badge {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 26px;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
-.side-nav a.active {
-	background-color: #61dafb;
-	color: #20232a;
-	font-weight: 600;
+.badge.css { background: #1572b6; }
+.badge.final { background: #7b1fa2; }
+
+/* CONTENT */
+.content {
+  grid-area: content;
+  padding: 2rem;
+  margin-left: 260px; /* spațiu pentru sidebar */
 }
 
-/* Conținut principal */
-.main-content {
-	margin-left: 250px; /* lasă loc pentru sidebar */
-	padding: 2rem;
-	min-height: 100vh;
-	overflow-y: auto;
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #4b3f72, #7b1fa2);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
 }
 
-header h1 {
-	margin-bottom: 1rem;
-	color: #20232a;
+/* CARDURI */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
 }
 
-article p {
-	margin-bottom: 1rem;
-	line-height: 1.6;
+.card h3 {
+  margin-bottom: 0.5rem;
 }
 
-pre {
-	background-color: #282c34;
-	color: #fff;
-	padding: 1rem;
-	border-radius: 8px;
-	overflow-x: auto;
-	font-family: Consolas, monospace;
-	margin-bottom: 1rem;
+.card pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 1rem;
 }
 
-/* Scrollbar estetic (opțional) */
-.sidebar::-webkit-scrollbar {
-	width: 8px;
+.card ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
-	background-color: #444;
-	border-radius: 10px;
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 1rem;
+  background: #4b3f72;
+  color: white;
+  font-size: 0.9rem;
 }

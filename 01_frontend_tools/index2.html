@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>01. Frontend Tools — Curs Frontend</title>
+    <style>
+      :root {
+        --bg: #f5f7fa;
+        --sidebar: #1e293b;
+        --accent: #2563eb;
+        --text: #0f172a;
+        --muted: #94a3b802;
+        --card: #fff;
+        --radius: 10px;
+        --shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        display: flex;
+        background: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* SIDEBAR */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background: var(--sidebar);
+        color: #fff;
+        padding: 24px 16px;
+        overflow-y: auto;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        color: var(--accent);
+        letter-spacing: 0.5px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar li {
+        margin: 0.4rem 0;
+      }
+
+      .sidebar a {
+        color: #cbd5e1;
+        text-decoration: none;
+        padding: 8px 10px;
+        display: block;
+        border-radius: 6px;
+        transition: 0.2s;
+      }
+
+      .sidebar a:hover {
+        background: #334155;
+        color: var(--accent);
+      }
+
+      .sidebar a.active {
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* MAIN CONTENT */
+      main {
+        margin-left: 250px;
+        padding: 2rem;
+        flex: 1;
+        min-height: 100vh;
+      }
+
+      header {
+        background: linear-gradient(90deg, #2563eb, #1e40af);
+        color: #fff;
+        padding: 20px 24px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-bottom: 2rem;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+
+      .lessons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .lesson-card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 16px 18px;
+        box-shadow: var(--shadow);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .lesson-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      }
+
+      .lesson-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .lesson-info h3 {
+        margin: 0 0 6px 0;
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .lesson-info p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .eye-btn {
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .eye-btn:hover {
+        opacity: 0.9;
+      }
+
+      .answer {
+        display: none;
+        margin-top: 10px;
+        padding: 12px;
+        background: #eef2ff;
+        border-left: 4px solid var(--accent);
+        border-radius: 6px;
+        color: #1e3a8a;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        margin-top: 2rem;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <h2>Frontend Tools</h2>
+      <ul>
+        <li><a href="#" class="active">1. Ce este Frontend Development</a></li>
+        <li><a href="#">2. Instalarea Git & Git Bash</a></li>
+        <li><a href="#">3. Configurarea VS Code</a></li>
+        <li><a href="#">4. Instalarea Node.js & npm</a></li>
+        <li><a href="#">5. Utilizarea terminalului (CLI)</a></li>
+        <li><a href="#">6. Comenzi Git esențiale</a></li>
+        <li><a href="#">7. Crearea primului repository</a></li>
+        <li><a href="#">8. Folosirea GitHub</a></li>
+        <li><a href="#">9. Structura unui proiect frontend</a></li>
+        <li><a href="#">10. Versionare și colaborare cu Git</a></li>
+        <li><a href="#">11. Workflow profesional</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <header>
+        <h1>01. Frontend Tools — Introducere și Unelte Esențiale</h1>
+      </header>
+
+      <section class="lessons">
+        <!-- EXEMPLE DE LECȚII CU SHOW/HIDE -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <div class="lesson-info">
+              <h3>1. Ce este Frontend Development</h3>
+              <p>Învață ce presupune dezvoltarea front-end și cum se diferențiază de backend.</p>
+            </div>
+            <button class="eye-btn" data-target="#ans1">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="ans1">
+            Frontend development se referă la crearea părții vizibile a unui site sau aplicații web — interfața
+            utilizatorului. Principalele tehnologii folosite sunt:
+            <ul>
+              <li><strong>HTML</strong> – structura paginii</li>
+              <li><strong>CSS</strong> – stilizarea și layoutul</li>
+              <li><strong>JavaScript</strong> – logica și interactivitatea</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <div class="lesson-info">
+              <h3>2. Instalarea Git & Git Bash</h3>
+              <p>Pași pentru instalarea și configurarea Git pe sistemul tău.</p>
+            </div>
+            <button class="eye-btn" data-target="#ans2">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="ans2">
+            1️⃣ Descarcă Git de pe <a href="https://git-scm.com/" target="_blank">git-scm.com</a><br />
+            2️⃣ Instalează Git Bash<br />
+            3️⃣ Configurează-l:
+            <pre>
+git config --global user.name "Numele tău"
+git config --global user.email "email@exemplu.com"
+            </pre>
+          </div>
+        </div>
+
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <div class="lesson-info">
+              <h3>3. Configurarea VS Code</h3>
+              <p>Personalizează editorul de cod pentru eficiență maximă.</p>
+            </div>
+            <button class="eye-btn" data-target="#ans3">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="ans3">
+            Instalează extensii utile:
+            <ul>
+              <li>Live Server</li>
+              <li>Prettier</li>
+              <li>GitLens</li>
+            </ul>
+            Ajustează tema, fonturile și formatarea automată.
+          </div>
+        </div>
+      </section>
+
+      <footer>© 2025 Frontend Study Guide — Modulul 01: Frontend Tools</footer>
+    </main>
+
+    <script src="app2.js"></script>
+  </body>
+</html>
