@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Sidebar fix -->
+    <!-- Sidebar -->
     <aside class="sidebar">
-      <h2>JavaScript - Lecții</h2>
+      <h2>Modern JS (ES6+)</h2>
       <nav class="side-nav">
         <ul>
-          <li><a href="#" class="active">Modern JS (ES6+)</a></li>
-          <li><a href="#">Variabile & Scope</a></li>
-          <li><a href="#">Funcții</a></li>
-          <li><a href="#">Obiecte & Clase</a></li>
-          <li><a href="#">DOM & Evenimente</a></li>
-          <li><a href="#">API & Fetch</a></li>
-          <li><a href="#">Proiecte Practice</a></li>
+          <li><a href="#" class="active">1️⃣ let & const</a></li>
+          <li><a href="#">2️⃣ Template literals</a></li>
+          <li><a href="#">3️⃣ Arrow functions</a></li>
+          <li><a href="#">4️⃣ Destructuring</a></li>
+          <li><a href="#">5️⃣ Spread & Rest</a></li>
+          <li><a href="#">6️⃣ Default parameters</a></li>
+          <li><a href="#">7️⃣ Array methods (map, filter, reduce)</a></li>
+          <li><a href="#">8️⃣ Module system (import/export)</a></li>
+          <li><a href="#">9️⃣ Promises</a></li>
+          <li><a href="#">🔟 Async/Await</a></li>
+          <li><a href="#">1️⃣1️⃣ Workshop: Manipulare date JSON</a></li>
         </ul>
       </nav>
     </aside>
@@ -30,76 +34,93 @@
       </header>
 
       <article>
-        <section>
-          <h2>1. let & const</h2>
-          <p>În ES6, folosim <code>let</code> și <code>const</code> în loc de <code>var</code>:</p>
+        <section id="let-const">
+          <h2>1️⃣ let & const</h2>
+          <p>ES6 a introdus <code>let</code> și <code>const</code> pentru o mai bună gestionare a variabilelor.</p>
           <pre><code>let nume = "Ana";
 const PI = 3.14;
-nume = "Maria"; // OK
-PI = 3.1415; // ❌ Eroare - const nu poate fi reasignat</code></pre>
+
+nume = "Maria"; // ✅ OK
+PI = 3.1415;    // ❌ Eroare - const nu poate fi reasignat</code></pre>
         </section>
 
-        <section>
-          <h2>2. Template literals</h2>
-          <p>Permite interpolarea ușoară a valorilor:</p>
+        <section id="template-literals">
+          <h2>2️⃣ Template literals</h2>
+          <p>Permite interpolarea valorilor în șiruri de caractere cu backticks (``).</p>
           <pre><code>const nume = "Ion";
-console.log(`Salut, ${nume}!`); // Salut, Ion!</code></pre>
+const varsta = 28;
+console.log(`Salut, ${nume}! Ai ${varsta} ani.`);</code></pre>
         </section>
 
-        <section>
-          <h2>3. Arrow functions</h2>
-          <pre><code>const suma = (a, b) => a + b;
-console.log(suma(2, 3)); // 5</code></pre>
+        <section id="arrow-functions">
+          <h2>3️⃣ Arrow functions</h2>
+          <p>Funcții mai scurte, fără propriul <code>this</code>.</p>
+          <pre><code>const salut = nume => `Salut, ${nume}!`;
+console.log(salut("Andrei")); // Salut, Andrei!</code></pre>
         </section>
 
-        <section>
-          <h2>4. Destructuring</h2>
-          <pre><code>const persoana = { nume: "Andrei", varsta: 25 };
+        <section id="destructuring">
+          <h2>4️⃣ Destructuring</h2>
+          <p>Permite extragerea valorilor din obiecte și array-uri.</p>
+          <pre><code>const persoana = { nume: "Andreea", varsta: 25 };
 const { nume, varsta } = persoana;
-console.log(nume, varsta);</code></pre>
+console.log(nume, varsta); // Andreea 25
+
+const [a, b] = [10, 20];
+console.log(a, b); // 10 20</code></pre>
         </section>
 
-        <section>
-          <h2>5. Spread & Rest</h2>
+        <section id="spread-rest">
+          <h2>5️⃣ Spread & Rest</h2>
+          <p>Operatorul <code>...</code> poate fi folosit pentru a copia sau combina valori.</p>
           <pre><code>const arr1 = [1, 2, 3];
 const arr2 = [...arr1, 4, 5];
-console.log(arr2); // [1,2,3,4,5]
+console.log(arr2); // [1, 2, 3, 4, 5]
 
-const suma = (...numere) => numere.reduce((a,b) => a+b, 0);
-console.log(suma(1,2,3)); // 6</code></pre>
+// Rest parameters
+const suma = (...numere) => numere.reduce((a, b) => a + b, 0);
+console.log(suma(1, 2, 3)); // 6</code></pre>
         </section>
 
-        <section>
-          <h2>6. Default parameters</h2>
+        <section id="default-params">
+          <h2>6️⃣ Default parameters</h2>
+          <p>Setează valori implicite pentru parametrii funcțiilor.</p>
           <pre><code>function salut(nume = "Utilizator") {
   console.log(`Salut, ${nume}!`);
 }
-salut(); // Salut, Utilizator!</code></pre>
+
+salut(); // Salut, Utilizator!
+salut("Elena"); // Salut, Elena!</code></pre>
         </section>
 
-        <section>
-          <h2>7. Array methods: map, filter, reduce</h2>
+        <section id="array-methods">
+          <h2>7️⃣ Array methods: map, filter, reduce</h2>
+          <p>Metode moderne pentru prelucrarea array-urilor.</p>
           <pre><code>const numere = [1, 2, 3, 4, 5];
 
 const dublate = numere.map(n => n * 2);
 const pare = numere.filter(n => n % 2 === 0);
 const suma = numere.reduce((a, b) => a + b, 0);
 
-console.log(dublate, pare, suma);</code></pre>
+console.log(dublate); // [2, 4, 6, 8, 10]
+console.log(pare);    // [2, 4]
+console.log(suma);    // 15</code></pre>
         </section>
 
-        <section>
-          <h2>8. Module system (import/export)</h2>
+        <section id="modules">
+          <h2>8️⃣ Module system (import/export)</h2>
+          <p>Permite organizarea codului în fișiere separate.</p>
           <pre><code>// math.js
 export const aduna = (a, b) => a + b;
 
 // main.js
 import { aduna } from './math.js';
-console.log(aduna(2, 3));</code></pre>
+console.log(aduna(2, 3)); // 5</code></pre>
         </section>
 
-        <section>
-          <h2>9. Promises</h2>
+        <section id="promises">
+          <h2>9️⃣ Promises</h2>
+          <p>O modalitate elegantă de a lucra cu operații asincrone.</p>
           <pre><code>const promisiune = new Promise((resolve, reject) => {
   setTimeout(() => resolve("Date primite!"), 1000);
 });
@@ -107,19 +128,21 @@ console.log(aduna(2, 3));</code></pre>
 promisiune.then(msg => console.log(msg));</code></pre>
         </section>
 
-        <section>
-          <h2>10. Async/Await</h2>
+        <section id="async-await">
+          <h2>🔟 Async / Await</h2>
+          <p>Sintaxă simplificată pentru lucrul cu Promises.</p>
           <pre><code>async function preiaDate() {
   const raspuns = await fetch("https://jsonplaceholder.typicode.com/users");
   const date = await raspuns.json();
   console.log(date);
 }
+
 preiaDate();</code></pre>
         </section>
 
-        <section>
-          <h2>Workshop: Manipulare date JSON</h2>
-          <p>Exemplu de prelucrare date JSON cu metode ES6:</p>
+        <section id="workshop-json">
+          <h2>1️⃣1️⃣ Workshop: Manipulare date JSON</h2>
+          <p>Exemplu practic de filtrare și prelucrare a datelor JSON:</p>
           <pre><code>const utilizatori = [
   { nume: "Ana", varsta: 23 },
   { nume: "Mihai", varsta: 30 },
@@ -127,7 +150,10 @@ preiaDate();</code></pre>
 ];
 
 const peste25 = utilizatori.filter(u => u.varsta > 25);
-console.log(peste25);</code></pre>
+console.log("Utilizatori peste 25:", peste25);
+
+const numeUtilizatori = utilizatori.map(u => u.nume);
+console.log("Nume utilizatori:", numeUtilizatori);</code></pre>
         </section>
       </article>
     </main>
