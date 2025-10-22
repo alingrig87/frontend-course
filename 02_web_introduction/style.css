@@ -1,211 +1,140 @@
-/* === STYLE.CSS === */
-
-/* Reset & fonturi de bază */
+/* Reset general */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
+/* Stil general */
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: #f8f9fb;
-  color: #333;
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    'header header'
-    'sidebar content'
-    'footer footer';
-  min-height: 100vh;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #f5f7fa;
+	color: #333;
 }
 
-/* HEADER */
-.main-header {
-  grid-area: header;
-  background: #4b3f72;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-.main-header .logo {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.nav a {
-  color: #fff;
-  margin-left: 1rem;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav a:hover {
-  text-decoration: underline;
-}
-
-/* SIDEBAR */
+/* Sidebar fix pe stânga */
 .sidebar {
-  grid-area: sidebar;
-  background: #fff;
-  padding: 1.5rem;
-  border-right: 1px solid #ddd;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 250px;
+	background-color: #20232a;
+	color: #fff;
+	padding: 1.5rem 1rem;
+	overflow-y: auto;
+	border-right: 1px solid #333;
 }
 
 .sidebar h2 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+	color: #61dafb;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
-.sidebar ul {
-  list-style: none;
+.side-nav ul {
+	list-style: none;
 }
 
-.sidebar li {
-  margin: 0.6rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.side-nav li {
+	margin: 0.5rem 0;
 }
 
-/* BADGE-URI */
-.badge {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  color: white;
-  text-align: center;
-  line-height: 26px;
-  font-weight: bold;
-  font-size: 0.8rem;
+.side-nav a {
+	display: block;
+	padding: 0.5rem 0.75rem;
+	color: #ddd;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: all 0.2s ease;
 }
 
-.badge.html { background: #e44d26; }
-.badge.css { background: #1572b6; }
-.badge.js { background: #f7df1e; color: #000; }
-.badge.react { background: #61dafb; color: #000; }
-.badge.final { background: #7b1fa2; }
-
-/* CONTENT */
-.content {
-  grid-area: content;
-  padding: 2rem;
+.side-nav a:hover {
+	background-color: #2c2f36;
+	color: #61dafb;
 }
 
-/* HERO */
-.hero {
-  background: linear-gradient(135deg, #4b3f72, #7b1fa2);
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
+.side-nav a.active {
+	background-color: #61dafb;
+	color: #20232a;
+	font-weight: 600;
 }
 
-/* CARDURI */
-.cards-section h2 { margin-bottom: 1rem; }
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+/* Conținut principal */
+.main-content {
+	margin-left: 250px; /* lasă loc pentru sidebar */
+	padding: 2rem;
+	min-height: 100vh;
+	overflow-y: auto;
 }
 
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.2rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+header h1 {
+	margin-bottom: 1rem;
+	color: #20232a;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+article p {
+	margin-bottom: 1rem;
+	line-height: 1.6;
 }
 
-.card h3 { margin-bottom: 0.5rem; }
-
-.card button {
-  background: #4b3f72;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 0.5rem;
-}
-
-.card button:hover {
-  background: #7b1fa2;
-}
-
-/* CODE BLOCKS */
 pre {
-  background: #2d2d2d;
-  color: #f8f8f2;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
-  margin-top: 1rem;
+	background-color: #282c34;
+	color: #fff;
+	padding: 1rem;
+	border-radius: 8px;
+	overflow-x: auto;
+	font-family: Consolas, monospace;
+	margin-bottom: 1rem;
 }
 
-code {
-  font-family: 'Courier New', monospace;
-  font-size: 0.95rem;
+/* Scrollbar estetic (opțional) */
+.sidebar::-webkit-scrollbar {
+	width: 8px;
 }
 
-/* INFO BOXES */
-.info-boxes {
-  margin-top: 2rem;
+.sidebar::-webkit-scrollbar-thumb {
+	background-color: #444;
+	border-radius: 10px;
 }
 
-.info {
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
+/* Secțiuni de teorie și exerciții */
+section {
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #ddd;
 }
 
-.info.note {
-  background: #e0f7fa;
-  border-left: 5px solid #00acc1;
+section h2 {
+	color: #20232a;
+	margin-bottom: 0.5rem;
+	border-left: 4px solid #61dafb;
+	padding-left: 0.5rem;
 }
 
-.info.warning {
-  background: #fff8e1;
-  border-left: 5px solid #fbc02d;
+section ul, section ol {
+	margin-left: 1.5rem;
+	margin-bottom: 1rem;
+	line-height: 1.6;
 }
 
-.info.exercise {
-  background: #f3e5f5;
-  border-left: 5px solid #7b1fa2;
+section li {
+	margin-bottom: 0.4rem;
 }
 
-/* FOOTER */
+/* Footer */
 .footer {
-  grid-area: footer;
-  text-align: center;
-  padding: 1rem;
-  background: #4b3f72;
-  color: white;
-  font-size: 0.9rem;
+	text-align: center;
+	margin-top: 2rem;
+	padding-top: 1rem;
+	color: #555;
+	border-top: 1px solid #ccc;
+	font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'header'
-      'content'
-      'footer';
-  }
-  .sidebar {
-    display: none;
-  }
+html{
+  scroll-behavior: smooth;
 }
+
