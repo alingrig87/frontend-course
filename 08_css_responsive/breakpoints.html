@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitolul 3: Breakpoints standard</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Stil pentru exemplu live */
+      .breakpoint-container {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .box {
+        flex: 1;
+        background-color: #ffb703;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      /* Breakpoints standard */
+      @media (max-width: 1200px) {
+        .breakpoint-container {
+          flex-direction: row;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .breakpoint-container {
+          flex-direction: row;
+          gap: 0.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .breakpoint-container {
+          flex-direction: column;
+        }
+      }
+
+      pre {
+        background-color: #282c34;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-top: 1rem;
+      }
+
+      .key-points ul {
+        margin-top: 1rem;
+        padding-left: 1.2rem;
+      }
+
+      .key-points li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>🌐 Website Complet Responsive</h1>
+        </a>
+        <p>Învață pas cu pas să creezi site-uri care arată perfect pe orice dispozitiv</p>
+      </div>
+      <button id="menu-btn" class="menu-btn">☰</button>
+    </header>
+
+    <!-- ===== CONTAINER ===== -->
+    <div class="container">
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="sidebar" id="sidebar">
+        <h2>📘 Capitole</h2>
+        <nav>
+          <ul>
+            <li><a href="responsive-design.html">1. Ce este Responsive Design</a></li>
+            <li><a href="media-queries.html">2. Media Queries</a></li>
+            <li><a href="breakpoints.html" class="active">3. Breakpoints standard</a></li>
+            <li><a href="layout-fluid-fix.html">4. Layout fluid vs fix</a></li>
+            <li><a href="unitati-relative.html">5. Unități relative (%, vw, vh, rem)</a></li>
+            <li><a href="imagini-responsive.html">6. Imagini responsive</a></li>
+            <li><a href="mobile-first.html">7. Mobile-first design</a></li>
+            <li><a href="grid-flex.html">8. Grid și Flex responsive</a></li>
+            <li><a href="workshop-landing.html">9. Workshop: Landing Page responsive</a></li>
+            <li><a href="tema-finala.html">10. Tema: Website complet responsive</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ===== CONȚINUT PRINCIPAL ===== -->
+      <main class="main-content">
+        <!-- Introducere -->
+        <section class="intro">
+          <h2>Capitolul 3: Breakpoints standard</h2>
+          <p>
+            <strong>Breakpoints</strong> sunt lățimile de ecran la care design-ul site-ului trebuie să se adapteze.
+            Acestea sunt praguri standard folosite pentru a defini stiluri diferite în funcție de dimensiunea dispozitivului.
+          </p>
+        </section>
+
+        <!-- Exemplu de cod -->
+        <section class="example">
+          <h3>Exemplu practic:</h3>
+          <p>
+            Trei coloane pe desktop și tabletă care se transformă vertical pe mobil folosind breakpoints standard.
+          </p>
+
+          <!-- Boxuri vizuale -->
+          <div class="breakpoint-container">
+            <div class="box">Coloana 1</div>
+            <div class="box">Coloana 2</div>
+            <div class="box">Coloana 3</div>
+          </div>
+
+          <!-- Cod sursă -->
+          <pre>
+.breakpoint-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.box {
+  flex: 1;
+  background-color: #ffb703;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Breakpoints standard */
+@media (max-width: 1200px) { /* Large screens */ }
+@media (max-width: 992px)  { /* Medium screens */ }
+@media (max-width: 768px)  { /* Small screens - coloane verticale */ 
+  .breakpoint-container {
+    flex-direction: column;
+  }
+}
+          </pre>
+        </section>
+
+        <!-- Puncte cheie -->
+        <section class="key-points">
+          <h3>Puncte cheie:</h3>
+          <ul>
+            <li>Breakpoints definesc când layout-ul trebuie ajustat.</li>
+            <li>Standard: 1200px (desktop mare), 992px (tabletă), 768px (mobil).</li>
+            <li>Se folosesc cu media queries pentru design responsive.</li>
+            <li>Permite o experiență consistentă pe toate dispozitivele.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>© 2025 Curs Responsive Web Design | Creat de Echipa EduWeb</p>
+    </footer>
+
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

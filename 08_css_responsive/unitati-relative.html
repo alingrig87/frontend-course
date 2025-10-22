@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitolul 5: Unități relative</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Exemplu live pentru unități relative */
+      .unit-container {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .box-percent {
+        width: 30%; /* 30% din container */
+        background-color: #ff595e;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      .box-vw {
+        width: 20vw; /* 20% din lățimea viewport-ului */
+        background-color: #1982c4;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      .box-vh {
+        height: 20vh; /* 20% din înălțimea viewport-ului */
+        background-color: #6a4c93;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        flex: 1;
+      }
+
+      .box-rem {
+        font-size: 2rem; /* mărime text relativă la root */
+        background-color: #8ac926;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        flex: 1;
+      }
+
+      @media (max-width: 768px) {
+        .unit-container {
+          flex-direction: column;
+        }
+      }
+
+      pre {
+        background-color: #282c34;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-top: 1rem;
+      }
+
+      .key-points ul {
+        margin-top: 1rem;
+        padding-left: 1.2rem;
+      }
+
+      .key-points li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>🌐 Website Complet Responsive</h1>
+        </a>
+        <p>Învață pas cu pas să creezi site-uri care arată perfect pe orice dispozitiv</p>
+      </div>
+      <button id="menu-btn" class="menu-btn">☰</button>
+    </header>
+
+    <!-- ===== CONTAINER ===== -->
+    <div class="container">
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="sidebar" id="sidebar">
+        <h2>📘 Capitole</h2>
+        <nav>
+          <ul>
+            <li><a href="responsive-design.html">1. Ce este Responsive Design</a></li>
+            <li><a href="media-queries.html">2. Media Queries</a></li>
+            <li><a href="breakpoints.html">3. Breakpoints standard</a></li>
+            <li><a href="layout-fluid-fix.html">4. Layout fluid vs fix</a></li>
+            <li><a href="unitati-relative.html" class="active">5. Unități relative (%, vw, vh, rem)</a></li>
+            <li><a href="imagini-responsive.html">6. Imagini responsive</a></li>
+            <li><a href="mobile-first.html">7. Mobile-first design</a></li>
+            <li><a href="grid-flex.html">8. Grid și Flex responsive</a></li>
+            <li><a href="workshop-landing.html">9. Workshop: Landing Page responsive</a></li>
+            <li><a href="tema-finala.html">10. Tema: Website complet responsive</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ===== CONȚINUT PRINCIPAL ===== -->
+      <main class="main-content">
+        <!-- Introducere -->
+        <section class="intro">
+          <h2>Capitolul 5: Unități relative</h2>
+          <p>
+            Unitățile relative permit ca elementele să se ajusteze automat la dimensiunea ecranului
+            sau la mărimea fontului de bază. Cele mai folosite sunt:
+          </p>
+          <ul>
+            <li><strong>%</strong> – procent din container</li>
+            <li><strong>vw</strong> – procent din lățimea viewport-ului</li>
+            <li><strong>vh</strong> – procent din înălțimea viewport-ului</li>
+            <li><strong>rem</strong> – dimensiune relativă la font-size-ul rădăcină</li>
+          </ul>
+        </section>
+
+        <!-- Exemplu live -->
+        <section class="example">
+          <h3>Exemplu practic:</h3>
+          <div class="unit-container">
+            <div class="box-percent">30% width</div>
+            <div class="box-vw">20vw width</div>
+            <div class="box-vh">20vh height</div>
+            <div class="box-rem">2rem font-size</div>
+          </div>
+
+          <pre>
+/* Box cu lățime procentuală */
+.box-percent { width: 30%; }
+
+/* Box cu lățime relativă la viewport */
+.box-vw { width: 20vw; }
+
+/* Box cu înălțime relativă la viewport */
+.box-vh { height: 20vh; }
+
+/* Font-size relativ la root */
+.box-rem { font-size: 2rem; }
+
+@media (max-width: 768px) {
+  .unit-container { flex-direction: column; }
+}
+          </pre>
+        </section>
+
+        <!-- Puncte cheie -->
+        <section class="key-points">
+          <h3>Puncte cheie:</h3>
+          <ul>
+            <li>Unitățile relative fac site-ul flexibil și adaptabil.</li>
+            <li>% și vw/vh se folosesc pentru layout și dimensiuni de ecran.</li>
+            <li>rem este util pentru mărimea textului și spațiere consistentă.</li>
+            <li>Combinarea cu media queries oferă un design complet responsive.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>© 2025 Curs Responsive Web Design | Creat de Echipa EduWeb</p>
+    </footer>
+
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

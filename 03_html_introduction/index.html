@@ -1,55 +1,142 @@
 <!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HTML Introduction — Tutorial Extins</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="logo">🌐 Frontend Path</div>
-    <nav class="nav">
-      <a href="#">Acasă</a>
-      <a href="#">Module</a>
-      <a href="#">Resurse</a>
-      <a href="#">Despre</a>
-    </nav>
-  </header>
+<html lang="ro" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Introduction — Tutorial Extins</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="lesson-has-sidebar">
+    <!-- HEADER -->
+    <header class="main-header">
+      <div class="logo">🌐 Frontend Path</div>
+      <nav class="nav">
+        <a href="#">Acasă</a>
+        <a href="#">Module</a>
+        <a href="#">Resurse</a>
+        <a href="#">Despre</a>
+      </nav>
+    </header>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <h2>📚 Module</h2>
-    <ul>
-      <li><span class="badge html">01</span> HTML Introduction</li>
-      <li><span class="badge css">02</span> CSS de bază</li>
-      <li><span class="badge js">03</span> JavaScript de bază</li>
-      <li><span class="badge react">04</span> React Intro</li>
-      <li><span class="badge final">10</span> Proiect final</li>
-    </ul>
-  </aside>
+    <!-- NAVBAR (Sidebar fix) -->
+    <aside class="lesson-sidebar" aria-label="HTML — Lecții">
+      <h2>HTML — Lecții</h2>
+      <nav class="lesson-side-nav">
+        <ul>
+          <li>
+            <a href="#structura" class="active"
+              >📄 Structura unui document HTML</a
+            >
+          </li>
+          <li>
+            <a href="#taguri-atribute">🧩 Taguri, elemente și atribute</a>
+          </li>
+          <li><a href="#headings-paragrafe">📝 Headings și paragrafe</a></li>
+          <li><a href="#linkuri-imagini">🔗 Linkuri și 🖼️ Imagini</a></li>
+          <li><a href="#liste">🧾 Liste ordonate și neordonate</a></li>
+          <li><a href="#tabele">📊 Tabele HTML</a></li>
+          <li><a href="#formulare">📮 Formulare și inputuri</a></li>
+          <li><a href="#semantic">🏷️ Elemente semantice</a></li>
+          <li><a href="#div-span">🔸🔹 Div vs Span</a></li>
+          <li>
+            <a href="#comentarii-entitati"
+              >💬 Comentarii & 🔤 Entități speciale</a
+            >
+          </li>
+          <li>
+            <a href="#workshop">🚀 Workshop: prima pagină HTML completă</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
 
-  <!-- CONTINUT PRINCIPAL -->
-  <main class="content">
-    <section class="hero">
-      <h1>🔰 HTML Introduction (în limba română)</h1>
-      <p>În această lecție parcurgem conceptele fundamentale HTML, cu exerciții, soluții ascunse/afișabile, întrebări de interviu și un mini‑proiect cu cel puțin 10 task‑uri. Structura și stilurile sunt aliniate cu template‑ul dat.</p>
-    </section>
+    <!-- SIDEBAR din template (ascunsă când folosim lesson-sidebar) -->
+    <aside class="sidebar">
+      <h2>📚 Module</h2>
+      <ul>
+        <li><span class="badge html">01</span> HTML Introduction</li>
+        <li><span class="badge css">02</span> CSS de bază</li>
+        <li><span class="badge js">03</span> JavaScript de bază</li>
+        <li><span class="badge react">04</span> React Intro</li>
+        <li><span class="badge final">05</span> Proiect final</li>
+      </ul>
+    </aside>
 
-    <!-- TEORIE + EXERCITII + SOLUTII -->
-    <section class="exercise-section">
-      <h2>🧠 Teorie & Exerciții (cu soluții ascunse)</h2>
+    <!-- CONTINUT PRINCIPAL -->
+    <main class="content">
+      <section class="hero">
+        <h1>🔰 HTML Introduction</h1>
+        <p>
+          În această lecție parcurgem conceptele fundamentale HTML, cu
+          exerciții, soluții ascunse/afișabile, întrebări de interviu și un
+          mini-proiect cu cel puțin 10 task-uri. Structura și stilurile sunt
+          aliniate cu template-ul dat.
+        </p>
+      </section>
 
-      <!-- 1: Structura de bază -->
-      <article class="exercise-card">
-        <h3>1. 📄 Structura de bază a unui document HTML</h3>
-        <p><strong>Teorie:</strong> Un fișier HTML începe cu <code>&lt;!DOCTYPE html&gt;</code>, urmat de <code>&lt;html&gt;</code> (cu atribut <code>lang</code>), <code>&lt;head&gt;</code> (metadate) și <code>&lt;body&gt;</code> (conținut).</p>
-        <div class="info note">💡 Păstrează <code>&lt;meta charset="UTF-8"&gt;</code> și <code>&lt;meta name="viewport"&gt;</code> pentru suport limbi și responsive.</div>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Creează un document minim valid HTML5 cu titlul „Salut, HTML!”.</p>
-          <button class="toggle-btn" data-target="#sol-1">👁️ Vezi soluția</button>
-          <pre id="sol-1" class="solution hidden"><code>&lt;!DOCTYPE html&gt;
+      <!-- TEORIE + EXERCITII + SOLUTII -->
+      <section class="exercise-section">
+        <h2>🧠 Teorie & Exerciții (cu soluții ascunse)</h2>
+
+        <!-- 1: Structura de bază -->
+        <article id="structura" class="exercise-card">
+          <h3>1. 📄 Structura de bază a unui document HTML</h3>
+          <p>
+            <strong>Teorie:</strong> Un fișier HTML începe cu
+            <code>&lt;!DOCTYPE html&gt;</code>, urmat de
+            <code>&lt;html&gt;</code> (cu atribut <code>lang</code>),
+            <code>&lt;head&gt;</code> (metadate) și
+            <code>&lt;body&gt;</code> (conținut).
+          </p>
+          <ul class="doctips" style="margin: 0.6rem 0 0.2rem 1.2rem">
+            <li>
+              <strong>Ce este?</strong> O declarație care anunță browserului că
+              documentul folosește standardul HTML5.
+            </li>
+            <li>
+              <strong>De ce e important?</strong> Activează
+              <em>Standards Mode</em> și evită
+              <em>Quirks Mode</em> (compatibilitate veche) care poate rupe
+              layoutul.
+            </li>
+            <li>
+              <strong>Nu este un tag HTML</strong> (nu are pereche de închidere)
+              și în HTML5 nu mai referă un DTD.
+            </li>
+            <li>
+              <strong>Case-insensitive</strong>: poate fi scris și
+              <code>&lt;!doctype html&gt;</code>, dar forma recomandată e
+              <code>&lt;!DOCTYPE html&gt;</code>.
+            </li>
+            <li>
+              <strong>Universal</strong>: aceeași declarație funcționează pe
+              toate paginile HTML5.
+            </li>
+            <li>
+              <strong>Cum verifici modul de randare?</strong> În consolă:
+              <code>document.compatMode</code> (ar trebui să fie
+              <code>CSS1Compat</code> pentru standards mode).
+            </li>
+          </ul>
+          <div class="info warning">
+            ⚠️ Fără DOCTYPE, multe browsere intră în <em>Quirks Mode</em>,
+            aplicând reguli vechi care pot afecta box-model-ul și calculul
+            layout-ului.
+          </div>
+          <div class="info note">
+            💡 Păstrează <code>&lt;meta charset="UTF-8"&gt;</code> și
+            <code>&lt;meta name="viewport"&gt;</code> pentru suport limbi și
+            responsive.
+          </div>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Creează un document minim valid HTML5
+              cu titlul „Salut, HTML!”.
+            </p>
+            <button class="toggle-btn" data-target="#sol-1">
+              👁️ Vezi soluția
+            </button>
+            <pre id="sol-1" class="solution hidden"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="ro"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
@@ -60,17 +147,27 @@
   &lt;h1&gt;Salut, HTML!&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 2: Head & Meta -->
-      <article class="exercise-card">
-        <h3>2. 🧠 <code>&lt;head&gt;</code>, meta taguri & SEO de bază</h3>
-        <p><strong>Teorie:</strong> În <code>&lt;head&gt;</code> definim titlul, descrierea, favicon, resurse CSS/JS. <code>&lt;meta name="description"&gt;</code> ajută la SEO; <code>&lt;link rel="icon"&gt;</code> setează favicon.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Adaugă o descriere și un favicon la pagina ta.</p>
-          <button class="toggle-btn" data-target="#sol-2">👁️ Vezi soluția</button>
-          <pre id="sol-2" class="solution hidden"><code>&lt;head&gt;
+        <!-- 2: Head & Meta (folosim pentru "Taguri, elemente și atribute" nav -> mutăm pe 11) -->
+        <article id="head" class="exercise-card">
+          <h3>2. 🧠 <code>&lt;head&gt;</code>, meta taguri & SEO de bază</h3>
+          <p>
+            <strong>Teorie:</strong> În <code>&lt;head&gt;</code> definim
+            titlul, descrierea, favicon, resurse CSS/JS.
+            <code>&lt;meta name="description"&gt;</code> ajută la SEO;
+            <code>&lt;link rel="icon"&gt;</code> setează favicon.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Adaugă o descriere și un favicon la
+              pagina ta.
+            </p>
+            <button class="toggle-btn" data-target="#sol-2">
+              👁️ Vezi soluția
+            </button>
+            <pre id="sol-2" class="solution hidden"><code>&lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
   &lt;title&gt;Portofoliul meu&lt;/title&gt;
@@ -78,44 +175,78 @@
   &lt;link rel="icon" href="/favicon.ico"&gt;
   &lt;link rel="stylesheet" href="style.css"&gt;
 &lt;/head&gt;</code></pre>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 3: Headings & Text -->
-      <article class="exercise-card">
-        <h3>3. 📝 Heading‑uri & paragrafe (<code>h1..h6</code>, <code>p</code>)</h3>
-        <p><strong>Teorie:</strong> Folosește un singur <code>h1</code> pe pagină pentru titlul principal; <code>p</code> pentru paragrafe. Menține ierarhia corectă.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Scrie o secțiune cu un <code>h2</code> și două paragrafe.</p>
-          <button class="toggle-btn" data-target="#sol-3">👁️ Vezi soluția</button>
-          <pre id="sol-3" class="solution hidden"><code>&lt;section&gt;
+        <!-- 3: Headings & Text -->
+        <article id="headings-paragrafe" class="exercise-card">
+          <h3>
+            3. 📝 Heading-uri & paragrafe (<code>h1..h6</code>, <code>p</code>)
+          </h3>
+          <p>
+            <strong>Teorie:</strong> Folosește un singur <code>h1</code> pe
+            pagină pentru titlul principal; <code>p</code> pentru paragrafe.
+            Menține ierarhia corectă.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Scrie o secțiune cu un
+              <code>h2</code> și două paragrafe.
+            </p>
+            <button class="toggle-btn" data-target="#sol-3">
+              👁️ Vezi soluția
+            </button>
+            <pre id="sol-3" class="solution hidden"><code>&lt;section&gt;
   &lt;h2&gt;Despre proiect&lt;/h2&gt;
   &lt;p&gt;Acesta este un proiect demo.&lt;/p&gt;
   &lt;p&gt;Îl folosim pentru a învăța HTML de bază.&lt;/p&gt;
 &lt;/section&gt;</code></pre>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 4: Links & Images -->
-      <article class="exercise-card">
-        <h3>4. 🔗 Link‑uri & 🖼️ Imagini</h3>
-        <p><strong>Teorie:</strong> <code>&lt;a&gt;</code> creează linkuri; <code>href</code> definește destinația. <code>&lt;img&gt;</code> afișează imagini; <code>alt</code> descrie conținutul pentru accesibilitate.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Adaugă un link către MDN și o imagine cu atribut <code>alt</code> descriptiv.</p>
-          <button class="toggle-btn" data-target="#sol-4">👁️ Vezi soluția</button>
-          <pre id="sol-4" class="solution hidden"><code>&lt;a href="https://developer.mozilla.org" target="_blank"&gt;MDN Web Docs&lt;/a&gt;
+        <!-- 4: Links & Images -->
+        <article id="linkuri-imagini" class="exercise-card">
+          <h3>4. 🔗 Link-uri & 🖼️ Imagini</h3>
+          <p>
+            <strong>Teorie:</strong> <code>&lt;a&gt;</code> creează linkuri;
+            <code>href</code> definește destinația.
+            <code>&lt;img&gt;</code> afișează imagini; <code>alt</code> descrie
+            conținutul pentru accesibilitate.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Adaugă un link către MDN și o imagine
+              cu atribut <code>alt</code> descriptiv.
+            </p>
+            <button class="toggle-btn" data-target="#sol-4">
+              👁️ Vezi soluția
+            </button>
+            <pre
+              id="sol-4"
+              class="solution hidden"
+            ><code>&lt;a href="https://developer.mozilla.org" target="_blank"&gt;MDN Web Docs&lt;/a&gt;
 &lt;img src="poze/logo.png" alt="Sigla proiectului în albastru"&gt;</code></pre>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 5: Liste -->
-      <article class="exercise-card">
-        <h3>5. 🧾 Liste (<code>ul</code>, <code>ol</code>, <code>li</code>)</h3>
-        <p><strong>Teorie:</strong> <code>ul</code> = listă neordonată, <code>ol</code> = listă ordonată. Elementele sunt <code>li</code>.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Creează o listă cu 3 abilități și un top 3 resurse.</p>
-          <button class="toggle-btn" data-target="#sol-5">👁️ Vezi soluția</button>
-          <pre id="sol-5" class="solution hidden"><code>&lt;ul&gt;
+        <!-- 5: Liste -->
+        <article id="liste" class="exercise-card">
+          <h3>
+            5. 🧾 Liste (<code>ul</code>, <code>ol</code>, <code>li</code>)
+          </h3>
+          <p>
+            <strong>Teorie:</strong> <code>ul</code> = listă neordonată,
+            <code>ol</code> = listă ordonată. Elementele sunt <code>li</code>.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Creează o listă cu 3 abilități și un
+              top 3 resurse.
+            </p>
+            <button class="toggle-btn" data-target="#sol-5">
+              👁️ Vezi soluția
+            </button>
+            <pre id="sol-5" class="solution hidden"><code>&lt;ul&gt;
   &lt;li&gt;HTML&lt;/li&gt;
   &lt;li&gt;CSS&lt;/li&gt;
   &lt;li&gt;JavaScript&lt;/li&gt;
@@ -126,17 +257,26 @@
   &lt;li&gt;FreeCodeCamp&lt;/li&gt;
   &lt;li&gt;Web Dev Simplified&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 6: Tabele -->
-      <article class="exercise-card">
-        <h3>6. 📊 Tabele (<code>table</code>, <code>thead/tbody</code>)</h3>
-        <p><strong>Teorie:</strong> Tabelele sunt pentru date tabulare. Folosește <code>&lt;th&gt;</code> pentru headere și <code>scope</code> pentru accesibilitate.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Creează un tabel simplu cu 2 coloane (Lecție, Status).</p>
-          <button class="toggle-btn" data-target="#sol-6">👁️ Vezi soluția</button>
-          <pre id="sol-6" class="solution hidden"><code>&lt;table&gt;
+        <!-- 6: Tabele -->
+        <article id="tabele" class="exercise-card">
+          <h3>6. 📊 Tabele (<code>table</code>, <code>thead/tbody</code>)</h3>
+          <p>
+            <strong>Teorie:</strong> Tabelele sunt pentru date tabulare.
+            Folosește <code>&lt;th&gt;</code> pentru headere și
+            <code>scope</code> pentru accesibilitate.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Creează un tabel simplu cu 2 coloane
+              (Lecție, Status).
+            </p>
+            <button class="toggle-btn" data-target="#sol-6">
+              👁️ Vezi soluția
+            </button>
+            <pre id="sol-6" class="solution hidden"><code>&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th scope="col"&gt;Lecție&lt;/th&gt;
@@ -148,17 +288,30 @@
     &lt;tr&gt;&lt;td&gt;CSS Basics&lt;/td&gt;&lt;td&gt;⏳ În curs&lt;/td&gt;&lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 7: Formulare -->
-      <article class="exercise-card">
-        <h3>7. 🧾 Formulare de bază</h3>
-        <p><strong>Teorie:</strong> <code>&lt;form&gt;</code> grupează inputuri. <code>&lt;label for&gt;</code> se leagă de <code>id</code>. Atribute utile: <code>required</code>, <code>placeholder</code>, <code>type</code>, <code>name</code>.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Creează un formular de contact cu nume, email și mesaj.</p>
-          <button class="toggle-btn" data-target="#sol-7">👁️ Vezi soluția</button>
-          <pre id="sol-7" class="solution hidden"><code>&lt;form action="#" method="post"&gt;
+        <!-- 7: Formulare -->
+        <article id="formulare" class="exercise-card">
+          <h3>7. 🧾 Formulare de bază</h3>
+          <p>
+            <strong>Teorie:</strong> <code>&lt;form&gt;</code> grupează
+            inputuri. <code>&lt;label for&gt;</code> se leagă de
+            <code>id</code>. Atribute utile: <code>required</code>,
+            <code>placeholder</code>, <code>type</code>, <code>name</code>.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Creează un formular de contact cu
+              nume, email și mesaj.
+            </p>
+            <button class="toggle-btn" data-target="#sol-7">
+              👁️ Vezi soluția
+            </button>
+            <pre
+              id="sol-7"
+              class="solution hidden"
+            ><code>&lt;form action="#" method="post"&gt;
   &lt;label for="nume"&gt;Nume&lt;/label&gt;
   &lt;input id="nume" name="nume" type="text" required&gt;
 
@@ -170,197 +323,388 @@
 
   &lt;button type="submit"&gt;Trimite&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 8: Semantica -->
-      <article class="exercise-card">
-        <h3>8. 🏷️ Semantic HTML</h3>
-        <p><strong>Teorie:</strong> Folosește elemente semantice (<code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>) pentru structură logică și accesibilitate mai bună.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Reorganizează o pagină folosind <code>header</code>, <code>nav</code> și <code>main</code>.</p>
-          <button class="toggle-btn" data-target="#sol-8">👁️ Vezi soluția</button>
-          <pre id="sol-8" class="solution hidden"><code>&lt;header&gt;...logo + meniu...&lt;/header&gt;
+        <!-- 8: Semantica -->
+        <article id="semantic" class="exercise-card">
+          <h3>8. 🏷️ Semantic HTML</h3>
+          <p>
+            <strong>Teorie:</strong> Folosește elemente semantice
+            (<code>header</code>, <code>nav</code>, <code>main</code>,
+            <code>section</code>, <code>article</code>, <code>aside</code>,
+            <code>footer</code>) pentru structură logică și accesibilitate mai
+            bună.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Reorganizează o pagină folosind
+              <code>header</code>, <code>nav</code> și <code>main</code>.
+            </p>
+            <button class="toggle-btn" data-target="#sol-8">
+              👁️ Vezi soluția
+            </button>
+            <pre
+              id="sol-8"
+              class="solution hidden"
+            ><code>&lt;header&gt;...logo + meniu...&lt;/header&gt;
 &lt;nav&gt;...linkuri...&lt;/nav&gt;
 &lt;main&gt;
   &lt;section&gt;Conținut principal&lt;/section&gt;
 &lt;/main&gt;
 &lt;footer&gt;© 2025&lt;/footer&gt;</code></pre>
+          </div>
+        </article>
+
+        <!-- 9: Div vs Span -->
+        <article id="div-span" class="exercise-card">
+          <h3>9. 🔸🔹 Div vs Span</h3>
+          <p>
+            <strong>Teorie:</strong> <code>div</code> este block-level (ocupa
+            tot rândul), <code>span</code> este inline (doar cât conținutul).
+            Folosește <em>div</em> pentru grupări structurale și
+            <em>span</em> pentru porțiuni scurte în linie.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Evidențiază o expresie dintr-un
+              paragraf folosind <code>&lt;span&gt;</code> și o clasă.
+            </p>
+            <button class="toggle-btn" data-target="#sol-div-span">
+              👁️ Vezi soluția
+            </button>
+            <pre
+              id="sol-div-span"
+              class="solution hidden"
+            ><code>&lt;p&gt;Acesta este un &lt;span class="accent"&gt;exemplu&lt;/span&gt; de span în text.&lt;/p&gt;</code></pre>
+          </div>
+        </article>
+
+        <!-- 10: Comentarii & Entități -->
+        <article id="comentarii-entitati" class="exercise-card">
+          <h3>10. 💬 Comentarii & 🔤 Entități speciale</h3>
+          <p>
+            <strong>Teorie (comentarii):</strong> Comentariile nu sunt randate:
+            <code>&lt;!-- Acesta este un comentariu --&gt;</code>. Utile pentru
+            note și TODO-uri.
+          </p>
+          <p>
+            <strong>Teorie (entități):</strong> Pentru caractere speciale
+            folosește entități: &amp;copy;, &amp;nbsp;, &amp;lt;, &amp;gt; etc.
+            Diacriticele sunt afișate corect cu UTF-8.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Adaugă un comentariu și afișează
+              <code>&lt;div&gt;</code> ca text.
+            </p>
+            <button class="toggle-btn" data-target="#sol-10">
+              👁️ Vezi soluția
+            </button>
+            <pre
+              id="sol-10"
+              class="solution hidden"
+            ><code>&lt;!-- TODO: înlocuiește acest text mai târziu --&gt;
+&lt;p&gt;Afișăm &amp;lt;div&amp;gt; și &amp;lt;/div&amp;gt; ca text.&lt;/p&gt;</code></pre>
+          </div>
+        </article>
+
+        <!-- 11: Atribute (map pentru "Taguri, elemente și atribute") -->
+        <article id="taguri-atribute" class="exercise-card">
+          <h3>
+            11. 🧩 Atribute, <code>id</code> vs <code>class</code>,
+            <code>data-*</code>
+          </h3>
+          <p>
+            <strong>Teorie:</strong> <code>id</code> e unic,
+            <code>class</code> se repetă. <code>data-*</code> păstrează metadate
+            personalizate. (Elementele/Tag-urile sunt nodurile HTML precum
+            <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>,
+            <code>&lt;img&gt;</code> etc.)
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Creează un buton cu
+              <code>data-level="incepator"</code>.
+            </p>
+            <button class="toggle-btn" data-target="#sol-11">
+              👁️ Vezi soluția
+            </button>
+            <pre
+              id="sol-11"
+              class="solution hidden"
+            ><code>&lt;button class="btn" id="cta" data-level="incepator"&gt;Începe acum&lt;/button&gt;</code></pre>
+          </div>
+        </article>
+
+        <!-- 12: Scripturi -->
+        <article id="scripturi" class="exercise-card">
+          <h3>
+            12. ⚙️ Încărcarea scripturilor (<code>defer</code> /
+            <code>async</code>)
+          </h3>
+          <p>
+            <strong>Teorie:</strong> <code>defer</code> amână execuția până după
+            parsarea HTML; <code>async</code> rulează când fișierul e gata,
+            ordinea nu e garantată.
+          </p>
+          <div class="exercise">
+            <p>
+              <strong>Exercițiu:</strong> Leagă un fișier <code>app.js</code> cu
+              <code>defer</code>.
+            </p>
+            <button class="toggle-btn" data-target="#sol-12">
+              👁️ Vezi soluția
+            </button>
+            <pre
+              id="sol-12"
+              class="solution hidden"
+            ><code>&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+          </div>
+        </article>
+      </section>
+
+      <!-- INTREBARI INTERVIU -->
+      <section class="interview-section">
+        <h2>💬 Întrebări de interviu (HTML Intro)</h2>
+
+        <div class="question">
+          <p>
+            <strong>1.</strong> Ce face declarația
+            <code>&lt;!DOCTYPE html&gt;</code>?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Indică browserului că documentul folosește standardul HTML5 și
+            activează modul de randare modern (Standards Mode).
+          </div>
         </div>
-      </article>
-
-      <!-- 9: Media -->
-      <article class="exercise-card">
-        <h3>9. 🎬 Media: video & audio</h3>
-        <p><strong>Teorie:</strong> <code>&lt;video&gt;</code> și <code>&lt;audio&gt;</code> acceptă atribute precum <code>controls</code>, <code>autoplay</code>, <code>loop</code>. Include surse alternative.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Inserează un video MP4 cu controale.</p>
-          <button class="toggle-btn" data-target="#sol-9">👁️ Vezi soluția</button>
-          <pre id="sol-9" class="solution hidden"><code>&lt;video controls width="480"&gt;
-  &lt;source src="media/demo.mp4" type="video/mp4"&gt;
-  Browserul tău nu suportă elementul video.
-&lt;/video&gt;</code></pre>
+        <div class="question">
+          <p>
+            <strong>2.</strong> Care e diferența dintre elemente block-level și
+            inline?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Block ocupă lățimea disponibilă și începe pe rând nou; inline ocupă
+            doar cât conținutul și nu începe rând nou.
+          </div>
         </div>
-      </article>
-
-      <!-- 10: Entități & diacritice -->
-      <article class="exercise-card">
-        <h3>10. 🔤 Entități HTML & diacritice</h3>
-        <p><strong>Teorie:</strong> Pentru caractere speciale folosește entități: &amp;copy;, &amp;nbsp;, &amp;lt;, &amp;gt;, etc. Diacriticele sunt afișate corect cu UTF‑8.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Afișează simbolul &lt; și &gt; într‑un paragraf.</p>
-          <button class="toggle-btn" data-target="#sol-10">👁️ Vezi soluția</button>
-          <pre id="sol-10" class="solution hidden"><code>&lt;p&gt;Afișăm &amp;lt;div&amp;gt; și &amp;lt;/div&amp;gt; în text.&lt;/p&gt;</code></pre>
+        <div class="question">
+          <p>
+            <strong>3.</strong> Ce rol au atributele <code>alt</code> pe
+            imagini?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Descriu imaginea pentru cititoare de ecran și când fișierul nu se
+            încarcă; util și pentru SEO.
+          </div>
         </div>
-      </article>
-
-      <!-- 11: Atribute & id/class -->
-      <article class="exercise-card">
-        <h3>11. 🧩 Atribute, <code>id</code> vs <code>class</code>, <code>data-*</code></h3>
-        <p><strong>Teorie:</strong> <code>id</code> e unic, <code>class</code> se repetă. <code>data-*</code> păstrează metadate personalizate.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Creează un buton cu <code>data-level="incepator"</code>.</p>
-          <button class="toggle-btn" data-target="#sol-11">👁️ Vezi soluția</button>
-          <pre id="sol-11" class="solution hidden"><code>&lt;button class="btn" id="cta" data-level="incepator"&gt;Începe acum&lt;/button&gt;</code></pre>
+        <div class="question">
+          <p>
+            <strong>4.</strong> Diferența dintre <code>id</code> și
+            <code>class</code>?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            <code>id</code> este unic pe pagină; <code>class</code> poate fi
+            reutilizată pe mai multe elemente.
+          </div>
         </div>
-      </article>
-
-      <!-- 12: Scripturi -->
-      <article class="exercise-card">
-        <h3>12. ⚙️ Încărcarea scripturilor (<code>defer</code> / <code>async</code>)</h3>
-        <p><strong>Teorie:</strong> <code>defer</code> amână execuția până după parsarea HTML; <code>async</code> rulează când fișierul e gata, ordinea nu e garantată.</p>
-        <div class="exercise">
-          <p><strong>Exercițiu:</strong> Leagă un fișier <code>app.js</code> cu <code>defer</code>.</p>
-          <button class="toggle-btn" data-target="#sol-12">👁️ Vezi soluția</button>
-          <pre id="sol-12" class="solution hidden"><code>&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+        <div class="question">
+          <p>
+            <strong>5.</strong> Ce fac atributele <code>defer</code> și
+            <code>async</code> la scripturi?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            <code>defer</code> execută după parsarea HTML în ordinea tagurilor;
+            <code>async</code> execută imediat ce se încarcă, fără garanția
+            ordinii.
+          </div>
         </div>
-      </article>
-    </section>
+        <div class="question">
+          <p><strong>6.</strong> Ce este accesibilitatea (a11y) în HTML?</p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Practicile care fac conținutul utilizabil pentru toți, incluzând
+            persoane cu dizabilități (ex: etichete, structură semantică,
+            contrast, focus).
+          </div>
+        </div>
+        <div class="question">
+          <p><strong>7.</strong> Când folosești tabele vs CSS pentru layout?</p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Tabele doar pentru date tabulare; niciodată pentru layout. Layoutul
+            se face cu CSS.
+          </div>
+        </div>
+        <div class="question">
+          <p>
+            <strong>8.</strong> Ce este atributul <code>lang</code> pe
+            <code>&lt;html&gt;</code> și de ce contează?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Indică limba documentului (ex: <code>ro</code>), ajutând cititoarele
+            de ecran și motoarele de căutare.
+          </div>
+        </div>
+        <div class="question">
+          <p>
+            <strong>9.</strong> Cum legi corect un <code>&lt;label&gt;</code> de
+            un <code>&lt;input&gt;</code>?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Setezi <code>for="id-ul-inputului"</code> pe label și
+            <code>id</code> identic pe input.
+          </div>
+        </div>
+        <div class="question">
+          <p>
+            <strong>10.</strong> Ce este
+            <code>&lt;meta name="viewport"&gt;</code> și de ce e important pe
+            mobil?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Controlează scalarea pe dispozitive mobile;
+            <code>width=device-width, initial-scale=1.0</code> asigură layout
+            corect.
+          </div>
+        </div>
+        <div class="question">
+          <p>
+            <strong>11.</strong> Ce diferență este între <code>title</code> și
+            <code>meta description</code>?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            <code>title</code> apare în tab și în rezultatele de căutare;
+            <code>description</code> e rezumat folosit de motoarele de căutare.
+          </div>
+        </div>
+        <div class="question">
+          <p>
+            <strong>12.</strong> Când folosești <code>&lt;strong&gt;</code> vs
+            <code>&lt;b&gt;</code>?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            <code>&lt;strong&gt;</code> are semnificație semantică
+            (accentuează); <code>&lt;b&gt;</code> doar stil vizual fără
+            semnificație.
+          </div>
+        </div>
+        <div class="question">
+          <p><strong>13.</strong> Ce sunt atributele <code>data-*</code>?</p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Metadate personalizate atașate elementelor, accesibile în JS via
+            <code>dataset</code>.
+          </div>
+        </div>
+        <div class="question">
+          <p><strong>14.</strong> Cum inserezi corect un fișier CSS extern?</p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            În <code>&lt;head&gt;</code> cu
+            <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.
+          </div>
+        </div>
+        <div class="question">
+          <p>
+            <strong>15.</strong> Ce este <code>ARIA</code> (la nivel de bază)?
+          </p>
+          <button class="eye-btn">👁️ Vezi răspunsul</button>
+          <div class="answer hidden">
+            Atribute pentru a oferi informații suplimentare cititoarelor de
+            ecran (ex: <code>role</code>, <code>aria-label</code>).
+          </div>
+        </div>
+      </section>
 
-    <!-- INTREBARI INTERVIU -->
-    <section class="interview-section">
-      <h2>💬 Întrebări de interviu (HTML Intro)</h2>
+      <!-- PROIECT MIC CU 10+ TASKURI -->
+      <section id="workshop" class="project-section">
+        <h2>🧪 Mini-proiect: „Pagina CV” (10+ taskuri)</h2>
+        <p>
+          Obiectiv: creează o pagină CV single-page folosind conceptele HTML
+          învățate.
+        </p>
 
-      <!-- We'll render several Q&A blocks with toggle -->
-      <div class="question">
-        <p><strong>1.</strong> Ce face declarația <code>&lt;!DOCTYPE html&gt;</code>?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Indică browserului că documentul folosește standardul HTML5.</div>
-      </div>
-      <div class="question">
-        <p><strong>2.</strong> Care e diferența dintre elemente block‑level și inline?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Block ocupă lățimea disponibilă și începe pe rând nou; inline ocupă doar cât conținutul și nu începe rând nou.</div>
-      </div>
-      <div class="question">
-        <p><strong>3.</strong> Ce rol au atributele <code>alt</code> pe imagini?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Descriu imaginea pentru cititoare de ecran și când fișierul nu se încarcă; util și pentru SEO.</div>
-      </div>
-      <div class="question">
-        <p><strong>4.</strong> Diferența dintre <code>id</code> și <code>class</code>?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden"><code>id</code> este unic pe pagină; <code>class</code> poate fi reutilizată pe mai multe elemente.</div>
-      </div>
-      <div class="question">
-        <p><strong>5.</strong> Ce fac atributele <code>defer</code> și <code>async</code> la scripturi?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden"><code>defer</code> execută după parsarea HTML în ordinea tagurilor; <code>async</code> execută imediat ce se încarcă, fără garanția ordinii.</div>
-      </div>
-      <div class="question">
-        <p><strong>6.</strong> Ce este accesibilitatea (a11y) în HTML?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Practicile care fac conținutul utilizabil pentru toți, incluzând persoane cu dizabilități (ex: etichete, structură semantică, contrast, focus).</div>
-      </div>
-      <div class="question">
-        <p><strong>7.</strong> Când folosești tabele vs CSS pentru layout?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Tabele doar pentru date tabulare; niciodată pentru layout. Layoutul se face cu CSS.</div>
-      </div>
-      <div class="question">
-        <p><strong>8.</strong> Ce este atributul <code>lang</code> pe <code>&lt;html&gt;</code> și de ce contează?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Indică limba documentului (ex: <code>ro</code>), ajutând cititoarele de ecran și motoarele de căutare.</div>
-      </div>
-      <div class="question">
-        <p><strong>9.</strong> Cum legi corect un <code>&lt;label&gt;</code> de un <code>&lt;input&gt;</code>?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Setezi <code>for="id-ul-inputului"</code> pe label și <code>id</code> identic pe input.</div>
-      </div>
-      <div class="question">
-        <p><strong>10.</strong> Ce este <code>&lt;meta name="viewport"&gt;</code> și de ce e important pe mobil?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Controlează scalarea pe dispozitive mobile; <code>width=device-width, initial-scale=1.0</code> asigură layout corect.</div>
-      </div>
-      <div class="question">
-        <p><strong>11.</strong> Ce diferență este între <code>title</code> și <code>meta description</code>?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden"><code>title</code> apare în tab și în rezultatele de căutare; <code>description</code> e rezumat folosit de motoarele de căutare.</div>
-      </div>
-      <div class="question">
-        <p><strong>12.</strong> Când folosești <code>&lt;strong&gt;</code> vs <code>&lt;b&gt;</code>?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden"><code>&lt;strong&gt;</code> are semnificație semantică (accentuează); <code>&lt;b&gt;</code> doar stil vizual fără semnificație.</div>
-      </div>
-      <div class="question">
-        <p><strong>13.</strong> Ce sunt atributele <code>data-*</code>?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Metadate personalizate atașate elementelor, accesibile în JS via <code>dataset</code>.</div>
-      </div>
-      <div class="question">
-        <p><strong>14.</strong> Cum inserezi corect un fișier CSS extern?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">În <code>&lt;head&gt;</code> cu <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</div>
-      </div>
-      <div class="question">
-        <p><strong>15.</strong> Ce este <code>ARIA</code> (la nivel de bază)?</p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer hidden">Atribute pentru a oferi informații suplimentare cititoarelor de ecran (ex: <code>role</code>, <code>aria-label</code>).</div>
-      </div>
-    </section>
-
-    <!-- PROIECT MIC CU 10+ TASKURI -->
-    <section class="project-section">
-      <h2>🧪 Mini‑proiect: „Pagina CV” (10+ taskuri)</h2>
-      <p>Obiectiv: creează o pagină CV single‑page folosind conceptele HTML învățate.</p>
-
-      <ol class="project-tasks">
-        <li>📄 Adaugă structura minimă HTML5 (doctype, <code>lang="ro"</code>, meta viewport, titlu).</li>
-        <li>🧭 Creează <code>&lt;header&gt;</code> cu nume + meniu (ancore către secțiuni: „Despre”, „Experiență”, „Educație”, „Proiecte”, „Contact”).</li>
-        <li>📝 Secțiunea „Despre” cu <code>h2</code> + 1‑2 paragrafe și o imagine cu <code>alt</code> bun.</li>
-        <li>🏷️ Folosește elemente semantice (<code>main</code>, <code>section</code>, <code>article</code>, <code>footer</code>).</li>
-        <li>📋 Creează o listă neordonată cu abilități (HTML, CSS, JS).</li>
-        <li>📊 Adaugă o secțiune cu un <code>table</code> (ex: tabel experiență: rol, companie, ani).</li>
-        <li>✉️ Creează un formular „Contact” (nume, email, mesaj) cu <code>label</code> corelate la <code>input</code>.</li>
-        <li>🎬 Inserează un clip video de prezentare (opțional) cu <code>&lt;video controls&gt;</code>.</li>
-        <li>🔗 Adaugă linkuri către profilurile tale (GitHub, LinkedIn) cu atribute <code>target="_blank"</code> + <code>rel="noopener"</code>.</li>
-        <li>🧩 Folosește <code>data-*</code> pe un buton (ex: <code>data-theme</code>) și citește‑l în JS (bonus).</li>
-        <li>🧪 Validează HTML cu W3C Validator și corectează eventualele erori.</li>
-        <li>🐙 Versiunează cu Git:
-          <pre><code>git init
+        <ol class="project-tasks">
+          <li>
+            📄 Adaugă structura minimă HTML5 (doctype, <code>lang="ro"</code>,
+            meta viewport, titlu).
+          </li>
+          <li>
+            🧭 Creează <code>&lt;header&gt;</code> cu nume + meniu (ancore către
+            secțiuni: „Despre”, „Experiență”, „Educație”, „Proiecte”,
+            „Contact”).
+          </li>
+          <li>
+            📝 Secțiunea „Despre” cu <code>h2</code> + 1-2 paragrafe și o
+            imagine cu <code>alt</code> bun.
+          </li>
+          <li>
+            🏷️ Folosește elemente semantice (<code>main</code>,
+            <code>section</code>, <code>article</code>, <code>footer</code>).
+          </li>
+          <li>📋 Creează o listă neordonată cu abilități (HTML, CSS, JS).</li>
+          <li>
+            📊 Adaugă o secțiune cu un <code>table</code> (ex: tabel experiență:
+            rol, companie, ani).
+          </li>
+          <li>
+            ✉️ Creează un formular „Contact” (nume, email, mesaj) cu
+            <code>label</code> corelate la <code>input</code>.
+          </li>
+          <li>
+            🎬 Inserează un clip video de prezentare (opțional) cu
+            <code>&lt;video controls&gt;</code>.
+          </li>
+          <li>
+            🔗 Adaugă linkuri către profilurile tale (GitHub, LinkedIn) cu
+            atribute <code>target="_blank"</code> + <code>rel="noopener"</code>.
+          </li>
+          <li>
+            🧩 Folosește <code>data-*</code> pe un buton (ex:
+            <code>data-theme</code>) și citește-l în JS (bonus).
+          </li>
+          <li>
+            🧪 Validează HTML cu W3C Validator și corectează eventualele erori.
+          </li>
+          <li>
+            🐙 Versiunează cu Git:
+            <pre><code>git init
 git add .
 git commit -m "feat: initialize CV page"
 git branch -M main
 git remote add origin &lt;repo-url&gt;
 git push -u origin main</code></pre>
-        </li>
-      </ol>
+          </li>
+        </ol>
 
-      <div class="info exercise">
-        <strong>Hint CSS:</strong> Refolosește clasele din acest template pentru carduri/sectiuni.
-      </div>
+        <div class="info exercise">
+          <strong>Hint CSS:</strong> Refolosește clasele din acest template
+          pentru carduri/sectiuni.
+        </div>
 
-      <div class="info note">
-        <strong>Bonus JS:</strong> Adaugă un mic script care schimbă tema sau ascunde/arată secțiunea „Proiecte” folosind un buton.
-      </div>
-    </section>
-  </main>
+        <div class="info note">
+          <strong>Bonus JS:</strong> Adaugă un mic script care schimbă tema sau
+          ascunde/arată secțiunea „Proiecte” folosind un buton.
+        </div>
+      </section>
+    </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 Frontend Learning Path — HTML Introduction</p>
-  </footer>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2025 Frontend Learning Path — HTML Introduction</p>
+    </footer>
 
-  <script src="app.js" defer></script>
-</body>
+    <script src="app.js" defer></script>
+  </body>
 </html>
