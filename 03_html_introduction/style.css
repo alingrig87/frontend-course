@@ -48,7 +48,7 @@ body {
   text-decoration: underline;
 }
 
-/* SIDEBAR */
+/* SIDEBAR (template original) */
 .sidebar {
   grid-area: sidebar;
   background: #fff;
@@ -199,14 +199,80 @@ code {
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
+/* === Sidebar fix (nav lecții) — fără conflicte === */
+.lesson-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: #20232a;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  border-right: 1px solid #333;
+  z-index: 1000;
+}
+
+.lesson-sidebar h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #61dafb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lesson-side-nav ul { list-style: none; }
+.lesson-side-nav li { margin: 0.5rem 0; }
+
+.lesson-side-nav a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #ddd;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.lesson-side-nav a:hover {
+  background-color: #2c2f36;
+  color: #61dafb;
+}
+
+.lesson-side-nav a.active {
+  background-color: #61dafb;
+  color: #20232a;
+  font-weight: 600;
+}
+
+/* Când folosim lesson-sidebar, colapsăm grila originală și ascundem .sidebar */
+body.lesson-has-sidebar {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'content'
+    'footer';
+}
+body.lesson-has-sidebar .sidebar { display: none; }
+
+/* Mută conținutul principal la dreapta pentru sidebar-ul fix */
+@media (min-width: 769px) {
+  main.content { margin-left: 250px; }
+}
+
+/* Mobile: sidebar devine deasupra conținutului */
 @media (max-width: 768px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'header'
-      'content'
-      'footer';
+  .lesson-sidebar {
+    position: relative;
+    width: 100%;
+    border-right: none;
   }
-  .sidebar { display: none; }
+  main.content { margin-left: 0; }
+}
+
+/* Scrollbar estetic (opțional) */
+.lesson-sidebar::-webkit-scrollbar { width: 8px; }
+.lesson-sidebar::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 10px;
 }

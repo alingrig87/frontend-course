@@ -21,119 +21,75 @@
     </header>
 
     <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <h2>Module</h2>
-      <ul class="modules">
-        <!-- TEORIE -->
-        <li class="mod teorie">
-          <a href="#teorie" class="mod-link" onclick="toggleSubtopics(event)">
-            <span class="badge">01</span> Teorie
-            <span class="toggle-icon">▼</span>
-          </a>
-          <ul class="subtopics collapsed">
-            <li><a href="#grid-basics">Grid Basics</a></li>
-            <li><a href="#tracks">Grid Tracks</a></li>
-            <li><a href="#alignment">Alignment</a></li>
-          </ul>
-        </li>
-
-        <!-- EXERCITII -->
-        <li class="mod exercitii">
-          <a
-            href="#exercitii"
-            class="mod-link"
-            onclick="toggleSubtopics(event)"
-          >
-            <span class="badge">02</span> Exerciții
-            <span class="toggle-icon">▼</span>
-          </a>
-          <ul class="subtopics collapsed">
-            <li><a href="#ex1">Exercițiul 1: 3 coloane egale</a></li>
-            <li>
-              <a href="#ex2"
-                >Exercițiul 2: 4 coloane, primul item ocupă 2 coloane</a
-              >
-            </li>
-            <li>
-              <a href="#ex3"
-                >Exercițiul 3: Responsiv auto-fit minmax(120px,1fr)</a
-              >
-            </li>
-            <li>
-              <a href="#ex4">Exercițiul 4: 2 rânduri cu înălțimi diferite</a>
-            </li>
-            <li>
-              <a href="#ex5"
-                >Exercițiul 5: Item-uri centrate vertical și orizontal</a
-              >
-            </li>
-            <li>
-              <a href="#ex6"
-                >Exercițiul 6: Item poziționat ultima coloană, primul rând</a
-              >
-            </li>
-            <li>
-              <a href="#ex7"
-                >Exercițiul 7: 3x3 grid, item central ocupă 2 rânduri</a
-              >
-            </li>
-            <li>
-              <a href="#ex8"
-                >Exercițiul 8: Template areas pentru header, main, footer</a
-              >
-            </li>
-            <li><a href="#ex9">Exercițiul 9: Auto-rows 80px, gap 12px</a></li>
-            <li>
-              <a href="#ex10"
-                >Exercițiul 10: Responsiv auto-fill minmax, gap 8px</a
-              >
-            </li>
-          </ul>
-        </li>
-
-        <!-- INTREBARI -->
-        <li class="mod interviu">
-          <a
-            href="#intrebari"
-            class="mod-link"
-            onclick="toggleSubtopics(event)"
-          >
-            <span class="badge">03</span> Întrebări
-            <span class="toggle-icon">▼</span>
-          </a>
-          <ul class="subtopics collapsed">
-            <li><a href="#q1">grid-template-columns</a></li>
-            <li><a href="#q2">auto-fit vs auto-fill</a></li>
-            <!-- adaugă aici alte întrebări dacă vrei -->
-          </ul>
-        </li>
-
-        <!-- TEST -->
-        <li class="mod test">
-          <a href="#test" class="mod-link" onclick="toggleSubtopics(event)">
-            <span class="badge">04</span> Test
-            <span class="toggle-icon">▼</span>
-          </a>
-          <ul class="subtopics collapsed">
-            <li><a href="#quiz1">Întrebarea 1</a></li>
-            <li><a href="#quiz2">Întrebarea 2</a></li>
-            <!-- adaugă întrebări suplimentare -->
-          </ul>
-        </li>
-
-        <!-- PROIECT -->
-        <li class="mod proiect">
-          <a href="#proiect" class="mod-link" onclick="toggleSubtopics(event)">
-            <span class="badge">05</span> Proiect
-            <span class="toggle-icon">▼</span>
-          </a>
-          <ul class="subtopics collapsed">
-            <li><a href="#layout">Structura Layout</a></li>
-            <li><a href="#areas">Grid Areas</a></li>
-          </ul>
-        </li>
+  <aside class="sidebar">
+  <h2>Module</h2>
+  <ul class="modules">
+    <!-- TEORIE -->
+    <li class="mod teorie">
+      <a href="#teorie" class="mod-link" onclick="toggleSidebarSubtopics(event)">
+        <span class="badge">01</span> Teorie
+        <span class="toggle-icon">▼</span>
+      </a>
+      <ul class="subtopics collapsed">
+        <li><a href="#grid-basics">Grid Basics</a></li>
+        <li><a href="#tracks">Grid Tracks</a></li>
+        <li><a href="#alignment">Alignment</a></li>
       </ul>
-    </aside>
+    </li>
+
+    <!-- EXERCITII -->
+    <li class="mod exercitii">
+      <a href="#exercitii" class="mod-link" onclick="toggleSidebarSubtopics(event)">
+        <span class="badge">02</span> Exerciții
+        <span class="toggle-icon">▼</span>
+      </a>
+      <ul class="subtopics collapsed">
+        <li><a href="#ex1">Exercițiul 1: 3 coloane egale</a></li>
+        <li><a href="#ex2">Exercițiul 2: 4 coloane, primul item ocupă 2 coloane</a></li>
+        <li><a href="#ex3">Exercițiul 3: Responsiv auto-fit minmax(120px,1fr)</a></li>
+        <!-- restul exercițiilor -->
+      </ul>
+    </li>
+
+    <!-- INTREBARI -->
+    <li class="mod interviu">
+      <a href="#intrebari" class="mod-link" onclick="toggleSidebarSubtopics(event)">
+        <span class="badge">03</span> Întrebări
+        <span class="toggle-icon">▼</span>
+      </a>
+      <ul class="subtopics collapsed">
+        <li><a href="#q1">grid-template-columns</a></li>
+        <li><a href="#q2">auto-fit vs auto-fill</a></li>
+      </ul>
+    </li>
+
+    <!-- TEST -->
+    <li class="mod test">
+      <a href="#test" class="mod-link" onclick="toggleSidebarSubtopics(event)">
+        <span class="badge">04</span> Test
+        <span class="toggle-icon">▼</span>
+      </a>
+      <ul class="subtopics collapsed">
+        <li><a href="#quiz1">Întrebarea 1</a></li>
+        <li><a href="#quiz2">Întrebarea 2</a></li>
+      </ul>
+    </li>
+
+    <!-- PROIECTE -->
+    <li class="mod proiect">
+      <a href="#proiecte" class="mod-link" onclick="toggleSidebarSubtopics(event)">
+        <span class="badge">05</span> Proiecte
+        <span class="toggle-icon">▼</span>
+      </a>
+      <ul class="subtopics collapsed">
+        <li><a href="#proiect1">Proiect 1 — Nivel Ușor</a></li>
+        <li><a href="#proiect2">Proiect 2 — Nivel Mediu</a></li>
+        <li><a href="#proiect3">Proiect 3 — Nivel Foarte greu</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
 
     <!-- CONTENT -->
     <main class="content">
