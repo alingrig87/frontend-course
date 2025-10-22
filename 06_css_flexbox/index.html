@@ -1,13 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CSS Flexbox — layout flexibil</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>CSS Flexbox — layout flexibil</h1>
-  <script src="app.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06. CSS Flexbox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="main-header">
+      <div class="logo">🎨 CSS Flexbox</div>
+      <nav class="nav">
+        <a href="#">Acasă</a>
+        <a href="#">Module</a>
+        <a href="#">Exerciții</a>
+        <a href="#">Resurse</a>
+      </nav>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL (Sidebar + Conținut) -->
+    <div class="container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2>Cuprins</h2>
+        <ul>
+          <li><a href="#" class="active">Ce este Flexbox</a></li>
+          <li><a href="#">display: flex</a></li>
+          <li><a href="#">flex-direction</a></li>
+          <li><a href="#">justify-content</a></li>
+          <li><a href="#">align-items</a></li>
+          <li><a href="#">flex-wrap</a></li>
+          <li><a href="#">align-content</a></li>
+          <li><a href="#">order & flex-grow</a></li>
+          <li><a href="#">Layout-uri complexe</a></li>
+          <li><a href="#">Workshop</a></li>
+          <li><a href="#">Tema: Navbar Responsive</a></li>
+        </ul>
+      </aside>
+
+      <!-- CONȚINUT -->
+      <main class="content">
+        <section class="intro">
+          <h1>Ce este Flexbox?</h1>
+          <p>
+            Flexbox (Flexible Box Layout) este un model modern de dispunere a
+            elementelor în CSS, conceput pentru a alinia și distribui spațiul în
+            interiorul unui container, indiferent de dimensiunea ecranului.
+          </p>
+        </section>
+
+        <section class="properties">
+          <h2>🔧 Proprietăți de bază Flexbox</h2>
+          <div class="flex-cards">
+            <div class="card"><strong>display:</strong> flex / inline-flex</div>
+            <div class="card">
+              <strong>flex-direction:</strong> row | column
+            </div>
+            <div class="card">
+              <strong>justify-content:</strong> center | space-between
+            </div>
+            <div class="card">
+              <strong>align-items:</strong> center | stretch
+            </div>
+            <div class="card"><strong>flex-wrap:</strong> nowrap | wrap</div>
+            <div class="card">
+              <strong>align-content:</strong> center | space-around
+            </div>
+            <div class="card">
+              <strong>order:</strong> schimbă ordinea elementelor
+            </div>
+            <div class="card">
+              <strong>flex-grow:</strong> extinde elementul proporțional
+            </div>
+          </div>
+        </section>
+
+        <section class="example">
+          <h2>🧩 Exemplu practic</h2>
+          <p>
+            Containerul de mai jos folosește <code>display: flex</code> și
+            <code>justify-content: space-between</code> pentru alinierea
+            elementelor:
+          </p>
+          <div class="flex-demo">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+          </div>
+        </section>
+
+        <section class="workshop">
+          <h2>🧠 Workshop: Card Layout</h2>
+          <p>
+            Creează un layout de carduri folosind <code>display: flex</code> și
+            <code>flex-wrap</code>.
+          </p>
+          <div class="card-layout">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+          </div>
+        </section>
+
+        <section class="theme">
+          <h2>📱 Tema: Responsive Navbar cu Flexbox</h2>
+          <p>
+            Construiește o bară de navigație care se adaptează la diferite
+            dimensiuni ale ecranului.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">© 2025 Curs Frontend - Lecția 06: Flexbox</footer>
+  </body>
 </html>

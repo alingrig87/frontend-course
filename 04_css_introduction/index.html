@@ -1,13 +1,217 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Introducere în CSS (tipuri de legare, selectori)</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Introducere în CSS (tipuri de legare, selectori)</h1>
-  <script src="app.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Introduction — Frontend Path</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Meniu lateral">
+      <h2>Module</h2>
+      <nav class="side-nav" aria-label="Navegare module">
+        <ul>
+          <li>
+            <a href="#intro" class="active"
+              ><span class="badge">01</span> CSS Introduction</a
+            >
+          </li>
+          <li>
+            <a href="#selectori"
+              ><span class="badge">02</span> Selectori & Specificitate</a
+            >
+          </li>
+          <li>
+            <a href="#box-model"><span class="badge">03</span> Box Model</a>
+          </li>
+          <li>
+            <a href="#unitati"
+              ><span class="badge">04</span> Unități & Dimensiuni</a
+            >
+          </li>
+          <li>
+            <a href="#layout"><span class="badge">05</span> Layout de bază</a>
+          </li>
+          <li>
+            <a href="#exercitii"><span class="badge">06</span> Exerciții</a>
+          </li>
+          <li>
+            <a href="#interviu"
+              ><span class="badge">07</span> Întrebări 1 interviu</a
+            >
+          </li>
+          <li>
+            <a href="#resurse"><span class="badge">08</span> Resurse</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- CONȚINUT PRINCIPAL -->
+    <main class="main-content" id="top">
+      <header>
+        <h1>CSS Introduction</h1>
+        <p>
+          Fundamentele limbajului de stilizare pentru web: de la selectori și
+          cascade la box model și layout.
+        </p>
+      </header>
+      <article id="intro">
+        <h2>Ce este CSS?</h2>
+        <p>
+          <strong>CSS (Cascading Style Sheets)</strong> descrie prezentarea
+          documentelor HTML. Controlează culori, fonturi, spațieri, poziționări
+          și răspunsul la diferite dimensiuni de ecran.
+        </p>
+        <pre><code>/* CSS în fișier separat */
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+/* CSS în &lt;style&gt; */
+&lt;style&gt; h1 { color: #20232a; } &lt;/style&gt;
+/* CSS inline (de evitat) */
+&lt;h1 style="color:#20232a"&gt;Titlu&lt;/h1&gt;
+</code></pre>
+        <div class="note">
+          Principiul de bază: separă stilul de structură (HTML) pentru claritate
+          și mentenanță.
+        </div>
+      </article>
+      <article id="selectori">
+        <h2>Selectori, Specificitate &amp; Cascadă</h2>
+        <p>
+          CSS aplică stiluri în funcție de <em>selectori</em>, iar conflictele
+          se rezolvă prin <em>specificitate</em> și <em>ordinea în cascadă</em>.
+        </p>
+        <pre><code>/* Selectori de element, clasă, ID */
+h1 { font-size: 2rem; }
+.card { border-radius: 8px; }
+#highlight { background: #61dafb; }
+/* Combinatori */
+nav a { text-decoration: none; }
+.list &gt; li { margin-bottom: .5rem; }
+/* Pseudoclase &amp; pseudoelemente */
+button:hover { transform: translateY(-1px); }
+p::first-line { font-weight: 600; }
+2
+/* Specificitate (ID &gt; clasă &gt; element) */
+/* Evită !important; folosește-l doar ca ultimă soluție */
+</code></pre>
+        <div class="tip">
+          Folosește instrumente precum DevTools pentru a inspecta ce regulă
+          câștigă și de ce.
+        </div>
+      </article>
+      <article id="box-model">
+        <h2>Box Model</h2>
+        <p>
+          Fiecare element este o cutie compusă din: <strong>content</strong>,
+          <strong>padding</strong>, <strong>border</strong>,
+          <strong>margin</strong>.
+        </p>
+        <pre><code>*, *::before, *::after { box-sizing: border-box; }
+.card {
+ padding: 1rem;
+ border: 1px solid #ddd;
+ margin: 1rem 0;
+}
+</code></pre>
+        <div
+          class="image-placeholder"
+          role="img"
+          aria-label="diagramă box-model"
+        >
+          Diagramă Box Model
+        </div>
+      </article>
+      <article id="unitati">
+        <h2>Unități &amp; Dimensiuni</h2>
+        <ul class="bullets">
+          <li><strong>px</strong> — pixeli; absolut.</li>
+          <li>
+            <strong>em</strong> — relativ la font-size-ul elementului părinte.
+          </li>
+          <li>
+            <strong>rem</strong> — relativ la font-size-ul rădăcinii (html).
+          </li>
+          <li><strong>%</strong> — relativ la dimensiunea containerului.</li>
+          <li><strong>vw/vh</strong> — procent din viewport.</li>
+          <li>
+            <strong>clamp(min, preferat, max)</strong> — dimensiuni fluide cu
+            limite.
+          </li>
+        </ul>
+        <pre><code>:root { --space: clamp(.75rem, 1vw + .5rem, 1.25rem); }
+h1 { font-size: clamp(1.5rem, 2vw + 1rem, 3rem); }
+</code></pre>
+      </article>
+      <article id="layout">
+        <h2>Layout de bază: Flexbox &amp; Grid</h2>
+        <pre><code>/* Flexbox */
+.container { display: flex; gap: 1rem; align-items: center; justify-content:
+space-between; }
+/* CSS Grid */
+3
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,
+1fr)); gap: 1rem; }
+</code></pre>
+        <div class="image-placeholder">Exemplu layout responsiv</div>
+      </article>
+      <section id="exercitii">
+        <h2>Exerciții practice</h2>
+        <div class="exercise-card">
+          <h3>1) Card de profil cu Box Model</h3>
+          <p>
+            Creează un card cu avatar circular, nume și buton. Respectă
+            spațierile folosind <code>box-sizing: border-box</code>.
+          </p>
+        </div>
+        <div class="exercise-card">
+          <h3>2) Navbar cu Flexbox</h3>
+          <p>
+            Aranjează elementele pe un singur rând și spațiază-le uniform cu
+            <code>justify-content</code>.
+          </p>
+        </div>
+      </section>
+      <section id="interviu" class="interview">
+        <h2>Întrebări de interviu</h2>
+        <div class="question">
+          <p>
+            <strong>1. Ce este specificitatea și cum se calculează?</strong>
+          </p>
+          <button class="eye-btn">Vezi răspunsul</button>
+          <div class="answer">
+            Fiecare selector are un scor: ID &gt; clasă/atribut/ pseudoclasă
+            &gt; element/pseudoelement. CSS aplică regula cu scorul mai mare; la
+            egalitate, contează ordinea în fișier (ultimul câștigă).
+          </div>
+        </div>
+        <div class="question">
+          <p>
+            <strong
+              >2. Diferența între <code>em</code> și <code>rem</code>?</strong
+            >
+          </p>
+          <button class="eye-btn">Vezi răspunsul</button>
+          <div class="answer">
+            <code>em</code> este relativ la font-size-ul elementului părinte;
+            <code>rem</code> este relativ la <code>html</code>.
+            <code>rem</code> e mai previzibil pentru scale tipografice.
+          </div>
+        </div>
+      </section>
+      <section id="resurse">
+        <h2>Resurse utile</h2>
+        <ul>
+          <li>MDN: CSS — proprietăți, selectori, tutoriale.</li>
+          <li>freeCodeCamp — cursuri video CSS.</li>
+          <li>CodePen — experimente rapide de stilizare.</li>
+        </ul>
+      </section>
+      4
+      <footer>
+        <p>© 2025 Frontend Learning Path — CSS Introduction</p>
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -1,13 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Working with APIs (REST, JSON, fetch)</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Working with APIs (REST, JSON, fetch)</h1>
-  <script src="app.js" defer></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lecție: Working with APIs</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Sidebar fix -->
+		<aside class="sidebar">
+			<h2>Capitol 19: Working with APIs</h2>
+			<nav class="side-nav">
+				<ul>
+					<li><a href="#" class="active">Ce este un API</a></li>
+					<li><a href="#">JSON basics</a></li>
+					<li><a href="#">Fetch API avansat</a></li>
+					<li><a href="#">Request methods (GET, POST, PUT, DELETE)</a></li>
+					<li><a href="#">Headers și Body</a></li>
+					<li><a href="#">API Key & autentificare</a></li>
+					<li><a href="#">Workshop: API de produse</a></li>
+					<li><a href="#">Workshop: API meteo</a></li>
+					<li><a href="#">Tema: aplicație completă cu API</a></li>
+				</ul>
+			</nav>
+		</aside>
+
+		<!-- Conținut principal -->
+		<main class="main-content">
+			<header>
+				<h1>Working with APIs</h1>
+				<p>În acest capitol vom explora cum funcționează API-urile și cum pot fi folosite în aplicațiile web moderne.</p>
+			</header>
+
+			<article>
+				<h2>Ce este un API?</h2>
+				<p>
+					Un <strong>API (Application Programming Interface)</strong> este o interfață care permite aplicațiilor
+					să comunice între ele. Practic, un API oferă un set de reguli și endpoint-uri prin care o aplicație
+					poate cere sau trimite date către un server.
+				</p>
+
+				<pre>
+GET https://api.exemplu.com/products
+				</pre>
+
+				<p>
+					Răspunsul este, de obicei, în format <code>JSON</code>, un format text ușor de citit și prelucrat în JavaScript.
+				</p>
+			</article>
+		</main>
+	</body>
 </html>
