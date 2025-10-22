@@ -1,480 +1,135 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ES6 — Tutorial (RO) — Extins</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!--
-    Fisier: index.html
-    Scop: Pagina tutorial ES6 in limba romana
-    Comentarii Git: vezi README.md pentru comenzi git recomandate
-  -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecție: Modern JS (ES6+)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Sidebar fix -->
+    <aside class="sidebar">
+      <h2>JavaScript - Lecții</h2>
+      <nav class="side-nav">
+        <ul>
+          <li><a href="#" class="active">Modern JS (ES6+)</a></li>
+          <li><a href="#">Variabile & Scope</a></li>
+          <li><a href="#">Funcții</a></li>
+          <li><a href="#">Obiecte & Clase</a></li>
+          <li><a href="#">DOM & Evenimente</a></li>
+          <li><a href="#">API & Fetch</a></li>
+          <li><a href="#">Proiecte Practice</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="logo">🌐 Frontend Path — ES6</div>
-    <nav class="nav">
-      <a href="#teorie">Teorie</a>
-      <a href="#exemple">Exemple</a>
-      <a href="#exercitii">Exerciții</a>
-      <a href="#interviu">Întrebări</a>
-      <a href="#proiect">Proiect</a>
-      <a href="#resurse">Resurse</a>
-    </nav>
-  </header>
+    <!-- Conținut principal -->
+    <main class="main-content">
+      <header>
+        <h1>Modern JavaScript (ES6+)</h1>
+      </header>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar" aria-label="Meniu module">
-    <h2>Module</h2>
-    <ul>
-      <li><span class="badge js">ES6</span> ES6 - Bazele</li>
-      <li><span class="badge js">02</span> Arrow Functions</li>
-      <li><span class="badge js">03</span> Destructuring</li>
-      <li><span class="badge js">04</span> Modules</li>
-      <li><span class="badge final">Proiect</span> Micro-proiect</li>
-    </ul>
-  </aside>
+      <article>
+        <section>
+          <h2>1. let & const</h2>
+          <p>În ES6, folosim <code>let</code> și <code>const</code> în loc de <code>var</code>:</p>
+          <pre><code>let nume = "Ana";
+const PI = 3.14;
+nume = "Maria"; // OK
+PI = 3.1415; // ❌ Eroare - const nu poate fi reasignat</code></pre>
+        </section>
 
-  <!-- CONTINUT PRINCIPAL -->
-  <main class="content">
-    <section id="hero" class="hero">
-      <h1>ES6 — Tutorial în limba română</h1>
-      <p>Acest tutorial conține: parte teoretică, exemple cu butoane "Arată/Ascunde soluția", exerciții practice, întrebări de interviu și un mini-proiect cu minim 10 taskuri.</p>
-    </section>
+        <section>
+          <h2>2. Template literals</h2>
+          <p>Permite interpolarea ușoară a valorilor:</p>
+          <pre><code>const nume = "Ion";
+console.log(`Salut, ${nume}!`); // Salut, Ion!</code></pre>
+        </section>
 
-    <!-- TEORIE -->
-    <section id="teorie" class="cards-section">
-      <h2>📘 Partea teoretică — Concepte ES6</h2>
+        <section>
+          <h2>3. Arrow functions</h2>
+          <pre><code>const suma = (a, b) => a + b;
+console.log(suma(2, 3)); // 5</code></pre>
+        </section>
 
-      <div class="card">
-        <h3>1. <span class="icon">🔤</span> let vs const vs var</h3>
-        <pre><code>// Scop și reatribuire
-var x = 1; // scope funcție, poate fi redeclarat în același scope
-let y = 2; // scope bloc, poate fi reatribuit, NU redeclarat în același block
-const z = 3; // scope bloc, NU poate fi reatribuit (dar proprietățile obiectelor pot fi modificate)
-</code></pre>
-      </div>
+        <section>
+          <h2>4. Destructuring</h2>
+          <pre><code>const persoana = { nume: "Andrei", varsta: 25 };
+const { nume, varsta } = persoana;
+console.log(nume, varsta);</code></pre>
+        </section>
 
-      <div class="card">
-        <h3>2. <span class="icon">⚡</span> Arrow functions</h3>
-        <pre><code>// Sintaxă scurtă, lexical this
-const add = (a, b) => a + b;
+        <section>
+          <h2>5. Spread & Rest</h2>
+          <pre><code>const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2); // [1,2,3,4,5]
 
-const obj = {
-  value: 10,
-  inc: () => {
-    // nu folosi arrow dacă ai nevoie de this din obiect
-  }
-};
-</code></pre>
-      </div>
+const suma = (...numere) => numere.reduce((a,b) => a+b, 0);
+console.log(suma(1,2,3)); // 6</code></pre>
+        </section>
 
-      <div class="card">
-        <h3>3. <span class="icon">🧩</span> Destructuring</h3>
-        <pre><code>// Array
-const [a, b] = [1, 2];
+        <section>
+          <h2>6. Default parameters</h2>
+          <pre><code>function salut(nume = "Utilizator") {
+  console.log(`Salut, ${nume}!`);
+}
+salut(); // Salut, Utilizator!</code></pre>
+        </section>
 
-// Object
-const {name, age} = {name: 'Ana', age: 28};
-</code></pre>
-      </div>
+        <section>
+          <h2>7. Array methods: map, filter, reduce</h2>
+          <pre><code>const numere = [1, 2, 3, 4, 5];
 
-      <div class="card">
-        <h3>4. <span class="icon">📦</span> Template literals</h3>
-        <pre><code>const name = 'Ion';
-const text = `Salut, ${name}!`; // interpolare
-</code></pre>
-      </div>
+const dublate = numere.map(n => n * 2);
+const pare = numere.filter(n => n % 2 === 0);
+const suma = numere.reduce((a, b) => a + b, 0);
 
-      <div class="card">
-        <h3>5. <span class="icon">🔗</span> Promises</h3>
-        <pre><code>const p = new Promise((resolve, reject) => {
-  setTimeout(() => resolve('gata'), 500);
+console.log(dublate, pare, suma);</code></pre>
+        </section>
+
+        <section>
+          <h2>8. Module system (import/export)</h2>
+          <pre><code>// math.js
+export const aduna = (a, b) => a + b;
+
+// main.js
+import { aduna } from './math.js';
+console.log(aduna(2, 3));</code></pre>
+        </section>
+
+        <section>
+          <h2>9. Promises</h2>
+          <pre><code>const promisiune = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Date primite!"), 1000);
 });
 
-p.then(res => console.log(res)).catch(err => console.error(err));
-</code></pre>
-      </div>
+promisiune.then(msg => console.log(msg));</code></pre>
+        </section>
 
-      <div class="card">
-        <h3>6. <span class="icon">📚</span> Modules (import / export)</h3>
-        <pre><code>// export.js
-export const pi = 3.14;
-
-// import.js
-import { pi } from './export.js';
-</code></pre>
-      </div>
-
-    </section>
-
-    <!-- EXEMPLE CU SHOW/HIDE -->
-    <section id="exemple" class="exercise-section">
-      <h2>🧠 Exemple — fiecare exemplu are "Arată soluția"</h2>
-
-      <!-- Exemplu 1 -->
-      <div class="exercise-card">
-        <h3>Exemplu 1: let/const scope</h3>
-        <p>Observați comportamentul în consolă.</p>
-        <pre><code id="code-ex1">// Exemplu 1: let/const scope
-function testScope() {
-  if (true) {
-    var a = 'var';
-    let b = 'let';
-    const c = 'const';
-  }
-  console.log(a); // 'var'
-  // console.log(b); // ReferenceError
-  // console.log(c); // ReferenceError
+        <section>
+          <h2>10. Async/Await</h2>
+          <pre><code>async function preiaDate() {
+  const raspuns = await fetch("https://jsonplaceholder.typicode.com/users");
+  const date = await raspuns.json();
+  console.log(date);
 }
-</code></pre>
-        <button class="toggle-btn" data-target="sol-ex1">👁️ Arată/Ascunde soluția</button>
-        <div id="sol-ex1" class="answer hidden">
-          <pre><code>// Soluție: rulare în consolă confirmă că `a` este vizibil în afara block-ului,
-// iar `b` si `c` nu (scope bloc).
-</code></pre>
-        </div>
-      </div>
+preiaDate();</code></pre>
+        </section>
 
-      <!-- Exemplu 2 -->
-      <div class="exercise-card">
-        <h3>Exemplu 2: Arrow functions și this</h3>
-        <p>Diferența între funcție normală și arrow function în contextul <code>this</code>.</p>
-        <pre><code id="code-ex2">// Exemplu 2
-const person = {
-  age: 10,
-  grow1: function() { this.age++; }, // folosește this corect
-  grow2: () => { this.age++; } // this nu este legat la obiect
-};
-</code></pre>
-        <button class="toggle-btn" data-target="sol-ex2">👁️ Arată/Ascunde soluția</button>
-        <div id="sol-ex2" class="answer hidden">
-          <pre><code>// Soluție: grow1 va modifica person.age, grow2 nu, deoarece arrow nu are this lexical
-</code></pre>
-        </div>
-      </div>
+        <section>
+          <h2>Workshop: Manipulare date JSON</h2>
+          <p>Exemplu de prelucrare date JSON cu metode ES6:</p>
+          <pre><code>const utilizatori = [
+  { nume: "Ana", varsta: 23 },
+  { nume: "Mihai", varsta: 30 },
+  { nume: "Ioana", varsta: 27 },
+];
 
-      <!-- Exemplu 3 -->
-      <div class="exercise-card">
-        <h3>Exemplu 3: Destructuring cu valori implicite</h3>
-        <pre><code id="code-ex3">// Exemplu 3
-const options = {timeout: 1000};
-const {timeout = 500, verbose = false} = options;
-console.log(timeout, verbose); // 1000, false
-</code></pre>
-        <button class="toggle-btn" data-target="sol-ex3">👁️ Arată/Ascunde soluția</button>
-        <div id="sol-ex3" class="answer hidden">
-          <pre><code>// Soluție: destructuring permite setarea de valori implicite pentru proprietăți lipsă
-</code></pre>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- EXERCITII PRACTICE -->
-    <section id="exercitii" class="exercise-section">
-      <h2>🛠️ Exerciții practice</h2>
-
-      <div class="exercise-card">
-        <h3>Exercițiu A — Transformă funcțiile în arrow</h3>
-        <p>Transformă funcțiile de mai jos în arrow functions, păstrând funcționalitatea.</p>
-        <pre><code id="code-exA">// Exemplu:
-function multiply(a, b) {
-  return a * b;
-}
-</code></pre>
-        <button class="toggle-btn" data-target="sol-exA">👁️ Arată/Ascunde soluția</button>
-        <div id="sol-exA" class="answer hidden">
-          <pre><code>// Soluție:
-const multiply = (a, b) => a * b;
-</code></pre>
-        </div>
-      </div>
-
-      <div class="exercise-card">
-        <h3>Exercițiu B — Folosește Promise</h3>
-        <p>Scrie o funcție care returnează o Promise care rezolvă după 1s cu textul "gata".</p>
-        <button class="toggle-btn" data-target="sol-exB">👁️ Arată/Ascunde soluția</button>
-        <div id="sol-exB" class="answer hidden">
-          <pre><code>// Soluție:
-const wait = () => new Promise(res => setTimeout(() => res('gata'), 1000));
-</code></pre>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- INTREBARI INTERVIU -->
-    <section id="interviu" class="interview-section">
-      <h2>💬 Întrebări de interviu — ES6 (cât mai multe)</h2>
-
-      <div class="question-list">
-        <!-- Vom pune multe întrebări; fiecare are buton de show/hide -->
-
-      <div class="question">
-        <p><strong>1. Ce diferență există între var, let și const?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-0">👁️ Vezi răspunsul</button>
-        <div id="ans-static-0" class="answer hidden">var are scope de funcție; let și const au scope de bloc; const nu permite reatribuire.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>2. Ce sunt arrow functions și când NU ar trebui folosite?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-1">👁️ Vezi răspunsul</button>
-        <div id="ans-static-1" class="answer hidden">Sintaxă scurtă; nu au propriul this, nu pot fi folosite ca constructori.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>3. Ce este destructuring și cum se folosește cu valori implicite?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-2">👁️ Vezi răspunsul</button>
-        <div id="ans-static-2" class="answer hidden">Extrage valori din array/obj în variabile; poți defini valori implicite în destructuring.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>4. Ce sunt template literals?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-3">👁️ Vezi răspunsul</button>
-        <div id="ans-static-3" class="answer hidden">Șiruri delimitate cu backticks (`) care permit interpolare ${} și multiple linii.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>5. Ce este o Promise?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-4">👁️ Vezi răspunsul</button>
-        <div id="ans-static-4" class="answer hidden">Obiect care reprezintă o operațiune asincronă ce poate fi rezolvată sau respinsă.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>6. Care este diferența între then/catch și async/await?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-5">👁️ Vezi răspunsul</button>
-        <div id="ans-static-5" class="answer hidden">async/await oferă sintaxă mai clară; se bazează pe Promises.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>7. Ce sunt modulele ES6 (import/export)?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-6">👁️ Vezi răspunsul</button>
-        <div id="ans-static-6" class="answer hidden">Mecanism nativ pentru a împărți cod JS în fișiere reutilizabile.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>8. Ce înseamnă hoisting?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-7">👁️ Vezi răspunsul</button>
-        <div id="ans-static-7" class="answer hidden">Deplasarea declarațiilor de var și funcții în vârful scope-ului la execuție; let/const nu sunt accesibile înainte de declarație.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>9. Ce este rest și spread operator?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-8">👁️ Vezi răspunsul</button>
-        <div id="ans-static-8" class="answer hidden">... folosit pentru a agrega sau extinde elemente (ex: [...arr], function(...args)).</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>10. Cum clonezi un obiect superficial în ES6?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-9">👁️ Vezi răspunsul</button>
-        <div id="ans-static-9" class="answer hidden">Folosește spread: const clone = {...obj};</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>11. Ce sunt simbolurile (Symbol)?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-10">👁️ Vezi răspunsul</button>
-        <div id="ans-static-10" class="answer hidden">Primitive unice, utile pentru chei non-colizionabile în obiecte.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>12. Ce sunt template tagged functions?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-11">👁️ Vezi răspunsul</button>
-        <div id="ans-static-11" class="answer hidden">Funcții care prelucrează template literals înainte de a returna un string.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>13. Ce sunt generator functions?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-12">👁️ Vezi răspunsul</button>
-        <div id="ans-static-12" class="answer hidden">Funcții cu asterisk (function*) care pot yield-ui valori și pot fi iterate.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>14. Ce este Promise.all și când se folosește?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-13">👁️ Vezi răspunsul</button>
-        <div id="ans-static-13" class="answer hidden">Rulează mai multe Promises în paralel; se rezolvă când toate rezolvă.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>15. Cum tratezi erori cu async/await?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-14">👁️ Vezi răspunsul</button>
-        <div id="ans-static-14" class="answer hidden">Folosești try/catch în jurul await-urilor.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>16. Ce este optional chaining (?.)?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-15">👁️ Vezi răspunsul</button>
-        <div id="ans-static-15" class="answer hidden">Permite accesul sigur la proprietăți nested fără a arunca eroare.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>17. Ce este nullish coalescing (??)?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-16">👁️ Vezi răspunsul</button>
-        <div id="ans-static-16" class="answer hidden">Operator care alege valoarea din dreapta doar dacă stânga este null sau undefined.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>18. Care sunt avantajele folosirii const pentru obiecte?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-17">👁️ Vezi răspunsul</button>
-        <div id="ans-static-17" class="answer hidden">Previne reatribuirea variabilei; nu împiedică modificarea proprietăților.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>19. Ce este dynamic import?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-18">👁️ Vezi răspunsul</button>
-        <div id="ans-static-18" class="answer hidden">import() returnează o Promise și permite încărcare lazy a modulelor.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>20. Cum funcționează import/export default vs named?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-19">👁️ Vezi răspunsul</button>
-        <div id="ans-static-19" class="answer hidden">Default export permite import fără acolade; named require acolade cu nume exact.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>21. Ce sunt template strings multiliniar?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-20">👁️ Vezi răspunsul</button>
-        <div id="ans-static-20" class="answer hidden">Backticks permit linii noi direct în string.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>22. Care e diferența între shallow copy și deep copy?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-21">👁️ Vezi răspunsul</button>
-        <div id="ans-static-21" class="answer hidden">Shallow copy copiază referințe pentru obiectele nested; deep copy creează copii independente.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>23. Ce este class în ES6 și diferența față de funcțiile constructor?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-22">👁️ Vezi răspunsul</button>
-        <div id="ans-static-22" class="answer hidden">class este sintactic sugar peste prototype-based inheritance; se comportă ca funcție constructor.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>24. Ce sunt property shorthand și method shorthand în obiecte?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-23">👁️ Vezi răspunsul</button>
-        <div id="ans-static-23" class="answer hidden">Syntactic sugar pentru a scrie {x} în loc de {x: x} și metode scurte.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>25. Ce este computed property names?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-24">👁️ Vezi răspunsul</button>
-        <div id="ans-static-24" class="answer hidden">Permite definirea cheilor dinamice în obiecte: {[expr]: value}.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>26. Cum folosești Map și Set în ES6?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-25">👁️ Vezi răspunsul</button>
-        <div id="ans-static-25" class="answer hidden">Colecții care permit chei de orice tip (Map) și valori unice (Set).</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>27. Ce este for...of vs for...in?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-26">👁️ Vezi răspunsul</button>
-        <div id="ans-static-26" class="answer hidden">for...of iterează valori iterabile (array); for...in iterează chei enumerate.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>28. Cum funcționează Default Parameters?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-27">👁️ Vezi răspunsul</button>
-        <div id="ans-static-27" class="answer hidden">Poți seta valori implicite în definiția funcției: fn(a=1){...}.</div>
-      </div>
-    
-      <div class="question">
-        <p><strong>29. Ce înseamnă tail call optimization?</strong></p>
-        <button class="eye-btn" data-ans-static="ans-static-28">👁️ Vezi răspunsul</button>
-        <div id="ans-static-28" class="answer hidden">Optimizare pentru apeluri recursive în poziție finală (nu suportată uniform).</div>
-      </div>
-    
-    </div>
-
-    </section>
-
-    <!-- PROIECT MIC -->
-    <section id="proiect" class="cards-section">
-      <h2>🧩 Mini-proiect — 10 taskuri pentru practică</h2>
-      <p>Scop: consolidează conceptele ES6 prezentate mai sus. Folosește repository Git, commit mic, branch-uri.</p>
-      <ol class="project-tasks">
-        <li>
-          <span>1. Inițializează repo și adaugă README</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>2. Creează pagină index.html cu structură de bază</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>3. Folosește let/const corect în fișierul app.js</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>4. Scrie 3 arrow functions (ex: sum, map callback, filter callback)</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>5. Folosește destructuring în minim 2 locuri</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>6. Adaugă un modul (export/import) — split JS în două fișiere</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>7. Implementare Promise simplă și consum cu async/await</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>8. Adaugă un mic test de integrare manual (deschide în browser și verifică)</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>9. Creează o pagină cu listă generată dintr-un Array folosind map() și template literals</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>10. Folosește Map/Set într-un exemplu practic (de ex. elimină duplicate)</span>
-          <input type="checkbox" />
-        </li>
-        <li>
-          <span>11. BONUS: Implementare dynamic import pentru un modul opțional</span>
-          <input type="checkbox" />
-        </li>
-      </ol>
-
-      <p>La final: commit, push și deschide pull request (dacă folosești Github).</p>
-    </section>
-
-    <!-- RESURSE -->
-    <section id="resurse" class="resources">
-      <h2>🔗 Resurse utile</h2>
-      <ul>
-        <li>📘 MDN — <a href="https://developer.mozilla.org/ro/docs/Web/JavaScript" target="_blank" rel="noopener">MDN Web Docs (JS)</a></li>
-        <li>🎥 Tutoriale — caută "ES6 tutorial" pe YouTube (FreeCodeCamp, Academind)</li>
-        <li>📦 Module bundlers — webpack / vite (opțional pentru proiect)</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 Frontend Learning Path — ES6 Tutorial (RO)</p>
-  </footer>
-
-  <script src="app.js"></script>
-  <script>
-    // fallback JS pentru butoanele statice de la întrebări, în cazul în care app.js nu a rulat imediat
-    document.addEventListener('click', function(e) {
-      if (e.target.matches('[data-ans-static]')) {
-        const id = e.target.getAttribute('data-ans-static');
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.classList.toggle('hidden');
-        e.target.textContent = el.classList.contains('hidden') ? '👁️ Vezi răspunsul' : '🙈 Ascunde';
-      }
-    });
-  </script>
-</body>
+const peste25 = utilizatori.filter(u => u.varsta > 25);
+console.log(peste25);</code></pre>
+        </section>
+      </article>
+    </main>
+  </body>
 </html>
