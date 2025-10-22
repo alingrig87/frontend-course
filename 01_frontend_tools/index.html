@@ -1,13 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Front end developer tools</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>01. Frontend Tools - Curs Front-End</title>
+	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Front end developer tools</h1>
-  <script src="app.js" defer></script>
+	<!-- Sidebar fix -->
+	<aside class="sidebar">
+		<h2>01. Frontend Tools</h2>
+		<nav class="side-nav">
+			<ul>
+				<li><a href="#" class="active">Ce este Frontend Development</a></li>
+				<li><a href="#">Instalarea Git & Git Bash</a></li>
+				<li><a href="#">Configurarea VS Code</a></li>
+				<li><a href="#">Instalarea Node.js & npm</a></li>
+				<li><a href="#">Utilizarea terminalului (CLI)</a></li>
+				<li><a href="#">Comenzi Git esențiale</a></li>
+				<li><a href="#">Crearea primului repository</a></li>
+				<li><a href="#">Folosirea GitHub</a></li>
+				<li><a href="#">Structura unui proiect frontend</a></li>
+				<li><a href="#">Versionare & colaborare cu Git</a></li>
+				<li><a href="#">Workflow profesional (branching, pull requests)</a></li>
+			</ul>
+		</nav>
+	</aside>
+
+	<!-- Conținut principal -->
+	<main class="main-content">
+		<header>
+			<h1>Ce este Frontend Development</h1>
+		</header>
+
+		<article>
+			<p>
+				Frontend development reprezintă partea vizibilă a unui website — tot ceea ce utilizatorul
+				vede și cu ce interacționează direct în browser. Un frontend developer folosește tehnologii
+				ca <strong>HTML</strong>, <strong>CSS</strong> și <strong>JavaScript</strong> pentru a crea
+				interfețe moderne, interactive și responsive.
+			</p>
+
+			<p>
+				Un proiect frontend tipic se bazează pe un mediu de dezvoltare local cu instrumente precum:
+				<ul>
+					<li><strong>Git</strong> — pentru versionare;</li>
+					<li><strong>VS Code</strong> — editor de cod;</li>
+					<li><strong>Node.js & npm</strong> — pentru gestionarea pachetelor și rularea scripturilor;</li>
+					<li><strong>CLI</strong> — interfața de comandă pentru automatizări și execuții rapide.</li>
+				</ul>
+			</p>
+
+			<p>
+				În această secțiune, vei învăța cum să configurezi mediul de lucru complet pentru a putea
+				dezvolta proiecte frontend moderne.
+			</p>
+
+			<pre>
+# Exemplu: verificare versiune Node.js și npm
+node -v
+npm -v
+
+# Inițializare proiect nou
+npm init -y
+			</pre>
+
+			<p>
+				Pe măsură ce avansezi, vei folosi GitHub pentru a publica proiectele tale și pentru a colabora cu alți
+				dezvoltatori folosind un flux profesional bazat pe <code>branching</code> și <code>pull requests</code>.
+			</p>
+		</article>
+	</main>
 </body>
 </html>
