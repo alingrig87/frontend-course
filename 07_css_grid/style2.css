@@ -1,0 +1,446 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f8f9fb;
+    color: #333;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+    min-height: 100vh;
+}
+
+/* HEADER */
+.main-header {
+    grid-area: header;
+    background: #4b3f72;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.main-header .logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.nav a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* SIDEBAR */
+/* Sidebar container */
+.sidebar {
+    width: 250px;
+    background: #1e293b;
+    /* albastru închis */
+    color: #fff;
+    font-family: "Verdana", sans-serif;
+    padding: 1rem;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+    position: fixed;
+}
+
+/* Sidebar title */
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #38bdf8;
+    /* albastru deschis */
+}
+
+/* Lista de module */
+.sidebar .modules {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Fiecare modul */
+.sidebar .modules .mod {
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Link modul */
+.sidebar .modules .mod-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background: #334155;
+    /* gri-albastru */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+/* Hover */
+.sidebar .modules .mod-link:hover {
+    background: #3b82f6;
+    /* albastru vibrant */
+}
+
+/* Active / deschis */
+.sidebar .modules .mod-link.active {
+    background: #2563eb;
+    /* albastru închis */
+}
+
+/* Badge (numar) */
+.sidebar .badge {
+    background: #facc15;
+    /* galben */
+    color: #1f2937;
+    /* text inchis */
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+/* Săgeata */
+.toggle-icon {
+    transition: transform 0.3s;
+}
+
+/* Rotire când deschis */
+.subtopics:not(.collapsed)+.toggle-icon,
+.mod-link.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Subtopics list */
+.subtopics {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+    transition: max-height 0.3s ease;
+}
+
+/* Subtopics hidden */
+.subtopics.collapsed {
+    display: none;
+}
+
+/* Link subtopic */
+.subtopics li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #cbd5e1;
+    /* gri deschis */
+    text-decoration: none;
+    font-weight: normal;
+    border-radius: 0.3rem;
+    transition: background 0.2s;
+}
+
+.subtopics li a:hover {
+    background: black;
+    color: #fff;
+}
+
+/* Scroll styling */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* Badge colors & module colors */
+.mod.teorie>.mod-link,
+.mod.teorie>.mod-link .badge {
+    background-color: #1976d2;
+    /* albastru */
+    color: #fff;
+}
+
+.mod.exercitii>.mod-link,
+.mod.exercitii>.mod-link .badge {
+    background-color: #388e3c;
+    /* verde */
+    color: #fff;
+}
+
+.mod.interviu>.mod-link,
+.mod.interviu>.mod-link .badge {
+    background-color: #ef6c00;
+    /* portocaliu */
+    color: #fff;
+}
+
+.mod.test>.mod-link,
+.mod.test>.mod-link .badge {
+    background-color: #d32f2f;
+    /* rosu */
+    color: #fff;
+}
+
+.mod.proiect>.mod-link,
+.mod.proiect>.mod-link .badge {
+    background-color: #7b1fa2;
+    /* mov */
+    color: #fff;
+}
+
+/* CONTENT */
+.content {
+    grid-area: content;
+    padding: 2rem;
+}
+
+.content section {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* CHAPTER HEADERS */
+.chapter {
+    margin-bottom: 1.5rem;
+}
+
+.chapter-header {
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.teorie-section .chapter-header {
+    background-color: #1976d2;
+    /* albastru */
+}
+
+.exercise-section .chapter-header {
+    background-color: #388e3c;
+    /* verde */
+}
+
+.interview-section .chapter-header {
+    background-color: #ef6c00;
+    /* portocaliu */
+}
+
+.test-section .chapter-header {
+    background-color: #d32f2f;
+    /* rosu */
+}
+
+.project-section .chapter-header {
+    background-color: #7b1fa2;
+    /* mov */
+}
+
+.subchapter-content {
+    display: none;
+    background: #f0f4f8;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.interview-section .subchapter-content {
+    background: #fef7f0;
+}
+
+.exercise-section .subchapter-content {
+    background: #f3f9f4;
+}
+
+/* DEMO GRID */
+.demo-grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 0.8rem;
+    background: #90caf9;
+    /* albastru deschis pentru grid demo */
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.demo-grid.layout-demo {
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(60px, auto);
+}
+
+.demo {
+    background: #e3f2fd;
+    border-radius: 8px;
+    padding: 0.8rem;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    font-weight: 600;
+    color: #333;
+}
+
+.demo.large {
+    grid-column: 1 / 2;
+}
+
+.demo.full {
+    grid-column: 1 / 3;
+}
+
+/* EXERCISES */
+.exercise-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    margin-bottom: 1rem;
+}
+
+.exercise-card textarea {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: monospace;
+}
+
+.exercise-title {
+    color: #388e3c;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.eye-btn {
+    background: #4b3f72;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 0.3rem;
+}
+
+.answer {
+    display: none;
+    margin-top: 0.6rem;
+    padding: 0.6rem;
+    background: #f7f7fb;
+    border-radius: 6px;
+}
+
+/* INTERVIEW QUESTIONS */
+.question {
+    background: #fff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* PROJECT */
+.project-tasks {
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.project-tasks li {
+    margin: 0.5rem 0;
+}
+
+.gitbox pre {
+    background: #222;
+    color: #eee;
+    padding: 0.8rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* FOOTER */
+.footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 1rem;
+    background: #4b3f72;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* IMAGE DEMO */
+.image-placeholder {
+    background: #fff;
+    border: 1px dashed #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+}
+
+/* CODE BOLD */
+code {
+    font-weight: bold;
+    background: #f7f7fb;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "content"
+            "footer";
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .demo-grid {
+        grid-template-columns: 1fr;
+    }
+}
