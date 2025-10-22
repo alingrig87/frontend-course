@@ -1,1 +1,28 @@
-/* Testing & Deployment (Jest, RTL, Vercel, Netlify) - style.css (gol, folosește pentru exerciții) */
+/* Folosește stilurile generale din sidebar + adaugă doar particularități */
+.main-content {
+  margin-left: 250px;
+  padding: 2rem;
+  background: #f5f7fa;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+h1,
+h2 {
+  color: #20232a;
+}
+
+section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+#testResult {
+  background: #eee;
+  border-radius: 6px;
+  padding: 1rem;
+  font-weight: bold;
+}
