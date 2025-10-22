@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitolul 4: Layout fluid vs fix</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Stil pentru exemplu live */
+      .layout-container {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .box-fixed {
+        width: 300px; /* fixă */
+        background-color: #8ac926;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      .box-fluid {
+        flex: 1; /* fluidă */
+        background-color: #1982c4;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      @media (max-width: 768px) {
+        .layout-container {
+          flex-direction: column;
+        }
+      }
+
+      pre {
+        background-color: #282c34;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-top: 1rem;
+      }
+
+      .key-points ul {
+        margin-top: 1rem;
+        padding-left: 1.2rem;
+      }
+
+      .key-points li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>🌐 Website Complet Responsive</h1>
+        </a>
+        <p>Învață pas cu pas să creezi site-uri care arată perfect pe orice dispozitiv</p>
+      </div>
+      <button id="menu-btn" class="menu-btn">☰</button>
+    </header>
+
+    <!-- ===== CONTAINER ===== -->
+    <div class="container">
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="sidebar" id="sidebar">
+        <h2>📘 Capitole</h2>
+        <nav>
+          <ul>
+            <li><a href="responsive-design.html">1. Ce este Responsive Design</a></li>
+            <li><a href="media-queries.html">2. Media Queries</a></li>
+            <li><a href="breakpoints.html">3. Breakpoints standard</a></li>
+            <li><a href="layout-fluid-fix.html" class="active">4. Layout fluid vs fix</a></li>
+            <li><a href="unitati-relative.html">5. Unități relative (%, vw, vh, rem)</a></li>
+            <li><a href="imagini-responsive.html">6. Imagini responsive</a></li>
+            <li><a href="mobile-first.html">7. Mobile-first design</a></li>
+            <li><a href="grid-flex.html">8. Grid și Flex responsive</a></li>
+            <li><a href="workshop-landing.html">9. Workshop: Landing Page responsive</a></li>
+            <li><a href="tema-finala.html">10. Tema: Website complet responsive</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ===== CONȚINUT PRINCIPAL ===== -->
+      <main class="main-content">
+        <!-- Introducere -->
+        <section class="intro">
+          <h2>Capitolul 4: Layout fluid vs fix</h2>
+          <p>
+            <strong>Layout fix</strong> are lățimi precise (pixeli) și nu se ajustează la dimensiunea ecranului.
+            <strong>Layout fluid</strong> folosește unități relative (%, flex) și se adaptează automat la ecran.
+          </p>
+        </section>
+
+        <!-- Exemplu live -->
+        <section class="example">
+          <h3>Exemplu practic:</h3>
+          <p>
+            Coloana verde are lățime fixă, iar coloana albastră se ajustează automat la ecran.
+          </p>
+
+          <div class="layout-container">
+            <div class="box-fixed">Coloană fixă</div>
+            <div class="box-fluid">Coloană fluidă</div>
+          </div>
+
+          <pre>
+/* Fixă */
+.box-fixed {
+  width: 300px;
+}
+
+/* Fluidă */
+.box-fluid {
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+  }
+}
+          </pre>
+        </section>
+
+        <!-- Puncte cheie -->
+        <section class="key-points">
+          <h3>Puncte cheie:</h3>
+          <ul>
+            <li>Layout fix: dimensiune constantă, nu se adaptează la ecran.</li>
+            <li>Layout fluid: folosește unități relative și se ajustează automat.</li>
+            <li>Pe mobil, coloanele se pot aranja vertical.</li>
+            <li>Layout fluid este recomandat pentru design responsive modern.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>© 2025 Curs Responsive Web Design | Creat de Echipa EduWeb</p>
+    </footer>
+
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
