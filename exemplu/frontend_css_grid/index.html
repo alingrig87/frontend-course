@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tutorial CSS Grid — Frontend Path</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!--
+    Fișiere incluse:
+      - index.html  (pagina principală tutorial)
+      - style.css   (stiluri, bazate pe exemplul furnizat)
+      - app.js      (comportament: show/hide, toggles)
+    GIT NOTES: vezi GIT_NOTES.md pentru comenzi rapide de inițializare repo.
+  -->
+
+  <header class="main-header">
+    <div class="logo">🌐 Frontend Path</div>
+    <nav class="nav">
+      <a href="#">Acasă</a>
+      <a href="#teorie">Teorie</a>
+      <a href="#exemple">Exemple</a>
+      <a href="#exercitii">Exerciții</a>
+      <a href="#intrebari">Întrebări</a>
+      <a href="#proiect">Proiect</a>
+    </nav>
+  </header>
+
+  <aside class="sidebar">
+    <h2>Module</h2>
+    <ul>
+      <li><span class="badge css">01</span> Introducere CSS Grid</li>
+      <li><span class="badge css">02</span> Container & Item</li>
+      <li><span class="badge css">03</span> Dense / Auto</li>
+      <li><span class="badge final">10</span> Mini-proiect</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <section id="teorie" class="hero">
+      <h1>📚 Teorie — CSS Grid (în română)</h1>
+      <p>CSS Grid este un sistem bidimensional pentru layout în care poți controla rânduri și coloane. Ideal pentru layout-uri complexe și responsive.</p>
+      <div class="info-boxes">
+        <div class="info note">
+          <strong>Concept cheie:</strong> Grid are două lucruri importante: <code>grid-container</code> (părintele) și <code>grid-item</code> (copiii).
+        </div>
+        <div class="info exercise">
+          <strong>Avantaje:</strong> aliniere facilă, zonare, gaps (spațieri), rearanjare ușoară la responsive.
+        </div>
+      </div>
+    </section>
+
+    <section id="exemple" class="cards-section">
+      <h2>🔎 Exemple teoretice + demo</h2>
+
+      <!-- Exemplu 1 -->
+      <div class="card example">
+        <h3>Exemplu 1 — Container de bază</h3>
+        <p><code>display: grid;</code> + <code>grid-template-columns</code> pentru a defini coloane.</p>
+        <pre><code>&lt;div class="grid-basic"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+.grid-basic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+</code></pre>
+        <button class="eye-btn" data-target="#sol1">👁️ Vezi demo/rezolvare</button>
+        <div id="sol1" class="answer demo">
+          <div class="grid-basic demo-grid">
+            <div>1</div><div>2</div><div>3</div>
+          </div>
+          <p class="small">Codul HTML/CSS de mai sus creează 3 coloane egale.</p>
+        </div>
+      </div>
+
+      <!-- Exemplu 2 -->
+      <div class="card example">
+        <h3>Exemplu 2 — Linie/Coloană denumită (named lines)</h3>
+        <p>Poți denumi linii și apoi poziționa un item între ele: <code>grid-column: start / end;</code></p>
+        <pre><code>.grid-lines {
+  display:grid;
+  grid-template-columns: [left] 1fr [center] 2fr [right] 1fr;
+}
+.item {
+  grid-column: left / right;
+}
+</code></pre>
+        <button class="eye-btn" data-target="#sol2">👁️ Vezi demo/rezolvare</button>
+        <div id="sol2" class="answer demo">
+          <div class="grid-lines demo-grid">
+            <div class="item big">Item mare (left / right)</div>
+            <div>A</div><div>B</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exemplu 3 -->
+      <div class="card example">
+        <h3>Exemplu 3 — Auto-placement & dense</h3>
+        <p>Proprietăți: <code>grid-auto-flow: row | column | dense;</code></p>
+        <pre><code>.grid-dense {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+}
+</code></pre>
+        <button class="eye-btn" data-target="#sol3">👁️ Vezi demo/rezolvare</button>
+        <div id="sol3" class="answer demo">
+          <div class="grid-dense demo-grid">
+            <div>1</div><div class="wide">2 (wide)</div><div>3</div><div>4</div><div>5</div>
+          </div>
+          <p class="small">Folosește <code>dense</code> când vrei ca spațiile goale să fie umplute.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exercitii" class="exercise-section">
+      <h2>🧠 Exerciții practice — CSS Grid</h2>
+
+      <div class="exercise-card">
+        <h3>1. Creează un layout de 3 coloane cu header și footer</h3>
+        <p>Folosind <code>grid-template-areas</code>, rezervă o zonă pentru header, conținut și footer.</p>
+        <button class="eye-btn" data-target="#exsol1">👁️ Vezi rezolvare</button>
+        <div id="exsol1" class="answer">
+          <pre><code>.page {
+  display:grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+}
+</code></pre>
+          <p class="small">Acesta este un exemplu simplu folosind grid-area. Ajustează la responsive.</p>
+        </div>
+      </div>
+
+      <div class="exercise-card">
+        <h3>2. Realizează un gallery cu carduri care reflow-uiesc la responsive</h3>
+        <p>Folosește <code>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))</code>.</p>
+        <button class="eye-btn" data-target="#exsol2">👁️ Vezi rezolvare</button>
+        <div id="exsol2" class="answer">
+          <pre><code>.gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:1rem;
+}
+</code></pre>
+        </div>
+      </div>
+
+      <div class="exercise-card">
+        <h3>3. Provoacă: poziționează un element să ocupe 2 coloane și 2 rânduri</h3>
+        <p>Folosește <code>grid-column</code> și <code>grid-row</code>.</p>
+        <button class="eye-btn" data-target="#exsol3">👁️ Vezi rezolvare</button>
+        <div id="exsol3" class="answer">
+          <pre><code>.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="intrebari" class="interview-section">
+      <h2>💬 Întrebări de interviu — CSS Grid (cât mai multe)</h2>
+
+      <!-- Multiple questions; fiecare are buton show/hide -->
+      <div class="question">
+        <p><strong>1. Care sunt diferențele între Flexbox și Grid?</strong></p>
+        <button class="eye-btn" data-target="#a1">👁️ Vezi răspuns</button>
+        <div id="a1" class="answer">Grid = layout bidimensional (rânduri + coloane). Flexbox = unidimensional (rând sau coloană). Folosește Grid pentru layout-uri complexe.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>2. Ce face <code>grid-template-areas</code>?</strong></p>
+        <button class="eye-btn" data-target="#a2">👁️ Vezi răspuns</button>
+        <div id="a2" class="answer">Permite definirea unei hărți vizuale a layout-ului prin string-uri care reprezintă zone numite.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>3. Ce este <code>fr</code> unit?</strong></p>
+        <button class="eye-btn" data-target="#a3">👁️ Vezi răspuns</button>
+        <div id="a3" class="answer">Unitatea <code>fr</code> reprezintă o fracțiune din spațiul disponibil din containerul grid.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>4. Cum funcționează <code>grid-auto-flow</code>?</strong></p>
+        <button class="eye-btn" data-target="#a4">👁️ Vezi răspuns</button>
+        <div id="a4" class="answer">Controlează plasarea automată a itemilor: <code>row</code>, <code>column</code> și <code>dense</code> pentru umplerea spațiilor.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>5. Ce probleme rezolvă <code>minmax()</code>?</strong></p>
+        <button class="eye-btn" data-target="#a5">👁️ Vezi răspuns</button>
+        <div id="a5" class="answer"><code>minmax(min, max)</code> permite definirea limitelor pentru coloane/ rânduri fluide.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>6. Când folosești <code>auto-fit</code> vs <code>auto-fill</code>?</strong></p>
+        <button class="eye-btn" data-target="#a6">👁️ Vezi răspuns</button>
+        <div id="a6" class="answer"><code>auto-fit</code> strechează grid-ul pentru a umple spațiul; <code>auto-fill</code> păstrează track-urile goale. Practic diferențe subtile la comportamentul colanelor.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>7. Cum poziționezi elemente pe axele rând și coloană (properties)</strong></p>
+        <button class="eye-btn" data-target="#a7">👁️ Vezi răspuns</button>
+        <div id="a7" class="answer">Folosești <code>grid-column</code>, <code>grid-row</code>, <code>justify-self</code>, <code>align-self</code> pentru itemi, și <code>justify-items</code>, <code>align-items</code> pentru container.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>8. Ce probleme poate crea folosirea excesivă a grid-area?</strong></p>
+        <button class="eye-btn" data-target="#a8">👁️ Vezi răspuns</button>
+        <div id="a8" class="answer">Poate face CSS-ul greu de întreținut dacă sunt folosite multe nume inconsistente; recomand structuri clare și comentarii.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>9. Care este suportul browserelor pentru Grid?</strong></p>
+        <button class="eye-btn" data-target="#a9">👁️ Vezi răspuns</button>
+        <div id="a9" class="answer">Astăzi majoritatea browserelor moderne suportă CSS Grid. Verifică caniuse când ai nevoie de compatibilitate pentru versiuni vechi.</div>
+      </div>
+
+      <div class="question">
+        <p><strong>10. Cum testezi performanța layout-ului?</strong></p>
+        <button class="eye-btn" data-target="#a10">👁️ Vezi răspuns</button>
+        <div id="a10" class="answer">Testare responsive, audit Lighthouse, verificare reflow-uri excesive pe animații și evitarea recalculărilor costisitoare.</div>
+      </div>
+
+    </section>
+
+    <section id="proiect" class="images-demo">
+      <h2>🛠️ Mini-proiect (10 taskuri) — "Dashboard Grid"</h2>
+      <p>Obiectiv: construiește un mic dashboard responsive folosind CSS Grid. Fiecare task învață un concept.</p>
+
+      <ol class="project-tasks">
+        <li>🔧 Setup: creează structura HTML de bază (header, sidebar, content, footer).</li>
+        <li>📐 Grid principal: definește containerul principal cu <code>grid-template-areas</code>.</li>
+        <li>🧩 Sidebar: fixează dimensiunea sidebar-ului în grid (ex: 220px).</li>
+        <li>📱 Responsive: la <code>max-width: 768px</code> transformă layout în 1 coloană.</li>
+        <li>🖼️ Cards: creează un grid intern pentru carduri cu <code>auto-fit/minmax</code>.</li>
+        <li>⭐ Item mare: poziționează un widget mare care ocupă 2 coloane pe desktop.</li>
+        <li>🔁 Auto-flow: experimentează cu <code>grid-auto-flow: dense</code> pentru galerie.</li>
+        <li>🔒 Sticky header: folosește <code>position: sticky</code> pentru header sau sidebar.</li>
+        <li>🎛️ Controls: adaugă butoane care filtrează cardurile (JS minimal).</li>
+        <li>📂 Final: documentează pașii și commit-urile Git (vezi GIT_NOTES.md).</li>
+      </ol>
+
+      <p class="small">Fiecare task poate fi bifat/local testat. În arhivă găsești codul de start.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Frontend Learning Path — CSS Grid Tutorial</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
