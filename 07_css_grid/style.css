@@ -41,6 +41,7 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
+
 .nav a:hover {
   text-decoration: underline;
 }
@@ -94,50 +95,37 @@ body {
   margin-left: 1.5rem;
   list-style-type: disc;
   color: #555;
-  display: none; /* hidden by default */
+  display: none;
 }
 
 .subtopics:not(.collapsed) {
   display: block;
 }
 
-/* Badge colors */
-.badge {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  color: white;
-  text-align: center;
-  line-height: 26px;
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin-right: 0.5rem;
-}
-
+/* Badge colors & module colors */
 .mod.teorie > .mod-link,
 .mod.teorie > .mod-link .badge {
-  background-color: #1572b6;
+  background-color: #1976d2; /* albastru */
   color: #fff;
 }
 .mod.exercitii > .mod-link,
 .mod.exercitii > .mod-link .badge {
-  background-color: #388e3c;
+  background-color: #388e3c; /* verde */
   color: #fff;
 }
 .mod.interviu > .mod-link,
 .mod.interviu > .mod-link .badge {
-  background-color: #ef6c00;
+  background-color: #ef6c00; /* portocaliu */
   color: #fff;
 }
 .mod.test > .mod-link,
 .mod.test > .mod-link .badge {
-  background-color: #d32f2f;
+  background-color: #d32f2f; /* rosu */
   color: #fff;
 }
 .mod.proiect > .mod-link,
 .mod.proiect > .mod-link .badge {
-  background-color: #7b1fa2;
+  background-color: #7b1fa2; /* mov */
   color: #fff;
 }
 
@@ -154,30 +142,53 @@ body {
   box-sizing: border-box;
 }
 
-/* CHAPTERS (mov header + collapsable subchapters) */
+/* CHAPTER HEADERS */
 .chapter {
   margin-bottom: 1.5rem;
 }
 
 .chapter-header {
-  background: linear-gradient(135deg, #4b3f72, #7b1fa2);
   color: #fff;
   padding: 0.8rem 1rem;
   border-radius: 12px;
   cursor: pointer;
-  margin-bottom: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.teorie-section .chapter-header {
+  background-color: #1976d2; /* albastru */
+}
+.exercise-section .chapter-header {
+  background-color: #388e3c; /* verde */
+}
+.interview-section .chapter-header {
+  background-color: #ef6c00; /* portocaliu */
+}
+.test-section .chapter-header {
+  background-color: #d32f2f; /* rosu */
+}
+.project-section .chapter-header {
+  background-color: #7b1fa2; /* mov */
 }
 
 .subchapter-content {
-  display: none; /* ascuns implicit */
-  background: #f0f4f8; /* culoare deschisa pentru contrast */
+  display: none;
+  background: #f0f4f8;
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 0.8rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.interview-section .subchapter-content {
+  background: #fef7f0;
+}
+
+.exercise-section .subchapter-content {
+  background: #f3f9f4;
 }
 
 /* DEMO GRID */
@@ -185,7 +196,7 @@ body {
   display: grid;
   gap: 10px;
   margin-top: 0.8rem;
-  background: #e9ecef; /* culoare mai soft pentru exemplu */
+  background: #90caf9; /* albastru deschis pentru grid demo */
   border-radius: 8px;
   padding: 0.5rem;
 }
@@ -196,7 +207,7 @@ body {
 }
 
 .demo {
-  background: #dee2e6;
+  background: #e3f2fd;
   border-radius: 8px;
   padding: 0.8rem;
   text-align: center;
@@ -213,7 +224,6 @@ body {
 }
 
 /* EXERCISES */
-
 .exercise-card {
   background: white;
   border-radius: 12px;
@@ -231,7 +241,6 @@ body {
   font-family: monospace;
 }
 
-/* Titlu exercitiu */
 .exercise-title {
   color: #388e3c;
   font-weight: bold;
@@ -239,7 +248,6 @@ body {
   display: block;
 }
 
-/* Answer button */
 .eye-btn {
   background: #4b3f72;
   color: #fff;
@@ -329,35 +337,4 @@ code {
   .demo-grid {
     grid-template-columns: 1fr;
   }
-}
-.exercise-section .chapter-header {
-  background-color: #27ae60; /* verde */
-  color: white;
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-.interview-section .chapter-header {
-  background-color: #ef6c00; /* portocaliu */
-  color: white;
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-
-.interview-section .subchapter-content {
-  display: none; /* ascuns implicit */
-  background: #fef7f0; /* culoare deschisă pentru contrast */
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 0.8rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
