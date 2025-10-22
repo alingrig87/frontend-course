@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitolul 8: Grid și Flex responsive</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Exemplu live Flex și Grid responsive */
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .flex-item {
+        background-color: #ff595e;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        flex: 1 1 150px; /* crește și micșorează în funcție de spațiu */
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .grid-item {
+        background-color: #1982c4;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      pre {
+        background-color: #282c34;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-top: 1rem;
+      }
+
+      .key-points ul {
+        margin-top: 1rem;
+        padding-left: 1.2rem;
+      }
+
+      .key-points li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>🌐 Website Complet Responsive</h1>
+        </a>
+        <p>Învață pas cu pas să creezi site-uri care arată perfect pe orice dispozitiv</p>
+      </div>
+      <button id="menu-btn" class="menu-btn">☰</button>
+    </header>
+
+    <!-- ===== CONTAINER ===== -->
+    <div class="container">
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="sidebar" id="sidebar">
+        <h2>📘 Capitole</h2>
+        <nav>
+          <ul>
+            <li><a href="responsive-design.html">1. Ce este Responsive Design</a></li>
+            <li><a href="media-queries.html">2. Media Queries</a></li>
+            <li><a href="breakpoints.html">3. Breakpoints standard</a></li>
+            <li><a href="layout-fluid-fix.html">4. Layout fluid vs fix</a></li>
+            <li><a href="unitati-relative.html">5. Unități relative (%, vw, vh, rem)</a></li>
+            <li><a href="imagini-responsive.html">6. Imagini responsive</a></li>
+            <li><a href="mobile-first.html">7. Mobile-first design</a></li>
+            <li><a href="grid-flex.html" class="active">8. Grid și Flex responsive</a></li>
+            <li><a href="workshop-landing.html">9. Workshop: Landing Page responsive</a></li>
+            <li><a href="tema-finala.html">10. Tema: Website complet responsive</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ===== CONȚINUT PRINCIPAL ===== -->
+      <main class="main-content">
+        <!-- Introducere -->
+        <section class="intro">
+          <h2>Capitolul 8: Grid și Flex responsive</h2>
+          <p>
+            Grid și Flexbox sunt două tehnici moderne de layout care permit crearea de designuri responsive și flexibile:
+          </p>
+          <ul>
+            <li><strong>Flexbox</strong> – excelent pentru aranjarea elementelor pe un singur rând sau coloană și distribuirea spațiului.</li>
+            <li><strong>CSS Grid</strong> – excelent pentru layout-uri bidimensionale complexe, rânduri și coloane.</li>
+            <li>Combinarea lor permite un control complet al layout-ului responsive.</li>
+          </ul>
+        </section>
+
+        <!-- Exemplu live -->
+        <section class="example">
+          <h3>Exemplu Flex:</h3>
+          <div class="flex-container">
+            <div class="flex-item">Flex 1</div>
+            <div class="flex-item">Flex 2</div>
+            <div class="flex-item">Flex 3</div>
+            <div class="flex-item">Flex 4</div>
+          </div>
+
+          <h3>Exemplu Grid:</h3>
+          <div class="grid-container">
+            <div class="grid-item">Grid 1</div>
+            <div class="grid-item">Grid 2</div>
+            <div class="grid-item">Grid 3</div>
+            <div class="grid-item">Grid 4</div>
+            <div class="grid-item">Grid 5</div>
+          </div>
+
+          <pre>
+/* Flexbox */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.flex-item {
+  flex: 1 1 150px; /* crește și micșorează */
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.grid-item {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #1982c4;
+  color: white;
+}
+          </pre>
+        </section>
+
+        <!-- Puncte cheie -->
+        <section class="key-points">
+          <h3>Puncte cheie:</h3>
+          <ul>
+            <li>Flexbox este ideal pentru layout-uri pe un singur rând sau coloană.</li>
+            <li>Grid este ideal pentru layout-uri complexe bidimensionale.</li>
+            <li>Unitățile relative și media queries fac layout-ul complet responsive.</li>
+            <li>Combinarea Grid + Flex permite flexibilitate maximă pe orice ecran.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>© 2025 Curs Responsive Web Design | Creat de Echipa EduWeb</p>
+    </footer>
+
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
