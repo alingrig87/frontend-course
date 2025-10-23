@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capitolul 9: Workshop – Întrebări de interviu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <a href="index.html">
+      <h1>🌐 Website Complet Responsive</h1>
+    </a>
+    <p>Workshop: 30 de întrebări cu răspuns ascuns</p>
+  </div>
+  <button id="menu-btn" class="menu-btn">☰</button>
+</header>
+
+<div class="container">
+  <aside class="sidebar" id="sidebar">
+    <h2>📘 Capitole</h2>
+    <ul>
+      <li><a href="responsive-design.html">1. Ce este Responsive Design</a></li>
+      <li><a href="media-queries.html">2. Media Queries</a></li>
+      <li><a href="breakpoints.html">3. Breakpoints standard</a></li>
+      <li><a href="layout-fluid-fix.html">4. Layout fluid vs fix</a></li>
+      <li><a href="unitati-relative.html">5. Unități relative (%, vw, vh, rem)</a></li>
+      <li><a href="imagini-responsive.html">6. Imagini responsive</a></li>
+      <li><a href="mobile-first.html">7. Mobile-first design</a></li>
+      <li><a href="grid-flex.html">8. Grid și Flex responsive</a></li>
+      <li><a href="workshop-interviu.html" class="active">9. Workshop: Întrebări de interviu</a></li>
+      <li><a href="tema-finala.html">10. Tema: Website complet responsive</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <section class="intro">
+      <h2>Capitolul 9: Workshop – Întrebări de interviu</h2>
+      <p>Acest workshop conține întrebări frecvente întâlnite la interviurile pentru web development și design responsive. Testează-ți cunoștințele și află răspunsurile ascunse.</p>
+    </section>
+
+    <section class="objectives">
+      <h3>Întrebări practice:</h3>
+      <div id="questions" class="grid"></div>
+    </section>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>© 2025 Curs Responsive Web Design | Creat de Echipa EduWeb</p>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menu-btn");
+const sidebar = document.getElementById("sidebar");
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("show");
+});
+
+const questions = [
+  ["Ce este Responsive Design?", "Responsive Design înseamnă că site-ul se adaptează automat la diferite dimensiuni de ecran, oferind o experiență optimă pe mobil, tabletă și desktop."],
+  ["Ce sunt Media Queries?", "Media Queries sunt reguli CSS care permit aplicarea diferită a stilurilor în funcție de caracteristicile dispozitivului, cum ar fi lățimea ecranului sau tipul de display."],
+  ["Ce este Mobile-First Design?", "Mobile-First Design presupune proiectarea inițială pentru ecrane mici (mobil) și apoi adăugarea de stiluri pentru ecrane mai mari."],
+  ["Ce sunt breakpoints standard?", "Breakpoints sunt lățimile de ecran la care layout-ul se schimbă pentru a se adapta diferitelor dispozitive, de exemplu 480px, 768px, 1024px, 1200px."],
+  ["Ce înseamnă layout fluid?", "Layout-ul fluid se ajustează proporțional la dimensiunea ferestrei browserului, folosind unități relative precum % sau vw."],
+  ["Ce înseamnă layout fix?", "Layout-ul fix are lățimi și înălțimi definite în pixeli și nu se ajustează automat la diferite ecrane."],
+  ["Ce sunt unitățile relative în CSS?", "Unitățile relative (% , vw , vh , rem) permit dimensionarea elementelor proporțional și ajută la responsive design."],
+  ["Ce este viewport?", "Viewport-ul reprezintă zona vizibilă a paginii pe dispozitivul utilizatorului."],
+  ["Cum se fac imaginile responsive?", "Se folosesc CSS: max-width:100%; height:auto; sau elementul <picture> pentru multiple variante."],
+  ["Ce este Flexbox responsive?", "Flexbox permite alinierea și distribuirea elementelor într-un container flexibil care se adaptează la diferite ecrane."],
+  ["Ce este Grid responsive?", "CSS Grid permite crearea de layout-uri pe grilă care se pot ajusta pentru diferite dimensiuni de ecran."],
+  ["Cum se folosește display:flex?", "Display:flex creează un container flexibil în care elementele pot fi aliniate și redistribuite ușor."],
+  ["Ce sunt elementele inline vs block?", "Elementele block ocupă întreaga lățime disponibilă, inline se aliniază pe același rând cu alte elemente."],
+  ["Ce sunt pseudoclasele CSS?", ":hover, :active, :focus sunt pseudoclase care permit stilizarea elementelor în funcție de starea lor."],
+  ["Ce este box-sizing:border-box?", "Box-sizing:border-box include padding și border în dimensiunea totală a elementului, facilitând layout-ul."],
+  ["Cum se face o navbar responsive?", "Se folosesc media queries și, adesea, o versiune hamburger pentru ecrane mici."],
+  ["Ce este un hamburger menu?", "Un buton care afișează meniul de navigare pe mobil pentru a economisi spațiu."],
+  ["Cum se aliniază centrul vertical în Flex?", "Se folosește align-items:center pentru a centra elementele pe axa verticală."],
+  ["Cum se împart elementele egal în Flex?", "Se folosește justify-content:space-between sau space-around pentru distribuție egală."],
+  ["Ce este viewport meta tag?", "<meta name='viewport' content='width=device-width, initial-scale=1.0'> setează viewport-ul pentru responsive design."],
+  ["Cum se ascund elemente pe mobil?", "Se folosește display:none; în media queries corespunzătoare dimensiunii ecranului."],
+  ["Cum se ajustează fonturile responsive?", "Se folosesc unități relative precum rem sau vw pentru dimensiuni proporționale."],
+  ["Ce sunt breakpoints personalizate?", "Breakpoints definite manual pentru a se potrivi designului site-ului, nu doar cele standard."],
+  ["Ce sunt elementele flex-wrap?", "Flex-wrap permite elementelor dintr-un container flex să treacă pe următorul rând când nu încap."],
+  ["Ce este order în Flexbox?", "Proprietatea order modifică ordinea vizuală a elementelor în containerul flex fără a schimba HTML-ul."],
+  ["Cum se face o grilă responsive?", "Se folosesc CSS Grid cu template-columns: repeat(auto-fit, minmax(...)) și media queries."],
+  ["Ce este minmax() în CSS Grid?", "minmax() definește valoarea minimă și maximă pentru dimensiunea unei coloane sau linii în Grid."],
+  ["Cum se folosește object-fit pentru imagini?", "object-fit:cover sau contain ajustează imaginea într-un container fără deformare."],
+  ["Ce este z-index?", "Z-index controlează ordinea elementelor suprapuse, elemente cu z-index mai mare sunt afișate deasupra."],
+  ["Cum se adaugă tranziții CSS?", "Se folosește transition: all 0.3s ease; pentru efecte line de schimbare a proprietăților CSS."]
+];
+
+const containerQuestions = document.getElementById("questions");
+
+questions.forEach((q, index) => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const h3 = document.createElement("h3");
+  h3.textContent = "Întrebarea " + (index + 1);
+  card.appendChild(h3);
+
+  const p = document.createElement("p");
+  p.textContent = q[0];
+  card.appendChild(p);
+
+  const answer = document.createElement("div");
+  answer.className = "answer";
+  answer.style.marginTop = "0.5rem";
+  answer.style.padding = "0.5rem";
+  answer.style.backgroundColor = "#e0f7fa";
+  answer.style.borderRadius = "6px";
+  answer.style.display = "none";
+  const answerP = document.createElement("p");
+  answerP.textContent = q[1];
+  answer.appendChild(answerP);
+  card.appendChild(answer);
+
+  const btn = document.createElement("button");
+  btn.className = "btn-answer";
+  btn.textContent = "Arată răspunsul";
+  btn.style.marginTop = "0.8rem";
+  btn.onclick = () => {
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+  };
+  card.appendChild(btn);
+
+  containerQuestions.appendChild(card);
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+

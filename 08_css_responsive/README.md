@@ -1,29 +1,21 @@
-# CSS Responsive — media queries, mobile-first
+# 🌐 Curs Responsive Web Design
 
-## Descriere
-Această lecție explică **CSS Responsive — media queries, mobile-first**. Scopul este să oferi o înțelegere practică și teoretică, exemple și exerciții pentru a putea aplica imediat conceptele în proiecte reale.
+📚 **Website complet responsive** – curs practic pentru începători și avansați.
 
-## Ce înveți
-- Înțelegerea conceptelor cheie legate de: css responsive — media queries, mobile-first
-- Instrumente, comenzi și workflow-uri specifice
-- Exemple practice și pași pentru a construi un mic proiect aplicat
+---
 
-## Partea teoretică (ce să scrii în viitor)
-Adaugă aici explicații detaliate, diagrame, comenzi și referințe. Exemple recomandate de sub-capitole:
-- Definiții și concepte-cheie
-- Comenzi / API-uri / sintaxă
-- Bune practici și capcane comune
+## 🔹 Conținut curs
 
-## Exerciții
-1. Citește și rezumă conceptele principale în 5 propoziții.
-2. Rezolvă 3-4 exemple practice din acest capitol (implementate în `index.html` / `app.js` / `style.css`).
-3. Extensie: implementează o funcționalitate mică legată de capitol.
-
-## Întrebări de interviu
-- Explică pe scurt: CSS Responsive — media queries, mobile-first.
-- Care sunt cele mai frecvente probleme întâlnite și cum le rezolvi?
-- Demonstrează un exemplu practic în 5 pași.
-
-## Mini-proiect (mic)
-Proiect: Construiește un mic proiect care să exerseze conceptele descrise mai sus. De exemplu: Transformă o pagină fixă într-una responsive cu media queries..
+| # | Capitol | Descriere |
+|---|---------|-----------|
+| 1️⃣ | Ce este Responsive Design | Introducere & concepte de bază |
+| 2️⃣ | Media Queries | Stiluri adaptabile la ecran |
+| 3️⃣ | Breakpoints standard | Lățimi uzuale pentru dispozitive |
+| 4️⃣ | Layout fluid vs fix | Diferențe și aplicații practice |
+| 5️⃣ | Unități relative | %, vw, vh, rem pentru design proporțional |
+| 6️⃣ | Imagini responsive | Imagini care se adaptează la ecran |
+| 7️⃣ | Mobile-first design | Strategie pentru ecrane mici |
+| 8️⃣ | Grid & Flex responsive | Layout modern cu CSS Grid & Flexbox |
+| 9️⃣ | Workshop – Întrebări | 30 întrebări practice cu răspuns ascuns |
+| 🔟 | Tema finală | 10 exerciții practice: website complet responsive |
 

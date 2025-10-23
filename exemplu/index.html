@@ -1,107 +1,476 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exemplu Tutorial Frontend - Extins</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="logo">🌐 Frontend Path</div>
-    <nav class="nav">
-      <a href="#">Acasă</a>
-      <a href="#">Module</a>
-      <a href="#">Resurse</a>
-      <a href="#">Despre</a>
-    </nav>
-  </header>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Frontend Study Guide — Index</title>
+		<style>
+			:root {
+				--bg: #f5f7fa;
+				--card: #fff;
+				--text: #0f172a;
+				--muted: #6b7280;
+				--accent: #2563eb;
+				--radius: 12px;
+				--shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+				font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto,
+					'Helvetica Neue', Arial;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				background: var(--bg);
+				color: var(--text);
+				-webkit-font-smoothing: antialiased;
+			}
+			header {
+				background: linear-gradient(90deg, #2563eb, #1e40af);
+				color: #fff;
+				padding: 28px 16px;
+				text-align: center;
+				border-bottom-left-radius: 12px;
+				border-bottom-right-radius: 12px;
+			}
+			header h1 {
+				margin: 0;
+				font-size: 20px;
+				font-weight: 600;
+			}
+			header p {
+				margin: 6px 0 0;
+				font-size: 13px;
+				opacity: 0.95;
+			}
+			.wrap {
+				max-width: 1100px;
+				margin: 28px auto;
+				padding: 0 16px;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+				gap: 16px;
+			}
+			.card {
+				background: var(--card);
+				border-radius: var(--radius);
+				padding: 18px;
+				box-shadow: var(--shadow);
+				display: flex;
+				gap: 14px;
+				align-items: center;
+				border-left: 6px solid transparent;
+				text-decoration: none;
+				color: inherit;
+				transition: transform 0.14s ease, box-shadow 0.14s ease;
+			}
+			.card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+			}
+			.icon {
+				width: 56px;
+				height: 56px;
+				border-radius: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 22px;
+				background: #eef2ff;
+				color: #1e3a8a;
+				flex-shrink: 0;
+			}
+			.card-body {
+				flex: 1;
+				min-width: 0;
+			}
+			.card h3 {
+				margin: 0 0 6px 0;
+				font-size: 1.05rem;
+			}
+			.card p {
+				margin: 0;
+				color: var(--muted);
+				font-size: 0.9rem;
+			}
+			.meta {
+				margin-top: 8px;
+				font-size: 12px;
+				color: var(--muted);
+			}
+			.action {
+				margin-left: 12px;
+			}
+			.btn {
+				background: var(--accent);
+				color: #fff;
+				padding: 8px 12px;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				font-size: 0.9rem;
+				display: inline-block;
+			}
+			footer {
+				max-width: 1100px;
+				margin: 22px auto;
+				padding: 0 16px;
+				color: var(--muted);
+				font-size: 13px;
+				text-align: center;
+			}
+			@media (max-width: 600px) {
+				.card {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				.action {
+					align-self: stretch;
+					width: 100%;
+					display: flex;
+					justify-content: flex-end;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Frontend Study Guide</h1>
+			<p>Ghid principal — accesează lecțiile și resursele front-end</p>
+		</header>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <h2>Module</h2>
-    <ul>
-      <li><span class="badge html">01</span> Frontend Tools</li>
-      <li><span class="badge css">08</span> CSS Responsive</li>
-      <li><span class="badge js">15</span> Ajax & Promises</li>
-      <li><span class="badge react">24</span> React Hooks</li>
-      <li><span class="badge final">28</span> Final Project</li>
-    </ul>
-  </aside>
+		<main class="wrap">
+			<div class="grid">
+				<a class="card" href="01_frontend_tools/index.html">
+					<div class="icon">🧰</div>
+					<div class="card-body">
+						<h3>Unelte Front-end</h3>
+						<p>
+							Editor, extensii, DevTools și workflow esențial pentru dezvoltare.
+						</p>
+						<div class="meta">01_frontend_tools/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-  <!-- CONTINUT PRINCIPAL -->
-  <main class="content">
-    <section class="hero">
-      <h1>Exemplu Pagina Tutorial Extinsă</h1>
-      <p>Template cu secțiuni pentru exerciții, întrebări de interviu, resurse și mai mult.</p>
-    </section>
+				<a class="card" href="02_web_introduction/index.html">
+					<div class="icon">🌐</div>
+					<div class="card-body">
+						<h3>Introducere în Web</h3>
+						<p>
+							Conceptul web: HTTP, browsere, servere și cum funcționează
+							site-urile.
+						</p>
+						<div class="meta">02_web_introduction/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-    <!-- EXERCITII -->
-    <section class="exercise-section">
-      <h2>🧠 Exerciții practice</h2>
-      <div class="exercise-card">
-        <h3>1. Creează un layout responsive cu Flexbox</h3>
-        <p>Folosește <code>display: flex</code> și proprietățile <code>justify-content</code> și <code>align-items</code>.</p>
-        <div class="image-placeholder">📷 Aici poți adăuga o imagine cu rezultatul final.</div>
-      </div>
-      <div class="exercise-card">
-        <h3>2. Stilizează un buton cu efect hover</h3>
-        <p>Adaugă tranziții CSS pentru un efect plăcut.</p>
-      </div>
-    </section>
+				<a class="card" href="03_html_introduction/index.html">
+					<div class="icon">📄</div>
+					<div class="card-body">
+						<h3>HTML — Bazele</h3>
+						<p>Structura paginii, taguri, semantică și atribute uzuale.</p>
+						<div class="meta">03_html_introduction/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-    <!-- INTREBARI INTERVIU -->
-    <section class="interview-section">
-      <h2>💬 Întrebări de interviu</h2>
+				<a class="card" href="04_css_introduction/index.html">
+					<div class="icon">🎨</div>
+					<div class="card-body">
+						<h3>CSS — Bazele</h3>
+						<p>Selectori, proprietăți de bază, culori și fonturi.</p>
+						<div class="meta">04_css_introduction/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-      <div class="question">
-        <p><strong>1. Ce este diferența dintre <code>let</code>, <code>const</code> și <code>var</code>?</strong></p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer">👉 <code>var</code> are scop de funcție, <code>let</code> și <code>const</code> au scop de bloc; <code>const</code> nu poate fi reatribuit.</div>
-      </div>
+				<a class="card" href="05_css_properties/index.html">
+					<div class="icon">⚙️</div>
+					<div class="card-body">
+						<h3>Proprietăți CSS</h3>
+						<p>
+							Margin, padding, display, position și alte proprietăți frecvente.
+						</p>
+						<div class="meta">05_css_properties/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-      <div class="question">
-        <p><strong>2. Ce este DOM și cum îl putem manipula?</strong></p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer">👉 DOM este o reprezentare obiectuală a structurii HTML; putem manipula nodurile cu <code>document.querySelector()</code> și metodele asociate.</div>
-      </div>
-    </section>
+				<a class="card" href="06_css_flexbox/index.html">
+					<div class="icon">🧩</div>
+					<div class="card-body">
+						<h3>Layout cu Flexbox</h3>
+						<p>Aliniere, distribuire spațiu și patternuri comune cu Flexbox.</p>
+						<div class="meta">06_css_flexbox/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-    <!-- STIATI CA -->
-    <section class="did-you-know">
-      <h2>💡 Știați că...</h2>
-      <div class="fact">
-        <span class="icon">⚙️</span>
-        <p>Proprietatea <code>position: sticky</code> combină comportamentul static și fix, permițând elementelor să rămână „lipite” în viewport.</p>
-      </div>
-      <div class="fact">
-        <span class="icon">🧩</span>
-        <p>În CSS poți folosi funcția <code>clamp()</code> pentru a seta dimensiuni fluide cu limite minime și maxime.</p>
-      </div>
-    </section>
+				<a class="card" href="07_css_grid/index.html">
+					<div class="icon">▦</div>
+					<div class="card-body">
+						<h3>Layout cu Grid</h3>
+						<p>Creare de grile, zone și layout-uri complexe cu CSS Grid.</p>
+						<div class="meta">07_css_grid/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-    <!-- RESURSE EXTERNE -->
-    <section class="resources">
-      <h2>🔗 Resurse utile</h2>
-      <ul>
-        <li>🎥 <a href="https://www.youtube.com/c/Freecodecamp" target="_blank">FreeCodeCamp YouTube</a></li>
-        <li>📘 <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
-        <li>📺 <a href="https://www.youtube.com/@WebDevSimplified" target="_blank">Web Dev Simplified</a></li>
-      </ul>
-    </section>
+				<a class="card" href="08_css_responsive/index.html">
+					<div class="icon">📱</div>
+					<div class="card-body">
+						<h3>Design Responsive</h3>
+						<p>Media queries, unități relative și tehnici mobile-first.</p>
+						<div class="meta">08_css_responsive/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-    <!-- LOC PENTRU IMAGINI -->
-    <section class="images-demo">
-      <h2>🖼️ Exemple vizuale</h2>
-      <div class="image-placeholder">📷 Aici poți adăuga o imagine despre conceptele prezentate.</div>
-      <div class="image-placeholder">📷 Poți adăuga un GIF sau o captură de ecran cu rezultat de cod.</div>
-    </section>
-  </main>
+				<a class="card" href="09_html_css_examples/index.html">
+					<div class="icon">🧾</div>
+					<div class="card-body">
+						<h3>Exemple HTML & CSS</h3>
+						<p>Componente practice și pagini demonstrative.</p>
+						<div class="meta">09_html_css_examples/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 Frontend Learning Path — Template Extins</p>
-  </footer>
-</body>
+				<a class="card" href="10_best_practices_html_css/index.html">
+					<div class="icon">✅</div>
+					<div class="card-body">
+						<h3>Bune Practici HTML/CSS</h3>
+						<p>
+							Organizare, nomenclatură, accesibilitate și mentenanță a
+							stilurilor.
+						</p>
+						<div class="meta">10_best_practices_html_css/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="11_js_basics/index.html">
+					<div class="icon">💡</div>
+					<div class="card-body">
+						<h3>JavaScript — Bazele</h3>
+						<p>
+							Variabile, tipuri, control de flux și concepte fundamentale JS.
+						</p>
+						<div class="meta">11_js_basics/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="12_js_functions/index.html">
+					<div class="icon">ƒ</div>
+					<div class="card-body">
+						<h3>Funcții în JavaScript</h3>
+						<p>Declarare, expresii, arrow functions și scope.</p>
+						<div class="meta">12_js_functions/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="13_dom_manipulation/index.html">
+					<div class="icon">🧭</div>
+					<div class="card-body">
+						<h3>DOM & Interacțiuni</h3>
+						<p>
+							Găsire elemente, evenimente, modificare conținut și structură.
+						</p>
+						<div class="meta">13_dom_manipulation/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="14_es6/index.html">
+					<div class="icon">⚡</div>
+					<div class="card-body">
+						<h3>ES6 și mai departe</h3>
+						<p>
+							Let/const, template strings, destructuring, modules și multe
+							altele.
+						</p>
+						<div class="meta">14_es6/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="15_ajax_promises/index.html">
+					<div class="icon">🔗</div>
+					<div class="card-body">
+						<h3>Ajax & Promisiuni</h3>
+						<p>Fetch API, Promises, async/await și comunicare cu serverul.</p>
+						<div class="meta">15_ajax_promises/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="16_js_classes_objects/index.html">
+					<div class="icon">🏷️</div>
+					<div class="card-body">
+						<h3>Clase & Obiecte JS</h3>
+						<p>OOP în JavaScript: clase, prototype și modele de obiecte.</p>
+						<div class="meta">16_js_classes_objects/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="17_js_bom/index.html">
+					<div class="icon">🧭</div>
+					<div class="card-body">
+						<h3>BOM — Browser Object Model</h3>
+						<p>
+							Window, navigator, location, history și controlul ferestrelor.
+						</p>
+						<div class="meta">17_js_bom/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="18_debugging_error_handling/index.html">
+					<div class="icon">🐞</div>
+					<div class="card-body">
+						<h3>Debugging & Erori</h3>
+						<p>
+							Tehnici de debug, console, breakpoint-uri și tratarea excepțiilor.
+						</p>
+						<div class="meta">18_debugging_error_handling/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="19_working_with_apis/index.html">
+					<div class="icon">📡</div>
+					<div class="card-body">
+						<h3>Lucrul cu API-uri</h3>
+						<p>
+							Consumarea API-urilor REST, serializare, autentificare și CORS.
+						</p>
+						<div class="meta">19_working_with_apis/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="20_build_tools_package_management/index.html">
+					<div class="icon">🛠️</div>
+					<div class="card-body">
+						<h3>Build Tools & NPM</h3>
+						<p>
+							Bundlers, task runners, npm/yarn și managementul dependențelor.
+						</p>
+						<div class="meta">20_build_tools_package_management/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="21_css_preprocessors_frameworks/index.html">
+					<div class="icon">⚗️</div>
+					<div class="card-body">
+						<h3>Preprocesatoare & Frameworks CSS</h3>
+						<p>
+							Sass, Less, Tailwind, Bootstrap — când și cum să le folosești.
+						</p>
+						<div class="meta">21_css_preprocessors_frameworks/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="22_accessibility_a11y/index.html">
+					<div class="icon">♿</div>
+					<div class="card-body">
+						<h3>Accesibilitate (A11Y)</h3>
+						<p>
+							Reguli practice pentru site-uri accesibile: ARIA, keyboard nav,
+							contrast.
+						</p>
+						<div class="meta">22_accessibility_a11y/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="23_react_basics/index.html">
+					<div class="icon">⚛️</div>
+					<div class="card-body">
+						<h3>React — Bazele</h3>
+						<p>Componente, JSX, props și state — începutul cu React.</p>
+						<div class="meta">23_react_basics/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="24_react_hooks_lifecycle/index.html">
+					<div class="icon">🔁</div>
+					<div class="card-body">
+						<h3>React — Hooks & Lifecycle</h3>
+						<p>
+							useState, useEffect și ciclul de viață al componentelor
+							funcționale.
+						</p>
+						<div class="meta">24_react_hooks_lifecycle/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="25_react_project_structure_routing/index.html">
+					<div class="icon">🗂️</div>
+					<div class="card-body">
+						<h3>Structură Proiect React & Routing</h3>
+						<p>
+							Organizarea proiectului, routing și bune practici pentru aplicații
+							React.
+						</p>
+						<div class="meta">
+							25_react_project_structure_routing/index.html
+						</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="26_testing_deployment/index.html">
+					<div class="icon">🚀</div>
+					<div class="card-body">
+						<h3>Testing & Deploy</h3>
+						<p>
+							Testare unit/integrare, CI, și modalități de deploy (Netlify,
+							Vercel, etc.).
+						</p>
+						<div class="meta">26_testing_deployment/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="27_git_advanced/index.html">
+					<div class="icon">🔧</div>
+					<div class="card-body">
+						<h3>Git — Avansat</h3>
+						<p>
+							Branching model, rebase, resolving conflicts și bune practici Git.
+						</p>
+						<div class="meta">27_git_advanced/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+
+				<a class="card" href="28_final_project_portfolio/index.html">
+					<div class="icon">🏁</div>
+					<div class="card-body">
+						<h3>Proiect Final & Portofoliu</h3>
+						<p>
+							Construiește un proiect final și pregătește portofoliul pentru
+							joburi.
+						</p>
+						<div class="meta">28_final_project_portfolio/index.html</div>
+					</div>
+					<div class="action"><span class="btn">Start Learning</span></div>
+				</a>
+			</div>
+		</main>
+
+		<footer>© 2025 Frontend Study Guide — pagina principală</footer>
+	</body>
 </html>

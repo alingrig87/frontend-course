@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitolul 1: Ce este Responsive Design</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Stil suplimentar doar pentru exemplu live */
+      .responsive-container {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .box {
+        flex: 1;
+        background-color: #00b4d8;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      @media (max-width: 768px) {
+        .responsive-container {
+          flex-direction: column;
+        }
+      }
+
+      pre {
+        background-color: #282c34;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-top: 1rem;
+      }
+
+      .key-points ul {
+        margin-top: 1rem;
+        padding-left: 1.2rem;
+      }
+
+      .key-points li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>🌐 Website Complet Responsive</h1>
+        </a>
+        <p>Învață pas cu pas să creezi site-uri care arată perfect pe orice dispozitiv</p>
+      </div>
+      <button id="menu-btn" class="menu-btn">☰</button>
+    </header>
+
+    <!-- ===== CONTAINER ===== -->
+    <div class="container">
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="sidebar" id="sidebar">
+        <h2>📘 Capitole</h2>
+        <nav>
+          <ul>
+            <li><a href="responsive-design.html" class="active">1. Ce este Responsive Design</a></li>
+            <li><a href="media-queries.html">2. Media Queries</a></li>
+            <li><a href="breakpoints.html">3. Breakpoints standard</a></li>
+            <li><a href="layout-fluid-fix.html">4. Layout fluid vs fix</a></li>
+            <li><a href="unitati-relative.html">5. Unități relative (%, vw, vh, rem)</a></li>
+            <li><a href="imagini-responsive.html">6. Imagini responsive</a></li>
+            <li><a href="mobile-first.html">7. Mobile-first design</a></li>
+            <li><a href="grid-flex.html">8. Grid și Flex responsive</a></li>
+            <li><a href="workshop-landing.html">9. Workshop: Landing Page responsive</a></li>
+            <li><a href="tema-finala.html">10. Tema: Website complet responsive</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ===== CONȚINUT PRINCIPAL ===== -->
+      <main class="main-content">
+        <!-- Introducere -->
+        <section class="intro">
+          <h2>Capitolul 1: Ce este Responsive Design</h2>
+          <p>
+            <strong>Responsive Design</strong> înseamnă crearea de site-uri care se adaptează
+            automat la dimensiunea ecranului dispozitivului pe care sunt vizualizate, fie că este
+            desktop, tabletă sau mobil. Scopul este ca utilizatorul să aibă o experiență optimă
+            indiferent de device.
+          </p>
+        </section>
+
+        <!-- Exemplu de cod -->
+        <section class="example">
+          <h3>Exemplu practic:</h3>
+          <p>
+            Două coloane pe desktop devin una sub alta pe mobil.
+          </p>
+
+          <!-- Boxuri vizuale -->
+          <div class="responsive-container">
+            <div class="box">Coloana 1</div>
+            <div class="box">Coloana 2</div>
+          </div>
+
+          <!-- Cod sursă -->
+          <pre>
+.responsive-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.box {
+  flex: 1;
+  background-color: #00b4d8;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Pe ecrane mici, coloanele se așază una sub alta */
+@media (max-width: 768px) {
+  .responsive-container {
+    flex-direction: column;
+  }
+}
+          </pre>
+        </section>
+
+        <!-- Puncte cheie -->
+        <section class="key-points">
+          <h3>Puncte cheie:</h3>
+          <ul>
+            <li>Layout-ul se adaptează la orice dimensiune de ecran.</li>
+            <li>Imaginile și textele sunt scalabile.</li>
+            <li>Experiență consistentă pentru utilizator.</li>
+            <li>Se folosesc unități relative și media queries pentru ajustări.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>© 2025 Curs Responsive Web Design | Creat de Echipa EduWeb</p>
+    </footer>
+
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
+
+
+
