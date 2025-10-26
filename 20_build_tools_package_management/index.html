@@ -1,13 +1,277 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Build Tools & Package Management (npm, vite)</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Build Tools & Package Management (npm, vite)</h1>
-  <script src="app.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecție: Build Tools & Package Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Frontend Tools</h2>
+        <a href="../index.html" class="home-link">Pagina principală</a>
+        <button id="theme-toggle" aria-label="Comută tema">🌙</button>
+      </div>
+
+      <nav class="side-nav">
+        <ul>
+          <li>
+            <a href="#intro" class="active">Ce sunt tool-urile de build</a>
+          </li>
+          <li><a href="#node">Node.js & npm recap</a></li>
+          <li><a href="#deps">Instalarea dependințelor</a></li>
+          <li><a href="#scripts">Scripturi npm</a></li>
+          <li><a href="#minify">Minificare & Bundling</a></li>
+          <li><a href="#webpack">Webpack - Introducere</a></li>
+          <li><a href="#modules">Module Bundling</a></li>
+          <li><a href="#babel">Babel - Transpiling JS</a></li>
+          <li><a href="#linters">ESLint & Prettier</a></li>
+          <li><a href="#vite">Vite & Tool-uri moderne</a></li>
+          <li><a href="#tasks">Task Runners (Gulp)</a></li>
+          <li><a href="#workshop">Workshop: proiect npm + Webpack</a></li>
+          <li><a href="#cicd">CI/CD & Automatizare</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONȚINUT PRINCIPAL -->
+    <main class="main-content">
+      <header>
+        <h1>Build Tools & Package Management</h1>
+        <p class="intro-text">
+          În această lecție vei învăța despre ecosistemul modern JavaScript: cum
+          gestionezi dependințele, cum folosești Webpack și Vite, cum
+          transpilezi codul cu Babel și cum automatizezi totul pentru producție.
+        </p>
+      </header>
+
+      <article>
+        <section id="intro" class="fade-section">
+          <h2>1. Ce sunt tool-urile de build</h2>
+          <p>
+            Tool-urile de build sunt aplicații care automatizează sarcini
+            repetitive din procesul de dezvoltare frontend: compilare,
+            optimizare, testare și pregătirea aplicației pentru producție.
+          </p>
+          <ul>
+            <li>✅ Reduc dimensiunea codului (minificare)</li>
+            <li>✅ Automatizează compilarea fișierelor SCSS/TypeScript</li>
+            <li>✅ Optimizează imagini și cod JS/CSS</li>
+            <li>✅ Rulează teste și verificări de calitate automată</li>
+          </ul>
+          <pre><code># Exemple populare
+- Webpack
+- Vite
+- Parcel
+- Gulp
+- Rollup
+- esbuild</code></pre>
+        </section>
+
+        <section id="node" class="fade-section">
+          <h2>2. Node.js & npm recap</h2>
+          <p>
+            <strong>Node.js</strong> permite rularea JavaScript în afara
+            browserului. <strong>npm (Node Package Manager)</strong> este
+            sistemul de gestionare al pachetelor din ecosistemul JS.
+          </p>
+          <pre><code># Verifică versiunile instalate
+node -v
+npm -v
+
+# Creează un fișier package.json automat
+npm init -y</code></pre>
+          <p>
+            Fișierul <code>package.json</code> conține informații despre proiect
+            (nume, versiune, autor) și lista de <em>dependințe</em> instalate.
+          </p>
+        </section>
+
+        <section id="deps" class="fade-section">
+          <h2>3. Instalarea dependințelor</h2>
+          <p>Pentru a adăuga o bibliotecă, folosești comanda:</p>
+          <pre><code># Instalare normală
+npm install react
+
+# Instalare doar pentru dezvoltare (ex: tool-uri de build)
+npm install webpack --save-dev
+</code></pre>
+          <p>
+            Dependințele din secțiunea <code>devDependencies</code> nu sunt
+            incluse în buildul final de producție.
+          </p>
+        </section>
+
+        <section id="scripts" class="fade-section">
+          <h2>4. Scripturi npm</h2>
+          <p>
+            Poți defini scripturi personalizate în fișierul
+            <code>package.json</code> pentru a automatiza comenzi:
+          </p>
+          <pre><code>"scripts": {
+  "start": "webpack serve",
+  "build": "webpack --mode production",
+  "lint": "eslint src/",
+  "format": "prettier --write ."
+}</code></pre>
+          <p>Rulezi scriptul astfel:</p>
+          <pre><code>npm run build</code></pre>
+        </section>
+
+        <section id="minify" class="fade-section">
+          <h2>5. Minificare & Bundling</h2>
+          <p>
+            <strong>Minificarea</strong> reduce dimensiunea fișierelor prin
+            eliminarea spațiilor, comentariilor și denumirilor lungi.
+            <strong>Bundling</strong> combină mai multe fișiere într-unul
+            singur, pentru a îmbunătăți performanța.
+          </p>
+          <pre><code># Exemple
+- Terser → minifică JS
+- CSSNano → optimizează CSS
+- Webpack → face ambele + multe altele</code></pre>
+        </section>
+
+        <section id="webpack" class="fade-section">
+          <h2>6. Webpack - Introducere</h2>
+          <p>
+            <strong>Webpack</strong> este unul dintre cele mai populare tool-uri
+            pentru bundling și managementul dependințelor JS.
+          </p>
+          <pre><code># Instalare
+npm install webpack webpack-cli --save-dev</code></pre>
+          <p>Exemplu de fișier de configurare:</p>
+          <pre><code>// webpack.config.js
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: __dirname + '/dist'
+  },
+  mode: 'development'
+};</code></pre>
+        </section>
+
+        <section id="modules" class="fade-section">
+          <h2>7. Module Bundling</h2>
+          <pre><code>// src/utils.js
+export function salut(nume) {
+  console.log(`Salut, ${nume}!`);
+}
+
+// src/index.js
+import { salut } from './utils.js';
+salut('developer');
+</code></pre>
+          <p>
+            Webpack combină aceste fișiere într-un singur
+            <code>bundle.js</code> pentru browser.
+          </p>
+        </section>
+
+        <section id="babel" class="fade-section">
+          <h2>8. Babel - Transpiling JS</h2>
+          <p>
+            <strong>Babel</strong> transformă codul modern (ES6+) în cod
+            compatibil cu browserele mai vechi.
+          </p>
+          <pre><code># Instalare Babel
+npm install --save-dev @babel/core @babel/preset-env babel-loader</code></pre>
+          <pre><code>// webpack.config.js
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: { presets: ['@babel/preset-env'] }
+      }
+    }
+  ]
+}</code></pre>
+        </section>
+
+        <section id="linters" class="fade-section">
+          <h2>9. ESLint & Prettier</h2>
+          <p>
+            <strong>ESLint</strong> ajută la detectarea problemelor din cod, iar
+            <strong>Prettier</strong> îl formatează automat.
+          </p>
+          <pre><code># Instalare
+npm install --save-dev eslint prettier
+
+# Inițializare ESLint
+npx eslint --init</code></pre>
+        </section>
+
+        <section id="vite" class="fade-section">
+          <h2>10. Vite & Tool-uri moderne</h2>
+          <p>
+            <strong>Vite</strong> este un bundler ultrarapid bazat pe ES Modules
+            și <code>esbuild</code>.
+          </p>
+          <pre><code># Creare proiect Vite
+npm create vite@latest my-app
+cd my-app
+npm install
+npm run dev</code></pre>
+        </section>
+
+        <section id="tasks" class="fade-section">
+          <h2>11. Task Runners (Gulp)</h2>
+          <p>
+            <strong>Gulp</strong> automatizează sarcini precum compilarea SCSS,
+            optimizarea imaginilor sau reîncărcarea automată.
+          </p>
+          <pre><code># Instalare
+npm install --save-dev gulp
+
+# gulpfile.js
+const { src, dest } = require('gulp');
+function copyFiles() {
+  return src('src/*.html').pipe(dest('dist'));
+}
+exports.default = copyFiles;</code></pre>
+        </section>
+
+        <section id="workshop" class="fade-section">
+          <h2>12. Workshop: proiect npm + Webpack</h2>
+          <ol>
+            <li>Inițializează proiectul: <code>npm init -y</code></li>
+            <li>Instalează Webpack și Babel</li>
+            <li>Configurează <code>webpack.config.js</code></li>
+            <li>
+              Adaugă scripturi npm (<code>build</code>, <code>start</code>)
+            </li>
+            <li>Rulează: <code>npm run build</code></li>
+          </ol>
+        </section>
+
+        <section id="cicd" class="fade-section">
+          <h2>13. CI/CD & Automatizare</h2>
+          <p>
+            Tool-urile de build se integrează ușor în procese CI/CD pentru a
+            automatiza testarea și deploy-ul.
+          </p>
+          <pre><code># Exemplu simplu GitHub Action
+name: Build Frontend
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: npm run build
+</code></pre>
+        </section>
+      </article>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>
