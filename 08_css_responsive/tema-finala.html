@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capitolul 10: Tema – Website complet responsive</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <a href="index.html">
+      <h1>🌐 Website Complet Responsive</h1>
+    </a>
+    <p>Capitolul 10: Tema finală – 10 exerciții practice cu cod</p>
+  </div>
+  <button id="menu-btn" class="menu-btn">☰</button>
+</header>
+
+<div class="container">
+  <aside class="sidebar" id="sidebar">
+    <h2>📘 Capitole</h2>
+    <ul>
+      <li><a href="responsive-design.html">1. Ce este Responsive Design</a></li>
+      <li><a href="media-queries.html">2. Media Queries</a></li>
+      <li><a href="breakpoints.html">3. Breakpoints standard</a></li>
+      <li><a href="layout-fluid-fix.html">4. Layout fluid vs fix</a></li>
+      <li><a href="unitati-relative.html">5. Unități relative</a></li>
+      <li><a href="imagini-responsive.html">6. Imagini responsive</a></li>
+      <li><a href="mobile-first.html">7. Mobile-first design</a></li>
+      <li><a href="grid-flex.html">8. Grid și Flex responsive</a></li>
+      <li><a href="workshop-interviu.html">9. Workshop</a></li>
+      <li><a href="tema-finala.html" class="active">10. Tema finală</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <section class="intro">
+      <h2>Capitolul 10: Tema – Website complet responsive</h2>
+      <p>Acesta este testul final. Încearcă să rezolvi toate exercițiile și verifică soluțiile în cod.</p>
+    </section>
+
+    <section class="objectives">
+      <h3>Exerciții practice:</h3>
+      <div id="questions" class="grid"></div>
+    </section>
+
+    <section class="bonus">
+      <h3>🎯 Provocare finală:</h3>
+      <p>Creează o pagină de prezentare completă care include:</p>
+      <ul>
+        <li>Header cu navbar responsive</li>
+        <li>Secțiuni multiple cu layout flexibil (Flexbox/Grid)</li>
+        <li>Galerie de imagini responsive</li>
+        <li>Footer cu contact și social media</li>
+        <li>Tranziții CSS pentru hover și focus</li>
+        <li>Testarea completă pe mobil și tabletă</li>
+      </ul>
+      <p>📝 Poți folosi toate cunoștințele acumulate în curs și codul exemplificat mai sus.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <p>© 2025 Curs Responsive Web Design | Creat de Echipa EduWeb</p>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menu-btn");
+const sidebar = document.getElementById("sidebar");
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("show");
+});
+
+
+// Întrebări + soluții cod
+const questions = [
+  ["Creează un layout complet responsive folosind Flexbox.", `<pre><code>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item {
+  flex: 1 1 200px;
+  margin: 0.5rem;
+}
+</code></pre>`],
+  ["Transformă un layout fix într-un layout fluid.", `<pre><code>
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</code></pre>`],
+  ["Adaugă un navbar responsive cu hamburger menu.", `<pre><code>
+@media(max-width:768px){
+  .navbar ul { display: none; }
+  .menu-btn { display: block; }
+}
+.menu-btn.active + ul { display: block; }
+</code></pre>`],
+  ["Folosește unități relative pentru fonturi și spacing.", `<pre><code>
+body { font-size: 1rem; }
+h1 { font-size: 2.5rem; }
+p { margin: 1rem 0; }
+</code></pre>`],
+  ["Creează o grilă de imagini responsive.", `<pre><code>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+img { width: 100%; height: auto; }
+</code></pre>`],
+  ["Setează breakpoints personalizate.", `<pre><code>
+@media(max-width: 480px){ ... }
+@media(max-width: 768px){ ... }
+@media(min-width: 1200px){ ... }
+</code></pre>`],
+  ["Include un footer responsive.", `<pre><code>
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+</code></pre>`],
+  ["Asigură-te că toate link-urile și butoanele sunt accesibile.", `<pre><code>
+a:focus, button:focus {
+  outline: 2px solid #00b4d8;
+}
+</code></pre>`],
+  ["Testează website-ul pe mobil și tabletă.", `<pre><code>
+// Folosește DevTools -> Toggle Device Toolbar
+// Ajustează width și verifică layout-ul
+</code></pre>`],
+  ["Adaugă tranziții CSS pentru hover și focus.", `<pre><code>
+button, a {
+  transition: all 0.3s ease;
+}
+button:hover { background-color: #00b4d8; color: #fff; }
+</code></pre>`]
+];
+
+const containerQuestions = document.getElementById("questions");
+
+questions.forEach((q, index) => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const h3 = document.createElement("h3");
+  h3.textContent = "Exercițiul " + (index + 1);
+  card.appendChild(h3);
+
+  const p = document.createElement("p");
+  p.innerHTML = q[0];
+  card.appendChild(p);
+
+  const answer = document.createElement("div");
+  answer.className = "answer";
+  answer.style.marginTop = "0.5rem";
+  answer.style.padding = "0.5rem";
+  answer.style.backgroundColor = "#e0f7fa";
+  answer.style.borderRadius = "6px";
+  answer.style.display = "none";
+  answer.innerHTML = q[1];
+
+  card.appendChild(answer);
+
+  const btn = document.createElement("button");
+  btn.className = "btn-answer";
+  btn.textContent = "Arată codul";
+  btn.style.marginTop = "0.8rem";
+  btn.onclick = () => {
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+  };
+  card.appendChild(btn);
+
+  containerQuestions.appendChild(card);
+});
+</script>
+
+</body>
+</html>
+
+

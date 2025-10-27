@@ -1,13 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Testing & Deployment (Jest, RTL, Vercel, Netlify)</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Testing & Deployment (Jest, RTL, Vercel, Netlify)</h1>
-  <script src="app.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>26. Testing & Deployment</title>
+    <link rel="stylesheet" href="../components/sidebar/style.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar component (inclus) -->
+    <aside class="sidebar">
+      <h2>Module</h2>
+      <nav class="side-nav">
+        <ul>
+          <li><a href="../11_js_basics/index.html">JS Basics</a></li>
+          <li>
+            <a href="../24_react_hooks_lifecycle/index.html">React Hooks</a>
+          </li>
+          <li><a href="#" class="active">Testing & Deployment</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conținut principal -->
+    <main class="main-content">
+      <header>
+        <h1>26. Testing & Deployment</h1>
+        <p>Verifică funcționalitatea aplicației și public-o online 🚀</p>
+      </header>
+
+      <section id="testing">
+        <h2>🧪 Testare JavaScript</h2>
+        <p id="testResult"></p>
+      </section>
+
+      <section id="deployment">
+        <h2>☁️ Deployment</h2>
+        <p>După testare, aplicația poate fi urcată pe Netlify sau Vercel.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>

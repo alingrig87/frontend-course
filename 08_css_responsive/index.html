@@ -1,13 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CSS Responsive — media queries, mobile-first</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>CSS Responsive — media queries, mobile-first</h1>
-  <script src="app.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curs: Website complet responsive</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <!-- 🔗 Am adăugat link spre index.html -->
+        <a href="index.html">
+          <h1>🌐 Website Complet Responsive</h1>
+        </a>
+        <p>Învață pas cu pas să creezi site-uri care arată perfect pe orice dispozitiv</p>
+      </div>
+      <button id="menu-btn" class="menu-btn">☰</button>
+    </header>
+
+    <!-- ===== CONTAINER ===== -->
+    <div class="container">
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="sidebar" id="sidebar">
+        <h2>📘 Capitole</h2>
+        <nav>
+          <ul>
+            <li><a href="responsive-design.html" class="active">1. Ce este Responsive Design</a></li>
+            <li><a href="media-queries.html">2. Media Queries</a></li>
+            <li><a href="breakpoints.html">3. Breakpoints standard</a></li>
+            <li><a href="layout-fluid-fix.html">4. Layout fluid vs fix</a></li>
+            <li><a href="unitati-relative.html">5. Unități relative (%, vw, vh, rem)</a></li>
+            <li><a href="imagini-responsive.html">6. Imagini responsive</a></li>
+            <li><a href="mobile-first.html">7. Mobile-first design</a></li>
+            <li><a href="grid-flex.html">8. Grid și Flex responsive</a></li>
+            <li><a href="workshop-interviu.html">9. Workshop: Landing Page responsive</a></li>
+            <li><a href="tema-finala.html">10. Tema: Website complet responsive</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ===== CONȚINUT PRINCIPAL ===== -->
+      <main class="main-content">
+        <section class="intro">
+          <h2>Bine ai venit la cursul tău de Responsive Web Design!</h2>
+          <p>
+            Acest curs te va ghida prin toate conceptele și tehnicile necesare pentru a construi
+            site-uri moderne, care se adaptează perfect la orice dimensiune de ecran — fie că este
+            vorba de telefon, tabletă sau desktop.
+          </p>
+        </section>
+
+        <section class="objectives">
+          <h3>Ce vei învăța în acest curs</h3>
+          <div class="grid">
+            <div class="card">Ce este Responsive Design</div>
+            <div class="card">Media Queries</div>
+            <div class="card">Breakpoints standard</div>
+            <div class="card">Layout fluid vs fix</div>
+            <div class="card">Unități relative (%, vw, vh, rem)</div>
+            <div class="card">Imagini responsive</div>
+            <div class="card">Mobile-first design</div>
+            <div class="card">Grid și Flex responsive</div>
+            <div class="card special">Workshop: Landing Page responsive</div>
+            <div class="card final">Tema: Website complet responsive</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>© 2025 Curs Responsive Web Design | Creat de Echipa EduWeb</p>
+    </footer>
+
+    <script>
+      // Buton pentru a deschide/inchide sidebar-ul pe mobil
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
 </html>
+
+
+
+
