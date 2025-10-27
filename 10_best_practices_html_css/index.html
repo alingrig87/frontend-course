@@ -1,171 +1,121 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>10 Best Practices HTML & CSS</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="logo">🌐 10 Best Practices HTML & CSS</div>
-    <nav class="nav">
-      <a href="#teorie">Teorie</a>
-      <a href="#exercitii">Exerciții</a>
-      <a href="#interviu">Întrebări</a>
-      <a href="#proiect">Proiect</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bune Practici HTML & CSS (naming, organizare)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <h2>Capitole</h2>
-    <ul>
-      <li><span class="badge html">01</span> HTML Semantic</li>
-      <li><span class="badge css">02</span> Nume de clase clare</li>
-      <li><span class="badge css">03</span> Structură Mobile-First</li>
-      <li><span class="badge html">04</span> Accesibilitate</li>
-      <li><span class="badge css">05</span> CSS Modular</li>
-      <li><span class="badge css">06</span> Evitarea stilurilor inline</li>
-      <li><span class="badge css">07</span> Reset și Normalize</li>
-      <li><span class="badge html">08</span> SEO Semantic</li>
-      <li><span class="badge css">09</span> Reutilizare CSS</li>
-      <li><span class="badge html">10</span> Validare cod</li>
-    </ul>
-  </aside>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h2>Frontend Tools</h2>
+      <ul>
+        <li><a href="#" class="active">1. Bune practici HTML & CSS</a></li>
+        <li><a href="#">2. Structura unui proiect</a></li>
+        <li><a href="#">3. Versionare și colaborare</a></li>
+        <li><a href="#">4. Workflow profesional</a></li>
+      </ul>
+    </aside>
 
-  <!-- CONȚINUT PRINCIPAL -->
-  <main class="content">
-    <!-- TEORIE -->
-    <section id="teorie" class="hero">
-      <h1>🧠 Cele mai bune practici HTML & CSS</h1>
-      <p>Un ghid complet despre scrierea codului clar, semantic și performant pentru proiecte moderne.</p>
-    </section>
+    <!-- CONȚINUT PRINCIPAL -->
+    <main>
+      <header>
+        <h1>Bune practici HTML & CSS (naming, organizare)</h1>
+      </header>
 
-    <section class="cards-section">
-      <h2>📘 Partea Teoretică</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>1️⃣ Folosește HTML semantic</h3>
-          <p>Tagurile precum <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> sau <code>&lt;article&gt;</code> cresc lizibilitatea și SEO-ul.</p>
-        </div>
-        <div class="card">
-          <h3>2️⃣ Clase descriptive</h3>
-          <p>Evită nume generice precum <code>.red</code>. Preferă <code>.error-text</code> sau <code>.btn-primary</code>.</p>
-        </div>
-        <div class="card">
-          <h3>3️⃣ CSS Modular</h3>
-          <p>Grupează regulile pe componente și evită duplicarea codului.</p>
-        </div>
-        <div class="card">
-          <h3>4️⃣ Mobile-First</h3>
-          <p>Construiește layoutul întâi pentru ecrane mici și extinde cu media queries.</p>
-        </div>
-      </div>
-
-      <div class="info-boxes">
-        <div class="info note">💡 <strong>Sfat:</strong> Verifică-ți codul periodic cu <code>W3C Validator</code> pentru a evita erorile ascunse.</div>
-        <div class="info warning">⚠️ <strong>Atenție:</strong> Nu combina prea multe frameworkuri CSS – poate duce la conflicte de stiluri.</div>
-      </div>
-    </section>
-
-    <!-- EXERCIȚII -->
-    <section id="exercitii" class="cards-section">
-      <h2>🧩 Exerciții Practice</h2>
-      <div class="card-grid">
-
-        <div class="card">
-          <h3>Exercițiu 1: Creează un header semantic</h3>
-          <p>Include un logo și un meniu navigațional.</p>
-          <button class="toggle-btn">👁️ Arată rezolvarea</button>
-          <div class="solution">
-<pre><code>&lt;header&gt;
-  &lt;h1&gt;Logo&lt;/h1&gt;
-  &lt;nav&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href="#"&gt;Acasă&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="#"&gt;Despre&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/header&gt;
-</code></pre>
+      <section class="lessons">
+        <!-- DESCRIERE -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Descriere</h3>
+            <button class="eye-btn" data-target="#descriere">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="descriere">
+            Această lecție explică <strong>Bune practici HTML & CSS (naming, organizare)</strong>.
+            Scopul este să ofere o înțelegere practică și teoretică, exemple și exerciții pentru a putea aplica imediat conceptele în proiecte reale.
           </div>
         </div>
 
-        <div class="card">
-          <h3>Exercițiu 2: Stilizează un buton cu hover</h3>
-          <p>Aplică tranziție lină la schimbarea culorii.</p>
-          <button class="toggle-btn">👁️ Arată rezolvarea</button>
-          <div class="solution">
-<pre><code>.btn {
-  background: #4b3f72;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-.btn:hover {
-  background: #7b1fa2;
-}
-</code></pre>
+        <!-- CE ÎNVEȚI -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Ce înveți</h3>
+            <button class="eye-btn" data-target="#ce-inveti">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="ce-inveti">
+            <ul>
+              <li>Înțelegerea conceptelor cheie legate de bune practici HTML & CSS (naming, organizare)</li>
+              <li>Instrumente, comenzi și workflow-uri specifice</li>
+              <li>Exemple practice și pași pentru a construi un mic proiect aplicat</li>
+            </ul>
           </div>
         </div>
 
-      </div>
-    </section>
+        <!-- PARTEA TEORETICĂ -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Partea Teoretică</h3>
+            <button class="eye-btn" data-target="#teorie">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="teorie">
+            Adaugă aici explicații detaliate, diagrame, comenzi și referințe.  
+            Exemple recomandate de sub-capitole:
+            <ul>
+              <li>Definiții și concepte-cheie</li>
+              <li>Comenzi / API-uri / sintaxă</li>
+              <li>Bune practici și capcane comune</li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- ÎNTREBĂRI DE INTERVIU -->
-    <section id="interviu" class="cards-section">
-      <h2>💬 Întrebări de Interviu (HTML & CSS)</h2>
+        <!-- EXERCIȚII -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Exerciții</h3>
+            <button class="eye-btn" data-target="#exercitii">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="exercitii">
+            <ol>
+              <li>Citește și rezumă conceptele principale în 5 propoziții.</li>
+              <li>Rezolvă 3-4 exemple practice din acest capitol (implementate în index.html / app.js / style.css).</li>
+              <li>Extensie: implementează o funcționalitate mică legată de capitol.</li>
+            </ol>
+          </div>
+        </div>
 
-      <div class="card">
-        <p><strong>1. Care este diferența dintre tagurile <code>&lt;section&gt;</code> și <code>&lt;div&gt;</code>?</strong></p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer">👉 <code>&lt;section&gt;</code> are valoare semantică (o secțiune logică de conținut), în timp ce <code>&lt;div&gt;</code> este doar un container generic.</div>
-      </div>
+        <!-- ÎNTREBĂRI DE INTERVIU -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Întrebări de interviu</h3>
+            <button class="eye-btn" data-target="#interviu">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="interviu">
+            <ul>
+              <li>Explică pe scurt: Bune practici HTML & CSS (naming, organizare).</li>
+              <li>Care sunt cele mai frecvente probleme întâlnite și cum le rezolvi?</li>
+              <li>Demonstrează un exemplu practic în 5 pași.</li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="card">
-        <p><strong>2. Ce face proprietatea <code>z-index</code>?</strong></p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer">👉 Controlează ordinea de afișare pe axa Z; valori mai mari apar deasupra celor mai mici.</div>
-      </div>
+        <!-- MINI-PROIECT -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Mini-Proiect (mic)</h3>
+            <button class="eye-btn" data-target="#proiect">👁️ Vezi detalii</button>
+          </div>
+          <div class="answer" id="proiect">
+            Proiect: Construiește un mic proiect care să exerseze conceptele descrise mai sus.  
+            De exemplu: Refactorizează un cod CSS prost structurat folosind BEM și variabile CSS.
+          </div>
+        </div>
+      </section>
 
-      <div class="card">
-        <p><strong>3. Ce diferență este între <code>em</code> și <code>rem</code>?</strong></p>
-        <button class="eye-btn">👁️ Vezi răspunsul</button>
-        <div class="answer">👉 <code>em</code> depinde de font-size-ul părintelui, <code>rem</code> de font-size-ul rădăcinii (<code>html</code>).</div>
-      </div>
-    </section>
+      <footer>© 2025 Frontend Study Guide — Bune Practici HTML & CSS</footer>
+    </main>
 
-    <!-- PROIECT -->
-    <section id="proiect" class="cards-section">
-      <h2>🚀 Mini-Proiect: „HTML & CSS Playground”</h2>
-      <p>Urmărește pașii pentru a crea un site curat, responsive și semantic.</p>
-
-      <div class="info exercise">
-        <ol>
-          <li>🔧 <code>git init</code> – Inițializează un repository</li>
-          <li>📄 Creează fișierele <code>index.html</code> și <code>style.css</code></li>
-          <li>🏗️ Adaugă structură semantică completă (<code>header</code>, <code>main</code>, <code>footer</code>)</li>
-          <li>🎨 Adaugă culori și fonturi coerente</li>
-          <li>📱 Aplică principiul Mobile First</li>
-          <li>🧩 Creează componente reutilizabile (ex: carduri)</li>
-          <li>🔍 Adaugă atribute ALT la imagini</li>
-          <li>🧭 Folosește linkuri descriptive</li>
-          <li>🧹 Rulează <code>npx stylelint "**/*.css"</code></li>
-          <li>🚀 Publică pe GitHub Pages</li>
-        </ol>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2025 HTML & CSS Learning Path — Best Practices</p>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
-
