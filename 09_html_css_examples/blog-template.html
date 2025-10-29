@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Template</title>
+    <link rel="stylesheet" href="../stylenou.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>HTML & CSS Examples</h2>
+      <nav class="side-nav">
+        <ul>
+          <li><a href="index.html">Pagina principala</a></li>
+          <li><a href="pagini-statice.html">Pagini statice</a></li>
+          <li><a href="layout-complex.html">Layout complex</a></li>
+          <li><a href="formulare-stilizate.html">Formulare stilizate</a></li>
+          <li><a href="carduri-de-produs.html">Carduri de produs</a></li>
+          <li><a href="profile-page.html">Profile page</a></li>
+          <li><a href="gallery-grid.html">Gallery grid</a></li>
+          <li><a href="contact-forms.html">Contact forms</a></li>
+          <li><a href="blog-template.html" class="active">Blog template</a></li>
+          <li><a href="resume-page.html">Resume page</a></li>
+          <li><a href="workshop.html">Workshop</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <p>
+          Aici se află un template de blog simplu, care include titluri, imagini
+          și text.
+        </p>
+      </header>
+
+      <section id="blog-template" class="expandable-section">
+        <h2>8. Template blog</h2>
+        <p>
+          Un template de blog simplu permite afișarea articolelor cu titlu,
+          dată, imagine și text. Poate fi extins pentru mai multe articole.
+        </p>
+        <p>Un exemplu de template pentru blog ar putea arăta astfel:</p>
+
+        <!-- Rezultatul vizual al articolelor de blog -->
+        <div class="blog-container">
+          <article class="blog-post">
+            <h3>Primul articol</h3>
+            <small>Publicat pe 22 octombrie 2025</small>
+            <div class="image-container">
+              <img
+                src="https://picsum.photos/600/200?random=1"
+                alt="Articol 1"
+              />
+              <img
+                src="https://picsum.photos/600/200?random=2"
+                alt="Articol 2"
+              />
+            </div>
+            <p>
+              Acesta este un exemplu de articol de blog cu HTML și CSS. Poți
+              adăuga titlu, text, dată și imagine.
+            </p>
+          </article>
+
+          <article class="blog-post">
+            <h3>Al doilea articol</h3>
+            <small>Publicat pe 21 octombrie 2025</small>
+            <div class="image-container">
+              <img
+                src="https://picsum.photos/600/200?random=3"
+                alt="Articol 3"
+              />
+              <img
+                src="https://picsum.photos/600/200?random=4"
+                alt="Articol 4"
+              />
+            </div>
+            <p>
+              Articolele pot fi stilizate diferit pentru a evidenția conținutul
+              relevant.
+            </p>
+          </article>
+        </div>
+
+        <p>
+          Când dai click pe butonul „Arată rezolvarea”, vei vedea codul HTML și
+          CSS care formează acest template de blog.
+        </p>
+
+        <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;div class="blog-container"&gt;
+  &lt;article class="blog-post"&gt;
+    &lt;h3&gt;Primul articol&lt;/h3&gt;
+    &lt;small&gt;Publicat pe 22 octombrie 2025&lt;/small&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="https://picsum.photos/600/200?random=1" alt="Articol 1"&gt;
+      &lt;img src="https://picsum.photos/600/200?random=2" alt="Articol 2"&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Acesta este un exemplu de articol de blog cu HTML și CSS. Poți adăuga titlu, text, dată și imagine.&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article class="blog-post"&gt;
+    &lt;h3&gt;Al doilea articol&lt;/h3&gt;
+    &lt;small&gt;Publicat pe 21 octombrie 2025&lt;/small&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="https://picsum.photos/600/200?random=3" alt="Articol 3"&gt;
+      &lt;img src="https://picsum.photos/600/200?random=4" alt="Articol 4"&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Articolele pot fi stilizate diferit pentru a evidenția conținutul relevant.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog-post {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+  margin-bottom: 5px;
+  color: #20232a;
+}
+
+.blog-post small {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.blog-post img {
+  width: 45%;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.blog-post p {
+  line-height: 1.6;
+  color: #333;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .blog-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .blog-post {
+    width: 48%;
+  }
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li>
+              <code>&lt;article&gt;</code> – fiecare articol este încadrat în
+              acest element pentru semnificație semantică;
+            </li>
+            <li>
+              <code>.blog-container</code> – containerul principal folosește
+              **Flexbox** pentru a organiza articolele vertical și le transformă
+              într-un **grid cu două coloane pe ecrane mari**;
+            </li>
+            <li>
+              <code>box-shadow</code> – adaugă un efect vizual de „card” pentru
+              fiecare post;
+            </li>
+            <li>
+              <code>border-radius</code> – face colțurile imaginii și ale
+              cardului rotunjite pentru un aspect mai plăcut;
+            </li>
+            <li>
+              <code>width: 45%;</code> – face ca fiecare imagine să fie mai mică
+              și să încapă pe același rând;
+            </li>
+            <li>
+              <code>justify-content: space-between;</code> – asigură că
+              imaginile sunt distribuite uniform pe același rând;
+            </li>
+            <li>
+              <code>@media (min-width: 768px)</code> – face articolele să apară
+              într-un **grid cu două coloane pe ecrane mari**;
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <ul>
+          <li>Adaugă un al treilea articol cu imagine și dată;</li>
+          <li>
+            Schimbă culorile fundalului și ale titlurilor pentru stil personal;
+          </li>
+          <li>
+            Transformă articolele într-un **grid cu două coloane** pe ecrane
+            mari (<code>@media queries</code>).
+          </li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum poți crea un
+          **template de blog responsive** care să arate bine pe toate
+          dispozitivele și să includă articolele într-un **layout flexibil**.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const expandBtns = document.querySelectorAll(".expand-btn");
+      expandBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const solution = btn.nextElementSibling;
+          const isHidden = solution.classList.contains("hidden");
+          solution.classList.toggle("hidden");
+          // schimbă textul butonului
+          btn.textContent = isHidden
+            ? "🙈 Ascunde rezolvarea"
+            : "👁️ Arată rezolvarea";
+        });
+      });
+    </script>
+  </body>
+</html>
