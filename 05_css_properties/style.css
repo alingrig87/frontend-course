@@ -208,6 +208,9 @@ code {
 .answer {
   margin-top: 0.6rem;
 }
+.hidden {
+  display: none;
+}
 
 /* PROIECT */
 .project-tasks {
