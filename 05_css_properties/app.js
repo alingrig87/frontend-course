@@ -1,23 +1,34 @@
+// --- Pentru butoanele din exerciții (toggle soluții) ---
 document.querySelectorAll('.toggle-btn').forEach((btn) => {
   btn.addEventListener('click', () => {
-    const next = btn.nextElementSibling;
-    if (next && next.classList.contains('solution')) {
-      next.style.display = next.style.display === 'block' ? 'none' : 'block';
+    const targetSelector = btn.getAttribute('data-target');
+    const target = document.querySelector(targetSelector);
+
+    if (!target) return; // dacă nu există, nu face nimic
+
+    target.classList.toggle('hidden');
+
+    // schimbăm textul butonului
+    if (target.classList.contains('hidden')) {
+      btn.textContent = '👁️ Vezi soluția';
+    } else {
+      btn.textContent = '🙈 Ascunde soluția';
     }
   });
 });
-<script>
-  // Selectăm toate butoanele const buttons =
-  document.querySelectorAll('.eye-btn'); buttons.forEach(button ={' '}
-  {button.addEventListener('click', () => {
-    const answer = button.nextElementSibling; // răspunsul imediat după buton
-    answer.classList.toggle('hidden'); // adaugă/șterge clasa hidden
-    // Schimbăm textul butonului
+
+// --- Pentru întrebările de interviu (eye-btn) ---
+document.querySelectorAll('.eye-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling; // răspunsul e imediat după buton
+    if (!answer) return;
+
+    answer.classList.toggle('hidden');
+
     if (answer.classList.contains('hidden')) {
-      button.textContent = '👁️ Vezi răspunsul';
+      btn.textContent = '👁️ Vezi răspunsul';
     } else {
-      button.textContent = '🙈 Ascunde răspunsul';
+      btn.textContent = '🙈 Ascunde răspunsul';
     }
-  })}
-  );
-</script>;
+  });
+});
