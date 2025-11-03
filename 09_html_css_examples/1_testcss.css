@@ -1,0 +1,52 @@
+.resume-container {
+  max-width: 600px; /* limitează lățimea containerului */
+  margin: 20px auto; /* centrează pe orizontală */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resume-header h1 {
+  margin-bottom: 5px;
+  color: #20232a;
+  text-align: center; /* centrează numele */
+}
+
+.resume-header h2 {
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: 400;
+  text-align: center; /* centrează titlul */
+}
+
+.resume-section {
+  margin-bottom: 20px;
+}
+
+.resume-section h3 {
+  margin-bottom: 10px;
+  color: #20232a;
+  border-bottom: 2px solid #61dafb; /* mic accent vizual */
+  padding-bottom: 5px;
+}
+
+.resume-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-section li {
+  padding: 5px 0;
+  border-left: 3px solid #61dafb;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+/* Responsive: pe ecrane mici, reduce padding-ul */
+@media (max-width: 480px) {
+  .resume-container {
+    padding: 15px;
+  }
+}

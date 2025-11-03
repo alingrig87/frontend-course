@@ -4,119 +4,161 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulare Stilizate</title>
-    <link rel="stylesheet" href="../stylenou.css" />
+    <link rel="stylesheet" href="stylenou.css" />
   </head>
   <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>💻 HTML & CSS Examples</h1>
+        </a>
+        <p>Pregătește-te să pui în practică HTML și CSS!</p>
+        <button id="menu-btn" class="menu-btn">☰</button>
+      </div>
+    </header>
+
     <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2>HTML & CSS Examples</h2>
-      <nav class="side-nav">
-        <ul>
-          <li><a href="index.html">Pagina principala</a></li>
-          <li><a href="pagini-statice.html">Pagini statice</a></li>
-          <li><a href="layout-complex.html">Layout complex</a></li>
-          <li>
-            <a href="formulare-stilizate.html" class="active"
-              >Formulare stilizate</a
-            >
-          </li>
-          <li><a href="carduri-de-produs.html">Carduri de produs</a></li>
-          <li><a href="profile-page.html">Profile page</a></li>
-          <li><a href="gallery-grid.html">Gallery grid</a></li>
-          <li><a href="contact-forms.html">Contact forms</a></li>
-          <li><a href="blog-template.html">Blog template</a></li>
-          <li><a href="resume-page.html">Resume page</a></li>
-          <li><a href="workshop.html">Workshop</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <div class="container">
+      <aside class="sidebar show">
+        <h2>📘 Capitole</h2>
+        <nav class="side-nav">
+          <ul>
+            <li><a href="pagini-statice.html">1. Pagini statice</a></li>
+            <li><a href="layout-complex.html">2. Layout complex</a></li>
+            <li>
+              <a href="formulare-stilizate.html" class="active"
+                >3. Formulare stilizate</a
+              >
+            </li>
+            <li><a href="carduri-de-produs.html">4. Carduri de produs</a></li>
+            <li><a href="profile-page.html">5. Profile page</a></li>
+            <li><a href="gallery-grid.html">6. Gallery grid</a></li>
+            <li><a href="contact-forms.html">7. Contact forms</a></li>
+            <li><a href="blog-template.html">8. Blog template</a></li>
+            <li><a href="resume-page.html">9. Resume page</a></li>
+            <li><a href="workshop.html">10. Workshop</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-    <!-- Conținut principal -->
-    <main class="main-content">
-      <header>
-        <p>
-          În această secțiune vom explora cum să stilizăm formulare pentru a le
-          face mai atractive și ușor de utilizat.
-        </p>
-      </header>
+      <!-- Conținut principal -->
+      <main class="main-content">
+        <!-- <header>
+          <h1>Formulare stilizate</h1>
+        </header> -->
 
-      <!-- Formulare stilizate -->
-      <section id="formulare-stilizate" class="expandable-section">
-        <h2>3. Formular Stilizat - Evaluare Produs</h2>
-        <p>
-          Acest formular este pentru a evalua un produs. Utilizatorii pot acorda
-          un rating cu stele, selecta categoria produsului și adăuga comentarii
-          suplimentare.
-        </p>
+        <!-- Formulare stilizate -->
+        <section id="formulare-stilizate" class="expandable-section">
+          <h1>Capitolul 3: Formulare stilizate</h1>
 
-        <form class="styled-form">
-          <div class="form-row">
-            <label for="rating">Rating produs:</label>
-            <div class="rating">
-              <label>
-                <input type="radio" name="rating" value="5" />
-                ★★★★★
+          <p>
+            Un <strong>formular stilizat</strong> este o componentă esențială a
+            oricărui site modern, folosită pentru a colecta informații de la
+            utilizatori într-un mod clar, atractiv și ușor de utilizat. Prin
+            combinarea HTML-ului semantic cu CSS, putem transforma formularele
+            simple într-o experiență vizuală plăcută și intuitivă. Stilizarea
+            formularelor nu înseamnă doar alegerea culorilor și a fonturilor, ci
+            și organizarea logică a elementelor, adăugarea de spații, umbre și
+            efecte care ajută utilizatorul să interacționeze mai ușor cu pagina.
+          </p>
+          <h3>Cum funcționează un formular stilizat</h3>
+          <p>
+            Un formular este construit folosind elemente HTML precum
+            <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>,
+            <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code> și
+            <code>&lt;button&gt;</code>. Acestea definesc tipurile de date pe
+            care utilizatorul le poate introduce: text, e-mail, număr, selectare
+            de opțiuni, feedback etc. Cu ajutorul CSS, aceste elemente pot fi
+            aranjate, dimensionate și evidențiate pentru a crea o interfață
+            coerentă și modernă.
+          </p>
+
+          <h3>Exemple de utilizare</h3>
+          <p>
+            <strong>Formular de înscriere pe site</strong>: Utilizatorii
+            introduc nume, email și parolă. Formularele sunt stilizate cu
+            margini rotunjite, culori și efecte hover pentru o interacțiune mai
+            plăcută.
+          </p>
+          <p>
+            <strong>Formular de feedback sau evaluare</strong>: Clienții
+            completează scoruri, comentarii sau rating-uri. Formularele
+            stilizate fac procesul mai clar și mai rapid, crescând șansa de
+            completare.
+          </p>
+          <p>
+            <strong>Formulare de comandă sau rezervare</strong>: Pentru magazine
+            online sau restaurante, formularele pot conține mai multe câmpuri
+            (nume, adresă, telefon, dată, cantitate etc.) organizate clar și
+            intuitiv. CSS-ul permite alinierea lor într-un mod logic, folosind
+            spațiere uniformă și un fundal discret care separă formularul de
+            restul paginii.
+          </p>
+
+          <p>Un exemplu tipic de formular stilizat ar putea arăta astfel:</p>
+
+          <section class="formular-exemplu">
+            <form class="styled-form">
+              <label for="rating">Rating produs:</label>
+              <div class="rating-group">
+                <label>
+                  <input type="radio" name="rating" value="5" />
+                  <span class="stars">★★★★★</span>
+                </label>
+                <label>
+                  <input type="radio" name="rating" value="4" />
+                  <span class="stars">★★★★☆</span>
+                </label>
+                <label>
+                  <input type="radio" name="rating" value="3" />
+                  <span class="stars">★★★☆☆</span>
+                </label>
+                <label>
+                  <input type="radio" name="rating" value="2" />
+                  <span class="stars">★★☆☆☆</span>
+                </label>
+                <label>
+                  <input type="radio" name="rating" value="1" />
+                  <span class="stars">★☆☆☆☆</span>
+                </label>
+              </div>
+
+              <label for="categorie">Categorie produs:</label>
+              <select id="categorie">
+                <option>Electronice</option>
+                <option>Îmbrăcăminte</option>
+                <option>Alimente</option>
+                <option>Cărți</option>
+              </select>
+
+              <label for="comentarii">Comentarii suplimentare:</label>
+              <textarea
+                id="comentarii"
+                placeholder="Scrie părerea ta despre produs..."
+              ></textarea>
+
+              <label class="checkbox">
+                <input type="checkbox" id="termeni" />
+                Sunt de acord cu termenii și condițiile
               </label>
-              <label>
-                <input type="radio" name="rating" value="4" />
-                ★★★★☆
-              </label>
-              <label>
-                <input type="radio" name="rating" value="3" />
-                ★★★☆☆
-              </label>
-              <label>
-                <input type="radio" name="rating" value="2" />
-                ★★☆☆☆
-              </label>
-              <label>
-                <input type="radio" name="rating" value="1" />
-                ★☆☆☆☆
-              </label>
-            </div>
-          </div>
 
-          <div class="form-row">
-            <label for="categoria">Categorie produs:</label>
-            <select id="categoria">
-              <option value="electronice">Electronice</option>
-              <option value="imbracaminte">Îmbrăcăminte</option>
-              <option value="accesorii">Accesorii</option>
-              <option value="cosmetice">Cosmetice</option>
-            </select>
-          </div>
+              <button type="submit">Trimite evaluarea</button>
+            </form>
+          </section>
 
-          <div class="form-row">
-            <label for="comentarii">Comentarii suplimentare:</label>
-            <textarea
-              id="comentarii"
-              placeholder="Scrie părerea ta despre produs..."
-              rows="4"
-            ></textarea>
-          </div>
+          <p>
+            Cu tot ce ai învățat până acum, încearcă să realizezi pagina din
+            imagine. După ce ai terminat, apasă pe butonul „Arată soluția”
+            pentru a vedea codul HTML și CSS care formează acest formular
+            stilizat.
+          </p>
 
-          <div class="form-row">
-            <label for="termeni">
-              <input type="checkbox" id="termeni" required />
-              Sunt de acord cu termenii și condițiile
-            </label>
-          </div>
+          <button class="expand-btn">👁️ Arată soluția</button>
 
-          <div class="form-row">
-            <button type="submit">Trimite evaluarea</button>
-          </div>
-        </form>
-
-        <p>
-          Când dai click pe butonul „Arată soluția”, vei vedea codul HTML și CSS
-          care formează acest formular de evaluare.
-        </p>
-
-        <button class="expand-btn">👁️ Arată soluția</button>
-
-        <div class="solution hidden">
-          <h3>Cod HTML:</h3>
-          <pre><code>&lt;form class="styled-form"&gt;
+          <div class="solution hidden">
+            <h3>Cod HTML:</h3>
+            <pre><code>&lt;form class="styled-form"&gt;
   &lt;div class="form-row"&gt;
     &lt;label for="rating"&gt;Rating produs:&lt;/label&gt;
     &lt;div class="rating"&gt;
@@ -170,8 +212,8 @@
   &lt;/div&gt;
 &lt;/form&gt;</code></pre>
 
-          <h3>Cod CSS:</h3>
-          <pre><code>.styled-form {
+            <h3>Cod CSS:</h3>
+            <pre><code>.styled-form {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -251,14 +293,13 @@ input, select, textarea {
   color: #333;
 }
 
-/* Adăugăm un spațiu între câmpuri */
 .form-row {
   margin-bottom: 1.2rem;
 }
     </code></pre>
-
-          <!-- Explicații -->
-          <h3>Explicații:</h3>
+          </div>
+          <!-- hint -->
+          <h3>Indicii:</h3>
           <ul>
             <li><code>&lt;form&gt;</code> – definește formularul;</li>
             <li>
@@ -271,41 +312,57 @@ input, select, textarea {
             </li>
             <li><code>&lt;textarea&gt;</code> – câmp pentru comentarii;</li>
             <li>
-              <code>&lt;input type="checkbox"&gt;</code> – acceptarea termenilor
-              și condițiilor;
+              <code>&lt;input type="checkbox"&gt;</code> – permite acceptarea
+              termenilor și condițiilor;
             </li>
             <li>
-              <code>:focus</code> – stilizează câmpurile când sunt selectate;
+              <code>:focus</code> – stilizează câmpurile când sunt selectate (de
+              exemplu, adaugă o umbră sau schimbă culoarea bordurii);
             </li>
             <li>
-              <code>box-shadow</code> – adaugă un efect de adâncire pentru
-              formular;
+              <code>box-shadow</code> – adaugă un efect de adâncire vizuală
+              pentru formular;
             </li>
             <li>
               <code>border-radius</code> – face colțurile elementelor mai
-              rotunjite;
+              rotunjite pentru un aspect modern;
             </li>
             <li>
-              <code>background-color</code> – setează fundalul butonului și al
-              câmpurilor de input.
+              <code>input[type="radio"], input[type="checkbox"]</code> –
+              selectează doar câmpurile de tip radio și checkbox pentru a le
+              aplica stiluri specifice (selector de atribute
+              <code>[]</code> indică tipul exact de input care va fi stilizat).
             </li>
           </ul>
-        </div>
-        <!-- Exercițiu propus -->
-        <h3>Exercițiu propus:</h3>
-        <p>Creează un formular pentru evaluarea unui produs care să conțină:</p>
-        <ul>
-          <li>Un câmp de rating cu stele;</li>
-          <li>Un câmp de selecție pentru categoria produsului;</li>
-          <li>Un câmp pentru comentarii suplimentare;</li>
-          <li>Un checkbox pentru acceptarea termenilor și condițiilor.</li>
-        </ul>
-        <p>
-          <strong>Scopul exercițiului:</strong> să înveți cum să creezi un
-          formular de evaluare pentru un produs cu diverse tipuri de câmpuri.
-        </p>
-      </section>
-    </main>
+
+          <!-- Exercițiu propus -->
+          <h3 class="tema-titlu">Temă:</h3>
+          <p>Creează un formular cu următoarele câmpuri:</p>
+          <ul>
+            <li>Nume complet (input text);</li>
+            <li>Email (input email);</li>
+            <li>
+              Rating eveniment (5 stele, să fie funcțional, cu highlight la
+              hover și click);
+            </li>
+            <li>Feedback despre organizare (textarea);</li>
+            <li>
+              Categoria evenimentului (select: Conferință, Workshop, Concert,
+              Webinar);
+            </li>
+            <li>
+              Checkbox „Sunt de acord cu termenii și condițiile” (caseta
+              înaintea textului);
+            </li>
+            <li>Buton de trimitere stilizat.</li>
+          </ul>
+          <p>
+            <strong>Scopul exercițiului:</strong> să înveți cum să creezi un
+            formular de evaluare cu diverse tipuri de câmpuri.
+          </p>
+        </section>
+      </main>
+    </div>
 
     <script>
       const expandBtns = document.querySelectorAll(".expand-btn");
@@ -319,6 +376,15 @@ input, select, textarea {
             ? "🙈 Ascunde rezolvarea"
             : "👁️ Arată rezolvarea";
         });
+      });
+    </script>
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.querySelector(".sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
       });
     </script>
   </body>

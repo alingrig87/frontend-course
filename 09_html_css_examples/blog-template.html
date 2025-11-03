@@ -4,96 +4,138 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Template</title>
-    <link rel="stylesheet" href="../stylenou.css" />
+    <link rel="stylesheet" href="stylenou.css" />
   </head>
   <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>💻 HTML & CSS Examples</h1>
+        </a>
+        <p>Pregătește-te să pui în practică HTML și CSS!</p>
+        <button id="menu-btn" class="menu-btn">☰</button>
+      </div>
+    </header>
+
     <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2>HTML & CSS Examples</h2>
-      <nav class="side-nav">
-        <ul>
-          <li><a href="index.html">Pagina principala</a></li>
-          <li><a href="pagini-statice.html">Pagini statice</a></li>
-          <li><a href="layout-complex.html">Layout complex</a></li>
-          <li><a href="formulare-stilizate.html">Formulare stilizate</a></li>
-          <li><a href="carduri-de-produs.html">Carduri de produs</a></li>
-          <li><a href="profile-page.html">Profile page</a></li>
-          <li><a href="gallery-grid.html">Gallery grid</a></li>
-          <li><a href="contact-forms.html">Contact forms</a></li>
-          <li><a href="blog-template.html" class="active">Blog template</a></li>
-          <li><a href="resume-page.html">Resume page</a></li>
-          <li><a href="workshop.html">Workshop</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <div class="container">
+      <aside class="sidebar show">
+        <h2>📘 Capitole</h2>
+        <nav class="side-nav">
+          <ul>
+            <li><a href="pagini-statice.html">1. Pagini statice</a></li>
+            <li><a href="layout-complex.html">2. Layout complex</a></li>
+            <li>
+              <a href="formulare-stilizate.html">3. Formulare stilizate</a>
+            </li>
+            <li><a href="carduri-de-produs.html">4. Carduri de produs</a></li>
+            <li><a href="profile-page.html">5. Profile page</a></li>
+            <li><a href="gallery-grid.html">6. Gallery grid</a></li>
+            <li><a href="contact-forms.html">7. Contact forms</a></li>
+            <li>
+              <a href="blog-template.html" class="active">8. Blog template</a>
+            </li>
+            <li><a href="resume-page.html">9. Resume page</a></li>
+            <li><a href="workshop.html">10. Workshop</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-    <main class="main-content">
-      <header>
-        <p>
-          Aici se află un template de blog simplu, care include titluri, imagini
-          și text.
-        </p>
-      </header>
+      <main class="main-content">
+        <section id="blog-template" class="expandable-section">
+          <h1>Capitolul 8: Template blog</h1>
+          <p>
+            Un <strong>template de blog simplu</strong> permite afișarea
+            articolelor cu titlu, dată, imagine și text. Poate fi extins pentru
+            mai multe articole și aranjat astfel încât utilizatorul să parcurgă
+            conținutul ușor și vizual atractiv.
+          </p>
+          <h3>Cum funcționează CSS Grid pentru un blog</h3>
+          <p>
+            CSS Grid poate fi folosit pentru a
+            <strong>organiza articolele</strong> pe mai multe coloane și
+            rânduri. Spre deosebire de alte tehnici de layout, cum ar fi
+            Flexbox, care se concentrează pe alinierea elementelor într-o
+            direcție, Grid îți permite să controlezi atât coloanele, cât și
+            rândurile simultan, creând astfel un design clar și flexibil pentru
+            blog. Folosind CSS Grid, poți decide exact cum se aranjează fiecare
+            articol în layout: poți avea un articol principal mai mare și
+            articole secundare mai mici, poți ajusta spațiile dintre articole și
+            poți face ca layout-ul să fie complet responsiv.
+          </p>
+          <h3>Exemple de utilizare</h3>
+          <p>
+            <strong>Blog personal sau profesional</strong>: Pentru afișarea
+            articolelor în format grilă, cu titlu, imagine, dată și fragment din
+            text.
+          </p>
+          <p>
+            <strong>Site-uri de știri sau reviste online</strong>: Pentru
+            organizarea articolelor pe mai multe coloane, dar și pentru
+            adaptarea layout-ului pe mobil, astfel încât articolele să rămână
+            lizibile.
+          </p>
+          <p>
+            <strong>Portofolii sau secțiuni de noutăți</strong>: Pentru afișarea
+            proiectelor recente, articolelor sau știrilor într-un mod vizual
+            atractiv și organizat.
+          </p>
+          <p>Un exemplu de template pentru blog ar putea arăta astfel:</p>
 
-      <section id="blog-template" class="expandable-section">
-        <h2>8. Template blog</h2>
-        <p>
-          Un template de blog simplu permite afișarea articolelor cu titlu,
-          dată, imagine și text. Poate fi extins pentru mai multe articole.
-        </p>
-        <p>Un exemplu de template pentru blog ar putea arăta astfel:</p>
+          <!-- Rezultatul vizual al articolelor de blog -->
+          <div class="blog-container">
+            <article class="blog-post">
+              <h3>Primul articol</h3>
+              <small>Publicat pe 22 octombrie 2025</small>
+              <div class="image-container">
+                <img
+                  src="https://picsum.photos/600/200?random=1"
+                  alt="Articol 1"
+                />
+                <img
+                  src="https://picsum.photos/600/200?random=2"
+                  alt="Articol 2"
+                />
+              </div>
+              <p>
+                Acesta este un exemplu de articol de blog cu HTML și CSS. Poți
+                adăuga titlu, text, dată și imagine.
+              </p>
+            </article>
 
-        <!-- Rezultatul vizual al articolelor de blog -->
-        <div class="blog-container">
-          <article class="blog-post">
-            <h3>Primul articol</h3>
-            <small>Publicat pe 22 octombrie 2025</small>
-            <div class="image-container">
-              <img
-                src="https://picsum.photos/600/200?random=1"
-                alt="Articol 1"
-              />
-              <img
-                src="https://picsum.photos/600/200?random=2"
-                alt="Articol 2"
-              />
-            </div>
-            <p>
-              Acesta este un exemplu de articol de blog cu HTML și CSS. Poți
-              adăuga titlu, text, dată și imagine.
-            </p>
-          </article>
+            <article class="blog-post">
+              <h3>Al doilea articol</h3>
+              <small>Publicat pe 21 octombrie 2025</small>
+              <div class="image-container">
+                <img
+                  src="https://picsum.photos/600/200?random=3"
+                  alt="Articol 3"
+                />
+                <img
+                  src="https://picsum.photos/600/200?random=4"
+                  alt="Articol 4"
+                />
+              </div>
+              <p>
+                Articolele pot fi stilizate diferit pentru a evidenția
+                conținutul relevant.
+              </p>
+            </article>
+          </div>
 
-          <article class="blog-post">
-            <h3>Al doilea articol</h3>
-            <small>Publicat pe 21 octombrie 2025</small>
-            <div class="image-container">
-              <img
-                src="https://picsum.photos/600/200?random=3"
-                alt="Articol 3"
-              />
-              <img
-                src="https://picsum.photos/600/200?random=4"
-                alt="Articol 4"
-              />
-            </div>
-            <p>
-              Articolele pot fi stilizate diferit pentru a evidenția conținutul
-              relevant.
-            </p>
-          </article>
-        </div>
+          <p>
+            Cu tot ce ai învățat până acum, încearcă să realizezi pagina din
+            imagine. După ce ai terminat, apasă pe butonul „Arată soluția”
+            pentru a vedea codul HTML și CSS care formează acest template de
+            blog.
+          </p>
 
-        <p>
-          Când dai click pe butonul „Arată rezolvarea”, vei vedea codul HTML și
-          CSS care formează acest template de blog.
-        </p>
+          <button class="expand-btn">👁️ Arată rezolvarea</button>
 
-        <button class="expand-btn">👁️ Arată rezolvarea</button>
-
-        <div class="solution hidden">
-          <h3>Cod HTML:</h3>
-          <pre><code>&lt;div class="blog-container"&gt;
+          <div class="solution hidden">
+            <h3>Cod HTML:</h3>
+            <pre><code>&lt;div class="blog-container"&gt;
   &lt;article class="blog-post"&gt;
     &lt;h3&gt;Primul articol&lt;/h3&gt;
     &lt;small&gt;Publicat pe 22 octombrie 2025&lt;/small&gt;
@@ -115,8 +157,8 @@
   &lt;/article&gt;
 &lt;/div&gt;</code></pre>
 
-          <h3>Cod CSS:</h3>
-          <pre><code>.blog-container {
+            <h3>Cod CSS:</h3>
+            <pre><code>.blog-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -172,18 +214,13 @@
   }
 }
     </code></pre>
-
+          </div>
           <!-- Explicații -->
-          <h3>Explicații:</h3>
+          <h3>Indicii:</h3>
           <ul>
             <li>
               <code>&lt;article&gt;</code> – fiecare articol este încadrat în
               acest element pentru semnificație semantică;
-            </li>
-            <li>
-              <code>.blog-container</code> – containerul principal folosește
-              **Flexbox** pentru a organiza articolele vertical și le transformă
-              într-un **grid cu două coloane pe ecrane mari**;
             </li>
             <li>
               <code>box-shadow</code> – adaugă un efect vizual de „card” pentru
@@ -206,26 +243,28 @@
               într-un **grid cu două coloane pe ecrane mari**;
             </li>
           </ul>
-        </div>
-        <!-- Exercițiu propus -->
-        <h3>Exercițiu propus:</h3>
-        <ul>
-          <li>Adaugă un al treilea articol cu imagine și dată;</li>
-          <li>
-            Schimbă culorile fundalului și ale titlurilor pentru stil personal;
-          </li>
-          <li>
-            Transformă articolele într-un **grid cu două coloane** pe ecrane
-            mari (<code>@media queries</code>).
-          </li>
-        </ul>
-        <p>
-          <strong>Scopul exercițiului:</strong> să înveți cum poți crea un
-          **template de blog responsive** care să arate bine pe toate
-          dispozitivele și să includă articolele într-un **layout flexibil**.
-        </p>
-      </section>
-    </main>
+
+          <!-- Exercițiu propus -->
+          <h3 class="tema-titlu">Temă:</h3>
+          <ul>
+            <li>Adaugă un al treilea articol cu imagine și dată;</li>
+            <li>
+              Schimbă culorile fundalului și ale titlurilor pentru stil
+              personal;
+            </li>
+            <li>
+              Transformă articolele într-un **grid cu două coloane** pe ecrane
+              mari (<code>@media queries</code>).
+            </li>
+          </ul>
+          <p>
+            <strong>Scopul exercițiului:</strong> să înveți cum poți crea un
+            **template de blog responsive** care să arate bine pe toate
+            dispozitivele și să includă articolele într-un **layout flexibil**.
+          </p>
+        </section>
+      </main>
+    </div>
 
     <script>
       const expandBtns = document.querySelectorAll(".expand-btn");
@@ -239,6 +278,15 @@
             ? "🙈 Ascunde rezolvarea"
             : "👁️ Arată rezolvarea";
         });
+      });
+    </script>
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.querySelector(".sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
       });
     </script>
   </body>

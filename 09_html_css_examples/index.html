@@ -7,39 +7,77 @@
     <link rel="stylesheet" href="stylenou.css" />
   </head>
   <body>
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2>HTML & CSS Examples</h2>
-      <nav class="side-nav">
-        <ul>
-          <li><a href="pagini-statice.html">Pagini statice</a></li>
-          <li><a href="layout-complex.html">Layout complex</a></li>
-          <li>
-            <a href="formulare-stilizate.html">Formulare stilizate</a>
-          </li>
-          <li><a href="carduri-de-produs.html">Carduri de produs</a></li>
-          <li><a href="profile-page.html">Profile page</a></li>
-          <li><a href="gallery-grid.html">Gallery grid</a></li>
-          <li><a href="contact-forms.html">Contact forms</a></li>
-          <li>
-            <a href="blog-template.html" class="active">Blog template</a>
-          </li>
-          <li><a href="resume-page.html">Resume page</a></li>
-          <li><a href="workshop.html">Workshop</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>💻 HTML & CSS Examples</h1>
+        </a>
+        <p>Pregătește-te să pui în practică HTML și CSS!</p>
+        <button id="menu-btn" class="menu-btn">☰</button>
+      </div>
+    </header>
 
-    <!-- Conținut principal -->
-    <main class="main-content">
-      <header>
-        <h1>Capitolul 9 – Aplicații HTML & CSS în acțiune</h1>
-        <p>
-          În acest capitol explorăm exemple practice de utilizare a HTML și CSS:
-          pagini statice, layout-uri complexe, formulare stilizate, carduri de
-          produse și multe altele!
-        </p>
-      </header>
-    </main>
+    <div class="container">
+      <aside class="sidebar show">
+        <h2>📘 Capitole</h2>
+        <nav class="side-nav">
+          <ul>
+            <li>
+              <a href="pagini-statice.html" class="active">1. Pagini statice</a>
+            </li>
+            <li><a href="layout-complex.html">2. Layout complex</a></li>
+            <li>
+              <a href="formulare-stilizate.html">3. Formulare stilizate</a>
+            </li>
+            <li><a href="carduri-de-produs.html">4. Carduri de produs</a></li>
+            <li><a href="profile-page.html">5. Profile page</a></li>
+            <li><a href="gallery-grid.html">6. Gallery grid</a></li>
+            <li><a href="contact-forms.html">7. Contact forms</a></li>
+            <li>
+              <a href="blog-template.html">8. Blog template</a>
+            </li>
+            <li><a href="resume-page.html">9. Resume page</a></li>
+            <li><a href="workshop.html">10. Workshop</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- ===== CONȚINUT PRINCIPAL ===== -->
+      <main class="main-content">
+        <section class="intro">
+          <h2>Exemple practice HTML & CSS</h2>
+          <p>
+            În acest capitol explorăm exemple practice de utilizare a HTML și
+            CSS: pagini statice, layout-uri complexe, formulare stilizate,
+            carduri de produse și multe altele!
+          </p>
+        </section>
+        <section class="objectives">
+          <h3>Pregătește-te să pui în practică HTML și CSS!</h3>
+          <div class="grid">
+            <div class="card">Pagini statice</div>
+            <div class="card">Layout complex</div>
+            <div class="card">Formulare stilizate</div>
+            <div class="card">Carduri de produs</div>
+            <div class="card">Profile page</div>
+            <div class="card">Gallery grid</div>
+            <div class="card">Contact forms</div>
+            <div class="card">Blog template</div>
+            <div class="card">Resume page</div>
+            <div class="card special">Workshop</div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      // Buton pentru a deschide/inchide sidebar-ul pe mobil
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.querySelector(".sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
   </body>
 </html>

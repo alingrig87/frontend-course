@@ -4,133 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workshop: Mini-Proiect Complet</title>
-    <link rel="stylesheet" href="../stylenou.css" />
+    <link rel="stylesheet" href="stylenou.css" />
   </head>
   <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>💻 HTML & CSS Examples</h1>
+        </a>
+        <p>Pregătește-te să pui în practică HTML și CSS!</p>
+        <button id="menu-btn" class="menu-btn">☰</button>
+      </div>
+    </header>
+
     <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2>HTML & CSS Examples</h2>
-      <nav class="side-nav">
-        <ul>
-          <li><a href="index.html">Pagina principala</a></li>
-          <li><a href="pagini-statice.html">Pagini statice</a></li>
-          <li><a href="layout-complex.html">Layout complex</a></li>
-          <li><a href="formulare-stilizate.html">Formulare stilizate</a></li>
-          <li><a href="carduri-de-produs.html">Carduri de produs</a></li>
-          <li><a href="profile-page.html">Profile page</a></li>
-          <li><a href="gallery-grid.html">Gallery grid</a></li>
-          <li><a href="contact-forms.html">Contact forms</a></li>
-          <li><a href="blog-template.html">Blog template</a></li>
-          <li><a href="resume-page.html">Resume page</a></li>
-          <li><a href="workshop.html" class="active">Workshop</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <div class="container">
+      <aside class="sidebar show">
+        <h2>📘 Capitole</h2>
+        <nav class="side-nav">
+          <ul>
+            <li><a href="pagini-statice.html">1. Pagini statice</a></li>
+            <li><a href="layout-complex.html">2. Layout complex</a></li>
+            <li>
+              <a href="formulare-stilizate.html">3. Formulare stilizate</a>
+            </li>
+            <li><a href="carduri-de-produs.html">4. Carduri de produs</a></li>
+            <li><a href="profile-page.html">5. Profile page</a></li>
+            <li><a href="gallery-grid.html">6. Gallery grid</a></li>
+            <li><a href="contact-forms.html">7. Contact forms</a></li>
+            <li><a href="blog-template.html">8. Blog template</a></li>
+            <li><a href="resume-page.html">9. Resume page</a></li>
+            <li><a href="workshop.html" class="active">10. Workshop</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-    <!-- Conținut principal -->
-    <main class="main-content">
-      <header>
-        <h1>Mini-Proiect: Portofoliu Personal</h1>
-        <p>
-          Obiectiv: Construiește un mini-site de tip portofoliu personal care
-          combină conceptele învățate în acest capitol.
-        </p>
-      </header>
+      <!-- Conținut principal -->
+      <main class="main-content">
+        <!-- Workshop -->
+        <section id="mini-proiect" class="expandable-section">
+          <h1>10. Workshop: Mini-proiect complet</h1>
+          <p>
+            Obiectiv: construiește un mini-site de tip portofoliu personal care
+            combină conceptele anterioare (pagini statice, layout-uri complexe,
+            carduri, galerie, blog, CV).
+          </p>
 
-      <!-- Workshop -->
-      <section id="mini-proiect" class="expandable-section">
-        <h2>10. Workshop: Mini-proiect complet</h2>
-        <p>
-          Obiectiv: construiește un mini-site de tip portofoliu personal care
-          combină conceptele anterioare (pagini statice, layout-uri complexe,
-          carduri, galerie, blog, CV).
-        </p>
+          <div class="task-list">
+            <label
+              ><input type="checkbox" /> Creează structura fișierelor:
+              <code>index.html</code>, <code>style.css</code></label
+            >
+            <label
+              ><input type="checkbox" /> Construiește header-ul cu titlu și
+              meniu de navigație (Acasă, Proiecte, Contact)</label
+            >
+            <label
+              ><input type="checkbox" /> Creează o secțiune "Proiecte" cu
+              carduri pentru fiecare proiect</label
+            >
+            <label
+              ><input type="checkbox" /> Adaugă stiluri responsive pentru
+              carduri și layout folosind Flexbox/Grid</label
+            >
+            <label
+              ><input type="checkbox" /> Creează un mini-blog cu 2 articole
+              (titlu, dată, text)</label
+            >
+            <label
+              ><input type="checkbox" /> Adaugă o secțiune CV cu informații
+              despre experiență și educație</label
+            >
+            <label
+              ><input type="checkbox" /> Creează o galerie foto cu 4 imagini în
+              layout Grid</label
+            >
+            <label
+              ><input type="checkbox" /> Adaugă footer cu copyright și numele
+              tău</label
+            >
+            <label
+              ><input type="checkbox" /> Testează site-ul pe mobil și desktop,
+              verificând responsive design</label
+            >
+          </div>
 
-        <div class="task-list">
-          <label
-            ><input type="checkbox" /> Creează structura fișierelor:
-            <code>index.html</code>, <code>style.css</code>,
-            <code>script.js</code></label
-          >
-          <label
-            ><input type="checkbox" /> Construiește header-ul cu titlu și meniu
-            de navigație (Acasă, Proiecte, Contact)</label
-          >
-          <label
-            ><input type="checkbox" /> Creează o secțiune "Proiecte" cu carduri
-            pentru fiecare proiect</label
-          >
-          <label
-            ><input type="checkbox" /> Adaugă stiluri responsive pentru carduri
-            și layout folosind Flexbox/Grid</label
-          >
-          <label
-            ><input type="checkbox" /> Creează un mini-blog cu 2 articole
-            (titlu, dată, text)</label
-          >
-          <label
-            ><input type="checkbox" /> Adaugă o secțiune CV cu informații despre
-            experiență și educație</label
-          >
-          <label
-            ><input type="checkbox" /> Creează o galerie foto cu 4 imagini în
-            layout Grid</label
-          >
-          <label
-            ><input type="checkbox" /> Adaugă footer cu copyright și numele
-            tău</label
-          >
-          <label
-            ><input type="checkbox" /> Testează site-ul pe mobil și desktop,
-            verificând responsive design</label
-          >
-          <label
-            ><input type="checkbox" /> Opțional: Adaugă animații simple sau
-            hover pentru carduri și linkuri</label
-          >
-        </div>
+          <p>
+            După bifarea tuturor cerințelor, site-ul ar trebui să fie un
+            mini-portofoliu complet, cu HTML semantic, CSS stilizat și layout
+            responsive.
+          </p>
 
-        <p>
-          După bifarea tuturor cerințelor, site-ul ar trebui să fie un
-          mini-portofoliu complet, cu HTML semantic, CSS stilizat și layout
-          responsive.
-        </p>
+          <form action="https://formspree.io/f/your-email" method="POST">
+            <h3>Cod HTML:</h3>
+            <textarea
+              name="html_code"
+              id="html-code"
+              placeholder="Introdu codul HTML aici..."
+              required
+            ></textarea>
 
-        <form action="https://formspree.io/f/your-email" method="POST">
-          <h3>Cod HTML:</h3>
-          <textarea
-            name="html_code"
-            id="html-code"
-            placeholder="Introdu codul HTML aici..."
-            required
-          ></textarea>
+            <h3>Cod CSS:</h3>
+            <textarea
+              name="css_code"
+              id="css-code"
+              placeholder="Introdu codul CSS aici..."
+              required
+            ></textarea>
 
-          <h3>Cod CSS:</h3>
-          <textarea
-            name="css_code"
-            id="css-code"
-            placeholder="Introdu codul CSS aici..."
-            required
-          ></textarea>
+            <button type="submit">Trimite</button>
+          </form>
 
-          <button type="submit">Trimite</button>
-        </form>
-
-        <h3>Explicații:</h3>
-        <p>
-          Folosește acest mini-portofoliu pentru a învăța să integrezi diversele
-          tehnici învățate:
-        </p>
-        <ul>
-          <li><code>index.html</code> - Structura HTML a paginii tale;</li>
-          <li><code>style.css</code> - Stilizează elementele folosind CSS;</li>
-          <li>
-            <code>script.js</code> - Poți adăuga funcționalități JavaScript
-            pentru animații sau interacțiuni.
-          </li>
-        </ul>
-      </section>
-    </main>
+          <h3>Explicații:</h3>
+          <p>
+            Folosește acest mini-portofoliu pentru a învăța să integrezi
+            diversele tehnici învățate:
+          </p>
+          <ul>
+            <li><code>index.html</code> - Structura HTML a paginii tale;</li>
+            <li>
+              <code>style.css</code> - Stilizează elementele folosind CSS;
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
 
     <script>
       const expandBtns = document.querySelectorAll(".expand-btn");
@@ -144,6 +143,16 @@
             ? "🙈 Ascunde rezolvarea"
             : "👁️ Arată rezolvarea";
         });
+      });
+    </script>
+
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.querySelector(".sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
       });
     </script>
   </body>
