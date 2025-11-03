@@ -3,117 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>06. CSS Flexbox</title>
+    <title>CSS Flexbox — Lecție completă</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- HEADER -->
-    <header class="main-header">
-      <div class="logo">🎨 CSS Flexbox</div>
-      <nav class="nav">
-        <a href="#">Acasă</a>
-        <a href="#">Module</a>
-        <a href="#">Exerciții</a>
-        <a href="#">Resurse</a>
-      </nav>
-    </header>
-
-    <!-- CONTAINER PRINCIPAL (Sidebar + Conținut) -->
     <div class="container">
-      <!-- SIDEBAR -->
       <aside class="sidebar">
-        <h2>Cuprins</h2>
-        <ul>
-          <li><a href="#" class="active">Ce este Flexbox</a></li>
-          <li><a href="#">display: flex</a></li>
-          <li><a href="#">flex-direction</a></li>
-          <li><a href="#">justify-content</a></li>
-          <li><a href="#">align-items</a></li>
-          <li><a href="#">flex-wrap</a></li>
-          <li><a href="#">align-content</a></li>
-          <li><a href="#">order & flex-grow</a></li>
-          <li><a href="#">Layout-uri complexe</a></li>
-          <li><a href="#">Workshop</a></li>
-          <li><a href="#">Tema: Navbar Responsive</a></li>
-        </ul>
+        <h2>CSS — FLEXBOX</h2>
+        <nav>
+          <ul>
+            <li class="active">Introducere</li>
+            <li>Proprietăți de bază</li>
+            <li>Aliniere & Direcții</li>
+            <li>Exemple practice</li>
+            <li>Exerciții</li>
+            <li>Întrebări de interviu</li>
+            <li>Mini-proiect</li>
+          </ul>
+        </nav>
       </aside>
 
-      <!-- CONȚINUT -->
       <main class="content">
-        <section class="intro">
-          <h1>Ce este Flexbox?</h1>
+        <header class="banner">
+          <h1>Flexbox — Layout flexibil în CSS</h1>
           <p>
-            Flexbox (Flexible Box Layout) este un model modern de dispunere a
-            elementelor în CSS, conceput pentru a alinia și distribui spațiul în
-            interiorul unui container, indiferent de dimensiunea ecranului.
+            Flexbox este un sistem modern de aranjare a elementelor în pagină,
+            care oferă control total asupra aliniamentului și spațierii.
           </p>
-        </section>
+        </header>
 
-        <section class="properties">
-          <h2>🔧 Proprietăți de bază Flexbox</h2>
-          <div class="flex-cards">
-            <div class="card"><strong>display:</strong> flex / inline-flex</div>
-            <div class="card">
-              <strong>flex-direction:</strong> row | column
-            </div>
-            <div class="card">
-              <strong>justify-content:</strong> center | space-between
-            </div>
-            <div class="card">
-              <strong>align-items:</strong> center | stretch
-            </div>
-            <div class="card"><strong>flex-wrap:</strong> nowrap | wrap</div>
-            <div class="card">
-              <strong>align-content:</strong> center | space-around
-            </div>
-            <div class="card">
-              <strong>order:</strong> schimbă ordinea elementelor
-            </div>
-            <div class="card">
-              <strong>flex-grow:</strong> extinde elementul proporțional
-            </div>
-          </div>
-        </section>
-
-        <section class="example">
-          <h2>🧩 Exemplu practic</h2>
+        <section class="lesson">
+          <h2>1. Ce este Flexbox?</h2>
           <p>
-            Containerul de mai jos folosește <code>display: flex</code> și
-            <code>justify-content: space-between</code> pentru alinierea
-            elementelor:
+            Flexbox (Flexible Box Layout) este un model de layout introdus în
+            CSS3, conceput pentru a facilita distribuirea spațiului între
+            elemente și alinierea lor într-un container flexibil. Scopul este de
+            a face layout-urile responsive mai simple și mai previzibile.
           </p>
-          <div class="flex-demo">
-            <div class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-          </div>
-        </section>
 
-        <section class="workshop">
-          <h2>🧠 Workshop: Card Layout</h2>
-          <p>
-            Creează un layout de carduri folosind <code>display: flex</code> și
-            <code>flex-wrap</code>.
-          </p>
-          <div class="card-layout">
-            <div class="card">Card 1</div>
-            <div class="card">Card 2</div>
-            <div class="card">Card 3</div>
-            <div class="card">Card 4</div>
-          </div>
-        </section>
+          <h2>2. Conceptul de bază</h2>
+          <ul>
+            <li>
+              <strong>Containerul flexibil</strong> — elementul părinte cu
+              <code>display: flex</code>;
+            </li>
+            <li>
+              <strong>Itemii flexibili</strong> — elementele copil care se
+              aliniază automat în funcție de regulile stabilite;
+            </li>
+            <li>
+              Poți controla direcția, spațiul, ordinea și alinierea elementelor
+              fără a folosi float-uri sau position absolute.
+            </li>
+          </ul>
 
-        <section class="theme">
-          <h2>📱 Tema: Responsive Navbar cu Flexbox</h2>
+          <h2>3. Proprietăți principale</h2>
+          <ul>
+            <li>
+              <code>justify-content</code> — aliniază elementele pe axa
+              principală;
+            </li>
+            <li><code>align-items</code> — aliniază pe axa transversală;</li>
+            <li>
+              <code>flex-direction</code> — definește direcția (row / column);
+            </li>
+            <li>
+              <code>flex-wrap</code> — controlează împachetarea elementelor;
+            </li>
+            <li>
+              <code>align-content</code> — gestionează alinierea mai multor
+              rânduri de itemi.
+            </li>
+          </ul>
+
+          <h2>4. Exemplu practic</h2>
+          <div class="flex-example">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+
+          <h2>5. Exerciții</h2>
+          <ol>
+            <li>
+              Schimbă direcția containerului folosind
+              <code>flex-direction: column;</code>
+            </li>
+            <li>
+              Experimentează cu <code>justify-content</code> pentru a alinia
+              elementele diferit.
+            </li>
+            <li>
+              Adaugă mai multe iteme și observă cum se ajustează layout-ul.
+            </li>
+          </ol>
+
+          <h2>6. Întrebări de interviu</h2>
+          <ul>
+            <li>
+              Ce diferență este între <code>align-items</code> și
+              <code>align-content</code>?
+            </li>
+            <li>Ce face proprietatea <code>flex-grow</code>?</li>
+            <li>Cum poți centra un element perfect cu Flexbox?</li>
+          </ul>
+
+          <h2>7. Mini-proiect</h2>
           <p>
-            Construiește o bară de navigație care se adaptează la diferite
-            dimensiuni ale ecranului.
+            Construiește o galerie de imagini responsive folosind Flexbox,
+            astfel încât elementele să se ajusteze automat pe ecrane mici și
+            mari.
           </p>
         </section>
       </main>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">© 2025 Curs Frontend - Lecția 06: Flexbox</footer>
+    <script src="app.js"></script>
   </body>
 </html>

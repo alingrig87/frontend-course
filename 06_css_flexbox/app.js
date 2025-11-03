@@ -1,2 +1,9 @@
-// CSS Flexbox — layout flexibil - app.js (gol, folosește pentru exerciții)
-console.log("Chapter: CSS Flexbox — layout flexibil");
+// Active sidebar item highlight
+const items = document.querySelectorAll(".sidebar li");
+
+items.forEach((item) => {
+  item.addEventListener("click", () => {
+    items.forEach((el) => el.classList.remove("active"));
+    item.classList.add("active");
+  });
+});
