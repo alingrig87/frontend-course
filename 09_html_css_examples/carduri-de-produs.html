@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carduri de Produs</title>
+    <link rel="stylesheet" href="stylenou.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>💻 HTML & CSS Examples</h1>
+        </a>
+        <p>Pregătește-te să pui în practică HTML și CSS!</p>
+        <button id="menu-btn" class="menu-btn">☰</button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="container">
+      <aside class="sidebar show">
+        <h2>📘 Capitole</h2>
+        <nav class="side-nav">
+          <ul>
+            <li><a href="pagini-statice.html">1. Pagini statice</a></li>
+            <li><a href="layout-complex.html">2. Layout complex</a></li>
+            <li>
+              <a href="formulare-stilizate.html">3. Formulare stilizate</a>
+            </li>
+            <li>
+              <a href="carduri-de-produs.html" class="active"
+                >4. Carduri de produs</a
+              >
+            </li>
+            <li><a href="profile-page.html">5. Profile page</a></li>
+            <li><a href="gallery-grid.html">6. Gallery grid</a></li>
+            <li><a href="contact-forms.html">7. Contact forms</a></li>
+            <li><a href="blog-template.html">8. Blog template</a></li>
+            <li><a href="resume-page.html">9. Resume page</a></li>
+            <li><a href="workshop.html">10. Workshop</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Conținut principal -->
+      <main class="main-content">
+        <!-- <header>
+          <h1>Carduri de Produs</h1>
+          <p>Exemplu de carduri de produs folosind HTML și CSS.</p>
+        </header> -->
+        <section id="carduri-produs" class="expandable-section">
+          <h1>Capitolul 4: Carduri de produs</h1>
+          <p>
+            <strong>Cardurile de produs</strong> sunt elemente vizuale esențiale
+            în paginile de comerț online. Ele afișează rapid informațiile
+            importante despre un produs, cum ar fi imaginea, numele, descrierea,
+            prețul și butonul de cumpărare. Cardurile bine stilizate contribuie
+            la o experiență de utilizare plăcută și pot crește rata de
+            conversie.
+          </p>
+          <h3>Elementele de bază includ:</h3>
+          <ul>
+            <li>
+              <strong>Imaginea produsului</strong> – prima componentă vizuală
+              care atrage atenția
+            </li>
+            <li><strong>Numele produsului</strong> – afișat clar și concis</li>
+            <li>
+              <strong>Descrierea scurtă</strong> – evidențiază principalele
+              caracteristici
+            </li>
+            <li><strong>Prețul</strong> – vizibil și ușor de comparat</li>
+            <li>
+              <strong>Butonul de acțiune</strong> – „Adaugă în coș” sau „Vezi
+              detalii”
+            </li>
+          </ul>
+
+          <h3>Cum funcționează un card de produs</h3>
+          <p>Cardurile sunt construite folosind HTML și CSS:</p>
+          <ul>
+            <li>
+              <strong>HTML</strong>: definesc structura – containerul principal
+              (<code>&lt;div class="card"&gt;</code>), imaginea
+              (<code>&lt;img&gt;</code>), titlul (<code>&lt;h3&gt;</code>),
+              descrierea (<code>&lt;p&gt;</code>), prețul și butonul
+              (<code>&lt;button&gt;</code>).
+            </li>
+            <li>
+              <strong>CSS</strong>: controlează aspectul vizual – dimensiuni,
+              umbre, margini, aliniere, tranziții la hover, fundaluri și colțuri
+              rotunjite. Prin folosirea CSS-ului, cardurile devin interactive.
+            </li>
+          </ul>
+
+          <h3>Exemple de utilizare</h3>
+          <p>
+            <strong>Magazine online</strong>: Cardurile prezintă produsele
+            principalelor categorii, cu imagine, preț și buton de cumpărare. Ele
+            permit compararea rapidă a mai multor produse și crearea unei
+            experiențe vizuale consistente.
+          </p>
+          <p>
+            <strong>Portofolii de produse</strong>: Cardurile pot afișa
+            informații despre serviciile sau produsele unui brand, cu imagini și
+            descrieri scurte. Stilizarea atrage atenția și facilitează navigarea
+            rapidă.
+          </p>
+          <p>
+            <strong>Rețele sociale sau aplicații de e-commerce</strong>:
+            Cardurile compacte afișează informații esențiale și pot include
+            elemente suplimentare, precum rating-ul cu stele, etichete „nou” sau
+            „reduceri”, și butoane interactive.
+          </p>
+          <p>Un exemplu tipic de carduri de produs ar putea arăta astfel:</p>
+
+          <!-- Rezultatul vizual al cardurilor de produs -->
+          <div class="product-grid">
+            <div class="product-card">
+              <img
+                src="https://img.smyk.ro/760x/https://bin.smyk.ro/media/product/1600/1/little-live-pets-pinguinul-mergator-jucarie-de-plus-interactiva-7828318.jpg"
+                alt="Jucărie Pinguinul Mergător"
+                class="product-image"
+              />
+              <h3>Pinguinul Mergător</h3>
+              <p>Jucărie de plus interactivă pentru copii.</p>
+              <button>Cumpără</button>
+            </div>
+
+            <div class="product-card">
+              <img
+                src="https://gomagcdn.ro/domains/orlandokids.ro/files/product/original/bentita-cu-urechi-miscatoare-adauga-farmec-si-distractie-in-viata-copiilor-copie-592094.jpg"
+                alt="Bentiță cu urechi mișcătoare"
+                class="product-image"
+              />
+              <h3>Iepuraș</h3>
+              <p>Adaugă farmec și distracție în viața copiilor.</p>
+              <button>Cumpără</button>
+            </div>
+
+            <div class="product-card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Ov91OlEJBdDmwDi-9D765RIarUXF71NzzA&s"
+                alt="Produs 3"
+                class="product-image"
+              />
+              <h3>Stitch</h3>
+              <p>Pur si simplu nu ai cum sa dai gres cu acest cadou!</p>
+              <button>Cumpără</button>
+            </div>
+          </div>
+
+          <p>
+            Cu tot ce ai învățat până acum, încearcă să realizezi pagina din
+            imagine. După ce ai terminat, apasă pe butonul „Arată soluția”
+            pentru a vedea codul HTML și CSS care formează aceste carduri de
+            produs.
+          </p>
+
+          <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+          <div class="solution hidden">
+            <h3>Cod HTML:</h3>
+            <pre><code>&lt;div class="product-grid"&gt;
+  &lt;div class="product-card"&gt;
+    &lt;img src="https://img.smyk.ro/760x/https://bin.smyk.ro/media/product/1600/1/little-live-pets-pinguinul-mergator-jucarie-de-plus-interactiva-7828318.jpg" alt="Jucărie Pinguinul Mergător" class="product-image"&gt;
+    &lt;h3&gt;Pinguinul Mergător&lt;/h3&gt;
+    &lt;p&gt;Jucărie de plus interactivă pentru copii.&lt;/p&gt;
+    &lt;button&gt;Cumpără&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="product-card"&gt;
+    &lt;img src="https://gomagcdn.ro/domains/orlandokids.ro/files/product/original/bentita-cu-urechi-miscatoare-adauga-farmec-si-distractie-in-viata-copiilor-copie-592094.jpg" alt="Bentiță cu urechi mișcătoare" class="product-image"&gt;
+    &lt;h3&gt;Iepuraș&lt;/h3&gt;
+    &lt;p&gt;Adaugă farmec și distracție în viața copiilor.&lt;/p&gt;
+    &lt;button&gt;Cumpără&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="product-card"&gt;
+    &lt;img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Ov91OlEJBdDmwDi-9D765RIarUXF71NzzA&s" alt="Produs 3" class="product-image"&gt;
+    &lt;h3&gt;Stitch&lt;/h3&gt;
+    &lt;p&gt;Pur si simplu nu ai cum sa dai gres cu acest cadou!&lt;/p&gt;
+    &lt;button&gt;Cumpără&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+
+            <h3>Cod CSS:</h3>
+            <pre><code>.product-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  margin-bottom: 8px;
+  color: #20232a;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.product-card button {
+  background-color: #61dafb;
+  border: none;
+  color: #20232a;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #4fc3f7;
+}
+    </code></pre>
+          </div>
+
+          <!-- Explicații -->
+          <h3>Indicii:</h3>
+          <ul>
+            <li>
+              <code>box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);</code> – adaugă o
+              umbră subtilă pentru a evidenția cardul și a-i oferi profunzime.
+            </li>
+            <li>
+              <code
+                >transition: transform 0.3s ease, box-shadow 0.3s ease;</code
+              >
+              – face ca efectele vizuale (ridicare și umbră) să se schimbe lin
+              atunci când interacționezi cu cardul.
+            </li>
+            <li>
+              <code>transform: translateY(-5px);</code> – ridică ușor cardul în
+              sus la hover, creând impresia de mișcare și interactivitate.
+            </li>
+            <li>
+              <code>box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);</code> –
+              intensifică umbra la hover pentru un efect de „plutire”.
+            </li>
+            <li>
+              <code>flex-wrap: wrap;</code> – permite ca elementele (cardurile)
+              să treacă automat pe un rând nou atunci când ecranul este mai mic,
+              păstrând un layout ordonat și responsiv.
+            </li>
+          </ul>
+
+          <!-- Exercițiu propus -->
+          <h3 class="tema-titlu">Temă:</h3>
+          <p>
+            Creează o pagină cu cel puțin 3 carduri de produse care să conțină:
+          </p>
+          <ul>
+            <li>O imagine pentru fiecare produs;</li>
+            <li>Titlu și descriere scurtă;</li>
+            <li>Buton de cumpărare;</li>
+            <li>
+              Un efect vizual diferit la hover (ex: culoare de fundal schimbată
+              sau mărire ușoară a imaginii).
+            </li>
+          </ul>
+          <p>
+            <strong>Scopul exercițiului:</strong> să înveți cum se creează
+            carduri moderne, responsive și atractive pentru prezentarea
+            produselor pe un site web.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const expandBtns = document.querySelectorAll(".expand-btn");
+      expandBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const solution = btn.nextElementSibling;
+          const isHidden = solution.classList.contains("hidden");
+          solution.classList.toggle("hidden");
+          // schimbă textul butonului
+          btn.textContent = isHidden
+            ? "🙈 Ascunde rezolvarea"
+            : "👁️ Arată rezolvarea";
+        });
+      });
+    </script>
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.querySelector(".sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

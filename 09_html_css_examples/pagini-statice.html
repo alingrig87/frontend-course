@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagini Statice</title>
+    <link rel="stylesheet" href="stylenou.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>💻 HTML & CSS Examples</h1>
+        </a>
+        <p>Pregătește-te să pui în practică HTML și CSS!</p>
+        <button id="menu-btn" class="menu-btn">☰</button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="container">
+      <aside class="sidebar show">
+        <h2>📘 Capitole</h2>
+        <nav class="side-nav">
+          <ul>
+            <li>
+              <a href="pagini-statice.html" class="active">1. Pagini statice</a>
+            </li>
+            <li><a href="layout-complex.html">2. Layout complex</a></li>
+            <li>
+              <a href="formulare-stilizate.html">3. Formulare stilizate</a>
+            </li>
+            <li><a href="carduri-de-produs.html">4. Carduri de produs</a></li>
+            <li><a href="profile-page.html">5. Profile page</a></li>
+            <li><a href="gallery-grid.html">6. Gallery grid</a></li>
+            <li><a href="contact-forms.html">7. Contact forms</a></li>
+            <li><a href="blog-template.html">8. Blog template</a></li>
+            <li><a href="resume-page.html">9. Resume page</a></li>
+            <li><a href="workshop.html">10. Workshop</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Conținut principal -->
+
+      <main class="main-content">
+        <section id="simple-pages" class="expandable-section">
+          <h1>Capitolul 1: Pagini statice</h1>
+          <p>
+            O <strong>pagină statică</strong> este o formă de document HTML care
+            rămâne constantă și nu interacționează cu utilizatorul într-un mod
+            dinamic. Spre deosebire de paginile dinamice, care pot schimba
+            conținutul în funcție de acțiunile utilizatorilor sau de condițiile
+            externe, o pagină statică este un document fix, în care tot
+            conținutul (text, imagini, structura paginii) este deja stabilit în
+            momentul în care pagina este încărcată în browser.
+          </p>
+          <p>
+            De obicei, o pagină statică este alcătuită din elemente HTML simple,
+            cum ar fi titluri, paragrafe, imagini sau linkuri, toate acestea
+            fiind hardcodate în document. Aceasta înseamnă că, de fiecare dată
+            când utilizatorul accesează pagina, va vedea exact aceleași
+            informații, fără a exista vreo modificare bazată pe interacțiuni.
+          </p>
+
+          <h3>Ce face o pagină statică diferită?</h3>
+          <p>
+            <strong>Fără interactivitate dinamică</strong>: Conținutul este fix
+            și nu se poate modifica fără actualizarea manuală a fișierelor HTML.
+            Nu există formulare care salvează date sau butoane care schimbă
+            conținutul în timp real.
+          </p>
+
+          <p>
+            <strong>Performanță ridicată</strong>: Pagina se încarcă rapid
+            pentru că nu necesită procesare pe server sau baze de date. Ideală
+            pentru site-uri simple, portofolii sau bloguri.
+          </p>
+
+          <p>
+            <strong>Ușurința în dezvoltare și mentenanță</strong>: Se creează
+            doar cu HTML, CSS și imagini, fără back-end sau CMS, fiind simplă și
+            rapid de gestionat.
+          </p>
+
+          <p>
+            <strong>Limitări</strong>: Nu permite personalizare complexă sau
+            funcționalități avansate (ex: autentificare, magazin online) fără
+            tehnologii dinamice.
+          </p>
+
+          <h3>Exemple de utilizare</h3>
+          <p>
+            <strong>Pagina „Despre noi”</strong>: Prezintă informații despre
+            companie sau echipă. Conținutul este fix, cu text și imagini, fără
+            interacțiuni dinamice.
+          </p>
+          <p>
+            <strong>Pagina de portofoliu</strong>: Arată proiecte sau lucrări
+            realizate. Elemente vizuale și descrieri, toate afișate static,
+            pentru vizitator.
+          </p>
+          <p>
+            <strong>Pagina de servicii</strong>: Detaliază serviciile oferite de
+            o companie. Structurată în secțiuni clare, cu titluri și liste, fără
+            elemente interactive complexe.
+          </p>
+
+          <p>Un exemplu tipic de pagină statică ar putea arăta astfel:</p>
+
+          <!-- Rezultatul vizual al paginii statice într-un chenar -->
+          <div class="example">
+            <!-- <h3>Exemplu:</h3> -->
+            <div class="example-output">
+              <h1>Bine ai venit pe site-ul meu!</h1>
+              <p>
+                Aceasta este o pagină statică simplă creată cu HTML și CSS.
+                Pagina conține un titlu și un paragraf de introducere. Aceasta
+                este o pagină care nu se modifică dinamic și rămâne fixă.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            Cu tot ce ai învățat până acum, încearcă să realizezi pagina din
+            imagine. După ce ai terminat, apasă pe butonul „Arată soluția”
+            pentru a vedea codul HTML și CSS care formează această pagină
+            statică simplă.
+          </p>
+
+          <button class="expand-btn">👁️ Arată soluția</button>
+
+          <div class="solution hidden">
+            <h3>Cod HTML:</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ro"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Pagina mea statică&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;h1&gt;Bine ai venit pe site-ul meu!&lt;/h1&gt;
+      &lt;p&gt;Aceasta este o pagină statică simplă creată cu HTML și CSS. Pagina
+              conține un titlu și un paragraf de introducere. Aceasta este o
+              pagină care nu se modifică dinamic și rămâne fixă.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <h3>Cod CSS:</h3>
+            <pre><code>
+/* Resetare stiluri implicite */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpul paginii */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f4f8; 
+  color: #333; 
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Titlul principal */
+h1 {
+  font-size: 3rem;
+  color: #0077cc; 
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+  letter-spacing: 2px; 
+}
+
+/* Paragraful secundar */
+p {
+  font-size: 1.3rem;
+  color: #555; 
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Stiluri pentru text */
+h1,
+p {
+  border-bottom: 2px solid #0077cc; 
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Stilizarea unui container centralizat (pentru a organiza mai bine conținutul) */
+.container {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 10px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+  </code></pre>
+          </div>
+
+          <!-- Hint -->
+          <h3>Indicii:</h3>
+          <ul>
+            <li>
+              <code>&lt;Flexbox&gt;</code> – Încearcă să folosești flexbox
+              pentru a alinia tot conținutul pe centru atât pe verticală cât și
+              pe orizontală;
+            </li>
+            <li>
+              <code>&lt;Umbre și spațiere&gt;</code> – Adaugă umbre subtile
+              folosind `text-shadow` și `box-shadow` pentru a crea un efect de
+              adâncire și un aspect mai rafinat;
+            </li>
+            <li>
+              <code>&lt;Container&gt;</code> – Folosește un container cu fundal
+              semitransparent pentru a face textul mai ușor de citit pe orice
+              fundal;
+            </li>
+          </ul>
+
+          <h3 class="tema-titlu">Temă:</h3>
+          <p>
+            Creează o pagină statică pentru un
+            <strong>restaurant imaginar</strong> care să conțină:
+          </p>
+          <ul>
+            <li>Un titlu cu numele restaurantului;</li>
+            <li>Un paragraf cu o scurtă descriere;</li>
+            <li>Un paragraf cu adresa și numărul de telefon.</li>
+          </ul>
+          <p>
+            <strong>Scopul exercițiului:</strong> să exersezi structura HTML și
+            stilizarea simplă cu CSS.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const expandBtns = document.querySelectorAll(".expand-btn");
+      expandBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const solution = btn.nextElementSibling;
+          const isHidden = solution.classList.contains("hidden");
+          solution.classList.toggle("hidden");
+          // schimbă textul butonului
+          btn.textContent = isHidden
+            ? "🙈 Ascunde rezolvarea"
+            : "👁️ Arată rezolvarea";
+        });
+      });
+    </script>
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.querySelector(".sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="stylenou.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>💻 HTML & CSS Examples</h1>
+        </a>
+        <p>Pregătește-te să pui în practică HTML și CSS!</p>
+        <button id="menu-btn" class="menu-btn">☰</button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="container">
+      <aside class="sidebar show">
+        <h2>📘 Capitole</h2>
+        <nav class="side-nav">
+          <ul>
+            <li><a href="pagini-statice.html">1. Pagini statice</a></li>
+            <li><a href="layout-complex.html">2. Layout complex</a></li>
+            <li>
+              <a href="formulare-stilizate.html">3. Formulare stilizate</a>
+            </li>
+            <li><a href="carduri-de-produs.html">4. Carduri de produs</a></li>
+            <li>
+              <a href="profile-page.html" class="active">5. Profile page</a>
+            </li>
+            <li><a href="gallery-grid.html">6. Gallery grid</a></li>
+            <li><a href="contact-forms.html">7. Contact forms</a></li>
+            <li><a href="blog-template.html">8. Blog template</a></li>
+            <li><a href="resume-page.html">9. Resume page</a></li>
+            <li><a href="workshop.html">10. Workshop</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Conținut principal -->
+      <main class="main-content">
+        <section id="profil-utilizator" class="expandable-section">
+          <h1>Capitolul 5: Profile page</h1>
+          <p>
+            Un <strong>profil de utilizator</strong> este o componentă esențială
+            a multor site-uri și aplicații web, folosită pentru a afișa
+            informațiile personale într-un mod clar, atractiv și ușor de
+            parcurs. Prin combinarea HTML-ului semantic cu CSS, putem transforma
+            o listă simplă de date într-un profil vizual interactiv și elegant.
+            Stilizarea unei pagini de profil nu înseamnă doar alegerea culorilor
+            și a fonturilor, ci și organizarea logică a informațiilor, adăugarea
+            de spații, umbre și efecte vizuale care evidențiază secțiunile
+            importante.
+          </p>
+          <h3>Cum funcționează o pagină de profil stilizată</h3>
+          <p>
+            O pagină de profil este construită folosind elemente HTML precum
+            <code>&lt;div&gt;</code>, <code>&lt;img&gt;</code>,
+            <code>&lt;h2&gt;</code> sau <code>&lt;h3&gt;</code>,
+            <code>&lt;p&gt;</code> și <code>&lt;button&gt;</code>. Acestea
+            definesc componentele principale ale profilului:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Imaginea utilizatorului</strong> – primul element vizual
+              care atrage atenția.
+            </li>
+            <li><strong>Numele și rolul</strong> – afișate clar și concis.</li>
+            <li>
+              <strong>Descrierea scurtă</strong> – evidențiază principalele
+              caracteristici, interese sau informații despre utilizator.
+            </li>
+            <li>
+              <strong>Butoane de acțiune</strong> – pot include „Editează
+              profilul”, „Trimite mesaj” sau „Urmărește”, stilizate pentru
+              interacțiune ușoară.
+            </li>
+          </ul>
+
+          <p>
+            Cu ajutorul CSS, aceste elemente pot fi aranjate într-un layout
+            coerent și modern, cu margini, umbre și efecte la hover care sporesc
+            experiența vizuală.
+          </p>
+          <h3>Exemple de utilizare</h3>
+          <p>
+            <strong>Echipa unui site web sau startup</strong>: Cardurile
+            prezintă membrii echipei: designer, dezvoltator, manager de proiect.
+            Vizitatorii pot vedea rapid cine face parte din echipă și pot lua
+            legătura prin butonul „Contactează”.
+          </p>
+          <p>
+            <strong
+              >Rețele sociale sau aplicații de networking profesional</strong
+            >: Profiluri scurte cu nume, fotografie și descriere profesională.
+            Utilizatorii pot da „Follow”, trimite mesaj sau adăuga în contacte.
+          </p>
+          <p>
+            <strong>Pagina de speakeri la un eveniment sau conferință</strong>:
+            Fiecare card prezintă speakerul cu poză, nume și domeniu de
+            expertiză. Vizitatorii pot vedea cine va vorbi și pot lua legătura
+            sau urmări speakerii pe rețele sociale.
+          </p>
+          <p>
+            Un exemplu de pagină cu profiluri de utilizatori ar putea arăta
+            astfel:
+          </p>
+
+          <!-- Rezultatul vizual al profilurilor utilizatorilor -->
+          <div class="profile-container">
+            <div class="profile-card">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1664537980500-30bb5ec506e1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+                alt="Maria Popescu"
+                class="profile-image"
+              />
+              <h3>Maria Popescu</h3>
+              <p>Web Designer pasionată de simplitate și detalii.</p>
+              <div class="button-group">
+                <button>Contactează</button>
+                <button>Follow</button>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <img
+                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+                alt="Ion Ionescu"
+                class="profile-image"
+              />
+              <h3>Ion Ionescu</h3>
+              <p>Dezvoltator Front-End cu experiență în React și Angular.</p>
+              <div class="button-group">
+                <button>Contactează</button>
+                <button>Follow</button>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=761"
+                alt="Ana Popa"
+                class="profile-image"
+              />
+              <h3>Ana Popa</h3>
+              <p>Manager de proiecte în IT, pasionată de tehnologie.</p>
+              <div class="button-group">
+                <button>Contactează</button>
+                <button>Follow</button>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Cu tot ce ai învățat până acum, încearcă să realizezi pagina din
+            imagine. După ce ai terminat, apasă pe butonul „Arată soluția”
+            pentru a vedea codul HTML și CSS care formează aceste profiluri
+            utilizator.
+          </p>
+
+          <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+          <div class="solution hidden">
+            <h3>Cod HTML:</h3>
+            <pre><code>&lt;div class="profile-container"&gt;
+  &lt;div class="profile-card"&gt;
+    &lt;img src="https://plus.unsplash.com/premium_photo-1664537980500-30bb5ec506e1?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1170" alt="Maria Popescu" class="profile-image"&gt;
+    &lt;h3&gt;Maria Popescu&lt;/h3&gt;
+    &lt;p&gt;Web Designer pasionată de simplitate și detalii.&lt;/p&gt;
+    &lt;div class="button-group"&gt;
+      &lt;button&gt;Contactează&lt;/button&gt;
+      &lt;button&gt;Follow&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="profile-card"&gt;
+    &lt;img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=1170" alt="Ion Ionescu" class="profile-image"&gt;
+    &lt;h3&gt;Ion Ionescu&lt;/h3&gt;
+    &lt;p&gt;Dezvoltator Front-End cu experiență în React și Angular.&lt;/p&gt;
+    &lt;div class="button-group"&gt;
+      &lt;button&gt;Contactează&lt;/button&gt;
+      &lt;button&gt;Follow&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="profile-card"&gt;
+    &lt;img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=761" alt="Ana Popa" class="profile-image"&gt;
+    &lt;h3&gt;Ana Popa&lt;/h3&gt;
+    &lt;p&gt;Manager de proiecte în IT, pasionată de tehnologie.&lt;/p&gt;
+    &lt;div class="button-group"&gt;
+      &lt;button&gt;Contactează&lt;/button&gt;
+      &lt;button&gt;Follow&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code></pre>
+
+            <h3>Cod CSS:</h3>
+            <pre><code>
+.profile-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  background-color: #fff;
+  width: 190px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #61dafb;
+}
+
+.profile-card h3 {
+  margin-bottom: 6px;
+  color: #20232a;
+}
+
+.profile-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.button-group button {
+  padding: 5px 10px; 
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #61dafb;
+  color: #20232a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-group button:hover {
+  background-color: #4fc3f7;
+}
+  </code></pre>
+          </div>
+
+          <!-- Indicii -->
+          <h3>Indicii:</h3>
+          <ul>
+            <li>
+              <code>border-radius</code> – rotunjește colțurile cardurilor și
+              ale imaginilor, oferind un aspect mai modern și plăcut vizual.
+            </li>
+            <li>
+              <code>box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);</code> – adaugă o
+              umbră discretă sub element, creând un efect de profunzime și
+              separare de fundal.
+            </li>
+
+            <li>
+              <code>transform: translateY(-5px);</code> – ridică ușor cardul sau
+              imaginea în sus atunci când treci cu mouse-ul peste ele, sugerând
+              interactivitate.
+            </li>
+            <li>
+              <code>box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);</code> –
+              intensifică umbra la hover, pentru un efect de „plutire”.
+            </li>
+            <li>
+              <code>cursor: pointer;</code> – schimbă forma cursorului la
+              trecerea peste element, indicând faptul că este clicabil.
+            </li>
+            <li>
+              <code
+                >transition: transform 0.2s ease, box-shadow 0.2s ease;</code
+              >
+              – face ca mișcarea și schimbarea umbrei să se producă lin și
+              natural, în loc să se modifice brusc.
+            </li>
+          </ul>
+
+          <!-- Exercițiu propus -->
+          <h3 class="tema-titlu">Temă:</h3>
+          <p>
+            Creează o pagină care conține 3 profiluri diferite de utilizatori,
+            fiecare cu:
+          </p>
+          <ul>
+            <li>Imagine de profil diferită;</li>
+            <li>Nume și rol (ex: dezvoltator, designer, manager);</li>
+            <li>O scurtă descriere personală;</li>
+            <li>
+              Un buton personalizat (ex: „Vezi portofoliu”, „Trimite mesaj”);
+            </li>
+            <li>
+              Un efect vizual diferit la hover (ex: schimbarea culorii de fundal
+              sau mărirea imaginii).
+            </li>
+          </ul>
+          <p>
+            <strong>Scopul exercițiului:</strong> să înveți cum se creează
+            carduri de profil atractive și responsive pentru pagini moderne de
+            prezentare.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const expandBtns = document.querySelectorAll(".expand-btn");
+      expandBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const solution = btn.nextElementSibling;
+          const isHidden = solution.classList.contains("hidden");
+          solution.classList.toggle("hidden");
+          // schimbă textul butonului
+          btn.textContent = isHidden
+            ? "🙈 Ascunde rezolvarea"
+            : "👁️ Arată rezolvarea";
+        });
+      });
+    </script>
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.querySelector(".sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitolul 9 - Aplicații HTML & CSS în acțiune</title>
+    <link rel="stylesheet" href="stylenou.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>HTML & CSS Examples</h2>
+      <nav class="side-nav">
+        <ul>
+          <li><a href="#" class="active">Pagini statice</a></li>
+          <li><a href="#">Layout complex</a></li>
+          <li><a href="#">Formulare stilizate</a></li>
+          <li><a href="#">Carduri de produs</a></li>
+          <li><a href="#">Profile page</a></li>
+          <li><a href="#">Gallery grid</a></li>
+          <li><a href="#">Contact forms</a></li>
+          <li><a href="#">Blog template</a></li>
+          <li><a href="#">Resume page</a></li>
+          <li><a href="#">Workshop</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conținut principal -->
+    <main class="main-content">
+      <header>
+        <h1>Capitolul 9 – Aplicații HTML & CSS în acțiune</h1>
+        <p>
+          În acest capitol explorăm exemple practice de utilizare a HTML și CSS:
+          pagini statice, layout-uri complexe, formulare stilizate, carduri de
+          produse și multe altele!
+        </p>
+      </header>
+
+      <!-- Pagină statică simplă -->
+      <section id="simple-pages" class="expandable-section">
+        <h2>1. Pagină statică simplă</h2>
+        <p>
+          O <strong>pagină statică</strong> este cea mai simplă formă de
+          document HTML — conține text, titluri și paragrafe, dar nu are
+          elemente dinamice (adică nu se modifică în funcție de acțiunile
+          utilizatorului).
+        </p>
+        <p>Un exemplu tipic de pagină statică ar putea arăta astfel:</p>
+
+        <!-- Rezultatul vizual al paginii statice într-un chenar -->
+        <div class="example">
+          <h3>Exemplu:</h3>
+          <div class="example-output">
+            <h1>Bine ai venit pe site-ul meu!</h1>
+            <p>
+              Aceasta este o pagină statică simplă creată cu HTML și CSS. Pagina
+              conține un titlu și un paragraf de introducere. Aceasta este o
+              pagină care nu se modifică dinamic și rămâne fixă.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          Când dai click pe butonul „Arată soluția”, vei vedea codul HTML și CSS
+          care formează această pagină statică simplă.
+        </p>
+
+        <button class="expand-btn">👁️ Arată soluția</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ro"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Pagina mea statică&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bine ai venit pe site-ul meu!&lt;/h1&gt;
+    &lt;p&gt;Aceasta este o pagină statică simplă.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9; /* Fundal mai deschis */
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #0077cc;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #61dafb;
+  color: #20232a;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #4ec1e0;
+}
+
+.example {
+  background-color: #f1f1f1;
+  border: 2px solid #0077cc; /* Bordură albastră */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.example-output h1 {
+  font-size: 2rem;
+  color: #0077cc;
+}
+
+.example-output p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #20232a;
+}
+
+h3 {
+  color: #61dafb;
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li><code>&lt;header&gt;</code> – zona de titlu a paginii;</li>
+            <li>
+              <code>&lt;main&gt;</code> – conținutul principal al paginii;
+            </li>
+            <li>
+              <code>&lt;footer&gt;</code> – zona de jos a paginii, unde se pun
+              drepturile de autor;
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <p>
+          Creează o pagină statică pentru un
+          <strong>restaurant imaginar</strong> care să conțină:
+        </p>
+        <ul>
+          <li>Un titlu cu numele restaurantului.</li>
+          <li>Un paragraf cu o scurtă descriere.</li>
+          <li>Un footer cu adresa și anul curent.</li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să exersezi structura HTML și
+          stilizarea simplă cu CSS.
+        </p>
+      </section>
+
+      <!-- Layout Complex -->
+      <section id="grid-layout" class="expandable-section">
+        <h2>2. Layout Complex (Grid)</h2>
+        <p>
+          Un layout complex cu CSS Grid implică organizarea conținutului în
+          coloane și rânduri. Este perfect pentru pagini care necesită un design
+          flexibil și dinamic. De exemplu, un layout cu 3 coloane pe desktop și
+          1 coloană pe mobil.
+        </p>
+
+        <h3>Rezultatul vizual:</h3>
+        <div
+          class="grid-container"
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+          "
+        >
+          <div
+            class="grid-item"
+            style="
+              background-color: #8cd8e1;
+              padding: 20px;
+              text-align: center;
+              border-radius: 8px;
+            "
+          >
+            Coloana 1
+          </div>
+          <div
+            class="grid-item"
+            style="
+              background-color: #8cd8e1;
+              padding: 20px;
+              text-align: center;
+              border-radius: 8px;
+            "
+          >
+            Coloana 2
+          </div>
+          <div
+            class="grid-item"
+            style="
+              background-color: #8cd8e1;
+              padding: 20px;
+              text-align: center;
+              border-radius: 8px;
+            "
+          >
+            Coloana 3
+          </div>
+        </div>
+        <p>
+          Când dai click pe butonul „Arată soluția”, vei vedea codul HTML și CSS
+          care formează aceast layout Complex.
+        </p>
+        <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item"&gt;Coloana 1&lt;/div&gt;
+  &lt;div class="grid-item"&gt;Coloana 2&lt;/div&gt;
+  &lt;div class="grid-item"&gt;Coloana 3&lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  background-color: #f3f3f3;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+        </code></pre>
+          <h3>Explicații:</h3>
+          <ul>
+            <li>
+              <code>display: grid;</code> – transformă containerul într-un grid
+              (grilă);
+            </li>
+            <li>
+              <code>grid-template-columns: repeat(3, 1fr);</code> – creează trei
+              coloane egale;
+            </li>
+            <li><code>gap: 20px;</code> – adaugă spațiu între coloane;</li>
+            <li>
+              <code>@media (max-width: 768px)</code> – face layoutul responsiv
+              pe telefoane;
+            </li>
+            <li>
+              <code>.grid-item</code> – fiecare „celulă” a grilei (coloană).
+            </li>
+          </ul>
+        </div>
+        <h3>Exercițiu propus:</h3>
+        <p>
+          Creează un layout pentru o pagină de prezentare folosind CSS Grid,
+          care să conțină:
+        </p>
+        <ul>
+          <li>Un header cu titlul paginii;</li>
+          <li>
+            Trei coloane în zona principală (ex: „Despre noi”, „Servicii”,
+            „Contact”);
+          </li>
+          <li>Un footer cu drepturile de autor.</li>
+        </ul>
+
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum poți organiza
+          conținutul în coloane folosind CSS Grid și cum să îl faci adaptabil pe
+          ecrane mici.
+        </p>
+      </section>
+
+      <!-- pagina formulare stilizate -->
+      <section id="formulare-stilizate" class="expandable-section">
+        <h2>3. Formular Stilizat - Evaluare Produs</h2>
+        <p>
+          Acest formular este pentru a evalua un produs. Utilizatorii pot acorda
+          un rating cu stele, selecta categoria produsului și adăuga comentarii
+          suplimentare.
+        </p>
+
+        <form class="styled-form">
+          <div class="form-row">
+            <label for="rating">Rating produs:</label>
+            <div class="rating">
+              <label>
+                <input type="radio" name="rating" value="5" />
+                ★★★★★
+              </label>
+              <label>
+                <input type="radio" name="rating" value="4" />
+                ★★★★☆
+              </label>
+              <label>
+                <input type="radio" name="rating" value="3" />
+                ★★★☆☆
+              </label>
+              <label>
+                <input type="radio" name="rating" value="2" />
+                ★★☆☆☆
+              </label>
+              <label>
+                <input type="radio" name="rating" value="1" />
+                ★☆☆☆☆
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="categoria">Categorie produs:</label>
+            <select id="categoria">
+              <option value="electronice">Electronice</option>
+              <option value="imbracaminte">Îmbrăcăminte</option>
+              <option value="accesorii">Accesorii</option>
+              <option value="cosmetice">Cosmetice</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="comentarii">Comentarii suplimentare:</label>
+            <textarea
+              id="comentarii"
+              placeholder="Scrie părerea ta despre produs..."
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="termeni">
+              <input type="checkbox" id="termeni" required />
+              Sunt de acord cu termenii și condițiile
+            </label>
+          </div>
+
+          <div class="form-row">
+            <button type="submit">Trimite evaluarea</button>
+          </div>
+        </form>
+
+        <p>
+          Când dai click pe butonul „Arată soluția”, vei vedea codul HTML și CSS
+          care formează acest formular de evaluare.
+        </p>
+
+        <button class="expand-btn">👁️ Arată soluția</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;form class="styled-form"&gt;
+  &lt;div class="form-row"&gt;
+    &lt;label for="rating"&gt;Rating produs:&lt;/label&gt;
+    &lt;div class="rating"&gt;
+      &lt;label&gt;
+        &lt;input type="radio" name="rating" value="5"&gt;
+        ★★★★★
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type="radio" name="rating" value="4"&gt;
+        ★★★★☆
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type="radio" name="rating" value="3"&gt;
+        ★★★☆☆
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type="radio" name="rating" value="2"&gt;
+        ★★☆☆☆
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type="radio" name="rating" value="1"&gt;
+        ★☆☆☆☆
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;label for="categoria"&gt;Categorie produs:&lt;/label&gt;
+    &lt;select id="categoria"&gt;
+      &lt;option value="electronice"&gt;Electronice&lt;/option&gt;
+      &lt;option value="imbracaminte"&gt;Îmbrăcăminte&lt;/option&gt;
+      &lt;option value="accesorii"&gt;Accesorii&lt;/option&gt;
+      &lt;option value="cosmetice"&gt;Cosmetice&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;label for="comentarii"&gt;Comentarii suplimentare:&lt;/label&gt;
+    &lt;textarea id="comentarii"&gt;Scrie părerea ta despre produs...&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;label for="termeni"&gt;
+      &lt;input type="checkbox" id="termeni" required&gt;
+      Sunt de acord cu termenii și condițiile
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;button type="submit"&gt;Trimite evaluarea&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.styled-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="radio"], input[type="checkbox"], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="radio"]:focus, input[type="checkbox"]:focus, select:focus, textarea:focus {
+  border-color: #61dafb;
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #61dafb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4ec1e0;
+}
+
+button:active {
+  background-color: #3bb6d8;
+}
+
+button:disabled {
+  background-color: #d4d4d4;
+  cursor: not-allowed;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+input, select, textarea {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Adăugăm un spațiu între câmpuri */
+.form-row {
+  margin-bottom: 1.2rem;
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li><code>&lt;form&gt;</code> – definește formularul;</li>
+            <li>
+              <code>&lt;input type="radio"&gt;</code> – câmpuri de selectare a
+              rating-ului;
+            </li>
+            <li>
+              <code>&lt;select&gt;</code> – câmp pentru selecția categoriei
+              produsului;
+            </li>
+            <li><code>&lt;textarea&gt;</code> – câmp pentru comentarii;</li>
+            <li>
+              <code>&lt;input type="checkbox"&gt;</code> – acceptarea termenilor
+              și condițiilor;
+            </li>
+            <li>
+              <code>:focus</code> – stilizează câmpurile când sunt selectate;
+            </li>
+            <li>
+              <code>box-shadow</code> – adaugă un efect de adâncire pentru
+              formular;
+            </li>
+            <li>
+              <code>border-radius</code> – face colțurile elementelor mai
+              rotunjite;
+            </li>
+            <li>
+              <code>background-color</code> – setează fundalul butonului și al
+              câmpurilor de input.
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <p>Creează un formular pentru evaluarea unui produs care să conțină:</p>
+        <ul>
+          <li>Un câmp de rating cu stele;</li>
+          <li>Un câmp de selecție pentru categoria produsului;</li>
+          <li>Un câmp pentru comentarii suplimentare;</li>
+          <li>Un checkbox pentru acceptarea termenilor și condițiilor.</li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum să creezi un
+          formular de evaluare pentru un produs cu diverse tipuri de câmpuri.
+        </p>
+      </section>
+
+      <!-- pagina carduri -->
+      <section id="carduri-produs" class="expandable-section">
+        <h2>4. Carduri de produs</h2>
+        <p>
+          Cardurile de produs sunt elemente vizuale folosite în paginile de
+          comerț online. Ele afișează rapid informațiile esențiale despre un
+          produs, cum ar fi imaginea, numele, descrierea și butonul de
+          cumpărare.
+        </p>
+        <p>Un exemplu tipic de carduri de produs ar putea arăta astfel:</p>
+
+        <!-- Rezultatul vizual al cardurilor de produs -->
+        <div class="product-grid">
+          <div class="product-card">
+            <div
+              class="product-image"
+              style="background-color: #ddd; height: 150px"
+            ></div>
+            <h3>Produs 1</h3>
+            <p>Descriere scurtă a produsului 1.</p>
+            <button>Cumpără</button>
+          </div>
+
+          <div class="product-card">
+            <div
+              class="product-image"
+              style="background-color: #ddd; height: 150px"
+            ></div>
+            <h3>Produs 2</h3>
+            <p>Descriere scurtă a produsului 2.</p>
+            <button>Cumpără</button>
+          </div>
+
+          <div class="product-card">
+            <div
+              class="product-image"
+              style="background-color: #ddd; height: 150px"
+            ></div>
+            <h3>Produs 3</h3>
+            <p>Descriere scurtă a produsului 3.</p>
+            <button>Cumpără</button>
+          </div>
+        </div>
+
+        <p>
+          Când dai click pe butonul „Arată rezolvarea”, vei vedea codul HTML și
+          CSS care formează aceste carduri de produs.
+        </p>
+
+        <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;div class="product-grid"&gt;
+  &lt;div class="product-card"&gt;
+    &lt;div class="product-image"&gt;&lt;/div&gt;
+    &lt;h3&gt;Produs 1&lt;/h3&gt;
+    &lt;p&gt;Descriere scurtă a produsului 1.&lt;/p&gt;
+    &lt;button&gt;Cumpără&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="product-card"&gt;
+    &lt;div class="product-image"&gt;&lt;/div&gt;
+    &lt;h3&gt;Produs 2&lt;/h3&gt;
+    &lt;p&gt;Descriere scurtă a produsului 2.&lt;/p&gt;
+    &lt;button&gt;Cumpără&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="product-card"&gt;
+    &lt;div class="product-image"&gt;&lt;/div&gt;
+    &lt;h3&gt;Produs 3&lt;/h3&gt;
+    &lt;p&gt;Descriere scurtă a produsului 3.&lt;/p&gt;
+    &lt;button&gt;Cumpără&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.product-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  background-color: #ddd;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  margin-bottom: 8px;
+  color: #20232a;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.product-card button {
+  background-color: #61dafb;
+  border: none;
+  color: #20232a;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #4fc3f7;
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li>
+              <code>.product-grid</code> – containerul principal, aranjează
+              cardurile pe orizontală folosind Flexbox;
+            </li>
+            <li>
+              <code>.product-card</code> – fiecare card individual cu imagine,
+              titlu, descriere și buton;
+            </li>
+            <li>
+              <code>box-shadow</code> – adaugă o umbră subtilă pentru efect de
+              adâncire;
+            </li>
+            <li><code>transition</code> – creează o animație lină la hover;</li>
+            <li>
+              <code>flex-wrap: wrap;</code> – permite ca elementele să treacă pe
+              rândul următor pe ecrane mici.
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <p>
+          Creează o pagină cu cel puțin 3 carduri de produse care să conțină:
+        </p>
+        <ul>
+          <li>O imagine pentru fiecare produs;</li>
+          <li>Titlu și descriere scurtă;</li>
+          <li>Buton de cumpărare;</li>
+          <li>
+            Un efect vizual diferit la hover (ex: culoare de fundal schimbată
+            sau mărire ușoară a imaginii).
+          </li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum se creează carduri
+          moderne, responsive și atractive pentru prezentarea produselor pe un
+          site web.
+        </p>
+      </section>
+
+      <!-- pagina profil utilizator -->
+      <section id="profil-utilizator" class="expandable-section">
+        <h2>5. Profil utilizator</h2>
+        <p>
+          Pagina de profil permite afișarea informațiilor despre un utilizator:
+          imagine, nume, rol și o scurtă descriere. Poate fi folosită în
+          paginile de tip „Despre mine” sau în secțiunile de profil ale unei
+          aplicații web.
+        </p>
+        <p>
+          Un exemplu de pagină cu profiluri de utilizatori ar putea arăta
+          astfel:
+        </p>
+
+        <!-- Rezultatul vizual al profilurilor utilizatorilor -->
+        <div class="profile-container">
+          <div class="profile-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Maria Popescu"
+              class="profile-image"
+            />
+            <h3>Maria Popescu</h3>
+            <p>Web Designer pasionată de simplitate și detalii.</p>
+            <button>Contactează</button>
+          </div>
+
+          <div class="profile-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Ion Ionescu"
+              class="profile-image"
+            />
+            <h3>Ion Ionescu</h3>
+            <p>Dezvoltator Front-End cu experiență în React și Angular.</p>
+            <button>Contactează</button>
+          </div>
+
+          <div class="profile-card">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Ana Popa"
+              class="profile-image"
+            />
+            <h3>Ana Popa</h3>
+            <p>
+              Manager de proiecte în IT, pasionată de tehnologie și management.
+            </p>
+            <button>Contactează</button>
+          </div>
+        </div>
+
+        <p>
+          Când dai click pe butonul „Arată rezolvarea”, vei vedea codul HTML și
+          CSS care formează aceste profiluri utilizator.
+        </p>
+
+        <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;div class="profile-container"&gt;
+  &lt;div class="profile-card"&gt;
+    &lt;img src="https://via.placeholder.com/150" alt="Maria Popescu" class="profile-image"&gt;
+    &lt;h3&gt;Maria Popescu&lt;/h3&gt;
+    &lt;p&gt;Web Designer pasionată de simplitate și detalii.&lt;/p&gt;
+    &lt;button&gt;Contactează&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="profile-card"&gt;
+    &lt;img src="https://via.placeholder.com/150" alt="Ion Ionescu" class="profile-image"&gt;
+    &lt;h3&gt;Ion Ionescu&lt;/h3&gt;
+    &lt;p&gt;Dezvoltator Front-End cu experiență în React și Angular.&lt;/p&gt;
+    &lt;button&gt;Contactează&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="profile-card"&gt;
+    &lt;img src="https://via.placeholder.com/150" alt="Ana Popa" class="profile-image"&gt;
+    &lt;h3&gt;Ana Popa&lt;/h3&gt;
+    &lt;p&gt;Manager de proiecte în IT, pasionată de tehnologie și management.&lt;/p&gt;
+    &lt;button&gt;Contactează&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.profile-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  background-color: #fff;
+  width: 250px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-card h3 {
+  margin-bottom: 6px;
+  color: #20232a;
+}
+
+.profile-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.profile-card button {
+  background-color: #61dafb;
+  border: none;
+  color: #20232a;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-card button:hover {
+  background-color: #4fc3f7;
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li>
+              <code>.profile-container</code> – containerul principal, aranjează
+              cardurile de profil pe orizontală folosind **Flexbox**;
+            </li>
+            <li>
+              <code>.profile-card</code> – fiecare card de profil are un design
+              cu imagine, nume, descriere și buton;
+            </li>
+            <li>
+              <code>border-radius</code> – face colțurile cardului și ale
+              imaginii rotunjite;
+            </li>
+            <li>
+              <code>box-shadow</code> – adaugă o umbră subtilă pentru
+              profunzime;
+            </li>
+            <li>
+              <code>transition</code> – creează o animație ușoară la hover;
+            </li>
+            <li>
+              <code>cursor: pointer;</code> – schimbă cursorul la buton pentru o
+              interacțiune mai clară.
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <p>
+          Creează o pagină care conține 3 profiluri diferite de utilizatori,
+          fiecare cu:
+        </p>
+        <ul>
+          <li>Imagine de profil diferită;</li>
+          <li>Nume și rol (ex: dezvoltator, designer, manager);</li>
+          <li>O scurtă descriere personală;</li>
+          <li>
+            Un buton personalizat (ex: „Vezi portofoliu”, „Trimite mesaj”);
+          </li>
+          <li>
+            Un efect vizual diferit la hover (ex: schimbarea culorii de fundal
+            sau mărirea imaginii).
+          </li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum se creează carduri
+          de profil atractive și responsive pentru pagini moderne de prezentare.
+        </p>
+      </section>
+
+      <!-- pagina gallery -->
+      <section id="galerie-foto" class="expandable-section">
+        <h2>6. Galerie foto (Grid)</h2>
+        <p>
+          O galerie foto este un exemplu perfect de folosire a
+          <strong>CSS Grid</strong>. Aceasta permite aranjarea imaginilor într-o
+          grilă modernă, flexibilă și responsivă.
+        </p>
+        <p>Un exemplu tipic de galerie foto ar putea arăta astfel:</p>
+
+        <!-- Rezultatul vizual al galeriei foto -->
+        <div class="gallery-grid">
+          <figure>
+            <img src="https://picsum.photos/300?random=1" alt="Imagine 1" />
+            <figcaption>Imagine 1</figcaption>
+          </figure>
+          <figure>
+            <img src="https://picsum.photos/300?random=2" alt="Imagine 2" />
+            <figcaption>Imagine 2</figcaption>
+          </figure>
+          <figure>
+            <img src="https://picsum.photos/300?random=3" alt="Imagine 3" />
+            <figcaption>Imagine 3</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          Când dai click pe butonul „Arată rezolvarea”, vei vedea codul HTML și
+          CSS care formează această galerie foto.
+        </p>
+
+        <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;div class="gallery-grid"&gt;
+  &lt;figure&gt;
+    &lt;img src="https://picsum.photos/300?random=1" alt="Imagine 1"&gt;
+    &lt;figcaption&gt;Imagine 1&lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;figure&gt;
+    &lt;img src="https://picsum.photos/300?random=2" alt="Imagine 2"&gt;
+    &lt;figcaption&gt;Imagine 2&lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;figure&gt;
+    &lt;img src="https://picsum.photos/300?random=3" alt="Imagine 3"&gt;
+    &lt;figcaption&gt;Imagine 3&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+    </code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  position: relative;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-grid figcaption {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li>
+              <code>display: grid;</code> – transformă containerul într-o grilă;
+            </li>
+            <li>
+              <code
+                >grid-template-columns: repeat(auto-fit, minmax(200px,
+                1fr));</code
+              >
+              – creează coloane care se adaptează automat la ecran;
+            </li>
+            <li><code>gap: 15px;</code> – adaugă spațiu între imagini;</li>
+            <li>
+              <code>object-fit: cover;</code> – păstrează proporțiile imaginilor
+              fără deformare;
+            </li>
+            <li>
+              <code>hover</code> – adaugă un efect vizual la trecerea cursorului
+              peste imagine (mărire și umbră).
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <p>Creează o galerie de <strong>3 imagini</strong> care:</p>
+        <ul>
+          <li>
+            Se aliniază automat pe 2–4 coloane, în funcție de dimensiunea
+            ecranului;
+          </li>
+          <li>Are efect de mărire la hover (zoom in);</li>
+          <li>
+            Are un titlu sub fiecare imagine (folosește
+            <code>&lt;figure&gt;</code> și <code>&lt;figcaption&gt;</code>).
+          </li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum poți crea o
+          galerie de imagini elegantă și responsive folosind doar HTML și CSS
+          Grid.
+        </p>
+      </section>
+
+      <!-- pagina contact forms -->
+      <section id="contact" class="expandable-section">
+        <h2>7. Formular de contact</h2>
+        <p>
+          Formularele de contact sunt esențiale pentru a permite utilizatorilor
+          să îți trimită mesaje sau întrebări. Acestea pot include câmpuri de
+          nume, email, subiect și mesaj.
+        </p>
+        <p>Un exemplu de formular de contact ar putea arăta astfel:</p>
+
+        <!-- Rezultatul vizual al formularului de contact -->
+        <form class="styled-form">
+          <div class="form-row">
+            <label for="nume">Nume complet:</label>
+            <input
+              type="text"
+              id="nume"
+              placeholder="Introdu numele tău"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Adresa de email:</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="exemplu@email.com"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="mesaj">Mesajul tău:</label>
+            <textarea
+              id="mesaj"
+              placeholder="Scrie mesajul aici..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-row">
+            <button type="submit">Trimite mesaj</button>
+          </div>
+        </form>
+
+        <p>
+          Când dai click pe butonul „Arată rezolvarea”, vei vedea codul HTML și
+          CSS care formează acest formular de contact.
+        </p>
+
+        <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;form class="styled-form"&gt;
+  &lt;div class="form-row"&gt;
+    &lt;label for="nume"&gt;Nume complet:&lt;/label&gt;
+    &lt;input type="text" id="nume" placeholder="Introdu numele tău" required&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;label for="email"&gt;Adresa de email:&lt;/label&gt;
+    &lt;input type="email" id="email" placeholder="exemplu@email.com" required&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;label for="mesaj"&gt;Mesajul tău:&lt;/label&gt;
+    &lt;textarea id="mesaj" placeholder="Scrie mesajul aici..." required&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;button type="submit"&gt;Trimite mesaj&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+    </code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.styled-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+input:focus, textarea:focus {
+  border-color: #61dafb;
+}
+
+button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4ec1e0;
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li><code>&lt;form&gt;</code> – definește formularul;</li>
+            <li>
+              <code>&lt;input&gt;</code> – câmpuri de introducere a datelor, ca
+              nume, email etc.;
+            </li>
+            <li>
+              <code>&lt;textarea&gt;</code> – câmp pentru mesaje mai lungi;
+            </li>
+            <li>
+              <code>&lt;button&gt;</code> – un buton pentru a trimite
+              formularul;
+            </li>
+            <li>
+              <code>:focus</code> – stilizează câmpurile când sunt selectate;
+            </li>
+            <li>
+              <code>box-shadow</code> – adaugă un efect de adâncire pentru
+              formular;
+            </li>
+            <li>
+              <code>border-radius</code> – face colțurile elementelor mai
+              rotunjite;
+            </li>
+            <li>
+              <code>background-color</code> – setează fundalul butonului și al
+              câmpurilor de input.
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <p>Creează un formular pentru un site de contact care să conțină:</p>
+        <ul>
+          <li>Un câmp de nume;</li>
+          <li>Un câmp de email;</li>
+          <li>Un câmp pentru mesaj;</li>
+          <li>Un buton de trimitere.</li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum poți stiliza un
+          formular folosind HTML și CSS pentru o interfață prietenoasă
+          utilizatorului.
+        </p>
+      </section>
+
+      <!-- pagina blog -->
+      <section id="blog-template" class="expandable-section">
+        <h2>8. Template blog</h2>
+        <p>
+          Un template de blog simplu permite afișarea articolelor cu titlu,
+          dată, imagine și text. Poate fi extins pentru mai multe articole.
+        </p>
+        <p>Un exemplu de template pentru blog ar putea arăta astfel:</p>
+
+        <!-- Rezultatul vizual al articolelor de blog -->
+        <div class="blog-container">
+          <article class="blog-post">
+            <h3>Primul articol</h3>
+            <small>Publicat pe 22 octombrie 2025</small>
+            <div class="image-container">
+              <img
+                src="https://picsum.photos/600/200?random=1"
+                alt="Articol 1"
+              />
+              <img
+                src="https://picsum.photos/600/200?random=2"
+                alt="Articol 2"
+              />
+            </div>
+            <p>
+              Acesta este un exemplu de articol de blog cu HTML și CSS. Poți
+              adăuga titlu, text, dată și imagine.
+            </p>
+          </article>
+
+          <article class="blog-post">
+            <h3>Al doilea articol</h3>
+            <small>Publicat pe 21 octombrie 2025</small>
+            <div class="image-container">
+              <img
+                src="https://picsum.photos/600/200?random=3"
+                alt="Articol 3"
+              />
+              <img
+                src="https://picsum.photos/600/200?random=4"
+                alt="Articol 4"
+              />
+            </div>
+            <p>
+              Articolele pot fi stilizate diferit pentru a evidenția conținutul
+              relevant.
+            </p>
+          </article>
+        </div>
+
+        <p>
+          Când dai click pe butonul „Arată rezolvarea”, vei vedea codul HTML și
+          CSS care formează acest template de blog.
+        </p>
+
+        <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;div class="blog-container"&gt;
+  &lt;article class="blog-post"&gt;
+    &lt;h3&gt;Primul articol&lt;/h3&gt;
+    &lt;small&gt;Publicat pe 22 octombrie 2025&lt;/small&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="https://picsum.photos/600/200?random=1" alt="Articol 1"&gt;
+      &lt;img src="https://picsum.photos/600/200?random=2" alt="Articol 2"&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Acesta este un exemplu de articol de blog cu HTML și CSS. Poți adăuga titlu, text, dată și imagine.&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article class="blog-post"&gt;
+    &lt;h3&gt;Al doilea articol&lt;/h3&gt;
+    &lt;small&gt;Publicat pe 21 octombrie 2025&lt;/small&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="https://picsum.photos/600/200?random=3" alt="Articol 3"&gt;
+      &lt;img src="https://picsum.photos/600/200?random=4" alt="Articol 4"&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Articolele pot fi stilizate diferit pentru a evidenția conținutul relevant.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog-post {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+  margin-bottom: 5px;
+  color: #20232a;
+}
+
+.blog-post small {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.blog-post img {
+  width: 45%;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.blog-post p {
+  line-height: 1.6;
+  color: #333;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .blog-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .blog-post {
+    width: 48%;
+  }
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li>
+              <code>&lt;article&gt;</code> – fiecare articol este încadrat în
+              acest element pentru semnificație semantică;
+            </li>
+            <li>
+              <code>.blog-container</code> – containerul principal folosește
+              **Flexbox** pentru a organiza articolele vertical și le transformă
+              într-un **grid cu două coloane pe ecrane mari**;
+            </li>
+            <li>
+              <code>box-shadow</code> – adaugă un efect vizual de „card” pentru
+              fiecare post;
+            </li>
+            <li>
+              <code>border-radius</code> – face colțurile imaginii și ale
+              cardului rotunjite pentru un aspect mai plăcut;
+            </li>
+            <li>
+              <code>width: 45%;</code> – face ca fiecare imagine să fie mai mică
+              și să încapă pe același rând;
+            </li>
+            <li>
+              <code>justify-content: space-between;</code> – asigură că
+              imaginile sunt distribuite uniform pe același rând;
+            </li>
+            <li>
+              <code>@media (min-width: 768px)</code> – face articolele să apară
+              într-un **grid cu două coloane pe ecrane mari**;
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <ul>
+          <li>Adaugă un al treilea articol cu imagine și dată;</li>
+          <li>
+            Schimbă culorile fundalului și ale titlurilor pentru stil personal;
+          </li>
+          <li>
+            Transformă articolele într-un **grid cu două coloane** pe ecrane
+            mari (<code>@media queries</code>).
+          </li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum poți crea un
+          **template de blog responsive** care să arate bine pe toate
+          dispozitivele și să includă articolele într-un **layout flexibil**.
+        </p>
+      </section>
+
+      <!-- resume page -->
+      <section id="resume-page" class="expandable-section">
+        <h2>9. Pagină de tip CV</h2>
+        <p>
+          Un template simplu pentru CV sau Resume Page. Poți include date
+          personale, experiență, educație și contact.
+        </p>
+
+        <p>Un exemplu de CV ar putea arăta astfel:</p>
+
+        <!-- Rezultatul vizual al CV-ului -->
+        <div class="resume-container">
+          <header class="resume-header">
+            <h1>Maria Popescu</h1>
+            <h2>Web Developer</h2>
+          </header>
+
+          <section class="resume-section">
+            <h3>Experiență</h3>
+            <ul>
+              <li>2022 - prezent: Freelancer Web Design</li>
+              <li>2020 - 2022: Front-End Developer la ABC Studio</li>
+            </ul>
+          </section>
+
+          <section class="resume-section">
+            <h3>Educație</h3>
+            <ul>
+              <li>Facultatea de Informatică, București</li>
+            </ul>
+          </section>
+        </div>
+
+        <p>
+          Când dai click pe butonul „Arată rezolvarea”, vei vedea codul HTML și
+          CSS care formează acest template de CV.
+        </p>
+
+        <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+        <div class="solution hidden">
+          <h3>Cod HTML:</h3>
+          <pre><code>&lt;div class="resume-container"&gt;
+  &lt;header class="resume-header"&gt;
+    &lt;h1&gt;Maria Popescu&lt;/h1&gt;
+    &lt;h2&gt;Web Developer&lt;/h2&gt;
+  &lt;/header&gt;
+
+  &lt;section class="resume-section"&gt;
+    &lt;h3&gt;Experiență&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;2022 - prezent: Freelancer Web Design&lt;/li&gt;
+      &lt;li&gt;2020 - 2022: Front-End Developer la ABC Studio&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+
+  &lt;section class="resume-section"&gt;
+    &lt;h3&gt;Educație&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Facultatea de Informatică, București&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+
+          <h3>Cod CSS:</h3>
+          <pre><code>.resume-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resume-header h1 {
+  margin-bottom: 5px;
+  color: #20232a;
+}
+
+.resume-header h2 {
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: 400;
+}
+
+.resume-section {
+  margin-bottom: 20px;
+}
+
+.resume-section h3 {
+  margin-bottom: 10px;
+  color: #20232a;
+}
+
+.resume-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-section li {
+  padding: 5px 0;
+  border-left: 3px solid #61dafb;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+    </code></pre>
+
+          <!-- Explicații -->
+          <h3>Explicații:</h3>
+          <ul>
+            <li>
+              <code>&lt;header&gt;</code> – secțiunea cu numele și rolul
+              principal;
+            </li>
+            <li>
+              <code>&lt;section&gt;</code> – secțiuni pentru experiență,
+              educație și alte informații relevante;
+            </li>
+            <li>
+              <code>list-style: none;</code> – elimină marcajele listelor;
+            </li>
+            <li>
+              <code>border-left</code> – adaugă o linie decorativă pe partea
+              stângă a fiecărui element de listă;
+            </li>
+            <li>
+              <code>box-shadow</code> – adaugă un efect subtil de adâncire
+              pentru CV;
+            </li>
+            <li>
+              <code>font-family</code> – setează o fontă modernă și ușor de
+              citit.
+            </li>
+          </ul>
+        </div>
+        <!-- Exercițiu propus -->
+        <h3>Exercițiu propus:</h3>
+        <ul>
+          <li>
+            Adaugă o secțiune pentru **abilități** (ex: HTML, CSS, JavaScript);
+          </li>
+          <li>
+            Adaugă o secțiune pentru **proiecte** (ex: Proiecte personale,
+            Freelance, Colaborări);
+          </li>
+          <li>Schimbă stilul CV-ului (culoare fundal, fonturi etc.).</li>
+        </ul>
+        <p>
+          <strong>Scopul exercițiului:</strong> să înveți cum să creezi un **CV
+          personalizat** folosind **HTML** și **CSS** și să-l faci mai
+          interesant și organizat.
+        </p>
+      </section>
+
+      <!-- workshop -->
+      <section id="mini-proiect" class="expandable-section">
+        <h2>10. Workshop: Mini-proiect complet</h2>
+        <p>
+          Obiectiv: construiește un mini-site de tip portofoliu personal care
+          combină conceptele anterioare (pagini statice, layout-uri complexe,
+          carduri, galerie, blog, CV).
+        </p>
+
+        <div class="task-list">
+          <label
+            ><input type="checkbox" /> Creează structura fișierelor:
+            <code>index.html</code>, <code>style.css</code>,
+            <code>script.js</code></label
+          >
+          <label
+            ><input type="checkbox" /> Construiește header-ul cu titlu și meniu
+            de navigație (Acasă, Proiecte, Contact)</label
+          >
+          <label
+            ><input type="checkbox" /> Creează o secțiune "Proiecte" cu carduri
+            pentru fiecare proiect</label
+          >
+          <label
+            ><input type="checkbox" /> Adaugă stiluri responsive pentru carduri
+            și layout folosind Flexbox/Grid</label
+          >
+          <label
+            ><input type="checkbox" /> Creează un mini-blog cu 2 articole
+            (titlu, dată, text)</label
+          >
+          <label
+            ><input type="checkbox" /> Adaugă o secțiune CV cu informații despre
+            experiență și educație</label
+          >
+          <label
+            ><input type="checkbox" /> Creează o galerie foto cu 4 imagini în
+            layout Grid</label
+          >
+          <label
+            ><input type="checkbox" /> Adaugă footer cu copyright și numele
+            tău</label
+          >
+          <label
+            ><input type="checkbox" /> Testează site-ul pe mobil și desktop,
+            verificând responsive design</label
+          >
+          <label
+            ><input type="checkbox" /> Opțional: Adaugă animații simple sau
+            hover pentru carduri și linkuri</label
+          >
+        </div>
+
+        <p>
+          După bifarea tuturor cerințelor, site-ul ar trebui să fie un
+          mini-portofoliu complet, cu HTML semantic, CSS stilizat și layout
+          responsive.
+        </p>
+
+        <form action="https://formspree.io/f/your-email" method="POST">
+          <h3>Cod HTML:</h3>
+          <textarea
+            name="html_code"
+            id="html-code"
+            placeholder="Introdu codul HTML aici..."
+            required
+          ></textarea>
+
+          <h3>Cod CSS:</h3>
+          <textarea
+            name="css_code"
+            id="css-code"
+            placeholder="Introdu codul CSS aici..."
+            required
+          ></textarea>
+
+          <button type="submit">Trimite</button>
+        </form>
+
+        <h3>Explicații:</h3>
+        <p>
+          Folosește acest mini-portofoliu pentru a învăța să integrezi diversele
+          tehnici învățate:
+        </p>
+        <ul>
+          <li><code>index.html</code> - Structura HTML a paginii tale;</li>
+          <li><code>style.css</code> - Stilizează elementele folosind CSS;</li>
+          <li>
+            <code>script.js</code> - Poți adăuga funcționalități JavaScript
+            pentru animații sau interacțiuni.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+      const expandBtns = document.querySelectorAll(".expand-btn");
+      expandBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const solution = btn.nextElementSibling;
+          const isHidden = solution.classList.contains("hidden");
+          solution.classList.toggle("hidden");
+          // schimbă textul butonului
+          btn.textContent = isHidden
+            ? "🙈 Ascunde rezolvarea"
+            : "👁️ Arată rezolvarea";
+        });
+      });
+    </script>
+  </body>
+</html>

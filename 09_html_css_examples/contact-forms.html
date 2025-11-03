@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Forms</title>
+    <link rel="stylesheet" href="stylenou.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <h1>💻 HTML & CSS Examples</h1>
+        </a>
+        <p>Pregătește-te să pui în practică HTML și CSS!</p>
+        <button id="menu-btn" class="menu-btn">☰</button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="container">
+      <aside class="sidebar show">
+        <h2>📘 Capitole</h2>
+        <nav class="side-nav">
+          <ul>
+            <li><a href="pagini-statice.html">1. Pagini statice</a></li>
+            <li><a href="layout-complex.html">2. Layout complex</a></li>
+            <li>
+              <a href="formulare-stilizate.html">3. Formulare stilizate</a>
+            </li>
+            <li><a href="carduri-de-produs.html">4. Carduri de produs</a></li>
+            <li><a href="profile-page.html">5. Profile page</a></li>
+            <li><a href="gallery-grid.html">6. Gallery grid</a></li>
+            <li>
+              <a href="contact-forms.html" class="active">7. Contact forms</a>
+            </li>
+            <li><a href="blog-template.html">8. Blog template</a></li>
+            <li><a href="resume-page.html">9. Resume page</a></li>
+            <li><a href="workshop.html">10. Workshop</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Conținut principal -->
+      <main class="main-content">
+        <section id="contact" class="expandable-section">
+          <h1>Capitolul 7: Formulare de contact</h1>
+          <p>
+            <strong>Formularele de contact</strong> sunt esențiale pentru a
+            permite utilizatorilor să trimită mesaje, întrebări sau solicitări.
+            Ele pot include câmpuri pentru nume, email, subiect și mesaj.
+            Utilizarea unei structuri moderne de layout, cum ar fi CSS Grid,
+            face formularele mai organizate, responsiv și ușor de utilizat pe
+            orice tip de ecran.
+          </p>
+          <h3>Cum funcționează formularele cu CSS Grid</h3>
+          <p>
+            CSS Grid poate fi folosit pentru a organiza câmpurile formularului
+            în coloane și rânduri, la fel cum se organizează elementele într-o
+            galerie sau într-un layout complex. Spre deosebire de Flexbox, care
+            aliniază elementele într-o singură direcție, Grid permite
+            poziționarea precisă a fiecărui câmp, atât pe orizontală, cât și pe
+            verticală. Acest lucru permite crearea unui formular aerisit,
+            profesional și adaptabil la diferite dimensiuni de ecran.
+          </p>
+          <h3>Exemple de utilizare</h3>
+          <p>
+            <strong>Site-uri de prezentare sau business</strong>: Pentru a
+            permite clienților să ceară mai multe informații despre produse sau
+            servicii.
+          </p>
+          <p>
+            <strong>Magazine online</strong>: Pentru a primi întrebări despre
+            comenzi, livrări sau produse.
+          </p>
+          <p>
+            <strong>Suport tehnic</strong>: Formularele permit utilizatorilor să
+            raporteze probleme sau să ceară asistență.
+          </p>
+          <p>Un exemplu de formular de contact ar putea arăta astfel:</p>
+
+          <!-- Rezultatul vizual al formularului de contact -->
+          <form class="styled-form">
+            <div class="form-row">
+              <label for="nume">Nume complet:</label>
+              <input
+                type="text"
+                id="nume"
+                placeholder="Introdu numele tău"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="email">Adresa de email:</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="exemplu@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="mesaj">Mesajul tău:</label>
+              <textarea
+                id="mesaj"
+                placeholder="Scrie mesajul aici..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-row">
+              <button type="submit">Trimite mesaj</button>
+            </div>
+          </form>
+
+          <p>
+            Cu tot ce ai învățat până acum, încearcă să realizezi pagina din
+            imagine. După ce ai terminat, apasă pe butonul „Arată soluția”
+            pentru a vedea codul HTML și CSS care formează aacest formular de
+            contact.
+          </p>
+
+          <button class="expand-btn">👁️ Arată rezolvarea</button>
+
+          <div class="solution hidden">
+            <h3>Cod HTML:</h3>
+            <pre><code>&lt;form class="styled-form"&gt;
+  &lt;div class="form-row"&gt;
+    &lt;label for="nume"&gt;Nume complet:&lt;/label&gt;
+    &lt;input type="text" id="nume" placeholder="Introdu numele tău" required&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;label for="email"&gt;Adresa de email:&lt;/label&gt;
+    &lt;input type="email" id="email" placeholder="exemplu@email.com" required&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;label for="mesaj"&gt;Mesajul tău:&lt;/label&gt;
+    &lt;textarea id="mesaj" placeholder="Scrie mesajul aici..." required&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-row"&gt;
+    &lt;button type="submit"&gt;Trimite mesaj&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+    </code></pre>
+
+            <h3>Cod CSS:</h3>
+            <pre><code>.styled-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+input:focus, textarea:focus {
+  border-color: #61dafb;
+}
+
+button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4ec1e0;
+}
+    </code></pre>
+          </div>
+
+          <!-- hints -->
+          <h3>Indicii:</h3>
+          <ul>
+            <li><code>&lt;form&gt;</code> – definește formularul;</li>
+            <li>
+              <code>&lt;input&gt;</code> – câmpuri de introducere a datelor, ca
+              nume, email etc.;
+            </li>
+            <li>
+              <code>&lt;textarea&gt;</code> – câmp pentru mesaje mai lungi;
+            </li>
+            <li>
+              <code>&lt;button&gt;</code> – un buton pentru a trimite
+              formularul;
+            </li>
+            <li>
+              <code>:focus</code> – stilizează câmpurile când sunt selectate;
+            </li>
+            <li>
+              <code>box-shadow</code> – adaugă un efect de adâncire pentru
+              formular;
+            </li>
+            <li>
+              <code>border-radius</code> – face colțurile elementelor mai
+              rotunjite;
+            </li>
+          </ul>
+          <!-- Exercițiu propus -->
+          <h3 class="tema-titlu">Temă:</h3>
+          <p>
+            Creează un formular pentru un site de suport tehnic care să conțină:
+          </p>
+          <ul>
+            <li>Un câmp de nume;</li>
+            <li>Un câmp de email;</li>
+            <li>Un câmp pentru subiectul problemei;</li>
+            <li>Descrierea problemei (textarea);</li>
+            <li>Checkbox pentru acceptarea termenilor și condițiilor;</li>
+            <li>Un buton de trimitere.</li>
+          </ul>
+          <p>
+            <strong>Scopul exercițiului:</strong> să înveți cum să construiești
+            un formular util pentru raportarea problemelor și să îl stilizezi
+            pentru o experiență prietenoasă utilizatorului.
+          </p>
+        </section>
+      </main>
+    </div>
+    <script>
+      const expandBtns = document.querySelectorAll(".expand-btn");
+      expandBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const solution = btn.nextElementSibling;
+          const isHidden = solution.classList.contains("hidden");
+          solution.classList.toggle("hidden");
+          // schimbă textul butonului
+          btn.textContent = isHidden
+            ? "🙈 Ascunde rezolvarea"
+            : "👁️ Arată rezolvarea";
+        });
+      });
+    </script>
+    <!-- ===== SCRIPT SIDEBAR ===== -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.querySelector(".sidebar");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
