@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Accesibilitate HTML</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar"><h1>Bune practici HTML & CSS</h1></nav>
+  <aside class="sidebar"><h2>Bune Practici HTML & CSS</h2><ul><li><a href="index.html">🏠 Înapoi</a></li></ul></aside>
+  <main>
+    <header>
+      <h1>3️⃣ Accesibilitate HTML</h1>
+      <p>Crearea site-urilor accesibile tuturor utilizatorilor, inclusiv celor cu dizabilități.</p>
+    </header>
+    <section class="lessons">
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Descriere</h3><button class="eye-btn" data-target="#desc3">👁️ Vezi detalii</button></div>
+        <div class="answer" id="desc3">
+          Accesibilitatea web (A11Y) asigură că paginile HTML pot fi folosite de persoane cu dizabilități vizuale, auditive sau motorii.
+        </div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Ce înveți</h3><button class="eye-btn" data-target="#inv3">👁️ Vezi detalii</button></div>
+        <div class="answer" id="inv3">
+          <ul>
+            <li>Importanța etichetelor semantice</li>
+            <li>Utilizarea atributelor <code>alt</code>, <code>aria-label</code></li>
+            <li>Crearea unui conținut ușor de navigat cu tastatura</li>
+            <li>Testarea accesibilității</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Partea Teoretică</h3><button class="eye-btn" data-target="#teorie3">👁️ Vezi detalii</button></div>
+        <div class="answer" id="teorie3">
+          <h3>Etichete Semantice</h3>
+          <p>Folosește etichete HTML semantice precum <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</p>
+<pre><code>&lt;header&gt;
+  &lt;h1&gt;Titlul paginii&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;p&gt;Conținut principal&lt;/p&gt;
+&lt;/main&gt;
+&lt;footer&gt;©2025&lt;/footer&gt;
+</code></pre>
+          <h3>Text alternativ (alt)</h3>
+          <p>Orice imagine trebuie să aibă o descriere utilă.</p>
+<pre><code>&lt;img src="profil.jpg" alt="Fotografie profil utilizator"&gt;
+</code></pre>
+          <h3>Accesibilitate prin tastatură</h3>
+          <p>Butonul trebuie să fie selectabil prin <kbd>Tab</kbd> și activat prin <kbd>Enter</kbd>:</p>
+<pre><code>&lt;button&gt;Trimite&lt;/button&gt;
+</code></pre>
+        </div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Exerciții</h3><button class="eye-btn" data-target="#ex3">👁️ Vezi detalii</button></div>
+        <div class="answer" id="ex3">
+          <div class="card">
+            <h3>Exercițiu 1: Adaugă un <code>alt</code> corect</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>&lt;img src="banner.png" alt="Banner promoțional Black Friday"&gt;</code></pre></div>
+          </div>
+          <div class="card">
+            <h3>Exercițiu 2: Folosește <code>aria-label</code></h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>&lt;button aria-label="Caută produse"&gt;🔍&lt;/button&gt;</code></pre></div>
+          </div>
+        </div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Întrebări de interviu</h3><button class="eye-btn" data-target="#int3">👁️ Vezi detalii</button></div>
+        <div class="answer" id="int3">
+          <div class="card"><p><strong>1. Ce este accesibilitatea web?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Crearea site-urilor care pot fi utilizate de toți utilizatorii, inclusiv cei cu dizabilități.</div></div>
+          <div class="card"><p><strong>2. Ce face atributul aria-label?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Oferă descrieri vocale pentru screen-readere, când nu există text vizibil.</div></div>
+          <div class="card"><p><strong>3. Ce este contrastul de culoare?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Diferența de luminozitate dintre text și fundal, pentru lizibilitate.</div></div>
+        </div>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Mini-Proiect</h3><button class="eye-btn" data-target="#pr3">👁️ Vezi detalii</button></div>
+        <div class="answer" id="pr3">
+          Creează o pagină cu un formular accesibil:
+<pre><code>&lt;form&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" type="email" aria-required="true"&gt;
+  &lt;button&gt;Trimite&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+        </div>
+      </div>
+    </section>
+    <footer>© 2025 — Lecția 3: Accesibilitate HTML</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

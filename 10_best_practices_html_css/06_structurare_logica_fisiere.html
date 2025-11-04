@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. Design Responsive</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar"><h1>Bune practici HTML & CSS</h1></nav>
+  <aside class="sidebar">
+    <h2>Bune Practici HTML & CSS</h2>
+    <ul><li><a href="index.html">🏠 Înapoi</a></li></ul>
+  </aside>
+
+  <main>
+    <header>
+      <h1>6️⃣ Design Responsive</h1>
+      <p>Adaptarea interfețelor web pentru toate dimensiunile de ecran: desktop, tabletă și mobil.</p>
+    </header>
+
+    <section class="lessons">
+      <!-- DESCRIERE -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Descriere</h3><button class="eye-btn" data-target="#desc6">👁️ Vezi detalii</button></div>
+        <div class="answer" id="desc6">
+          Designul responsive asigură ca paginile web să arate bine și să funcționeze corect pe orice dispozitiv, indiferent de rezoluție.
+        </div>
+      </div>
+
+      <!-- CE ÎNVEȚI -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Ce înveți</h3><button class="eye-btn" data-target="#inv6">👁️ Vezi detalii</button></div>
+        <div class="answer" id="inv6">
+          <ul>
+            <li>Ce sunt media queries</li>
+            <li>Unități relative: %, em, rem, vw, vh</li>
+            <li>Grid și Flexbox responsive</li>
+            <li>Tehnici mobile-first</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PARTEA TEORETICĂ -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Partea Teoretică</h3><button class="eye-btn" data-target="#teorie6">👁️ Vezi detalii</button></div>
+        <div class="answer" id="teorie6">
+          <h3>Ce este responsive design?</h3>
+          <p>Este abordarea prin care layout-ul unei pagini se adaptează la dimensiunea ecranului.</p>
+
+          <h4>Exemplu de media query:</h4>
+<pre><code>@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+}</code></pre>
+
+          <h4>Unități relative</h4>
+          <ul>
+            <li><code>%</code> – procentual față de elementul părinte</li>
+            <li><code>em</code> – relativ la font-size-ul părintelui</li>
+            <li><code>rem</code> – relativ la font-size-ul root</li>
+            <li><code>vw / vh</code> – procent din dimensiunea viewportului</li>
+          </ul>
+
+          <h4>Strategie Mobile First</h4>
+          <p>Scrie întâi pentru ecrane mici, apoi adaugă reguli pentru ecrane mari.</p>
+        </div>
+      </div>
+
+      <!-- EXERCIȚII -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Exerciții</h3><button class="eye-btn" data-target="#ex6">👁️ Vezi detalii</button></div>
+        <div class="answer" id="ex6">
+          <div class="card">
+            <h3>Exercițiu 1: Creează un layout responsive</h3>
+            <p>Transformă două coloane în una singură pe mobil.</p>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>@media (max-width: 600px) {
+  .container {
+    display: block;
+  }
+}</code></pre></div>
+          </div>
+
+          <div class="card">
+            <h3>Exercițiu 2: Adaugă fonturi scalabile</h3>
+            <p>Folosește unități relative.</p>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>h1 { font-size: 2.5rem; }
+p { font-size: 1rem; }</code></pre></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÎNTREBĂRI DE INTERVIU -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Întrebări de Interviu</h3><button class="eye-btn" data-target="#int6">👁️ Vezi detalii</button></div>
+        <div class="answer" id="int6">
+          <div class="card"><p><strong>1. Ce este o media query?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 O regulă CSS care aplică stiluri în funcție de dimensiunea ecranului.</div></div>
+          <div class="card"><p><strong>2. Ce înseamnă Mobile First?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Scrii CSS pentru mobil mai întâi și extinzi pentru desktop.</div></div>
+        </div>
+      </div>
+
+      <!-- MINI PROIECT -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Mini-Proiect</h3><button class="eye-btn" data-target="#pr6">👁️ Vezi detalii</button></div>
+        <div class="answer" id="pr6">
+          Creează un site simplu responsive cu un header, 2 coloane și un footer care se rearanjează pe mobil.
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 — Lecția 6: Design Responsive</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

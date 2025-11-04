@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Organizarea codului — Bune Practici HTML & CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <h1>Bune practici HTML & CSS</h1>
+    </nav>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h2>Bune Practici HTML & CSS</h2>
+      <ul>
+        <li><a href="index.html">🏠 Înapoi la pagina principală</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONȚINUT PRINCIPAL -->
+    <main>
+      <header>
+        <h1>1️⃣ Organizarea codului</h1>
+        <p>Scrie HTML & CSS clar, ușor de întreținut și bine structurat.</p>
+      </header>
+
+      <section class="lessons">
+        <!-- DESCRIERE -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Descriere</h3>
+            <button class="eye-btn" data-target="#descriere">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="descriere">
+            Această lecție explică <strong>organizarea codului</strong> în
+            proiectele frontend. Vei învăța cum să scrii fișiere HTML & CSS
+            curate, structurate logic și ușor de extins.
+          </div>
+        </div>
+
+        <!-- CE ÎNVEȚI -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Ce înveți</h3>
+            <button class="eye-btn" data-target="#ce-inveti">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="ce-inveti">
+            <ul>
+              <li>Principii pentru organizarea fișierelor și folderelor</li>
+              <li>Separarea logică a componentelor (HTML, CSS, JS)</li>
+              <li>Utilizarea comentariilor și indentării corecte</li>
+              <li>Structuri CSS modulare</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PARTEA TEORETICĂ -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Partea Teoretică</h3>
+            <div class="answer" id="teorie">
+  <h3>Principii generale de organizare a codului</h3>
+  <p>
+    Organizarea codului reprezintă fundația unui proiect frontend reușit.
+    Înainte de a aplica convenții de denumire, modularizare sau optimizare,
+    trebuie să existe o structură clară, lizibilă și logică a fișierelor.
+  </p>
+
+  <h4>1️⃣ Structura fișierelor</h4>
+  <p>Gruparea logică ajută la menținerea ordinii și la identificarea rapidă a componentelor.</p>
+  <ul>
+    <li><code>/css</code> – stilurile vizuale ale proiectului</li>
+    <li><code>/js</code> – funcționalitățile JavaScript</li>
+    <li><code>/images</code> – resursele grafice</li>
+    <li><code>/components</code> – secțiuni reutilizabile (header, footer, card etc.)</li>
+  </ul>
+
+  <h4>2️⃣ Claritate și indentare</h4>
+  <p>
+    Codul trebuie să fie ușor de citit. Indentarea corectă (2 sau 4 spații)
+    face diferența între un cod curat și unul haotic.
+  </p>
+  <pre><code>&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Titlu secțiune&lt;/h2&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+
+  <h4>3️⃣ Comentarii utile</h4>
+  <p>Adaugă comentarii pentru a delimita secțiunile principale ale paginii:</p>
+  <pre><code>&lt;!-- NAVBAR PRINCIPAL --&gt;
+&lt;!-- SECȚIUNEA DE CONTACT --&gt;</code></pre>
+
+  <h4>4️⃣ Separarea responsabilităților</h4>
+  <p>
+    Fiecare limbaj are propriul rol:
+  </p>
+  <ul>
+    <li><strong>HTML</strong> – structura conținutului</li>
+    <li><strong>CSS</strong> – prezentarea vizuală</li>
+    <li><strong>JS</strong> – comportamentul și interactivitatea</li>
+  </ul>
+
+  <p>
+    Pe scurt: <strong>HTML răspunde la “ce este”, CSS la “cum arată”, JS la “ce face”.</strong>
+  </p>
+
+  <h4>5️⃣ Documentare</h4>
+  <p>
+    Fiecare proiect ar trebui să aibă un fișier <code>README.md</code> care
+    explică structura și regulile de codare, pentru a facilita colaborarea.
+  </p>
+</div>
+
+            <button class="eye-btn" data-target="#teorie">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="teorie">
+            <ul>
+              <li>
+                <strong>1. Structura fișierelor:</strong> Organizează fișierele
+                în directoare precum <code>/css</code>, <code>/js</code>,
+                <code>/images</code>.
+              </li>
+              <li>
+                <strong>2. Indentare corectă:</strong> Fiecare nivel de
+                structură HTML trebuie indentat cu 2 sau 4 spații.
+              </li>
+              <li>
+                <strong>3. Comentarii utile:</strong> Folosește comentarii
+                pentru a marca secțiuni logice.
+              </li>
+              <li>
+                <strong>4. CSS modular:</strong> Folosește mai multe fișiere CSS
+                pentru componente diferite (header, footer, layout, etc.).
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXERCIȚII -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Exerciții</h3>
+            <div class="answer" id="exercitii">
+
+  <section id="exercitii" class="cards-section">
+    <h2>🧩 Exerciții Practice</h2>
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Exercițiu 1: Creează un header semantic</h3>
+        <p>Include un logo și un meniu navigațional.</p>
+        <button class="toggle-btn">👁️ Arată rezolvarea</button>
+        <div class="solution">
+<pre><code>&lt;header&gt;
+  &lt;h1&gt;Logo&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Acasă&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Despre&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Exercițiu 2: Stilizează un buton cu hover</h3>
+        <p>Aplică tranziție lină la schimbarea culorii.</p>
+        <button class="toggle-btn">👁️ Arată rezolvarea</button>
+        <div class="solution">
+<pre><code>.btn {
+  background: #4b3f72;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: #7b1fa2;
+}
+</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Exercițiu 3: Creează un layout simplu</h3>
+        <p>Folosește grid pentru a împărți pagina în 2 coloane.</p>
+        <button class="toggle-btn">👁️ Arată rezolvarea</button>
+        <div class="solution">
+<pre><code>.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+            <button class="eye-btn" data-target="#exercitii">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="exercitii">
+            <ol>
+              <li>
+                Reorganizează un proiect existent în foldere logice
+                (<code>css/</code>, <code>js/</code>, <code>img/</code>).
+              </li>
+              <li>Adaugă comentarii explicative în codul tău HTML.</li>
+              <li>Formatează corect indentarea într-un fișier HTML și CSS.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- ÎNTREBĂRI DE INTERVIU -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Întrebări de interviu</h3>
+            <!-- ÎNTREBĂRI DE INTERVIU -->
+<section id="interviu" class="cards-section">
+  <h2>💬 Întrebări de Interviu (HTML & CSS)</h2>
+
+  <div class="card">
+    <p><strong>1. Care este diferența dintre tagurile <code>&lt;section&gt;</code> și <code>&lt;div&gt;</code>?</strong></p>
+    <button class="eye-btn">👁️ Vezi răspunsul</button>
+    <div class="answer">👉 <code>&lt;section&gt;</code> are valoare semantică (o secțiune logică de conținut), în timp ce <code>&lt;div&gt;</code> este doar un container generic.</div>
+  </div>
+
+  <div class="card">
+    <p><strong>2. Ce face proprietatea <code>z-index</code>?</strong></p>
+    <button class="eye-btn">👁️ Vezi răspunsul</button>
+    <div class="answer">👉 Controlează ordinea de afișare pe axa Z; valori mai mari apar deasupra celor mai mici.</div>
+  </div>
+
+  <div class="card">
+    <p><strong>3. Ce diferență este între <code>em</code> și <code>rem</code>?</strong></p>
+    <button class="eye-btn">👁️ Vezi răspunsul</button>
+    <div class="answer">👉 <code>em</code> depinde de font-size-ul părintelui, <code>rem</code> de font-size-ul rădăcinii (<code>html</code>).</div>
+  </div>
+</section>
+
+            <button class="eye-btn" data-target="#interviu">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="interviu">
+            <ul>
+              <li>
+                De ce este importantă organizarea codului într-un proiect mare?
+              </li>
+              <li>Ce avantaje are împărțirea fișierelor CSS pe module?</li>
+              <li>Cum poți evita „spaghetti code” în HTML/CSS?</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MINI-PROIECT -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Mini-Proiect</h3>
+            <button class="eye-btn" data-target="#proiect">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="proiect">
+            Creează un mic proiect de pagină web (ex: portofoliu). Organizează
+            fișierele în:
+            <ul>
+              <li><code>index.html</code></li>
+              <li><code>css/style.css</code></li>
+              <li><code>js/app.js</code></li>
+              <li><code>images/</code> — pentru imagini</li>
+            </ul>
+            Respectă principiile de organizare și scrie comentarii clare.
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © 2025 Frontend Study Guide — Lecția 1: Organizarea codului
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

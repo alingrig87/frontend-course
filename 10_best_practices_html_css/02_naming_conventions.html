@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Naming Conventions (BEM) — Bune Practici HTML & CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <h1>Bune practici HTML & CSS</h1>
+    </nav>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h2>Bune Practici HTML & CSS</h2>
+      <ul>
+        <li><a href="index.html">🏠 Înapoi la pagina principală</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONȚINUT PRINCIPAL -->
+    <main>
+      <header>
+        <h1>2️⃣ Naming Conventions (BEM)</h1>
+        <p>
+          Îmbunătățește claritatea și scalabilitatea codului tău CSS printr-un
+          sistem de denumire consecvent — BEM.
+        </p>
+      </header>
+
+      <section class="lessons">
+        <!-- DESCRIERE -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Descriere</h3>
+            <button class="eye-btn" data-target="#descriere">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="descriere">
+            BEM (Block Element Modifier) este o convenție de denumire folosită
+            pentru a scrie CSS clar, predictibil și modular. Te ajută să
+            structurezi componentele astfel încât să eviți conflictele de stil
+            și să poți scala proiecte mari fără haos.
+          </div>
+        </div>
+
+        <!-- CE ÎNVEȚI -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Ce înveți</h3>
+            <button class="eye-btn" data-target="#ce-inveti">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="ce-inveti">
+            <ul>
+              <li>Principiile BEM: Block, Element, Modifier</li>
+              <li>Cum să alegi denumiri logice și consistente</li>
+              <li>Cum se evită coliziunile de clase</li>
+              <li>Aplicarea convenției BEM în fișiere CSS reale</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PARTEA TEORETICĂ -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Partea Teoretică</h3>
+            <button class="eye-btn" data-target="#teorie">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="teorie">
+            <h3>Ce este BEM?</h3>
+            <p>
+              <strong>BEM</strong> (Block Element Modifier) este o metodologie
+              de denumire care ajută la crearea unui cod CSS mai clar și mai
+              ușor de întreținut. Fiecare componentă a interfeței este împărțită
+              în 3 concepte:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Block</strong> – o entitate independentă (ex:
+                <code>.card</code>, <code>.menu</code>)
+              </li>
+              <li>
+                <strong>Element</strong> – parte a unui bloc care are sens doar
+                în contextul acelui bloc (ex: <code>.card__title</code>)
+              </li>
+              <li>
+                <strong>Modifier</strong> – o variantă a blocului sau a
+                elementului (ex: <code>.card--highlighted</code>)
+              </li>
+            </ul>
+
+            <h4>Structura BEM:</h4>
+            <pre><code>.block { ... }
+.block__element { ... }
+.block--modifier { ... }
+</code></pre>
+
+            <h4>Exemplu practic:</h4>
+            <pre><code>&lt;div class="button button--primary"&gt;
+  &lt;span class="button__text"&gt;Cumpără acum&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+            <pre><code>.button {
+  background: #4b3f72;
+  color: white;
+  border-radius: 4px;
+}
+
+.button__text {
+  font-weight: bold;
+}
+
+.button--primary {
+  background: #7b1fa2;
+}
+</code></pre>
+
+            <p>
+              Avantajul major este claritatea și previzibilitatea codului. Orice
+              dezvoltator poate ști imediat ce rol are fiecare clasă.
+            </p>
+          </div>
+        </div>
+
+        <!-- EXERCIȚII -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Exerciții</h3>
+            <button class="eye-btn" data-target="#exercitii">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="exercitii">
+            <section class="cards-section">
+              <h2>🧩 Exerciții Practice</h2>
+              <div class="card-grid">
+                <div class="card">
+                  <h3>Exercițiu 1: Creează o secțiune BEM pentru un card</h3>
+                  <p>
+                    Definește corect clasele BEM pentru un card cu titlu și
+                    buton.
+                  </p>
+                  <button class="toggle-btn">👁️ Vezi răspunsul</button>
+                  <div class="solution">
+                    <pre><code>&lt;div class="card"&gt;
+  &lt;h2 class="card__title"&gt;Articol nou&lt;/h2&gt;
+  &lt;button class="card__button card__button--accent"&gt;Citește&lt;/button&gt;
+&lt;/div&gt;
+
+.card { ... }
+.card__title { ... }
+.card__button { ... }
+.card__button--accent { background: #7b1fa2; color: white; }
+</code></pre>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <h3>Exercițiu 2: Adaugă un modifier pentru un meniu activ</h3>
+                  <p>Scrie clasa BEM pentru un element activ de meniu.</p>
+                  <button class="toggle-btn">👁️ Vezi răspunsul</button>
+                  <div class="solution">
+                    <pre><code>.menu__item--active {
+  color: #7b1fa2;
+  font-weight: bold;
+}
+</code></pre>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <h3>Exercițiu 3: Creează o listă BEM pentru un sidebar</h3>
+                  <p>Fiecare element are un icon și text. Aplică BEM corect.</p>
+                  <button class="toggle-btn">👁️ Vezi răspunsul</button>
+                  <div class="solution">
+                    <pre><code>&lt;ul class="sidebar"&gt;
+  &lt;li class="sidebar__item"&gt;
+    &lt;span class="sidebar__icon"&gt;🏠&lt;/span&gt;
+    &lt;span class="sidebar__text"&gt;Acasă&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- ÎNTREBĂRI DE INTERVIU -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Întrebări de interviu</h3>
+            <button class="eye-btn" data-target="#interviu">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="interviu">
+            <section class="cards-section">
+              <h2>💬 Întrebări de Interviu (BEM & CSS Structurare)</h2>
+
+              <div class="card">
+                <p><strong>1. Ce avantaje oferă metodologia BEM?</strong></p>
+                <button class="eye-btn">👁️ Vezi răspunsul</button>
+                <div class="answer">
+                  👉 Claritate, scalabilitate și evitarea conflictelor între
+                  clase CSS.
+                </div>
+              </div>
+
+              <div class="card">
+                <p>
+                  <strong
+                    >2. Cum diferențiezi un <code>block</code> de un
+                    <code>element</code>?</strong
+                  >
+                </p>
+                <button class="eye-btn">👁️ Vezi răspunsul</button>
+                <div class="answer">
+                  👉 Un block poate exista independent, un element depinde de
+                  block (nu are sens separat).
+                </div>
+              </div>
+
+              <div class="card">
+                <p><strong>3. Cum se notează un modifier în BEM?</strong></p>
+                <button class="eye-btn">👁️ Vezi răspunsul</button>
+                <div class="answer">
+                  👉 Cu dublă liniuță: <code>.block--modifier</code> sau
+                  <code>.block__element--modifier</code>.
+                </div>
+              </div>
+
+              <div class="card">
+                <p>
+                  <strong
+                    >4. Este BEM compatibil cu framework-uri moderne?</strong
+                  >
+                </p>
+                <button class="eye-btn">👁️ Vezi răspunsul</button>
+                <div class="answer">
+                  👉 Da, este des folosit cu React, Vue, Angular și chiar
+                  Tailwind pentru claritate în clase.
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- MINI-PROIECT -->
+        <div class="lesson-card">
+          <div class="lesson-header">
+            <h3>Mini-Proiect</h3>
+            <button class="eye-btn" data-target="#proiect">
+              👁️ Vezi detalii
+            </button>
+          </div>
+          <div class="answer" id="proiect">
+            Creează un mic layout de pagină de produs (card produs + buton +
+            badge promoțional) folosind convenția BEM:
+            <pre><code>&lt;div class="product-card product-card--promo"&gt;
+  &lt;h3 class="product-card__title"&gt;Laptop Ultra&lt;/h3&gt;
+  &lt;button class="product-card__btn"&gt;Cumpără&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+            <p>
+              Respectă structura BEM pentru toate clasele CSS și folosește
+              culori diferite pentru varianta <code>--promo</code>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © 2025 Frontend Study Guide — Lecția 2: Naming Conventions (BEM)
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

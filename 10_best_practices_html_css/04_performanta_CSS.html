@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Structura Fișierelor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar"><h1>Bune practici HTML & CSS</h1></nav>
+  <aside class="sidebar"><h2>Bune Practici HTML & CSS</h2><ul><li><a href="index.html">🏠 Înapoi</a></li></ul></aside>
+
+  <main>
+    <header>
+      <h1>4️⃣ Structura Fișierelor</h1>
+      <p>Organizarea clară a fișierelor și directoarelor într-un proiect frontend.</p>
+    </header>
+
+    <section class="lessons">
+      <!-- DESCRIERE -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Descriere</h3><button class="eye-btn" data-target="#desc4">👁️ Vezi detalii</button></div>
+        <div class="answer" id="desc4">
+          O structură corectă de fișiere asigură o dezvoltare rapidă, colaborare ușoară și mentenanță eficientă a codului.
+        </div>
+      </div>
+
+      <!-- CE ÎNVEȚI -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Ce înveți</h3><button class="eye-btn" data-target="#inv4">👁️ Vezi detalii</button></div>
+        <div class="answer" id="inv4">
+          <ul>
+            <li>Structurarea folderelor principale într-un proiect</li>
+            <li>Reguli de separare a componentelor HTML/CSS/JS</li>
+            <li>Importanța denumirilor logice</li>
+            <li>Crearea unui fișier README clar</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TEORETIC -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Partea Teoretică</h3><button class="eye-btn" data-target="#teorie4">👁️ Vezi detalii</button></div>
+        <div class="answer" id="teorie4">
+          <h3>Structura recomandată</h3>
+<pre><code>project/
+│
+├── index.html
+├── css/
+│   ├── style.css
+│   └── components/
+│       ├── header.css
+│       └── footer.css
+├── js/
+│   ├── app.js
+│   └── utils/
+│       └── helpers.js
+├── images/
+│   └── logo.png
+└── README.md
+</code></pre>
+
+          <h4>Separarea pe funcționalitate</h4>
+          <p>Fișierele trebuie grupate în funcție de scopul lor: stiluri, scripturi, resurse media.</p>
+
+          <h4>Nume clare și semnificative</h4>
+          <p>Exemple bune: <code>main.css</code>, <code>header.js</code>, <code>hero-section.html</code>.</p>
+        </div>
+      </div>
+
+      <!-- EXERCIȚII -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Exerciții</h3><button class="eye-btn" data-target="#ex4">👁️ Vezi detalii</button></div>
+        <div class="answer" id="ex4">
+          <div class="card">
+            <h3>Exercițiu 1: Creează structura de fișiere</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>mkdir css js images
+touch index.html css/style.css js/app.js README.md</code></pre></div>
+          </div>
+
+          <div class="card">
+            <h3>Exercițiu 2: Adaugă comentarii în CSS</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>/* === HEADER SECTION === */
+header {
+  background: #f0f0f0;
+}</code></pre></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÎNTREBĂRI -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Întrebări de Interviu</h3><button class="eye-btn" data-target="#int4">👁️ Vezi detalii</button></div>
+        <div class="answer" id="int4">
+          <div class="card"><p><strong>1. De ce e importantă o structură clară?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Ajută la mentenanță și colaborare.</div></div>
+          <div class="card"><p><strong>2. Ce fișier explică regulile de proiect?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Fișierul README.md</div></div>
+        </div>
+      </div>
+
+      <!-- MINI PROIECT -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Mini-Proiect</h3><button class="eye-btn" data-target="#pr4">👁️ Vezi detalii</button></div>
+        <div class="answer" id="pr4">
+          Creează un mini-proiect de landing page cu fișiere organizate logic.
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 — Lecția 4: Structura Fișierelor</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

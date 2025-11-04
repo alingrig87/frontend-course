@@ -1,8 +1,4 @@
-/* Bune practici HTML & CSS (naming, organizare) - style.css (gol, folosește pentru exerciții) */
-
-/* === STYLE.CSS === */
-
-/* RESET & FONTURI DE BAZĂ */
+/* === RESET & FONTURI === */
 * {
   margin: 0;
   padding: 0;
@@ -14,20 +10,20 @@ body {
   background: #f8f9fb;
   color: #333;
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 240px 1fr;
   min-height: 100vh;
 }
 
 /* === SIDEBAR === */
 .sidebar {
   background: #fff;
-  padding: 1.5rem;
-  border-right: 1px solid #ddd;
+  padding: 1.8rem;
+  border-right: 1px solid #e1e1e1;
 }
 
 .sidebar h2 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.25rem;
   color: #4b3f72;
 }
 
@@ -36,50 +32,90 @@ body {
 }
 
 .sidebar li {
-  margin: 0.6rem 0;
+  margin: 0.8rem 0;
 }
 
 .sidebar a {
   text-decoration: none;
-  color: #333;
+  color: #444;
   font-weight: 500;
-  transition: color 0.2s ease;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  display: block;
+  transition: all 0.2s ease;
 }
 
 .sidebar a:hover,
 .sidebar a.active {
-  color: #7b1fa2;
+  color: #fff;
+  background: #7b1fa2;
 }
 
-/* === CONȚINUT PRINCIPAL === */
-main {
-  padding: 2rem;
-}
-
+/* === HEADER === */
 header h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: #4b3f72;
+  margin-bottom: 0.4rem;
+}
+
+header p {
+  color: #555;
   margin-bottom: 2rem;
 }
 
-/* === CARDS (SECȚIUNI DE LECȚII) === */
-.lessons {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+/* === CARDURI === */
+.card-list {
+  display: grid;
+  gap: 1.5rem;
 }
 
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  color: #4b3f72;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.details-btn {
+  background: #4b3f72;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.details-btn:hover {
+  background: #7b1fa2;
+}
+
+/* === LESSON PAGES === */
 .lesson-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   padding: 1.2rem 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.lesson-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  margin-bottom: 1rem;
 }
 
 .lesson-header {
@@ -108,23 +144,18 @@ header h1 {
   background: #7b1fa2;
 }
 
-/* === CONȚINUTUL ASCUNS (DETALII) === */
 .answer {
   margin-top: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.6;
   font-size: 0.95rem;
   color: #444;
-  display: none; /* vizibilitate controlată din JS */
+  display: none;
 }
 
 .answer ul,
 .answer ol {
-  margin-left: 1.2rem;
+  margin-left: 1.4rem;
   margin-top: 0.5rem;
-}
-
-.answer li {
-  margin-bottom: 0.4rem;
 }
 
 /* === FOOTER === */
@@ -154,6 +185,94 @@ footer {
   }
 
   header h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
+}
+
+/* === NAVBAR === */
+.navbar {
+  grid-column: 1 / -1;
+  background: #4b3f72;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+/* === LAYOUT FIX === */
+main {
+  background: #f8f9fb;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Asigură spațiere între navbar și conținut */
+body {
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 240px 1fr;
+  grid-template-areas:
+    "nav nav"
+    "sidebar main";
+}
+
+.navbar {
+  grid-area: nav;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Carduri în main */
+main .lesson-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-areas:
+      "nav"
+      "main";
+  }
+}
+
+.answer {
+  display: none;
+  padding: 10px;
+  margin-top: 5px;
+  
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.answer.visible {
+  display: block;
+}
+
+.toggle-btn, .eye-btn {
+  
+  border: none;
+  
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.toggle-btn:hover, .eye-btn:hover {
+  background: #0056b3;
 }

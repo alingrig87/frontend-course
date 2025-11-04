@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. Performanța CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar"><h1>Bune practici HTML & CSS</h1></nav>
+  <aside class="sidebar"><h2>Bune Practici HTML & CSS</h2><ul><li><a href="index.html">🏠 Înapoi</a></li></ul></aside>
+
+  <main>
+    <header>
+      <h1>7️⃣ Performanța CSS</h1>
+      <p>Optimizarea codului CSS pentru încărcare rapidă și eficiență maximă.</p>
+    </header>
+
+    <section class="lessons">
+      <!-- DESCRIERE -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Descriere</h3><button class="eye-btn" data-target="#desc7">👁️ Vezi detalii</button></div>
+        <div class="answer" id="desc7">
+          Un CSS performant reduce timpul de încărcare și consumul de memorie, îmbunătățind experiența utilizatorului.
+        </div>
+      </div>
+
+      <!-- CE ÎNVEȚI -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Ce înveți</h3><button class="eye-btn" data-target="#inv7">👁️ Vezi detalii</button></div>
+        <div class="answer" id="inv7">
+          <ul>
+            <li>Minificarea fișierelor CSS</li>
+            <li>Încărcarea asincronă a stilurilor</li>
+            <li>Evitarea selectorilor ineficienți</li>
+            <li>Folosirea corectă a cache-ului</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PARTEA TEORETICĂ -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Partea Teoretică</h3><button class="eye-btn" data-target="#teorie7">👁️ Vezi detalii</button></div>
+        <div class="answer" id="teorie7">
+          <h3>Minificare CSS</h3>
+          <p>Elimină spațiile, comentariile și caracterele inutile.</p>
+          <p>Exemplu:</p>
+<pre><code>/* Înainte */
+body {
+  background: #fff;
+  color: #000;
+}
+
+/* După */
+body{background:#fff;color:#000;}</code></pre>
+
+          <h3>Încărcare eficientă</h3>
+<pre><code>&lt;link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'"&gt;</code></pre>
+
+          <h3>Selectori optimi</h3>
+          <p>Evitați selectori foarte generici sau complicați precum <code>div ul li a</code>.</p>
+        </div>
+      </div>
+
+      <!-- EXERCIȚII -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Exerciții</h3><button class="eye-btn" data-target="#ex7">👁️ Vezi detalii</button></div>
+        <div class="answer" id="ex7">
+          <div class="card">
+            <h3>Exercițiu 1: Optimizează un fișier CSS</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>body{margin:0;padding:0;font-family:sans-serif}</code></pre></div>
+          </div>
+
+          <div class="card">
+            <h3>Exercițiu 2: Folosește preloading</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>&lt;link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'"&gt;</code></pre></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÎNTREBĂRI DE INTERVIU -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Întrebări de Interviu</h3><button class="eye-btn" data-target="#int7">👁️ Vezi detalii</button></div>
+        <div class="answer" id="int7">
+          <div class="card"><p><strong>1. Ce este minificarea CSS?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Procesul de eliminare a spațiilor și caracterelor inutile pentru fișiere mai mici.</div></div>
+          <div class="card"><p><strong>2. Cum poți îmbunătăți performanța CSS?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Prin minificare, compresie și utilizarea cache-ului browserului.</div></div>
+        </div>
+      </div>
+
+      <!-- MINI PROIECT -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Mini-Proiect</h3><button class="eye-btn" data-target="#pr7">👁️ Vezi detalii</button></div>
+        <div class="answer" id="pr7">
+          Optimizează un fișier CSS existent: elimină redundanțele, minifică și încarcă-l asincron.
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 — Lecția 7: Performanța CSS</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

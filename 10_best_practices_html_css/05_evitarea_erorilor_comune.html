@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5. CSS Reset și Normalize</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar"><h1>Bune practici HTML & CSS</h1></nav>
+  <aside class="sidebar"><h2>Bune Practici HTML & CSS</h2><ul><li><a href="index.html">🏠 Înapoi</a></li></ul></aside>
+
+  <main>
+    <header>
+      <h1>5️⃣ CSS Reset & Normalize</h1>
+      <p>Eliminarea diferențelor implicite dintre browsere și unificarea stilurilor de bază.</p>
+    </header>
+
+    <section class="lessons">
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Descriere</h3><button class="eye-btn" data-target="#desc5">👁️ Vezi detalii</button></div>
+        <div class="answer" id="desc5">
+          CSS Reset și Normalize.css sunt fișiere folosite pentru a uniformiza stilurile implicite ale browserelor.
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Ce înveți</h3><button class="eye-btn" data-target="#inv5">👁️ Vezi detalii</button></div>
+        <div class="answer" id="inv5">
+          <ul>
+            <li>Diferența între CSS Reset și Normalize</li>
+            <li>Cum să incluzi aceste fișiere în proiect</li>
+            <li>Avantajele folosirii Normalize.css</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Partea Teoretică</h3><button class="eye-btn" data-target="#teorie5">👁️ Vezi detalii</button></div>
+        <div class="answer" id="teorie5">
+          <h3>Ce este CSS Reset?</h3>
+          <p>Un set de reguli care elimină toate stilurile implicite.</p>
+<pre><code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}</code></pre>
+
+          <h3>Ce este Normalize.css?</h3>
+          <p>Normalize.css păstrează comportamentele utile ale browserelor și ajustează doar diferențele majore.</p>
+
+          <h3>Implementare</h3>
+<pre><code>&lt;link rel="stylesheet" href="normalize.css"&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Exerciții</h3><button class="eye-btn" data-target="#ex5">👁️ Vezi detalii</button></div>
+        <div class="answer" id="ex5">
+          <div class="card">
+            <h3>Exercițiu 1: Aplică un reset CSS simplu</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>* {margin:0; padding:0; box-sizing:border-box;}</code></pre></div>
+          </div>
+
+          <div class="card">
+            <h3>Exercițiu 2: Adaugă Normalize în proiect</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"&gt;</code></pre></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Întrebări de Interviu</h3><button class="eye-btn" data-target="#int5">👁️ Vezi detalii</button></div>
+        <div class="answer" id="int5">
+          <div class="card"><p><strong>1. Ce diferență e între Reset și Normalize?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Reset șterge tot, Normalize păstrează stiluri utile.</div></div>
+          <div class="card"><p><strong>2. De ce se aplică Reset primul?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Pentru a seta o bază comună înainte de CSS-ul propriu.</div></div>
+        </div>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Mini-Proiect</h3><button class="eye-btn" data-target="#pr5">👁️ Vezi detalii</button></div>
+        <div class="answer" id="pr5">
+          Creează o pagină simplă aplicând Normalize.css și stiluri proprii pentru butoane și liste.
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 — Lecția 5: CSS Reset & Normalize</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

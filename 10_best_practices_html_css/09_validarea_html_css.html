@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9. Validarea HTML & CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar"><h1>Bune practici HTML & CSS</h1></nav>
+  <aside class="sidebar"><h2>Bune Practici HTML & CSS</h2><ul><li><a href="index.html">🏠 Înapoi</a></li></ul></aside>
+
+  <main>
+    <header>
+      <h1>9️⃣ Validarea HTML & CSS</h1>
+      <p>Asigurarea calității codului prin verificarea erorilor și respectarea standardelor W3C.</p>
+    </header>
+
+    <section class="lessons">
+      <!-- DESCRIERE -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Descriere</h3><button class="eye-btn" data-target="#desc9">👁️ Vezi detalii</button></div>
+        <div class="answer" id="desc9">
+          Validarea HTML & CSS înseamnă verificarea codului pentru a identifica greșeli de sintaxă, a respecta standardele web și a asigura compatibilitatea între browsere.
+        </div>
+      </div>
+
+      <!-- CE ÎNVEȚI -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Ce înveți</h3><button class="eye-btn" data-target="#inv9">👁️ Vezi detalii</button></div>
+        <div class="answer" id="inv9">
+          <ul>
+            <li>Folosirea validatorului W3C pentru HTML și CSS</li>
+            <li>Identificarea și corectarea erorilor frecvente</li>
+            <li>Importanța mesajelor de warning</li>
+            <li>Testarea compatibilității între browsere</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PARTEA TEORETICĂ -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Partea Teoretică</h3><button class="eye-btn" data-target="#teorie9">👁️ Vezi detalii</button></div>
+        <div class="answer" id="teorie9">
+          <p>W3C oferă validatoare oficiale care analizează codul tău:</p>
+          <ul>
+            <li><a href="https://validator.w3.org/">HTML Validator</a></li>
+            <li><a href="https://jigsaw.w3.org/css-validator/">CSS Validator</a></li>
+          </ul>
+
+          <h3>De ce e importantă validarea:</h3>
+          <ul>
+            <li>Îmbunătățește accesibilitatea și performanța</li>
+            <li>Reduce riscul de erori vizuale în browsere diferite</li>
+            <li>Asigură respectarea standardelor web</li>
+          </ul>
+
+          <h3>Erori comune detectate:</h3>
+          <ul>
+            <li>Taguri HTML neînchise</li>
+            <li>Atribute invalide</li>
+            <li>Proprietăți CSS greșite sau depășite</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EXERCIȚII -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Exerciții</h3><button class="eye-btn" data-target="#ex9">👁️ Vezi detalii</button></div>
+        <div class="answer" id="ex9">
+          <div class="card">
+            <h3>Exercițiu 1: Găsește eroarea</h3>
+            <p>Ce greșeală vezi în codul următor?</p>
+<pre><code>&lt;img src="poza.jpg" alt&gt;</code></pre>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution">👉 Lipsa valorii atributului <code>alt</code>. Corect: <code>&lt;img src="poza.jpg" alt="Descriere imagine"&gt;</code></div>
+          </div>
+
+          <div class="card">
+            <h3>Exercițiu 2: Validează CSS-ul</h3>
+<pre><code>p {
+  color: blu;
+}</code></pre>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution">👉 Valoarea <code>blu</code> este invalidă. Corect: <code>color: blue;</code></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÎNTREBĂRI DE INTERVIU -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Întrebări de Interviu</h3><button class="eye-btn" data-target="#int9">👁️ Vezi detalii</button></div>
+        <div class="answer" id="int9">
+          <div class="card"><p><strong>1. De ce este importantă validarea codului?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 Ajută la identificarea erorilor și menținerea calității codului conform standardelor.</div></div>
+          <div class="card"><p><strong>2. Ce unelte W3C există pentru validare?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 W3C HTML Validator și CSS Validator.</div></div>
+          <div class="card"><p><strong>3. Ce diferență e între „error” și „warning”?</strong></p><button class="eye-btn">👁️ Vezi răspunsul</button><div class="answer">👉 „Error” împiedică redarea corectă, „warning” e doar o recomandare.</div></div>
+        </div>
+      </div>
+
+      <!-- MINI PROIECT -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Mini-Proiect</h3><button class="eye-btn" data-target="#pr9">👁️ Vezi detalii</button></div>
+        <div class="answer" id="pr9">
+          Validează o pagină HTML reală folosind validatorul W3C și corectează toate erorile până obții mesajul:  
+          <em>“Document checking completed. No errors or warnings to show.”</em>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 — Lecția 9: Validarea HTML & CSS</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

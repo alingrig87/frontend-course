@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. Variabile CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar"><h1>Bune practici HTML & CSS</h1></nav>
+  <aside class="sidebar"><h2>Bune Practici HTML & CSS</h2><ul><li><a href="index.html">🏠 Înapoi</a></li></ul></aside>
+
+  <main>
+    <header>
+      <h1>8️⃣ Variabile CSS</h1>
+      <p>Scrierea unui cod CSS flexibil și ușor de întreținut prin folosirea variabilelor.</p>
+    </header>
+
+    <section class="lessons">
+      <!-- DESCRIERE -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Descriere</h3><button class="eye-btn" data-target="#desc8">👁️ Vezi detalii</button></div>
+        <div class="answer" id="desc8">
+          Variabilele CSS (numite și *custom properties*) permit reutilizarea valorilor în mai multe locuri, făcând stilurile mai ușor de actualizat.
+        </div>
+      </div>
+
+      <!-- CE ÎNVEȚI -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Ce înveți</h3><button class="eye-btn" data-target="#inv8">👁️ Vezi detalii</button></div>
+        <div class="answer" id="inv8">
+          <ul>
+            <li>Definirea și folosirea variabilelor CSS</li>
+            <li>Moștenirea și suprascrierea variabilelor</li>
+            <li>Teme de culoare și moduri dark/light</li>
+            <li>Utilizarea variabilelor în calcule</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PARTEA TEORETICĂ -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Partea Teoretică</h3><button class="eye-btn" data-target="#teorie8">👁️ Vezi detalii</button></div>
+        <div class="answer" id="teorie8">
+          <h3>Definirea variabilelor CSS</h3>
+          <p>Variabilele CSS sunt definite în interiorul unui selector, de obicei <code>:root</code> pentru valori globale.</p>
+
+<pre><code>:root {
+  --culoare-principala: #007bff;
+  --text-dark: #222;
+  --margine: 10px;
+}
+button {
+  background: var(--culoare-principala);
+  margin: var(--margine);
+}
+</code></pre>
+
+          <h3>Suprascrierea locală</h3>
+          <p>Variabilele pot fi redefinite într-un element specific:</p>
+
+<pre><code>.dark-mode {
+  --culoare-principala: #111;
+  --text-dark: #f1f1f1;
+}</code></pre>
+
+          <h3>Folosirea în calcule</h3>
+<pre><code>div {
+  width: calc(var(--margine) * 5);
+}</code></pre>
+
+          <h3>Avantaje</h3>
+          <ul>
+            <li>Ușor de modificat tema generală</li>
+            <li>Evita repetarea valorilor</li>
+            <li>Compatibil cu toate browserele moderne</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EXERCIȚII -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Exerciții</h3><button class="eye-btn" data-target="#ex8">👁️ Vezi detalii</button></div>
+        <div class="answer" id="ex8">
+          <div class="card">
+            <h3>Exercițiu 1: Creează o variabilă globală pentru culoare</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>:root {
+  --primary-color: #4CAF50;
+}
+button {
+  background-color: var(--primary-color);
+}</code></pre></div>
+          </div>
+
+          <div class="card">
+            <h3>Exercițiu 2: Mod dark/light cu variabile</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>:root {
+  --bg-color: #fff;
+  --text-color: #000;
+}
+.dark {
+  --bg-color: #111;
+  --text-color: #eee;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}</code></pre></div>
+          </div>
+
+          <div class="card">
+            <h3>Exercițiu 3: Folosește o variabilă într-un calc()</h3>
+            <button class="toggle-btn">👁️ Vezi răspunsul</button>
+            <div class="solution"><pre><code>:root {
+  --padding: 10px;
+}
+.box {
+  width: calc(100% - var(--padding) * 2);
+}</code></pre></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÎNTREBĂRI DE INTERVIU -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Întrebări de Interviu</h3><button class="eye-btn" data-target="#int8">👁️ Vezi detalii</button></div>
+        <div class="answer" id="int8">
+          <div class="card">
+            <p><strong>1. Ce sunt variabilele CSS?</strong></p>
+            <button class="eye-btn">👁️ Vezi răspunsul</button>
+            <div class="answer">👉 Sunt valori definite de utilizator, reutilizabile, care pot fi modificate ușor pentru a controla stilurile globale.</div>
+          </div>
+
+          <div class="card">
+            <p><strong>2. Cum se definesc și se folosesc?</strong></p>
+            <button class="eye-btn">👁️ Vezi răspunsul</button>
+            <div class="answer">👉 Se definesc cu <code>--nume-variabilă</code> și se apelează cu <code>var(--nume-variabilă)</code>.</div>
+          </div>
+
+          <div class="card">
+            <p><strong>3. Pot fi folosite în calcule?</strong></p>
+            <button class="eye-btn">👁️ Vezi răspunsul</button>
+            <div class="answer">👉 Da, în expresii <code>calc()</code> sau alte proprietăți care acceptă valori numerice.</div>
+          </div>
+
+          <div class="card">
+            <p><strong>4. Cum creezi mod dark/light folosind variabile?</strong></p>
+            <button class="eye-btn">👁️ Vezi răspunsul</button>
+            <div class="answer">👉 Definind seturi de variabile diferite în clase precum <code>.dark</code> și <code>:root</code>.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MINI PROIECT -->
+      <div class="lesson-card">
+        <div class="lesson-header"><h3>Mini-Proiect</h3><button class="eye-btn" data-target="#pr8">👁️ Vezi detalii</button></div>
+        <div class="answer" id="pr8">
+          Creează o pagină simplă cu două teme: light și dark.  
+          Schimbă tema printr-un buton care adaugă/elimină clasa `.dark` pe <code>&lt;body&gt;</code>.
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 — Lecția 8: Variabile CSS</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
