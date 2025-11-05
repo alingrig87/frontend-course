@@ -1,11 +1,9 @@
-/* Reset general */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Stil general */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
@@ -13,7 +11,6 @@ body {
     color: #333;
 }
 
-/* Sidebar fix pe stânga */
 .sidebar {
     position: fixed;
     left: 0;
@@ -36,7 +33,6 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* Navigare sidebar */
 .side-nav ul {
     list-style: none;
 }
@@ -66,7 +62,6 @@ body {
     color: white;
 }
 
-/* Conținut principal */
 .main-content {
     margin-left: 280px;
     padding: 2rem;
@@ -74,7 +69,6 @@ body {
 	width:85%;
 }
 
-/* Header */
 header {
     background: white;
     padding: 2rem;
@@ -94,7 +88,6 @@ header p {
     font-size: 1.1rem;
 }
 
-/* Articole */
 article {
     background: white;
     padding: 2rem;
@@ -123,7 +116,6 @@ article p {
     margin-bottom: 1rem;
 }
 
-/* Code blocks */
 pre {
     background: #2d3748;
     color: #68d391;
@@ -143,7 +135,6 @@ code {
     font-family: 'Courier New', monospace;
 }
 
-/* Demo box */
 .demo-box {
     background: #f7fafc;
     border: 2px solid #e2e8f0;
@@ -159,7 +150,6 @@ code {
     font-size: 1.1rem;
 }
 
-/* Controls layout inside demo boxes */
 .demo-box .controls {
     display: flex;
     flex-direction: column;
@@ -180,13 +170,12 @@ code {
     margin-left: 0.5rem;
 }
 
-/* Small modifier buttons */
 .btn-secondary {
-    background: #48bb78; /* green */
+    background: #48bb78;
 }
 .btn-secondary:hover { background: #38a169; }
 
-.btn-primary { /* reinforce primary look (same as default, but explicit) */
+.btn-primary { 
     background: #667eea;
 }
 
@@ -244,7 +233,6 @@ button:active {
     transform: translateY(0);
 }
 
-/* Input și select */
 input, select {
     padding: 0.8rem;
     border: 2px solid #e2e8f0;
@@ -259,7 +247,6 @@ input:focus, select:focus {
     border-color: #667eea;
 }
 
-/* Rezultate */
 #result, #result2 {
     background: #2d3748;
     color: #68d391;
@@ -274,7 +261,6 @@ input:focus, select:focus {
     overflow-y: auto;
 }
 
-/* Info box */
 .info-box {
     background: #bee3f8;
     border-left: 4px solid #3182ce;
@@ -283,7 +269,6 @@ input:focus, select:focus {
     margin: 1rem 0;
 }
 
-/* Warning box */
 .warning-box {
     background: #feebc8;
     border-left: 4px solid #ed8936;
@@ -292,7 +277,6 @@ input:focus, select:focus {
     margin: 1rem 0;
 }
 
-/* Liste */
 ul {
     margin-left: 2rem;
     margin-bottom: 1rem;
@@ -304,7 +288,6 @@ li {
     line-height: 1.6;
 }
 
-/* Link-uri */
 a {
     color: #667eea;
     text-decoration: none;
@@ -314,7 +297,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
@@ -341,7 +323,6 @@ a:hover {
     }
 }
 
-/* Scrollbar styling pentru sidebar */
 .sidebar::-webkit-scrollbar {
     width: 8px;
 }

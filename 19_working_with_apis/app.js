@@ -1,18 +1,12 @@
-// Working with APIs (REST, JSON, fetch) - app.js
 console.log("Chapter: Working with APIs (REST, JSON, fetch)");
 
-// ============================================
-// NAVIGARE SMOOTH ÎNTRE SECȚIUNI
-// ============================================
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
-        
-        // Actualizează clasa active
+
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         this.classList.add('active');
-        
-        // Scroll smooth către secțiune
+
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
@@ -21,12 +15,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// ============================================
-// WORKSHOP 1: API DE PRODUSE (FakeStore API)
-// ============================================
 const resultDiv = document.getElementById('result');
 
-// Obține toate produsele (limitat la 5)
 document.getElementById('getProducts').addEventListener('click', async () => {
     resultDiv.textContent = 'Se încarcă produsele...';
     
@@ -47,7 +37,6 @@ document.getElementById('getProducts').addEventListener('click', async () => {
     }
 });
 
-// Obține un produs specific după ID
 document.getElementById('getProduct').addEventListener('click', async () => {
     const id = document.getElementById('productId').value;
     
@@ -75,7 +64,6 @@ document.getElementById('getProduct').addEventListener('click', async () => {
     }
 });
 
-// Obține toate categoriile disponibile
 document.getElementById('getCategories').addEventListener('click', async () => {
     resultDiv.textContent = 'Se încarcă categorii...';
     
@@ -88,7 +76,6 @@ document.getElementById('getCategories').addEventListener('click', async () => {
         
         const categories = await response.json();
         
-        // Populează dropdown-ul cu categorii
         const select = document.getElementById('categorySelect');
         select.innerHTML = '<option value="">Selectează categorie</option>';
         
@@ -108,7 +95,6 @@ document.getElementById('getCategories').addEventListener('click', async () => {
     }
 });
 
-// Filtrează produsele după categorie selectată
 document.getElementById('getByCategory').addEventListener('click', async () => {
     const category = document.getElementById('categorySelect').value;
     
@@ -136,12 +122,8 @@ document.getElementById('getByCategory').addEventListener('click', async () => {
     }
 });
 
-// ============================================
-// WORKSHOP 2: API METEO (Open-Meteo API)
-// ============================================
 const result2Div = document.getElementById('result2');
 
-// Geocode a city name to coordinates using Open-Meteo's geocoding API
 async function geocodeCity(city) {
     const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=ro`;
     const resp = await fetch(url);
@@ -160,7 +142,6 @@ async function geocodeCity(city) {
     };
 }
 
-// Reverse geocode coordinates to a human-readable place (if available)
 async function reverseGeocode(lat, lon) {
     const url = `https://geocoding-api.open-meteo.com/v1/reverse?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}&count=1&language=ro`;
     const resp = await fetch(url);
@@ -176,16 +157,14 @@ async function reverseGeocode(lat, lon) {
     };
 }
 
-// Obține datele meteo pentru coordonatele introduse sau pentru un oraș
 document.getElementById('getWeather').addEventListener('click', async () => {
     const city = (document.getElementById('city') && document.getElementById('city').value || '').trim();
     let lat = document.getElementById('latitude').value;
     let lon = document.getElementById('longitude').value;
-    let resolvedLocation = null; // will hold human-readable place if available
+    let resolvedLocation = null; 
 
     result2Div.textContent = '';
 
-    // If a city is provided, try to geocode it first
     if (city) {
         result2Div.textContent = `Se caută orașul "${city}"...`;
         try {
@@ -205,7 +184,6 @@ document.getElementById('getWeather').addEventListener('click', async () => {
         }
     }
 
-    // Validate coordinates
     if (!lat || !lon) {
         result2Div.textContent = 'Te rog introdu latitudine și longitudine sau un oraș!';
         return;
@@ -228,7 +206,6 @@ document.getElementById('getWeather').addEventListener('click', async () => {
         const data = await response.json();
         const weather = data.current_weather;
 
-        // If the user did not provide a city, try reverse geocoding to get a place name
         if (!resolvedLocation) {
             try {
                 const r = await reverseGeocode(lat, lon);
@@ -241,7 +218,6 @@ document.getElementById('getWeather').addEventListener('click', async () => {
         const placeLabel = resolvedLocation && resolvedLocation.name ? `${resolvedLocation.name}, ${resolvedLocation.country}` : `${lat}°, ${lon}°`;
         const genMs = typeof data.generationtime_ms !== 'undefined' ? ` (generation: ${data.generationtime_ms} ms)` : '';
 
-        // Formatare răspuns user-friendly
         const formatted = `\n╔════════════════════════════════╗\n║      DATE METEO CURENTE        ║\n╚════════════════════════════════╝\n\n Locație: ${placeLabel}  —  (${lat}°N, ${lon}°E)\n Temperatură: ${weather.temperature}°C\n Viteză vânt: ${weather.windspeed} km/h\n Direcție vânt: ${weather.winddirection}°\n  Cod meteo: ${weather.weathercode}\n Timp: ${weather.time}${genMs}\n\n────────────────────────────────\n\nSursa: Open-Meteo (https://open-meteo.com)\n\nDate complete JSON:\n${JSON.stringify(data, null, 2)}`;
 
         result2Div.textContent = formatted;
@@ -253,11 +229,6 @@ document.getElementById('getWeather').addEventListener('click', async () => {
     }
 });
 
-// ============================================
-// FUNCȚII HELPER (pentru exerciții suplimentare)
-// ============================================
-
-// Exemplu funcție pentru POST request
 async function createProduct(productData) {
     try {
         const response = await fetch('https://fakestoreapi.com/products', {
@@ -281,7 +252,6 @@ async function createProduct(productData) {
     }
 }
 
-// Exemplu funcție pentru PUT request
 async function updateProduct(id, productData) {
     try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
@@ -305,7 +275,6 @@ async function updateProduct(id, productData) {
     }
 }
 
-// Exemplu funcție pentru DELETE request
 async function deleteProduct(id) {
     try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
@@ -325,18 +294,10 @@ async function deleteProduct(id) {
     }
 }
 
-// ============================================
-// EVENIMENTE LA ÎNCĂRCAREA PAGINII
-// ============================================
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Pagina a fost încărcată complet!');
     console.log('Aplicația API este gata de utilizare.');
     
-    // Poți adăuga aici orice inițializări necesare
-    // De exemplu: încărcare automată a categoriilor
-    // document.getElementById('getCategories').click();
-    
-    // NAV SCROLL-SPY: highlight nav link for section in viewport
     const navLinks = Array.from(document.querySelectorAll('.nav-link'));
     const sections = navLinks
         .map(l => l.getAttribute('href'))
@@ -344,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .map(id => document.querySelector(id))
         .filter(Boolean);
 
-    // helper to set active link by section id
     function setActiveById(id) {
         navLinks.forEach(link => {
             link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
@@ -356,15 +316,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -40% 0px', // consider section active when its top reaches 60% of viewport
+            rootMargin: '0px 0px -40% 0px',
             threshold: 0
         };
 
         const observer = new IntersectionObserver((entries) => {
-            // pick the entry that isIntersecting and has the largest boundingClientRect.top (closest to top)
             const visible = entries.filter(e => e.isIntersecting);
             if (visible.length) {
-                // choose the one with the smallest distance from top of viewport
                 visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
                 const topEntry = visible[0];
                 const id = topEntry.target.id;
@@ -373,14 +331,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     setActiveById(id);
                 }
             } else {
-                // if none intersecting, optionally clear active (or keep current)
             }
         }, observerOptions);
 
         sections.forEach(sec => observer.observe(sec));
 
-        // ensure active is set on load based on current scroll position
-        // find section whose top is closest but <= viewport middle
         const onLoadSet = () => {
             let best = null;
             let bestDist = Infinity;
@@ -396,10 +351,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (best && best.id) setActiveById(best.id);
         };
 
-        // run once after small delay to let layout settle
         setTimeout(onLoadSet, 50);
     } else if (sections.length) {
-        // fallback: on scroll, compute visible section
         window.addEventListener('scroll', () => {
             let best = null;
             let bestDist = Infinity;
@@ -416,30 +369,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 });
-
-// ============================================
-// EXEMPLE PENTRU EXERCIȚII
-// ============================================
-
-// Exemplu: Folosește funcțiile helper definite mai sus
-/*
-// Creare produs nou
-createProduct({
-    title: 'Produs Test',
-    price: 99.99,
-    description: 'Aceasta este o descriere',
-    image: 'https://i.pravatar.cc',
-    category: 'electronic'
-});
-
-// Actualizare produs
-updateProduct(1, {
-    title: 'Produs Actualizat',
-    price: 149.99
-});
-
-// Ștergere produs
-deleteProduct(1);
-*/
 
 console.log('App.js încărcat cu succes!');
