@@ -1,53 +1,340 @@
 <!DOCTYPE html>
 <html lang="ro">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Lecție: Working with APIs</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<!-- Sidebar fix -->
-		<aside class="sidebar">
-			<h2>Capitol 19: Working with APIs</h2>
-			<nav class="side-nav">
-				<ul>
-					<li><a href="#" class="active">Ce este un API</a></li>
-					<li><a href="#">JSON basics</a></li>
-					<li><a href="#">Fetch API avansat</a></li>
-					<li><a href="#">Request methods (GET, POST, PUT, DELETE)</a></li>
-					<li><a href="#">Headers și Body</a></li>
-					<li><a href="#">API Key & autentificare</a></li>
-					<li><a href="#">Workshop: API de produse</a></li>
-					<li><a href="#">Workshop: API meteo</a></li>
-					<li><a href="#">Tema: aplicație completă cu API</a></li>
-				</ul>
-			</nav>
-		</aside>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecție: Working with APIs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar fix -->
+    <aside class="sidebar">
+        <h2>Capitol 19: Working with APIs</h2>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="#api-intro" class="nav-link active">Ce este un API</a></li>
+                <li><a href="#json-basics" class="nav-link">JSON basics</a></li>
+                <li><a href="#fetch-advanced" class="nav-link">Fetch API avansat</a></li>
+                <li><a href="#request-methods" class="nav-link">Request methods (GET, POST, PUT, DELETE)</a></li>
+                <li><a href="#headers-body" class="nav-link">Headers și Body</a></li>
+                <li><a href="#api-auth" class="nav-link">API Key & autentificare</a></li>
+                <li><a href="#workshop-products" class="nav-link">Workshop: API de produse</a></li>
+                <li><a href="#workshop-weather" class="nav-link">Workshop: API meteo</a></li>
+                <li><a href="#homework" class="nav-link">Tema: aplicație completă cu API</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-		<!-- Conținut principal -->
-		<main class="main-content">
-			<header>
-				<h1>Working with APIs</h1>
-				<p>În acest capitol vom explora cum funcționează API-urile și cum pot fi folosite în aplicațiile web moderne.</p>
-			</header>
+    <!-- Conținut principal -->
+    <main class="main-content">
+        <header>
+            <h1>Working with APIs</h1>
+            <p>În acest capitol vom explora cum funcționează API-urile și cum pot fi folosite în aplicațiile web moderne.</p>
+        </header>
 
-			<article>
-				<h2>Ce este un API?</h2>
-				<p>
-					Un <strong>API (Application Programming Interface)</strong> este o interfață care permite aplicațiilor
-					să comunice între ele. Practic, un API oferă un set de reguli și endpoint-uri prin care o aplicație
-					poate cere sau trimite date către un server.
-				</p>
+        <article id="api-intro">
+            <h2>Ce este un API?</h2>
+            <p>
+                Un <strong>API (Application Programming Interface)</strong> este o interfață care permite aplicațiilor
+                să comunice între ele. Practic, un API oferă un set de reguli și endpoint-uri prin care o aplicație
+                poate cere sau trimite date către un server.
+            </p>
 
-				<pre>
-GET https://api.exemplu.com/products
-				</pre>
+            <pre>GET https://api.exemplu.com/products</pre>
 
-				<p>
-					Răspunsul este, de obicei, în format <code>JSON</code>, un format text ușor de citit și prelucrat în JavaScript.
-				</p>
-			</article>
-		</main>
-	</body>
+            <p>
+                Răspunsul este, de obicei, în format <code>JSON</code>, un format text ușor de citit și prelucrat în JavaScript.
+            </p>
+
+            <div class="info-box">
+                <strong>💡 Exemplu real:</strong> Când folosești o aplicație meteo, ea comunică cu un API pentru a obține temperatura curentă.
+            </div>
+        </article>
+
+        <article id="json-basics">
+            <h2>JSON Basics</h2>
+            <p>
+                <strong>JSON (JavaScript Object Notation)</strong> este formatul standard pentru schimbul de date între client și server.
+            </p>
+
+            <h3>Structura JSON</h3>
+            <pre>{
+  "nume": "Ion Popescu",
+  "varsta": 25,
+  "activ": true,
+  "skills": ["JavaScript", "React", "Node.js"],
+  "adresa": {
+    "oras": "București",
+    "strada": "Calea Victoriei"
+  }
+}</pre>
+
+            <h3>Conversii JSON în JavaScript</h3>
+            <pre>// Convertire string JSON în obiect JavaScript
+const jsonString = '{"nume": "Maria", "varsta": 30}';
+const obiect = JSON.parse(jsonString);
+
+// Convertire obiect JavaScript în string JSON
+const data = { nume: "Alex", varsta: 28 };
+const json = JSON.stringify(data);</pre>
+        </article>
+
+        <article id="fetch-advanced">
+            <h2>Fetch API Avansat</h2>
+            <p>
+                <code>fetch()</code> este funcția modernă pentru a face cereri HTTP în JavaScript. Returnează un <strong>Promise</strong>.
+            </p>
+
+            <h3>Sintaxa de bază</h3>
+            <pre>fetch('https://api.exemplu.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Eroare:', error));</pre>
+
+            <h3>Folosind async/await</h3>
+            <pre>async function getData() {
+  try {
+    const response = await fetch('https://api.exemplu.com/data');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Eroare:', error);
+  }
+}</pre>
+
+            <div class="warning-box">
+                <strong>⚠️ Atenție:</strong> Întotdeauna verifică dacă cererea a avut succes folosind <code>response.ok</code> sau <code>response.status</code>.
+            </div>
+        </article>
+
+        <article id="request-methods">
+            <h2>Request Methods (GET, POST, PUT, DELETE)</h2>
+            
+            <h3>GET - Obținere date</h3>
+            <pre>fetch('https://api.exemplu.com/products/1')
+  .then(response => response.json())
+  .then(data => console.log(data));</pre>
+
+            <h3>POST - Crearea unei resurse noi</h3>
+            <pre>fetch('https://api.exemplu.com/products', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    nume: 'Produs Nou',
+    pret: 99.99
+  })
+})
+  .then(response => response.json())
+  .then(data => console.log(data));</pre>
+
+            <h3>PUT - Actualizare completă</h3>
+            <pre>fetch('https://api.exemplu.com/products/1', {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    nume: 'Produs Actualizat',
+    pret: 149.99
+  })
+});</pre>
+
+            <h3>DELETE - Ștergere resursă</h3>
+            <pre>fetch('https://api.exemplu.com/products/1', {
+  method: 'DELETE'
+})
+  .then(response => console.log('Șters cu succes'));</pre>
+        </article>
+
+        <article id="headers-body">
+            <h2>Headers și Body</h2>
+            
+            <h3>Headers (Anteturi)</h3>
+            <p>Headers conțin metadate despre cerere, cum ar fi tipul de conținut sau token-uri de autentificare.</p>
+            
+            <pre>fetch('https://api.exemplu.com/data', {
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer token123',
+    'Accept': 'application/json'
+  }
+});</pre>
+
+            <h3>Body (Corp cerere)</h3>
+            <p>Body-ul conține datele efective care sunt trimise către server în metodele POST, PUT sau PATCH.</p>
+            
+            <pre>const userData = {
+  username: 'ion_popescu',
+  email: 'ion@exemplu.com',
+  password: 'parola123'
+};
+
+fetch('https://api.exemplu.com/register', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(userData)
+});</pre>
+        </article>
+
+        <article id="api-auth">
+            <h2>API Key & Autentificare</h2>
+            
+            <p>Multe API-uri necesită o <strong>cheie API (API Key)</strong> pentru a valida și limita accesul.</p>
+
+            <h3>Tipuri de autentificare</h3>
+            <ul>
+                <li><strong>API Key în URL:</strong> <code>?api_key=abc123</code></li>
+                <li><strong>API Key în Header:</strong> <code>X-API-Key: abc123</code></li>
+                <li><strong>Bearer Token:</strong> <code>Authorization: Bearer token123</code></li>
+                <li><strong>Basic Auth:</strong> Username și parolă encodate în Base64</li>
+            </ul>
+
+            <h3>Exemplu cu API Key</h3>
+            <pre>const apiKey = 'abc123xyz';
+
+fetch(`https://api.exemplu.com/data?api_key=${apiKey}`)
+  .then(response => response.json())
+  .then(data => console.log(data));</pre>
+
+            <h3>Exemplu cu Bearer Token</h3>
+            <pre>const token = 'your_token_here';
+
+fetch('https://api.exemplu.com/protected', {
+  headers: {
+    'Authorization': `Bearer ${token}`
+  }
+})
+  .then(response => response.json())
+  .then(data => console.log(data));</pre>
+
+            <div class="warning-box">
+                <strong>⚠️ Securitate:</strong> Nu expune niciodată cheia API în cod client public. Folosește variabile de mediu sau un backend intermediar.
+            </div>
+        </article>
+
+        <article id="workshop-products">
+            <h2>Workshop: API de Produse</h2>
+            <p>Vom folosi API-ul public <strong>FakeStore API</strong> pentru a obține și afișa produse.</p>
+
+            <div class="demo-box">
+        <h4>Demo Interactiv - Produse</h4>
+
+        <div class="controls">
+          <div class="control-row">
+            <button id="getProducts" class="btn-primary">Obține toate produsele (limit 5)</button>
+            <div class="hint">Afișează o listă de produse de test. Folosește pentru a vedea structura răspunsului.</div>
+          </div>
+
+          <div class="control-row">
+            <label for="productId" class="sr-only">ID produs</label>
+            <input type="number" id="productId" placeholder="ID produs (ex: 1)" value="1" min="1" max="20">
+            <button id="getProduct" class="btn-secondary">Obține produsul</button>
+            <div class="hint">Introdu un ID și apasă pentru a vedea detaliile acelui produs.</div>
+          </div>
+
+          <div class="control-row">
+            <button id="getCategories" class="btn-primary">Obține categorii</button>
+            <select id="categorySelect">
+              <option value="">Selectează categorie</option>
+            </select>
+            <button id="getByCategory" class="btn-secondary">Filtrează</button>
+            <div class="hint">Poți popula mai întâi lista de categorii, apoi filtra produsele după categorie selectată.</div>
+          </div>
+        </div>
+
+        <div class="result-box">
+          <h5>Rezultate</h5>
+          <div id="result" class="result-content">Rezultatul va apărea aici după ce apeși un buton.</div>
+        </div>
+            </div>
+
+            <h3>Cod sursă</h3>
+            <pre>// Obține toate produsele
+async function getAllProducts() {
+  const response = await fetch('https://fakestoreapi.com/products');
+  const products = await response.json();
+  console.log(products);
+}
+
+// Obține un produs specific
+async function getProduct(id) {
+  const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+  const product = await response.json();
+  console.log(product);
+}
+
+// Obține produse după categorie
+async function getProductsByCategory(category) {
+  const response = await fetch(
+    `https://fakestoreapi.com/products/category/${category}`
+  );
+  const products = await response.json();
+  console.log(products);
+}</pre>
+        </article>
+
+        <article id="workshop-weather">
+            <h2>Workshop: API Meteo</h2>
+            <p>Vom folosi <strong>Open-Meteo API</strong> (nu necesită cheie API) pentru a obține datele meteo.</p>
+
+            <div class="demo-box">
+                <h4>Demo Interactiv - Meteo</h4>
+        <input type="text" id="city" placeholder="Oraș (ex: București)" value="">
+        <div style="margin:0.25rem 0; color:#4a5568; font-size:0.9rem">Sau folosește coordonate:</div>
+        <input type="text" id="latitude" placeholder="Latitudine" value="44.4268">
+        <input type="text" id="longitude" placeholder="Longitudine" value="26.1025">
+        <button id="getWeather">Obține meteo</button>
+                <div id="result2"></div>
+            </div>
+
+            <h3>Cod sursă</h3>
+            <pre>async function getWeather(lat, lon) {
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
+  
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    const weather = data.current_weather;
+    console.log(`Temperatură: ${weather.temperature}°C`);
+    console.log(`Viteză vânt: ${weather.windspeed} km/h`);
+  } catch (error) {
+    console.error('Eroare:', error);
+  }
+}</pre>
+        </article>
+
+        <article id="homework">
+            <h2>Tema: Aplicație Completă cu API</h2>
+            
+            <h3>Cerințe</h3>
+            <p>Creează o aplicație web care folosește un API public și implementează următoarele funcționalități:</p>
+            
+            <ul>
+                <li>Afișare listă de date (produse, utilizatori, postări, etc.)</li>
+                <li>Căutare și filtrare după criterii</li>
+                <li>Afișare detalii pentru un element selectat</li>
+                <li>Design responsive și atractiv</li>
+                <li>Gestionare erori (loading, mesaje de eroare)</li>
+                <li>Bonus: Implementare POST/PUT/DELETE dacă API-ul permite</li>
+            </ul>
+
+            <h3>API-uri publice recomandate</h3>
+            <ul>
+                <li><a href="https://fakestoreapi.com" target="_blank">FakeStore API</a> - Produse e-commerce</li>
+                <li><a href="https://jsonplaceholder.typicode.com" target="_blank">JSONPlaceholder</a> - Postări, comentarii, utilizatori</li>
+                <li><a href="https://pokeapi.co" target="_blank">PokéAPI</a> - Date despre Pokémon</li>
+                <li><a href="https://open-meteo.com" target="_blank">Open-Meteo</a> - Date meteo</li>
+                <li><a href="https://restcountries.com" target="_blank">REST Countries</a> - Informații despre țări</li>
+            </ul>
+
+        </article>
+    </main>
+
+    <script src="app.js"></script>
+</body>
 </html>
