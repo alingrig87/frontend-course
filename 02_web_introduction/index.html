@@ -1,235 +1,234 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Introducere în Web</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lecția 16: JS Classes & Objects</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header class="main-header">
-    <div class="logo">🌐 Web Introduction</div>
-    <nav class="nav">
-      <a href="#intro">Acasă</a>
-      <a href="#theory">Partea teoretică</a>
-      <a href="#exercises">Exerciții</a>
-      <a href="#interview">Întrebări</a>
-      <a href="#project">Proiect</a>
-    </nav>
-  </header>
 
+<body>
+  <!-- === SIDEBAR === -->
   <aside class="sidebar">
     <h2>📘 Conținut</h2>
-    <ul>
-      <li>🌍 Internet și TCP/IP</li>
-      <li>🕸️ World Wide Web</li>
-      <li>🔗 URL</li>
-      <li>💻 Arhitectura Client-Server</li>
-      <li>🌐 DNS</li>
-      <li>📨 HTTP & HTTPS</li>
-      <li>🧭 Web Browsers</li>
-      <li>🧰 Developer Tools</li>
-    </ul>
+    <nav class="side-nav">
+      <ul>
+        <li><a href="#object-literals" class="active">1. Object literals</a></li>
+        <li><a href="#constructor-functions">2. Constructor functions</a></li>
+        <li><a href="#prototype">3. Prototype inheritance</a></li>
+        <li><a href="#classes">4. Classes ES6</a></li>
+        <li><a href="#getters">5. Getters & Setters</a></li>
+        <li><a href="#chaining">6. Chaining methods</a></li>
+        <li><a href="#static">7. Static methods</a></li>
+        <li><a href="#inheritance">8. Inheritance & overriding</a></li>
+        <li><a href="#json">9. JSON serialization</a></li>
+        <li><a href="#workshop">10. Workshop</a></li>
+      </ul>
+    </nav>
   </aside>
 
-  <main class="content">
-    <section id="intro" class="hero">
-      <h1>💡 Introducere în Web</h1>
-      <p>Acest curs explică fundamentele Internetului, World Wide Web-ului și ale arhitecturii web moderne.</p>
+  <!-- === MAIN CONTENT === -->
+  <main class="main-content">
+    <header>
+      <h1>🧩 Lecția 16: JavaScript Classes & Objects</h1>
+      <p class="subtitle">Învață cum funcționează OOP în JavaScript — de la obiecte simple la moștenire și clase moderne ES6.</p>
+    </header>
+
+    <!-- === 1. OBJECT LITERALS === -->
+    <section id="object-literals" class="theory-block">
+      <h2>1️⃣ Object literals</h2>
+      <p>Cel mai simplu mod de a crea un obiect este folosind un <strong>literal de obiect</strong> — adică o pereche de acolade cu proprietăți și valori:</p>
+      <pre><code>const user = {
+  name: "Alex",
+  age: 25,
+  greet() {
+    console.log(`Salut, eu sunt ${this.name}!`);
+  }
+};
+
+user.greet(); // Salut, eu sunt Alex!</code></pre>
+      <div class="info note">🔹 Ideal pentru obiecte unice sau configurări rapide.</div>
     </section>
 
-    <section id="theory">
-      <h2>📚 Partea teoretică</h2>
+    <!-- === 2. CONSTRUCTOR FUNCTIONS === -->
+    <section id="constructor-functions" class="theory-block">
+      <h2>2️⃣ Constructor functions</h2>
+      <p>Înainte de clasele ES6, obiectele multiple erau create prin funcții constructor.</p>
+      <pre><code>function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
 
-      <div class="theory-block">
-        <h3>🌍 Internet</h3>
-        <p>Internetul este o rețea globală de calculatoare care trimit pachete mici de date digitale între ele — un „sistem poștal foarte rapid”.</p>
-        <ul>
-          <li>A apărut din ARPAnet în anii 1960.</li>
-          <li>Permite trimiterea de pagini web, emailuri, fișiere media etc.</li>
-          <li>Folosește suita de protocoale <strong>TCP/IP</strong> pentru comunicare.</li>
-        </ul>
-      </div>
+Person.prototype.greet = function() {
+  console.log(`Salut, sunt ${this.name}.`);
+};
 
-      <div class="theory-block">
-        <h3>📡 Suita de protocoale TCP/IP</h3>
-        <p>Este o suită cu arhitectură pe straturi, fiecare strat având roluri și protocoale specifice:</p>
-        <ul>
-          <li><strong>Application Layer:</strong> HTTP, HTTPS, FTP, SMTP.</li>
-          <li><strong>Transport Layer:</strong> TCP (fiabil), UDP (rapid dar nefiabil).</li>
-          <li><strong>Network Layer:</strong> IP – adrese și rutare.</li>
-          <li><strong>Data Link Layer:</strong> ARP, PPP – comunicarea hardware-rețea.</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>🔢 IP Addresses</h3>
-        <p>Identifică fiecare calculator din rețea.</p>
-        <ul>
-          <li><strong>IPv4:</strong> format din 4 numere separate prin puncte, ex: 192.168.56.17.</li>
-          <li><strong>IPv6:</strong> format din 8 grupuri hex separate prin „:”, ex: 2a04:2413:8100:8080:d4d2:c098:514d:e7b2.</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>🕸️ World Wide Web</h3>
-        <p>WWW este un sistem de documente legate între ele prin hyperlinkuri, care permite navigarea între pagini.</p>
-        <p>Se bazează pe 3 tehnologii:</p>
-        <ul>
-          <li><strong>HTML</strong> – limbajul documentelor web.</li>
-          <li><strong>URI / URL</strong> – identificarea resurselor.</li>
-          <li><strong>HTTP</strong> – protocolul de transfer.</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>🔗 URL</h3>
-        <p>Un URL (Uniform Resource Locator) indică locația unei resurse web și cum se obține aceasta.</p>
-        <pre><code>https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET?source=sidebar#Syntax</code></pre>
-        <ul>
-          <li><strong>Schemă:</strong> https</li>
-          <li><strong>Domeniu:</strong> developer.mozilla.org</li>
-          <li><strong>Cale:</strong> /en-US/docs/Web/HTTP/Methods/GET</li>
-          <li><strong>Query:</strong> source=sidebar</li>
-          <li><strong>Fragment:</strong> Syntax</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>💻 Arhitectura Client-Server</h3>
-        <p>Modelul în care un client trimite o cerere către un server, iar serverul trimite un răspuns înapoi.</p>
-        <ul>
-          <li>Exemple: Browser → Web server, Aplicație mobilă → Server API.</li>
-          <li>Poate fi <strong>single process</strong> (standalone) sau <strong>multi-layer</strong>.</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>🏗️ Arhitectura pe 3 straturi</h3>
-        <ul>
-          <li><strong>Presentation:</strong> Interfața cu utilizatorul (UI/GUI).</li>
-          <li><strong>Business:</strong> Logica aplicației.</li>
-          <li><strong>Data:</strong> Persistența datelor (baze de date).</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>🌐 DNS</h3>
-        <p>DNS (Domain Name System) este „agenda telefonică” a internetului: traduce nume de domenii în adrese IP.</p>
-      </div>
-
-      <div class="theory-block">
-        <h3>📨 HTTP</h3>
-        <p>HTTP (HyperText Transfer Protocol) este protocolul de comunicare între client și server pentru resurse web.</p>
-        <ul>
-          <li>Model <strong>Request → Response</strong></li>
-          <li>Text-based</li>
-          <li>Stateless (fiecare cerere e independentă)</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>🔁 Metode HTTP</h3>
-        <ul>
-          <li><strong>GET:</strong> Citire (Read)</li>
-          <li><strong>POST:</strong> Creare (Create)</li>
-          <li><strong>PUT:</strong> Actualizare (Update)</li>
-          <li><strong>DELETE:</strong> Ștergere (Delete)</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>📦 Răspunsuri HTTP</h3>
-        <ul>
-          <li><strong>1xx</strong> – Informativ</li>
-          <li><strong>2xx</strong> – Succes (ex: 200 OK, 201 Created)</li>
-          <li><strong>3xx</strong> – Redirectare (ex: 302 Found)</li>
-          <li><strong>4xx</strong> – Eroare client (ex: 404 Not Found)</li>
-          <li><strong>5xx</strong> – Eroare server (ex: 500 Internal Server Error)</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>🔒 HTTPS</h3>
-        <p>HTTPS = HTTP + SSL/TLS (criptare pentru securitate). Protejează confidențialitatea și integritatea datelor transmise.</p>
-      </div>
-
-      <div class="theory-block">
-        <h3>🧭 Web Browsers</h3>
-        <p>Un browser este o aplicație client care afișează conținutul de pe web.</p>
-        <ul>
-          <li>Chrome</li>
-          <li>Firefox</li>
-          <li>Edge</li>
-          <li>Safari</li>
-          <li>Opera</li>
-        </ul>
-      </div>
-
-      <div class="theory-block">
-        <h3>🧰 Developer Tools</h3>
-        <p>Instrumente integrate în browsere pentru dezvoltatori:</p>
-        <ul>
-          <li>Inspectare DOM și CSS</li>
-          <li>Console pentru debugging JS</li>
-          <li>Analiză Network și Performance</li>
-        </ul>
-      </div>
+const p1 = new Person("Maria", 30);
+p1.greet(); // Salut, sunt Maria.</code></pre>
+      <div class="info note">🧠 Folosește <code>new</code> pentru a crea o instanță.</div>
     </section>
 
-    <section id="exercises" class="exercise-section">
-      <h2>🧠 Exerciții</h2>
-      <div class="exercise-card">
-        <h3>1️⃣ Care sunt cele 4 straturi ale suitei TCP/IP?</h3>
-        <p><em>Încearcă să le enumeri...</em></p>
-        <div class="answer">Application, Transport, Network, Data Link.</div>
-      </div>
+    <!-- === 3. PROTOTYPE INHERITANCE === -->
+    <section id="prototype" class="theory-block">
+      <h2>3️⃣ Prototype inheritance</h2>
+      <p>Toate obiectele în JS moștenesc proprietăți prin <strong>prototype chain</strong>:</p>
+      <pre><code>const animal = { eats: true };
+const rabbit = Object.create(animal);
+rabbit.jumps = true;
 
-      <div class="exercise-card">
-        <h3>2️⃣ Descompune un URL în părțile sale.</h3>
-        <div class="answer">Schemă, domeniu, cale, query, fragment.</div>
-      </div>
-
-      <div class="exercise-card">
-        <h3>3️⃣ Care este diferența între HTTP și HTTPS?</h3>
-        <div class="answer">HTTPS criptează datele cu SSL/TLS, spre deosebire de HTTP care transmite text clar.</div>
-      </div>
+console.log(rabbit.eats); // true (moștenit)
+console.log(rabbit.jumps); // true</code></pre>
+      <div class="info warning">⚙️ Prototipurile definesc comportamente comune între instanțe.</div>
     </section>
 
-    <section id="interview" class="interview-section">
-      <h2>💬 Întrebări de interviu</h2>
-      <ul>
-        <li>Ce este Internetul?</li>
-        <li>Ce rol are DNS?</li>
-        <li>Care este diferența între IPv4 și IPv6?</li>
-        <li>Ce înseamnă că HTTP este stateless?</li>
-        <li>Ce metode HTTP corespund operațiilor CRUD?</li>
-        <li>Ce face un browser?</li>
-        <li>Ce sunt codurile de stare 2xx, 4xx, 5xx?</li>
-        <li>Ce este HTTPS și de ce e important?</li>
-        <li>Ce unelte poți folosi în DevTools?</li>
-      </ul>
+    <!-- === 4. CLASSES === -->
+    <section id="classes" class="theory-block">
+      <h2>4️⃣ Classes (ES6)</h2>
+      <p>Clasele oferă o sintaxă modernă și clară pentru OOP în JavaScript.</p>
+      <pre><code>class Car {
+  constructor(brand) {
+    this.brand = brand;
+  }
+
+  drive() {
+    console.log(`${this.brand} pornește motorul 🚗`);
+  }
+}
+
+const c1 = new Car("Toyota");
+c1.drive();</code></pre>
+      <div class="info note">✨ În spate, clasele folosesc tot sistemul de prototipuri.</div>
     </section>
 
-    <section id="project" class="did-you-know">
-      <h2>🛠️ Mic proiect: “Mini-site - Fundamente Web”</h2>
-      <ol>
-        <li>Inițializează un repository Git.</li>
-        <li>Creează un fișier <code>index.html</code> care explică TCP/IP.</li>
-        <li>Adaugă stilizare de bază în <code>style.css</code>.</li>
-        <li>Include un exemplu de cerere HTTP (GET/POST).</li>
-        <li>Documentează un URL și părțile sale.</li>
-        <li>Adaugă o secțiune despre DNS și IP-uri.</li>
-        <li>Include imagini sau diagrame explicative.</li>
-        <li>Folosește DevTools pentru a analiza o pagină.</li>
-        <li>Scrie un mic ghid despre codurile de stare HTTP.</li>
-        <li>Publică proiectul pe GitHub Pages.</li>
-      </ol>
+    <!-- === 5. GETTERS & SETTERS === -->
+    <section id="getters" class="theory-block">
+      <h2>5️⃣ Getters & Setters</h2>
+      <p>Permit controlul asupra modului în care proprietățile sunt citite sau modificate.</p>
+      <pre><code>class User {
+  constructor(name) {
+    this._name = name;
+  }
+
+  get name() {
+    return this._name.toUpperCase();
+  }
+
+  set name(newName) {
+    this._name = newName.trim();
+  }
+}
+
+const u = new User("ana");
+console.log(u.name); // ANA</code></pre>
     </section>
+
+    <!-- === 6. METHOD CHAINING === -->
+    <section id="chaining" class="theory-block">
+      <h2>6️⃣ Chaining methods</h2>
+      <p>Returnând <code>this</code> din metode, poți apela mai multe una după alta:</p>
+      <pre><code>class Calculator {
+  constructor() { this.value = 0; }
+
+  add(n) { this.value += n; return this; }
+  sub(n) { this.value -= n; return this; }
+  mul(n) { this.value *= n; return this; }
+  show() { console.log(this.value); return this; }
+}
+
+new Calculator().add(5).mul(3).sub(2).show(); // 13</code></pre>
+    </section>
+
+    <!-- === 7. STATIC METHODS === -->
+    <section id="static" class="theory-block">
+      <h2>7️⃣ Static methods</h2>
+      <p>Metodele statice aparțin clasei, nu instanței.</p>
+      <pre><code>class MathUtils {
+  static square(x) {
+    return x * x;
+  }
+}
+
+console.log(MathUtils.square(5)); // 25</code></pre>
+    </section>
+
+    <!-- === 8. INHERITANCE === -->
+    <section id="inheritance" class="theory-block">
+      <h2>8️⃣ Inheritance & Overriding</h2>
+      <p>O clasă poate moșteni alta folosind <code>extends</code>.</p>
+      <pre><code>class Animal {
+  speak() {
+    console.log("Un animal scoate un sunet.");
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log("Câinele latră 🐶");
+  }
+}
+
+new Dog().speak(); // Câinele latră 🐶</code></pre>
+    </section>
+
+    <!-- === 9. JSON SERIALIZATION === -->
+    <section id="json" class="theory-block">
+      <h2>9️⃣ JSON serialization</h2>
+      <p>Obiectele JS pot fi convertite în text JSON pentru stocare sau transmitere.</p>
+      <pre><code>const person = { name: "Elena", age: 28 };
+const json = JSON.stringify(person);
+console.log(json); // {"name":"Elena","age":28}
+
+const back = JSON.parse(json);
+console.log(back.name); // Elena</code></pre>
+    </section>
+
+    <!-- === 10. WORKSHOP === -->
+    <section id="workshop" class="theory-block">
+      <h2>🔟 Workshop: mini OOP app</h2>
+      <p>💻 Creează o mică aplicație cu clase și metode:</p>
+      <pre><code>class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  info() {
+    return `${this.name} - ${this.price} RON`;
+  }
+}
+
+class Cart {
+  constructor() {
+    this.items = [];
+  }
+
+  add(product) {
+    this.items.push(product);
+    return this;
+  }
+
+  total() {
+    return this.items.reduce((sum, p) => sum + p.price, 0);
+  }
+}
+
+const c = new Cart()
+  .add(new Product("Mouse", 120))
+  .add(new Product("Tastatură", 200));
+
+console.log("Total:", c.total(), "RON");</code></pre>
+      <div class="info exercise">💡 Extinde aplicația adăugând reduceri sau stoc limitat!</div>
+    </section>
+
+    <!-- === PAGINARE === -->
+    <div class="pagination">
+      <a href="../lectia15/index.html">← Lecția anterioară</a>
+      <a href="../lectia17/index.html">Lecția următoare →</a>
+    </div>
   </main>
 
   <footer class="footer">
-    <p>© 2025 Web Introduction — Curs Frontend Path</p>
+    <p>© 2025 JavaScript Path — Lecția 16: Classes & Objects</p>
   </footer>
 </body>
 </html>

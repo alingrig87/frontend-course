@@ -1,13 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JavaScript Classes & Objects (OOP în JS)</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>JavaScript Classes & Objects (OOP în JS)</h1>
-  <script src="app.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecție 16: JS - Classes & Objects</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <h2>JavaScript - Lecții</h2>
+      <nav class="side-nav">
+        <ul>
+          <li><a href="#">Introducere în JS</a></li>
+          <li><a href="#">Variabile & Tipuri</a></li>
+          <li><a href="#">Operatori</a></li>
+          <li><a href="#">Funcții</a></li>
+          <li><a href="#">DOM & Evenimente</a></li>
+          <li><a href="#">Array & Obiecte</a></li>
+          <li><a href="#">Async & Promises</a></li>
+          <li><a href="#" class="active">Classes & Objects</a></li>
+          <li><a href="#">Module & Import</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ===== CONȚINUT PRINCIPAL ===== -->
+    <main class="main-content">
+      <header>
+        <h1>Lecția 16: JS Classes & Objects</h1>
+        <p class="subtitle">Concepte OOP moderne în JavaScript (ES6+)</p>
+      </header>
+
+      <article>
+
+        <!-- 1. Object literals -->
+        <section id="object-literals">
+          <h2>1️⃣ Object literals</h2>
+          <p>Cel mai simplu mod de a crea un obiect este folosind un literal:</p>
+          <pre><code>const user = {
+  name: "Ana",
+  age: 25,
+  greet() {
+    console.log(`Salut, sunt ${this.name}!`);
+  }
+};
+
+user.greet(); // Salut, sunt Ana!</code></pre>
+        </section>
+
+        <!-- 2. Constructor functions -->
+        <section id="constructor-functions">
+          <h2>2️⃣ Constructor functions</h2>
+          <p>Înainte de ES6, constructorii erau funcții folosite cu <code>new</code>:</p>
+          <pre><code>function Car(model, year) {
+  this.model = model;
+  this.year = year;
+}
+
+const car1 = new Car("Tesla", 2023);
+console.log(car1.model); // Tesla</code></pre>
+        </section>
+
+        <!-- 3. Prototype inheritance -->
+        <section id="prototype-inheritance">
+          <h2>3️⃣ Prototype inheritance</h2>
+          <p>Fiecare obiect moștenește metode prin <code>prototype</code>:</p>
+          <pre><code>Car.prototype.drive = function() {
+  console.log(`${this.model} pornește...`);
+};
+
+car1.drive(); // Tesla pornește...</code></pre>
+        </section>
+
+        <!-- 4. Classes ES6 -->
+        <section id="classes-es6">
+          <h2>4️⃣ Classes (ES6)</h2>
+          <p>ES6 a introdus o sintaxă mai clară pentru clase:</p>
+          <pre><code>class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Salut, sunt ${this.name}!`);
+  }
+}
+
+const p1 = new Person("Mihai", 30);
+p1.greet();</code></pre>
+        </section>
+
+        <!-- 5. Getters & Setters -->
+        <section id="getters-setters">
+          <h2>5️⃣ Getters & Setters</h2>
+          <p>Metode speciale pentru citire și scriere controlată a valorilor:</p>
+          <pre><code>class Product {
+  constructor(name, price) {
+    this._name = name;
+    this._price = price;
+  }
+
+  get price() {
+    return this._price.toFixed(2) + " lei";
+  }
+
+  set price(value) {
+    if (value > 0) this._price = value;
+  }
+}
+
+const phone = new Product("iPhone", 4999);
+console.log(phone.price);</code></pre>
+        </section>
+
+        <!-- 6. Chaining methods -->
+        <section id="chaining-methods">
+          <h2>6️⃣ Chaining methods</h2>
+          <p>Returnează <code>this</code> pentru a putea apela metode în lanț:</p>
+          <pre><code>class Counter {
+  constructor() {
+    this.value = 0;
+  }
+  inc() {
+    this.value++;
+    return this;
+  }
+  dec() {
+    this.value--;
+    return this;
+  }
+  show() {
+    console.log(this.value);
+    return this;
+  }
+}
+
+new Counter().inc().inc().dec().show(); // 1</code></pre>
+        </section>
+
+        <!-- 7. Static methods -->
+        <section id="static-methods">
+          <h2>7️⃣ Static methods</h2>
+          <p>Metodele statice se apelează direct pe clasă, nu pe instanță:</p>
+          <pre><code>class MathUtils {
+  static add(a, b) {
+    return a + b;
+  }
+}
+
+console.log(MathUtils.add(5, 3)); // 8</code></pre>
+        </section>
+
+        <!-- 8. Inheritance & overriding -->
+        <section id="inheritance-overriding">
+          <h2>8️⃣ Inheritance & Overriding</h2>
+          <p>Clasele pot moșteni alte clase cu <code>extends</code>:</p>
+          <pre><code>class Animal {
+  speak() {
+    console.log("Sunet generic...");
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log("Ham ham!");
+  }
+}
+
+new Dog().speak(); // Ham ham!</code></pre>
+        </section>
+
+        <!-- 9. JSON serialization -->
+        <section id="json-serialization">
+          <h2>9️⃣ JSON serialization</h2>
+          <p>Conversia între obiecte JS și formatul JSON:</p>
+          <pre><code>const user = { name: "Ion", age: 40 };
+
+const json = JSON.stringify(user);
+console.log(json); // {"name":"Ion","age":40}
+
+const obj = JSON.parse(json);
+console.log(obj.name); // Ion</code></pre>
+        </section>
+
+        <!-- 10. Workshop -->
+        <section id="workshop">
+          <h2>🔟 Workshop: Mini OOP App</h2>
+          <p>Exercițiu practic — o mini listă de sarcini OOP:</p>
+          <pre><code>class TodoList {
+  constructor() {
+    this.items = [];
+  }
+  add(task) {
+    this.items.push(task);
+    return this;
+  }
+  remove(task) {
+    this.items = this.items.filter(t => t !== task);
+    return this;
+  }
+  show() {
+    console.log("ToDo:", this.items);
+    return this;
+  }
+}
+
+new TodoList()
+  .add("JS practice")
+  .add("Review code")
+  .remove("JS practice")
+  .show();</code></pre>
+        </section>
+      </article>
+
+      <!-- ===== PAGINARE ===== -->
+      <footer class="pagination">
+        <a href="#" class="prev">← Lecția 15: Async JS</a>
+        <a href="#" class="next">Lecția 17: Module & Import →</a>
+      </footer>
+    </main>
+  </body>
 </html>

@@ -1,1 +1,88 @@
-/* JavaScript Classes & Objects (OOP în JS) - style.css (gol, folosește pentru exerciții) */
+/* ===== JavaScript Classes & Objects (OOP în JS) - style.css ===== */
+
+/* Secțiuni individuale în lecție */
+section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+section h2 {
+  color: #20232a;
+  margin-bottom: 0.5rem;
+}
+
+code {
+  background: #f0f0f0;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  background-color: #20232a;
+  color: white;
+  padding: 1rem;
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-nav a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+.side-nav a.active,
+.side-nav a:hover {
+  background-color: #61dafb;
+  color: #000;
+}
+
+/* ===== Main content ===== */
+.main-content {
+  margin-left: 260px;
+  padding: 2rem;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+header h1 {
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: #555;
+  font-style: italic;
+}
+
+/* ===== Paginare ===== */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.pagination a {
+  color: #20232a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pagination a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive Design ===== */
